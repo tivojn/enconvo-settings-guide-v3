@@ -570,7 +570,7 @@
         title: "Text-to-Speech Configuration",
         parent: "global-providers",
         parentPage: "Text-to-Speech",
-        intro: "Use this section when choosing the app-wide spoken-output provider. These settings control the default voice provider, voice, language, format, and speed behavior that agents can inherit.",
+        intro: "Use this section when choosing the app-wide spoken-output provider. Treat it like the AI Model page: Cloud Plan TTS is the EnConvo-managed route, while Provider Inventory contains direct providers, local providers, and credential-based provider setup.",
         pages: [
           ["global-text-to-speech/tts-01-overview-edge.png", "Edge TTS Overview", "Default Text-to-Speech provider setup with Edge TTS selected.", "Edge TTS is a no-key provider based on Microsoft Edge's Read Aloud API. Use it when you want a free global voice provider with many neural voices and output format control.", "Voice"],
           ["global-text-to-speech/tts-02-edge-voice-menu.png", "Edge TTS Voice Menu", "Voice menu opened for Edge TTS.", "Use the searchable Voice menu to choose the default spoken voice. Edge TTS exposes many online natural voices across languages and locales.", "Voice"],
@@ -579,24 +579,60 @@
           ["global-text-to-speech/tts-05-xai-cloud-voice-menu.png", "xAI TTS Cloud Plan Voice Menu", "Voice menu opened for xAI TTS through EnConvo Cloud Plan.", "The xAI Cloud Plan voice menu shows expressive voice presets such as Eve, Ara, Rex, Sal, and Leo. Pick a voice that fits the assistant's speaking tone.", "Voice"],
           ["global-text-to-speech/tts-06-xai-cloud-language-menu.png", "xAI TTS Cloud Plan Language Menu", "Language menu opened for xAI TTS through EnConvo Cloud Plan.", "Use Auto Detect for general multilingual use, or choose a fixed language when the agent should speak in a specific language.", "Voice"],
           ["global-text-to-speech/tts-07-openai-overview.png", "OpenAI TTS Overview", "Direct-provider Text-to-Speech setup with OpenAI TTS selected.", "Choose OpenAI TTS when spoken output should use your OpenAI credential. This path exposes credential provider, model name, voice, speech speed, and Set as Default Provider.", "Private"],
-          ["global-text-to-speech/tts-08-openai-credential-menu.png", "OpenAI TTS Credential Menu", "Credential Provider menu opened for OpenAI TTS.", "Use Credential Provider to select an existing OpenAI credential or create a new one. The pencil opens credential setup, and the gear opens broader credential management.", "Private"]
+          ["global-text-to-speech/tts-08-openai-credential-menu.png", "OpenAI TTS Credential Menu", "Credential Provider menu opened for OpenAI TTS.", "Use Credential Provider to select an existing OpenAI credential or create a new one. The pencil opens credential setup, and the gear opens broader credential management.", "Private"],
+          ["global-text-to-speech/tts-09-gemini-overview.png", "Gemini TTS Overview", "Direct-provider Text-to-Speech setup with Gemini TTS selected.", "Choose Gemini TTS when spoken output should use a Gemini credential. This provider exposes credential provider, model name, voice, and the default-provider action.", "Private"],
+          ["global-text-to-speech/tts-10-gemini-model-menu.png", "Gemini TTS Model Menu", "Model Name menu opened for Gemini TTS.", "Use Model Name to select the Gemini TTS model that should generate speech for the global provider default.", "Voice"],
+          ["global-text-to-speech/tts-11-gemini-voice-menu.png", "Gemini TTS Voice Menu", "Voice menu opened for Gemini TTS.", "Use Voice to pick the Gemini speaking style. The visible list includes names with short style descriptions, which helps match the voice to the assistant's tone.", "Voice"],
+          ["global-text-to-speech/tts-12-xai-direct-overview.png", "xAI TTS Overview", "Direct-provider Text-to-Speech setup with xAI TTS selected.", "Choose xAI TTS when spoken output should use your own xAI credential rather than the EnConvo Cloud Plan credential.", "Private"],
+          ["global-text-to-speech/tts-13-xai-credential-oauth-sheet.png", "xAI TTS OAuth2 Credential Sheet", "xAI credential setup opened from the pencil icon with OAuth2 selected.", "Use OAuth2 when you want browser-based account authorization. The connected account area is redacted here; do not reconnect unless you intend to refresh the authorization.", "Private"],
+          ["global-text-to-speech/tts-14-xai-credential-type-menu.png", "xAI TTS Credential Type Menu", "Credentials Type menu opened inside the xAI credential setup sheet.", "This menu confirms that xAI TTS supports both ApiKey and OAuth2 authentication branches.", "Private"],
+          ["global-text-to-speech/tts-15-xai-credential-apikey-setup.png", "xAI TTS ApiKey Setup", "xAI credential setup with ApiKey selected.", "Use ApiKey when you want to provide a masked xAI key directly. Validate only after confirming the key is correct and you are ready to test the credential.", "Private"]
         ],
         deepDive: [
           {
-            title: "TTS Provider Inventory",
+            title: "EnConvo Cloud Plan TTS",
+            proof: "global-text-to-speech/tts-04-xai-cloud-overview.png",
+            summary: "Cloud Plan TTS providers use EnConvo Cloud as the credential provider. This is the managed route for users who want subscription-backed speech access without maintaining a separate provider API key.",
+            steps: [
+              "Open Settings > Global Providers Settings > Text-to-Speech.",
+              "Choose one of the providers marked EnConvo Cloud Plan in the provider column.",
+              "Confirm Credential Provider is EnConvo Cloud.",
+              "Open Voice and Language when those controls are available for the selected Cloud Plan provider.",
+              "Use Auto Detect for flexible multilingual output, or choose a fixed language when the assistant should always speak one language.",
+              "Use Set as Default Provider only when this Cloud Plan voice should become the app-wide spoken-output default."
+            ],
+            evidence: [
+              "global-text-to-speech/tts-04-xai-cloud-overview.png",
+              "global-text-to-speech/tts-05-xai-cloud-voice-menu.png",
+              "global-text-to-speech/tts-06-xai-cloud-language-menu.png"
+            ],
+            inventoryTitle: "Observed EnConvo Cloud Plan TTS Providers",
+            inventory: [
+              "xAI TTS (EnConvo Cloud Plan)",
+              "Gemini TTS (EnConvo Cloud Plan)",
+              "Microsoft TTS (EnConvo Cloud Plan)",
+              "MiniMax TTS (EnConvo Cloud Plan)",
+              "Xiaomi MiMo TTS (EnConvo Cloud Plan)"
+            ],
+            badge: "Voice"
+          },
+          {
+            title: "Provider Inventory",
             proof: "global-text-to-speech/tts-01-overview-edge.png",
-            summary: "The Text-to-Speech provider column is a global voice-provider inventory. Some providers use EnConvo Cloud Plan credentials, some use local or no-key options, and some use direct provider credentials.",
+            summary: "The provider inventory lists the direct, local, no-key, and Cloud Plan entries available from the Text-to-Speech provider column. Direct providers can expose their own credential picker, credential setup sheet, model menu, voice menu, speed control, or language control.",
             steps: [
               "Open Settings > Global Providers Settings > Text-to-Speech.",
               "Use the provider column to choose the voice backend.",
-              "Cloud Plan entries use EnConvo-managed credentials when available.",
-              "Direct provider entries can expose Credential Provider, pencil setup, model, voice, and speed controls.",
-              "Use Set as Default Provider only when the chosen TTS provider should become the app-wide spoken-output default."
+              "Use Cloud Plan entries when EnConvo Cloud should supply the credential.",
+              "Use direct provider entries when you want EnConvo to use a provider credential you manage.",
+              "Use local or no-key entries when available for simpler setup without a third-party credential.",
+              "Use Set as Default Provider only when the chosen provider should become the app-wide spoken-output default."
             ],
             evidence: [
               "global-text-to-speech/tts-01-overview-edge.png",
-              "global-text-to-speech/tts-04-xai-cloud-overview.png",
-              "global-text-to-speech/tts-07-openai-overview.png"
+              "global-text-to-speech/tts-07-openai-overview.png",
+              "global-text-to-speech/tts-09-gemini-overview.png",
+              "global-text-to-speech/tts-12-xai-direct-overview.png"
             ],
             inventoryTitle: "Observed TTS Providers",
             inventory: [
@@ -647,40 +683,6 @@
             badge: "Voice"
           },
           {
-            title: "Cloud Plan TTS Setup",
-            proof: "global-text-to-speech/tts-04-xai-cloud-overview.png",
-            summary: "Cloud Plan TTS providers use EnConvo Cloud as the credential provider and offer provider-specific voice and language menus.",
-            steps: [
-              "Choose a provider such as xAI TTS (EnConvo Cloud Plan).",
-              "Confirm Credential Provider is EnConvo Cloud.",
-              "Open Voice and choose the speaking style.",
-              "Open Language and keep Auto Detect for flexible multilingual use, or choose a fixed language.",
-              "Use Set as Default Provider only when this Cloud Plan voice should become the global spoken-output default."
-            ],
-            evidence: [
-              "global-text-to-speech/tts-04-xai-cloud-overview.png",
-              "global-text-to-speech/tts-05-xai-cloud-voice-menu.png",
-              "global-text-to-speech/tts-06-xai-cloud-language-menu.png"
-            ],
-            inventoryTitle: "Observed xAI Cloud Plan Voices And Languages",
-            inventory: [
-              "Eve: energetic, upbeat",
-              "Ara: warm, friendly",
-              "Rex: confident, clear",
-              "Sal: smooth, balanced",
-              "Leo: authoritative, strong",
-              "Auto Detect",
-              "English",
-              "Chinese",
-              "Japanese",
-              "Korean",
-              "French",
-              "German",
-              "Spanish (Spain)"
-            ],
-            badge: "Voice"
-          },
-          {
             title: "OpenAI TTS Setup",
             proof: "global-text-to-speech/tts-07-openai-overview.png",
             summary: "OpenAI TTS is the direct-provider path for spoken output through an OpenAI credential. It follows the same credential-provider pattern used elsewhere in EnConvo Settings.",
@@ -702,6 +704,59 @@
               "Voice: alloy",
               "Speech Speed: 1.2x",
               "Credential menu: OpenAI or Create new Credential"
+            ],
+            badge: "Private"
+          },
+          {
+            title: "Gemini TTS Setup",
+            proof: "global-text-to-speech/tts-09-gemini-overview.png",
+            summary: "Gemini TTS is a direct-provider path for spoken output through a Gemini credential. It exposes credential provider, model, voice, and the default-provider action.",
+            steps: [
+              "Choose Gemini TTS in the provider column.",
+              "Open Credential Provider to select or create the Gemini credential.",
+              "Open Model Name to choose the Gemini TTS model.",
+              "Open Voice to choose the speaking style.",
+              "Use Set as Default Provider only when Gemini TTS should become the app-wide voice default."
+            ],
+            evidence: [
+              "global-text-to-speech/tts-09-gemini-overview.png",
+              "global-text-to-speech/tts-10-gemini-model-menu.png",
+              "global-text-to-speech/tts-11-gemini-voice-menu.png"
+            ],
+            inventoryTitle: "Observed Gemini TTS Controls",
+            inventory: [
+              "Credential Provider: Gemini",
+              "Model Name: gemini-3.1-flash-tts-preview",
+              "Voice: Zephyr -- Bright",
+              "Additional visible voices: Puck -- Upbeat, Charon -- Informative, Kore -- Firm, Fenrir -- Excitable, Leda -- Youthful, Orus -- Firm, Aoede -- Breezy"
+            ],
+            badge: "Private"
+          },
+          {
+            title: "xAI TTS Setup",
+            proof: "global-text-to-speech/tts-12-xai-direct-overview.png",
+            summary: "xAI TTS is the direct-provider path for spoken output through an xAI credential. The pencil beside Credential Provider opens a credential setup sheet with both OAuth2 and ApiKey authentication.",
+            steps: [
+              "Choose xAI TTS in the provider column.",
+              "Open Credential Provider to select the xAI credential.",
+              "Click the pencil beside Credential Provider to open the credential setup sheet.",
+              "Use Credentials Type to choose OAuth2 or ApiKey.",
+              "Use OAuth2 when you want browser-based authorization for the selected xAI account.",
+              "Use ApiKey when you want to enter a masked xAI API key directly, then validate only when you are ready to test that credential.",
+              "Return to the Text-to-Speech pane, choose Voice and Language, and set it as the default only when this provider should become the global voice default."
+            ],
+            evidence: [
+              "global-text-to-speech/tts-12-xai-direct-overview.png",
+              "global-text-to-speech/tts-13-xai-credential-oauth-sheet.png",
+              "global-text-to-speech/tts-14-xai-credential-type-menu.png",
+              "global-text-to-speech/tts-15-xai-credential-apikey-setup.png"
+            ],
+            inventoryTitle: "Observed xAI TTS Controls",
+            inventory: [
+              "Credential Provider: X.AI-GROK",
+              "Credentials Type: OAuth2 or ApiKey",
+              "Voice: Ara (warm, friendly)",
+              "Language: Auto Detect"
             ],
             badge: "Private"
           }
@@ -1099,10 +1154,12 @@
         { title: "OpenAI", pagePrefixes: ["OpenAI"], deepPrefixes: ["OpenAI"] }
       ],
       "global-text-to-speech": [
-        { title: "Provider Inventory", deepTitles: ["TTS Provider Inventory"] },
+        { title: "EnConvo Cloud Plan TTS", pagePrefixes: ["xAI TTS Cloud Plan"], deepTitles: ["EnConvo Cloud Plan TTS"] },
+        { title: "Provider Inventory", deepTitles: ["Provider Inventory"] },
         { title: "Edge TTS", pagePrefixes: ["Edge TTS"], deepTitles: ["Edge TTS Setup"] },
-        { title: "Cloud Plan TTS", pagePrefixes: ["xAI TTS Cloud Plan"], deepTitles: ["Cloud Plan TTS Setup"] },
-        { title: "OpenAI TTS", pagePrefixes: ["OpenAI TTS"], deepTitles: ["OpenAI TTS Setup"] }
+        { title: "OpenAI TTS", pagePrefixes: ["OpenAI TTS"], deepTitles: ["OpenAI TTS Setup"] },
+        { title: "Gemini TTS", pagePrefixes: ["Gemini TTS"], deepTitles: ["Gemini TTS Setup"] },
+        { title: "xAI TTS", pagePrefixes: ["xAI TTS"], deepTitles: ["xAI TTS Setup"] }
       ],
       "agent-mavis": [
         { title: "Change Agent Portrait", pagePrefixes: ["Change Agent Portrait"] },
@@ -1148,8 +1205,9 @@
       const usedPages = new Set();
       const usedDeep = new Set();
       const grouped = groups.map(group => {
-        const pages = child.pages.filter(page => matchesPrefix(page[1], group.pagePrefixes || [group.title]));
+        const pages = child.pages.filter(page => !usedPages.has(page) && matchesPrefix(page[1], group.pagePrefixes || [group.title]));
         const deep = (child.deepDive || []).filter(item => {
+          if (usedDeep.has(item)) return false;
           const exact = (group.deepTitles || []).includes(item.title);
           const prefixed = matchesPrefix(item.title, group.deepPrefixes || []);
           return exact || prefixed;

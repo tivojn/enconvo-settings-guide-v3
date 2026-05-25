@@ -201,3 +201,19 @@ Added after the user requested the next expanded section for `Global Providers S
 - Captured `global-text-to-speech/tts-07-openai-overview.png` for OpenAI TTS direct-provider configuration.
 - Captured `global-text-to-speech/tts-08-openai-credential-menu.png` for the OpenAI TTS credential menu.
 - No preview/play button was triggered, no voice was selected, no output format was selected, no credential was opened, and no default provider was changed.
+
+## Global Text-to-Speech Provider Structure And xAI Credentials
+
+Added after the user requested the TTS section to follow the same global-provider structure as AI Model.
+
+- Reorganized the guide into `EnConvo Cloud Plan TTS` and `Provider Inventory`.
+- Documented the observed Cloud Plan TTS providers: xAI TTS, Gemini TTS, Microsoft TTS, MiniMax TTS, and Xiaomi MiMo TTS.
+- Captured `global-text-to-speech/tts-09-gemini-overview.png` for Gemini TTS direct-provider setup.
+- Captured `global-text-to-speech/tts-10-gemini-model-menu.png` for the Gemini TTS model menu.
+- Captured `global-text-to-speech/tts-11-gemini-voice-menu.png` for the Gemini TTS voice menu.
+- Captured `global-text-to-speech/tts-12-xai-direct-overview.png` for xAI TTS direct-provider setup.
+- Captured `global-text-to-speech/tts-13-xai-credential-oauth-sheet.png` for the xAI TTS OAuth2 credential sheet.
+- Captured `global-text-to-speech/tts-14-xai-credential-type-menu.png` for the xAI TTS credential type menu showing ApiKey and OAuth2.
+- Captured `global-text-to-speech/tts-15-xai-credential-apikey-setup.png` for the xAI TTS ApiKey setup branch.
+- Account identifiers in the xAI OAuth2 credential sheet were redacted before saving public screenshots.
+- No preview/play button was triggered, no voice was selected, no credential was validated, no reconnect action was triggered, and no default provider was changed.
