@@ -236,3 +236,19 @@ Added after the user requested provider subsection deduplication and missing cre
 - Corrected the Gemini TTS documentation to show ApiKey setup only; unsupported authentication references and screenshots were removed after review.
 - Account identifiers in OpenAI OAuth2 credential screenshots were redacted before saving public screenshots.
 - No API key was entered, no OAuth connect/reconnect action was triggered, no credential was validated, no voice/model was changed, and no default provider was changed.
+
+## Global Text-to-Speech Additional Providers
+
+Added after the user requested three more provider sections under `Global Providers Settings > Text-to-Speech`: Eleven Labs TTS, Kokoro MLX TTS, and Qwen3 MLX TTS.
+
+- Captured `global-text-to-speech/tts-20-elevenlabs-overview.png` for the Eleven Labs TTS provider overview.
+- Captured `global-text-to-speech/tts-21-elevenlabs-credential-menu.png` for the Eleven Labs TTS credential provider menu.
+- Captured `global-text-to-speech/tts-22-elevenlabs-apikey-setup.png` for the Eleven Labs API-key credential sheet opened from the pencil icon.
+- Captured `global-text-to-speech/tts-23-elevenlabs-model-menu.png` for the Eleven Labs model menu state before a credential-backed model list is available.
+- Captured `global-text-to-speech/tts-24-elevenlabs-voice-menu.png` for the Eleven Labs voice menu state before a credential-backed voice list is available.
+- Captured `global-text-to-speech/tts-25-kokoro-mlx-overview.png` for the Kokoro MLX local-provider overview.
+- Captured `global-text-to-speech/tts-26-kokoro-voice-menu.png` for the Kokoro MLX voice menu.
+- Captured `global-text-to-speech/tts-27-qwen3-mlx-overview.png` for the Qwen3 MLX local-provider overview.
+- Captured `global-text-to-speech/tts-28-qwen3-model-manager.png` for the Qwen3 MLX All Models manager.
+- Captured `global-text-to-speech/tts-29-qwen3-voice-menu.png` for the Qwen3 MLX voice menu.
+- No API key was entered, no model was loaded or deleted, no refresh/play action was triggered, no voice/model/default provider was changed, and no credential was validated.

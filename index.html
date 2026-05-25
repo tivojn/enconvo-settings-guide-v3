@@ -396,21 +396,21 @@
         intro: "Use this section when choosing the app-wide AI model provider. These settings become the default model behavior for new agents unless an agent has its own AI Model override.",
         pages: [
           ["global-ai-model/enconvo-cloud-plan-01-overview.png", "EnConvo Cloud Plan Overview", "Provider setup with EnConvo Cloud Plan selected.", "Choose EnConvo Cloud Plan when you want EnConvo-managed access through your subscription instead of maintaining a separate provider credential. Review the provider, model, reasoning effort, and temperature before making it the default provider.", "Provider"],
-          ["global-ai-model/enconvo-cloud-plan-02-model-menu.png", "EnConvo Cloud Plan Model Menu", "Model Name menu opened for EnConvo Cloud Plan.", "Use the Model Name menu to choose the global default model. The visible list can include models from multiple model families, depending on your plan and the live EnConvo catalog.", "Provider"],
+          ["global-ai-model/enconvo-cloud-plan-02-model-menu.png", "EnConvo Cloud Plan Model Menu", "Choose the Cloud Plan model that new agents should inherit by default.", "Use the Model Name menu to choose the global default model. The visible list can include models from multiple model families, depending on your plan and the live EnConvo catalog.", "Provider"],
           ["global-ai-model/cloud-plan-model-list-01-top.png", "EnConvo Cloud Plan Model List: Top", "Top of the Cloud Plan model menu.", "The model menu is searchable and scrollable. The top segment shows Claude, OpenAI OSS, and the currently selected Gemini option.", "Provider"],
           ["global-ai-model/cloud-plan-model-list-02-gemini.png", "EnConvo Cloud Plan Model List: Gemini", "Gemini model family segment.", "Scroll the same Model Name menu to see the Gemini Flash, Pro, image-preview, and preview model variants.", "Provider"],
           ["global-ai-model/cloud-plan-model-list-04-deepseek-grok.png", "EnConvo Cloud Plan Model List: DeepSeek And Grok", "DeepSeek and Grok model segment.", "This segment shows DeepSeek variants, including free entries where the live UI labels them as free, plus Grok.", "Provider"],
           ["global-ai-model/cloud-plan-model-list-05-mistral-glm-mimo.png", "EnConvo Cloud Plan Model List: Mistral, GLM, Xiaomi", "Bottom of the Cloud Plan model menu.", "The lower segment includes Mistral, GLM, and Xiaomi MiMo options.", "Provider"],
-          ["global-ai-model/enconvo-cloud-plan-03-reasoning-menu.png", "EnConvo Cloud Plan Reasoning Menu", "Reasoning Effort menu opened for EnConvo Cloud Plan.", "Use Reasoning Effort to tune how much reasoning budget the default model should use. Higher reasoning can be useful for complex work, while lower settings can be better for lighter everyday tasks.", "Provider"],
+          ["global-ai-model/enconvo-cloud-plan-03-reasoning-menu.png", "EnConvo Cloud Plan Reasoning Menu", "Choose how much reasoning effort the Cloud Plan model should use.", "Use Reasoning Effort to tune how much reasoning budget the default model should use. Higher reasoning can be useful for complex work, while lower settings can be better for lighter everyday tasks.", "Provider"],
           ["global-ai-model/provider-list-01-top.png", "AI Model Provider List: Top", "Top of the AI Model provider column.", "The provider column is also scrollable. The top segment includes EnConvo-managed providers, OpenAI, Anthropic, Gemini, local-provider options, and other common LLM platforms.", "Provider"],
           ["global-ai-model/provider-list-02-lower.png", "AI Model Provider List: Lower", "Lower segment of the AI Model provider column.", "Scroll the provider column to reveal additional third-party LLM platforms such as OpenRouter, Fireworks, Together AI, Poe, Kimi, DashScope, Sambanova, and Cerebras.", "Provider"],
           ["global-ai-model/provider-list-03-bottom.png", "AI Model Provider List: Bottom", "Bottom of the AI Model provider column.", "The bottom segment confirms the final visible providers, including Arli AI, Straico AI, AIMagicX, 1min AI, and Vercel AI Gateway.", "Provider"],
           ["global-ai-model/openai-01-overview.png", "OpenAI Overview", "Provider setup with OpenAI selected.", "Choose OpenAI when you want the global AI model to use your OpenAI account or OpenAI-compatible endpoint. Review the credential provider, model, reasoning effort, and temperature before setting it as the default.", "Provider"],
-          ["global-ai-model/openai-02-credential-menu.png", "OpenAI Credential Menu", "Credential Provider menu opened for OpenAI.", "Use Credential Provider to choose an existing OpenAI credential or create a new credential. The pencil opens the selected credential setup sheet; the gear opens the broader credential management area.", "Private"],
+          ["global-ai-model/openai-02-credential-menu.png", "OpenAI Credential Menu", "Choose which OpenAI credential the global AI Model provider should use.", "Use Credential Provider to choose an existing OpenAI credential or create a new credential. The pencil opens the selected credential setup sheet; the gear opens the broader credential management area.", "Private"],
           ["global-ai-model/openai-03-oauth-sheet.png", "OpenAI OAuth2 Credential Sheet", "OpenAI credential setup with OAuth2 selected.", "Use OAuth2 when you want to connect through browser authorization. The sheet shows account connection state and the Connect or Reconnect action. Start that flow only when you are ready to authorize the account.", "Private"],
           ["global-ai-model/openai-04-credential-type-menu.png", "OpenAI Credential Type Menu", "Credentials Type menu showing OAuth2 and ApiKey options.", "Use Credentials Type to choose how OpenAI should connect. OAuth2 uses account authorization; ApiKey uses a masked API key field and base URL settings.", "Private"],
           ["global-ai-model/openai-05-apikey-setup.png", "OpenAI ApiKey Setup", "OpenAI credential setup with ApiKey selected.", "Use ApiKey when you want EnConvo to call OpenAI with an API key. Keep the key masked, confirm the API type and base URL, then validate only when you are ready to test the credential.", "Private"],
-          ["global-ai-model/openai-06-apikey-api-type-menu.png", "OpenAI API Type Menu", "API Type menu opened inside the OpenAI ApiKey branch.", "Use API Type to choose the OpenAI-compatible request mode exposed by the credential sheet. Standard OpenAI setups typically use the default OpenAI API type and base URL.", "Private"]
+          ["global-ai-model/openai-06-apikey-api-type-menu.png", "OpenAI API Type Menu", "Choose the API type for an OpenAI ApiKey credential.", "Use API Type to choose the OpenAI-compatible request mode exposed by the credential sheet. Standard OpenAI setups typically use the default OpenAI API type and base URL.", "Private"]
         ],
         deepDive: [
           {
@@ -559,21 +559,28 @@
         parentPage: "Text-to-Speech",
         intro: "Use this section when choosing the app-wide spoken-output provider. Treat it like the AI Model page: Cloud Plan TTS is the EnConvo-managed route, while Provider Inventory contains direct providers, local providers, and credential-based provider setup.",
         pages: [
-          ["global-text-to-speech/tts-02-edge-voice-menu.png", "Edge TTS Voice Menu", "Voice menu opened for Edge TTS.", "Use the searchable Voice menu to choose the default spoken voice. Edge TTS exposes many online natural voices across languages and locales.", "Voice"],
-          ["global-text-to-speech/tts-03-edge-output-format-menu.png", "Edge TTS Output Format Menu", "Output Format menu opened for Edge TTS.", "Use Output Format to choose the audio encoding and quality target, such as standard MP3 for voice notes, higher-bitrate MP3 for presentations, or Opus/WebM for smaller streaming files.", "Voice"],
-          ["global-text-to-speech/tts-04-xai-cloud-overview.png", "xAI TTS Cloud Plan Overview", "Cloud-plan TTS provider setup with xAI TTS selected.", "Choose a Cloud Plan TTS provider when you want EnConvo-managed speech access through the subscription-backed credential. Review the credential provider, voice, language, and Set as Default Provider action.", "Voice"],
-          ["global-text-to-speech/tts-05-xai-cloud-voice-menu.png", "xAI TTS Cloud Plan Voice Menu", "Voice menu opened for xAI TTS through EnConvo Cloud Plan.", "The xAI Cloud Plan voice menu shows expressive voice presets such as Eve, Ara, Rex, Sal, and Leo. Pick a voice that fits the assistant's speaking tone.", "Voice"],
-          ["global-text-to-speech/tts-06-xai-cloud-language-menu.png", "xAI TTS Cloud Plan Language Menu", "Language menu opened for xAI TTS through EnConvo Cloud Plan.", "Use Auto Detect for general multilingual use, or choose a fixed language when the agent should speak in a specific language.", "Voice"],
-          ["global-text-to-speech/tts-08-openai-credential-menu.png", "OpenAI TTS Credential Menu", "Credential Provider menu opened for OpenAI TTS.", "Use Credential Provider to select an existing OpenAI credential or create a new one. The pencil opens credential setup, and the gear opens broader credential management.", "Private"],
-          ["global-text-to-speech/tts-16-openai-credential-oauth-sheet.png", "OpenAI TTS OAuth2 Credential Sheet", "OpenAI credential setup opened from the pencil icon with OAuth2 selected.", "Use OAuth2 when you want browser-based OpenAI account authorization. Account identifiers are redacted here; do not reconnect unless you intend to refresh authorization.", "Private"],
-          ["global-text-to-speech/tts-17-openai-credential-type-menu.png", "OpenAI TTS Credential Type Menu", "Credentials Type menu opened inside the OpenAI credential setup sheet.", "This menu shows the OpenAI authentication branches available from the pencil editor, including ApiKey and OAuth2.", "Private"],
-          ["global-text-to-speech/tts-18-openai-credential-apikey-setup.png", "OpenAI TTS ApiKey Setup", "OpenAI credential setup with ApiKey selected.", "Use ApiKey when you want to provide a masked OpenAI key directly. Confirm API Type and base URL before using Validate.", "Private"],
-          ["global-text-to-speech/tts-10-gemini-model-menu.png", "Gemini TTS Model Menu", "Model Name menu opened for Gemini TTS.", "Use Model Name to select the Gemini TTS model that should generate speech for the global provider default.", "Voice"],
-          ["global-text-to-speech/tts-11-gemini-voice-menu.png", "Gemini TTS Voice Menu", "Voice menu opened for Gemini TTS.", "Use Voice to pick the Gemini speaking style. The visible list includes names with short style descriptions, which helps match the voice to the assistant's tone.", "Voice"],
-          ["global-text-to-speech/tts-19-gemini-credential-apikey-setup.png", "Gemini TTS ApiKey Setup", "Gemini credential setup opened from the pencil icon with ApiKey selected.", "Use ApiKey when you want to provide a masked Gemini API key and base URL directly. Validate only when you are ready to test the credential.", "Private"],
-          ["global-text-to-speech/tts-13-xai-credential-oauth-sheet.png", "xAI TTS OAuth2 Credential Sheet", "xAI credential setup opened from the pencil icon with OAuth2 selected.", "Use OAuth2 when you want browser-based account authorization. The connected account area is redacted here; do not reconnect unless you intend to refresh the authorization.", "Private"],
-          ["global-text-to-speech/tts-14-xai-credential-type-menu.png", "xAI TTS Credential Type Menu", "Credentials Type menu opened inside the xAI credential setup sheet.", "This menu confirms that xAI TTS supports both ApiKey and OAuth2 authentication branches.", "Private"],
-          ["global-text-to-speech/tts-15-xai-credential-apikey-setup.png", "xAI TTS ApiKey Setup", "xAI credential setup with ApiKey selected.", "Use ApiKey when you want to provide a masked xAI key directly. Validate only after confirming the key is correct and you are ready to test the credential.", "Private"]
+          ["global-text-to-speech/tts-02-edge-voice-menu.png", "Edge TTS Voice Menu", "Choose the Edge voice that should speak by default.", "Use the searchable Voice menu to pick the language, locale, and speaker style that best fits the assistant. Preview audio only when you intentionally want to test the selected voice.", "Voice"],
+          ["global-text-to-speech/tts-03-edge-output-format-menu.png", "Edge TTS Output Format Menu", "Choose the audio format Edge TTS should generate.", "Select a standard MP3 option for general voice output, a higher-bitrate MP3 for presentation-quality audio, or Opus/WebM when smaller streaming files are preferred.", "Voice"],
+          ["global-text-to-speech/tts-04-xai-cloud-overview.png", "xAI TTS Cloud Plan Overview", "Use this Cloud Plan page when you want EnConvo to manage the provider credential for you.", "Confirm the Credential Provider is EnConvo Cloud, choose the voice and language behavior, then set it as the default only when this Cloud Plan voice should be inherited by agents.", "Voice"],
+          ["global-text-to-speech/tts-05-xai-cloud-voice-menu.png", "xAI TTS Cloud Plan Voice Menu", "Choose the Cloud Plan xAI voice preset.", "Pick a voice that matches the assistant's tone. For example, use warmer voices for conversational agents and clearer, firmer voices for instructional agents.", "Voice"],
+          ["global-text-to-speech/tts-06-xai-cloud-language-menu.png", "xAI TTS Cloud Plan Language Menu", "Choose how the Cloud Plan voice handles language.", "Use Auto Detect for multilingual agents, or choose a fixed language when the agent should always speak in one language.", "Voice"],
+          ["global-text-to-speech/tts-08-openai-credential-menu.png", "OpenAI TTS Credential Menu", "Choose which OpenAI credential this TTS provider should use.", "Select an existing credential when it is already configured. Use Create new Credential for a new account, the pencil to edit the selected credential, and the gear for broader credential management.", "Private"],
+          ["global-text-to-speech/tts-16-openai-credential-oauth-sheet.png", "OpenAI TTS OAuth2 Credential Sheet", "Use OAuth2 when you want browser-based OpenAI account authorization.", "Review the connected account state before using Connect or Reconnect. Do not refresh authorization unless you intend to change or repair the account connection.", "Private"],
+          ["global-text-to-speech/tts-17-openai-credential-type-menu.png", "OpenAI TTS Credential Type Menu", "Choose the OpenAI authentication method for this credential.", "Select OAuth2 for browser account authorization, or ApiKey when you want to paste a provider key and configure API type and base URL manually.", "Private"],
+          ["global-text-to-speech/tts-18-openai-credential-apikey-setup.png", "OpenAI TTS ApiKey Setup", "Use ApiKey when you want to connect OpenAI TTS with a provider key.", "Paste the masked API key, confirm API Type and base URL, then validate only when you are ready to test the credential.", "Private"],
+          ["global-text-to-speech/tts-10-gemini-model-menu.png", "Gemini TTS Model Menu", "Choose the Gemini model that should generate speech.", "Select the model that matches the quality and latency target for this global TTS provider before setting Gemini TTS as the default.", "Voice"],
+          ["global-text-to-speech/tts-11-gemini-voice-menu.png", "Gemini TTS Voice Menu", "Choose the Gemini speaking voice.", "Use the voice descriptions to match the assistant's tone, such as brighter, firmer, upbeat, or more informative speech.", "Voice"],
+          ["global-text-to-speech/tts-19-gemini-credential-apikey-setup.png", "Gemini TTS ApiKey Setup", "Use ApiKey to connect Gemini TTS with a Gemini provider key.", "Paste the masked Gemini API key, confirm the base URL, then validate only when you are ready to test the credential.", "Private"],
+          ["global-text-to-speech/tts-13-xai-credential-oauth-sheet.png", "xAI TTS OAuth2 Credential Sheet", "Use OAuth2 when you want browser-based xAI account authorization.", "Review the connected account area before using Connect or Reconnect. Refresh authorization only when you intend to change or repair the xAI account connection.", "Private"],
+          ["global-text-to-speech/tts-14-xai-credential-type-menu.png", "xAI TTS Credential Type Menu", "Choose how xAI TTS should authenticate.", "Select OAuth2 for browser account authorization, or ApiKey when you want to paste an xAI key directly.", "Private"],
+          ["global-text-to-speech/tts-15-xai-credential-apikey-setup.png", "xAI TTS ApiKey Setup", "Use ApiKey when you want to connect xAI TTS with a provider key.", "Paste the masked xAI API key, then validate only after confirming the key is correct and you are ready to test it.", "Private"],
+          ["global-text-to-speech/tts-21-elevenlabs-credential-menu.png", "Eleven Labs TTS Credential Menu", "Choose which Eleven Labs credential should load models and voices.", "Select an existing credential or create a new one. After the credential is configured, refresh the provider so EnConvo can populate model and voice choices.", "Private"],
+          ["global-text-to-speech/tts-22-elevenlabs-apikey-setup.png", "Eleven Labs TTS ApiKey Setup", "Use this sheet to connect Eleven Labs with an API key.", "Paste the Eleven Labs API key, then validate only when you are ready to test it. After validation, return to the provider page and choose a model and voice.", "Private"],
+          ["global-text-to-speech/tts-23-elevenlabs-model-menu.png", "Eleven Labs TTS Model Menu", "Choose an Eleven Labs model after the API key is configured.", "If the model list is empty, finish the API-key credential setup first, then refresh the model list. Choose the model that matches your desired quality, latency, and cost profile.", "Voice"],
+          ["global-text-to-speech/tts-24-elevenlabs-voice-menu.png", "Eleven Labs TTS Voice Menu", "Choose an Eleven Labs voice after the API key is configured.", "If the voice list is empty, confirm the credential and refresh the voice list. Pick the voice that should become the global spoken-output style before setting this provider as default.", "Voice"],
+          ["global-text-to-speech/tts-26-kokoro-voice-menu.png", "Kokoro MLX TTS Voice Menu", "Choose a local Kokoro voice preset.", "Use the voice code and label to pick language and speaker style. For example, Japanese and Mandarin presets are visible here; choose the preset that matches the agent's target language.", "Voice"],
+          ["global-text-to-speech/tts-28-qwen3-model-manager.png", "Qwen3 MLX TTS Model Manager", "Choose or manage the local Qwen3 TTS model variant.", "Use the model manager to load a different local model, compare Base, CustomVoice, and VoiceDesign variants, or manage local storage. Use Delete only when you intentionally want to remove a model.", "Local"],
+          ["global-text-to-speech/tts-29-qwen3-voice-menu.png", "Qwen3 MLX TTS Voice Menu", "Choose the Qwen3 speaker profile.", "Pick a predefined voice, then use the Instruction field on the provider page to guide the delivery style, emotion, or speaking tone.", "Voice"]
         ],
         deepDive: [
           {
@@ -647,7 +654,7 @@
           {
             title: "Edge TTS Configuration",
             proof: "global-text-to-speech/tts-01-overview-edge.png",
-            summary: "Edge TTS is the current default in the captured setup. It does not require an API key and exposes preview text, voice selection, and output format.",
+            summary: "Edge TTS can be used without an API key. Configure the preview text, voice selection, and output format before deciding whether it should remain the global spoken-output default.",
             steps: [
               "Choose Edge TTS in the provider column.",
               "Edit Text for previewing voice only when you want to test a different sample phrase.",
@@ -755,6 +762,89 @@
               "Language: Auto Detect"
             ],
             badge: "Private"
+          },
+          {
+            title: "Eleven Labs TTS Configuration",
+            proof: "global-text-to-speech/tts-20-elevenlabs-overview.png",
+            summary: "Eleven Labs TTS is a direct online provider. Configure the Eleven Labs credential first, then refresh or open the model and voice menus before making it the app-wide spoken-output default.",
+            steps: [
+              "Choose Eleven Labs TTS in the provider column.",
+              "Open Credential Provider to select the existing Eleven Labs credential or create a new credential.",
+              "Use the pencil beside Credential Provider to open the Eleven Labs API-key setup sheet.",
+              "Enter an API key only when you are ready to configure the provider, then validate only when you intentionally want to test that key.",
+              "Open Model Name and Voice after the credential is ready; if either menu is empty, refresh the list after confirming the credential.",
+              "Use Speech Speed to tune playback pace, then use Set as Default Provider only when Eleven Labs should become the global voice default."
+            ],
+            evidence: [
+              "global-text-to-speech/tts-20-elevenlabs-overview.png",
+              "global-text-to-speech/tts-21-elevenlabs-credential-menu.png",
+              "global-text-to-speech/tts-22-elevenlabs-apikey-setup.png",
+              "global-text-to-speech/tts-23-elevenlabs-model-menu.png",
+              "global-text-to-speech/tts-24-elevenlabs-voice-menu.png"
+            ],
+            inventoryTitle: "Observed Eleven Labs TTS Controls",
+            inventory: [
+              "Credential Provider: Eleven Labs",
+              "Credential editor: Eleven Labs API key",
+              "Model Name: provider-loaded menu",
+              "Voice: provider-loaded menu",
+              "Speech Speed: 1.2x"
+            ],
+            badge: "Private"
+          },
+          {
+            title: "Kokoro MLX TTS Configuration",
+            proof: "global-text-to-speech/tts-25-kokoro-mlx-overview.png",
+            summary: "Kokoro MLX TTS is a local, on-device provider that runs through the mlx_manage extension on Apple Silicon. It uses downloaded local model weights and does not require a third-party credential.",
+            steps: [
+              "Choose Kokoro (mlx) in the provider column.",
+              "Review the selected local model card and confirm it is downloaded before relying on it.",
+              "Use Manage models when you need to review or change local model storage.",
+              "Open Voice to choose a Kokoro preset; the voice code and label indicate language and speaker style.",
+              "Use Speech Speed to tune playback pace.",
+              "Use Set as Default Provider only when Kokoro MLX should become the global voice default."
+            ],
+            evidence: [
+              "global-text-to-speech/tts-25-kokoro-mlx-overview.png",
+              "global-text-to-speech/tts-26-kokoro-voice-menu.png"
+            ],
+            inventoryTitle: "Observed Kokoro MLX TTS Controls",
+            inventory: [
+              "Model: Kokoro 82M (bf16)",
+              "Local model size: 366 MB",
+              "Selected voice: zm_yunxi -- Mandarin Male (Yunxi)",
+              "Visible voice examples: Japanese Female, Japanese Male, Mandarin Male",
+              "Speech Speed: 1x"
+            ],
+            badge: "Local"
+          },
+          {
+            title: "Qwen3 MLX TTS Configuration",
+            proof: "global-text-to-speech/tts-27-qwen3-mlx-overview.png",
+            summary: "Qwen3 MLX TTS is a local, on-device provider with multiple downloaded Qwen3-TTS model variants. It supports predefined voices and an Instruction field for voice style or emotion guidance.",
+            steps: [
+              "Choose Qwen3 (mlx) in the provider column.",
+              "Review the selected local model card and the additional visible model cards.",
+              "Open View All Models to inspect all Qwen3-TTS variants and their download or load state.",
+              "Open Voice to choose a predefined speaker profile.",
+              "Use Instruction to describe the target speaking style, such as natural, friendly, happy, or excited.",
+              "Use Set as Default Provider only when Qwen3 MLX should become the global voice default."
+            ],
+            evidence: [
+              "global-text-to-speech/tts-27-qwen3-mlx-overview.png",
+              "global-text-to-speech/tts-28-qwen3-model-manager.png",
+              "global-text-to-speech/tts-29-qwen3-voice-menu.png"
+            ],
+            inventoryTitle: "Observed Qwen3 MLX TTS Controls",
+            inventory: [
+              "Current model: Qwen3-TTS 0.6B CustomVoice (bf16)",
+              "Additional visible model: Qwen3-TTS 1.7B CustomVoice (bf16)",
+              "All Models count: 5",
+              "Visible model variants: CustomVoice, VoiceDesign, Base",
+              "Selected voice: Vivian -- Chinese Female",
+              "Instruction: Speak in a natural, friendly tone."
+            ],
+            badge: "Local"
           }
         ]
       },
@@ -894,7 +984,7 @@
         parentPage: "Agent List",
         intro: "This section explains how to configure or modify an individual agent, using Mavis as the worked example. Agent-level tabs can override global provider defaults and expose additional options through dropdowns, chevrons, pencil icons, gear icons, and fullscreen controls.",
         pages: [
-          ["agent-mavis/agent-list-change-icon-dialog.png", "Change Agent Portrait", "Portrait picker opened from the Mavis agent header.", "In Agent Configuration, click the portrait/icon beside the selected agent name. For Mavis, this opens the Change Icon dialog, where you can choose a local PNG, JPG, GIF, or SVG file and review the current portrait file path.", "Private"],
+          ["agent-mavis/agent-list-change-icon-dialog.png", "Change Agent Portrait", "Choose a custom portrait file for the selected agent.", "In Agent Configuration, click the portrait/icon beside the selected agent name. For Mavis, this opens the Change Icon dialog, where you can choose a local PNG, JPG, GIF, or SVG file and review the current portrait file path.", "Private"],
           ["agent-mavis/agent-definition-01-top.png", "Agent Definition: Top", "Instruction and core definition controls.", "Use the Instruction editor to define the agent's core behavior, role, and operating rules.", "Agent"],
           ["agent-mavis/agent-definition-02-lower.png", "Agent Definition: Lower", "User Message, working folder, and attached context files.", "Scroll the Agent Definition tab to review User Message, Working Folder, and attached context files below the main instruction editor.", "Segment"],
           ["agent-mavis/agent-definition-full-scroll.png", "Agent Definition: Full Scroll", "Full-page view of the Agent Definition tab.", "Use this view to understand how the instruction editor, user-message wrapper, working folder, and attached files fit together.", "Composite"],
@@ -1162,7 +1252,10 @@
         { title: "Edge TTS", pagePrefixes: ["Edge TTS"], deepTitles: ["Edge TTS Configuration"], deepFirst: true },
         { title: "OpenAI TTS", pagePrefixes: ["OpenAI TTS"], deepTitles: ["OpenAI TTS Configuration"], deepFirst: true },
         { title: "Gemini TTS", pagePrefixes: ["Gemini TTS"], deepTitles: ["Gemini TTS Configuration"], deepFirst: true },
-        { title: "xAI TTS", pagePrefixes: ["xAI TTS"], deepTitles: ["xAI TTS Configuration"], deepFirst: true }
+        { title: "xAI TTS", pagePrefixes: ["xAI TTS"], deepTitles: ["xAI TTS Configuration"], deepFirst: true },
+        { title: "Eleven Labs TTS", pagePrefixes: ["Eleven Labs TTS"], deepTitles: ["Eleven Labs TTS Configuration"], deepFirst: true },
+        { title: "Kokoro MLX TTS", pagePrefixes: ["Kokoro MLX TTS"], deepTitles: ["Kokoro MLX TTS Configuration"], deepFirst: true },
+        { title: "Qwen3 MLX TTS", pagePrefixes: ["Qwen3 MLX TTS"], deepTitles: ["Qwen3 MLX TTS Configuration"], deepFirst: true }
       ],
       "agent-mavis": [
         { title: "Change Agent Portrait", pagePrefixes: ["Change Agent Portrait"] },
