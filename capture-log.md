@@ -169,3 +169,21 @@ Added after the user requested a first-section deep dive for `Global Providers S
 - Documented the OpenAI provider overview, credential menu, OAuth2 sheet, credential-type dropdown, ApiKey branch, and API Type menu.
 - No API key was entered, no credential was validated, no OAuth login was started, no Reconnect action was triggered, and no Set as Default Provider action was clicked.
 - OpenAI account details visible in credential sheets were redacted before the public screenshots were saved.
+
+## Global AI Model Inventory Pass
+
+Added after the user requested full visible lists for EnConvo Cloud Plan models and AI Model providers.
+
+- Captured Cloud Plan model menu screenshots:
+  - `global-ai-model/cloud-plan-model-list-01-top.png`
+  - `global-ai-model/cloud-plan-model-list-02-gemini.png`
+  - `global-ai-model/cloud-plan-model-list-03-gemini-details.png`
+  - `global-ai-model/cloud-plan-model-list-04-deepseek-grok.png`
+  - `global-ai-model/cloud-plan-model-list-05-mistral-glm-mimo.png`
+- Captured AI Model provider column screenshots:
+  - `global-ai-model/provider-list-01-top.png`
+  - `global-ai-model/provider-list-02-lower.png`
+  - `global-ai-model/provider-list-03-bottom.png`
+- Added an observed Cloud Plan model inventory to the EnConvo Cloud Plan deep dive.
+- Added an observed AI Model provider inventory to the global AI Model deep dive, including the lower providers down to Vercel AI Gateway.
+- No model was selected, no provider was set as default, no credentials were opened, and no provider settings were changed.

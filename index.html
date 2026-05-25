@@ -277,6 +277,23 @@
       cursor: zoom-in;
     }
     .related-shot:hover { background: var(--primary-soft); }
+    .inventory {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 7px 16px;
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .inventory li {
+      padding: 6px 9px;
+      border: 1px solid #e7ebf2;
+      border-radius: 6px;
+      background: #fff;
+      color: #334155;
+      font-size: 13px;
+      line-height: 1.35;
+    }
     .toc strong { display: block; margin-bottom: 10px; font-size: 13px; }
     .toc a { display: block; padding: 5px 0 5px 10px; color: var(--muted); font-size: 12.75px; }
     code { padding: .13rem .3rem; border-radius: 4px; background: var(--soft); font: .9em ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -393,7 +410,14 @@
         pages: [
           ["global-ai-model/enconvo-cloud-plan-01-overview.png", "EnConvo Cloud Plan Overview", "Provider setup with EnConvo Cloud Plan selected.", "Choose EnConvo Cloud Plan when you want EnConvo-managed access through your subscription instead of maintaining a separate provider credential. Review the provider, model, reasoning effort, and temperature before making it the default provider.", "Provider"],
           ["global-ai-model/enconvo-cloud-plan-02-model-menu.png", "EnConvo Cloud Plan Model Menu", "Model Name menu opened for EnConvo Cloud Plan.", "Use the Model Name menu to choose the global default model. The visible list can include models from multiple model families, depending on your plan and the live EnConvo catalog.", "Provider"],
+          ["global-ai-model/cloud-plan-model-list-01-top.png", "EnConvo Cloud Plan Model List: Top", "Top of the Cloud Plan model menu.", "The model menu is searchable and scrollable. The top segment shows Claude, OpenAI OSS, and the currently selected Gemini option.", "Provider"],
+          ["global-ai-model/cloud-plan-model-list-02-gemini.png", "EnConvo Cloud Plan Model List: Gemini", "Gemini model family segment.", "Scroll the same Model Name menu to see the Gemini Flash, Pro, image-preview, and preview model variants.", "Provider"],
+          ["global-ai-model/cloud-plan-model-list-04-deepseek-grok.png", "EnConvo Cloud Plan Model List: DeepSeek And Grok", "DeepSeek and Grok model segment.", "This segment shows DeepSeek variants, including free entries where the live UI labels them as free, plus Grok.", "Provider"],
+          ["global-ai-model/cloud-plan-model-list-05-mistral-glm-mimo.png", "EnConvo Cloud Plan Model List: Mistral, GLM, Xiaomi", "Bottom of the Cloud Plan model menu.", "The lower segment includes Mistral, GLM, and Xiaomi MiMo options.", "Provider"],
           ["global-ai-model/enconvo-cloud-plan-03-reasoning-menu.png", "EnConvo Cloud Plan Reasoning Menu", "Reasoning Effort menu opened for EnConvo Cloud Plan.", "Use Reasoning Effort to tune how much reasoning budget the default model should use. Higher reasoning can be useful for complex work, while lower settings can be better for lighter everyday tasks.", "Provider"],
+          ["global-ai-model/provider-list-01-top.png", "AI Model Provider List: Top", "Top of the AI Model provider column.", "The provider column is also scrollable. The top segment includes EnConvo-managed providers, OpenAI, Anthropic, Gemini, local-provider options, and other common LLM platforms.", "Provider"],
+          ["global-ai-model/provider-list-02-lower.png", "AI Model Provider List: Lower", "Lower segment of the AI Model provider column.", "Scroll the provider column to reveal additional third-party LLM platforms such as OpenRouter, Fireworks, Together AI, Poe, Kimi, DashScope, Sambanova, and Cerebras.", "Provider"],
+          ["global-ai-model/provider-list-03-bottom.png", "AI Model Provider List: Bottom", "Bottom of the AI Model provider column.", "The bottom segment confirms the final visible providers, including Arli AI, Straico AI, AIMagicX, 1min AI, and Vercel AI Gateway.", "Provider"],
           ["global-ai-model/openai-01-overview.png", "OpenAI Overview", "Provider setup with OpenAI selected.", "Choose OpenAI when you want the global AI model to use your OpenAI account or OpenAI-compatible endpoint. Review the credential provider, model, reasoning effort, and temperature before setting it as the default.", "Provider"],
           ["global-ai-model/openai-02-credential-menu.png", "OpenAI Credential Menu", "Credential Provider menu opened for OpenAI.", "Use Credential Provider to choose an existing OpenAI credential or create a new credential. The pencil opens the selected credential setup sheet; the gear opens the broader credential management area.", "Private"],
           ["global-ai-model/openai-03-oauth-sheet.png", "OpenAI OAuth2 Credential Sheet", "OpenAI credential setup with OAuth2 selected.", "Use OAuth2 when you want to connect through browser authorization. The sheet shows account connection state and the Connect or Reconnect action. Start that flow only when you are ready to authorize the account.", "Private"],
@@ -405,7 +429,7 @@
           {
             title: "EnConvo Cloud Plan Setup",
             proof: "global-ai-model/enconvo-cloud-plan-01-overview.png",
-            summary: "EnConvo Cloud Plan is the easiest global AI Model path when you want EnConvo to manage model access through your subscription.",
+            summary: "EnConvo Cloud Plan is the easiest global AI Model path when you want EnConvo to manage model access through your subscription. The live model catalog is searchable and scrollable, and can change as EnConvo updates plan availability.",
             steps: [
               "Open Settings > Global Providers Settings > AI Model.",
               "Choose EnConvo Cloud Plan from AI Model Provider.",
@@ -417,7 +441,102 @@
             evidence: [
               "global-ai-model/enconvo-cloud-plan-01-overview.png",
               "global-ai-model/enconvo-cloud-plan-02-model-menu.png",
+              "global-ai-model/cloud-plan-model-list-01-top.png",
+              "global-ai-model/cloud-plan-model-list-02-gemini.png",
+              "global-ai-model/cloud-plan-model-list-03-gemini-details.png",
+              "global-ai-model/cloud-plan-model-list-04-deepseek-grok.png",
+              "global-ai-model/cloud-plan-model-list-05-mistral-glm-mimo.png",
               "global-ai-model/enconvo-cloud-plan-03-reasoning-menu.png"
+            ],
+            inventoryTitle: "Observed Cloud Plan Models",
+            inventory: [
+              "Claude Opus 4.1",
+              "Claude Opus 4",
+              "Claude 3.7 Sonnet",
+              "Claude 3.5 Sonnet",
+              "OpenAI GPT-OSS 120B (limited time free, until Sep 30)",
+              "OpenAI GPT-OSS 20B (limited time free, until Sep 30)",
+              "Gemini 3.5 Flash",
+              "Gemini 3.1 Flash Lite",
+              "Gemini 3.1 Pro",
+              "Gemini 3 Pro Preview",
+              "Gemini 3.1 Flash Image Preview",
+              "Gemini 3 Pro Image Preview",
+              "Gemini 3 Flash Preview",
+              "Gemini 2.5 Pro",
+              "Gemini 2.5 Flash",
+              "Gemini 2.5 Flash Image",
+              "Gemini 2.5 Flash Lite(free)",
+              "Gemini 2.5 Flash Latest",
+              "Gemini 2.5 Flash Lite Latest",
+              "Gemini 2.5 Flash Image Preview",
+              "DeepSeek-V4-Flash",
+              "DeepSeek-V4-Pro",
+              "DeepSeek-V3.2-Exp(free)",
+              "DeepSeek-V3.2-Exp-Thinking(free)",
+              "DeepSeek-R1-0528(free)",
+              "DeepSeek-V3.1(free)",
+              "Grok-4.3",
+              "Mistral Large",
+              "Mistral Small (Free)",
+              "GLM-5",
+              "XiaoMi MiMo v2.5 Pro",
+              "XiaoMi MiMo v2.5"
+            ],
+            badge: "Provider"
+          },
+          {
+            title: "AI Model Provider Inventory",
+            proof: "global-ai-model/provider-list-03-bottom.png",
+            summary: "The AI Model provider column is a scrollable inventory of configurable model platforms. Most third-party providers follow the same general setup pattern shown in the OpenAI example: choose the provider, pick or create a credential provider, open the pencil for credential setup, then choose model and runtime options.",
+            steps: [
+              "Open Settings > Global Providers Settings > AI Model.",
+              "Use the provider column in the middle pane to choose a platform.",
+              "Scroll the provider column to reveal providers beyond the first viewport.",
+              "For direct third-party platforms, use the OpenAI workflow as the general model: credential provider menu, pencil for setup, credential type, API key or OAuth2 if supported, model selection, reasoning effort when available, temperature, and Set as Default Provider only when ready.",
+              "Some entries are EnConvo-native or agent-specific surfaces rather than direct third-party API platforms, but they appear in the same provider column and can be selected from the same place."
+            ],
+            evidence: [
+              "global-ai-model/provider-list-01-top.png",
+              "global-ai-model/provider-list-02-lower.png",
+              "global-ai-model/provider-list-03-bottom.png"
+            ],
+            inventoryTitle: "Observed AI Model Providers",
+            inventory: [
+              "EnConvo Cloud Plan",
+              "OpenAI",
+              "OpenClaw",
+              "Hermes Agent",
+              "Anthropic",
+              "Minimax AI",
+              "Google Gemini AI",
+              "Ollama",
+              "Deep Seek",
+              "Groq AI",
+              "Azure OpenAI",
+              "X.AI-GROK",
+              "Z.AI",
+              "Xiaomi MiMo",
+              "Mistral AI",
+              "Qwen",
+              "Cohere AI",
+              "Perplexity",
+              "SiliconFlow",
+              "LM Studio",
+              "MLX (mlx)",
+              "OpenRouter",
+              "Fireworks",
+              "Together AI",
+              "Poe",
+              "kimi.ai",
+              "DashScope",
+              "Sambanova AI",
+              "Cerebras AI",
+              "Arli AI",
+              "Straico AI",
+              "AIMagicX",
+              "1min AI",
+              "Vercel AI Gateway"
             ],
             badge: "Provider"
           },
@@ -834,6 +953,7 @@
     const childNavGroups = {
       "global-ai-model": [
         { title: "EnConvo Cloud Plan", pagePrefixes: ["EnConvo Cloud Plan"], deepTitles: ["EnConvo Cloud Plan Setup"] },
+        { title: "Provider Inventory", pagePrefixes: ["AI Model Provider List"], deepTitles: ["AI Model Provider Inventory"] },
         { title: "OpenAI", pagePrefixes: ["OpenAI"], deepPrefixes: ["OpenAI"] }
       ],
       "agent-mavis": [
@@ -948,6 +1068,7 @@
       const deep = (section.deepDive || []).map(item => {
         const id = `${section.id}-${slug(item.title)}`;
         const evidence = (item.evidence || []).map((src, index) => `<li>${relatedShot(src, index + 1)}</li>`).join("");
+        const inventory = (item.inventory || []).map(value => `<li>${value}</li>`).join("");
         return `<section class="deep-card" id="${id}">
           ${shot(item.proof, item.title)}
           <div class="deep-body">
@@ -955,6 +1076,7 @@
             <h4>${item.title}</h4>
             <p>${item.summary}</p>
             <ul class="mini-list">${item.steps.map(step => `<li>${step}</li>`).join("")}</ul>
+            ${inventory ? `<h4>${item.inventoryTitle || "Inventory"}</h4><ul class="inventory">${inventory}</ul>` : ""}
             ${evidence ? `<h4>Related Screenshots</h4><ul class="mini-list">${evidence}</ul>` : ""}
           </div>
         </section>`;
@@ -990,6 +1112,7 @@
         const deep = (section.deepDive || []).map(item => {
           const id = `${section.id}-${slug(item.title)}`;
           const evidence = (item.evidence || []).map((src, index) => `<li>${relatedShot(src, index + 1)}</li>`).join("");
+          const inventory = (item.inventory || []).map(value => `<li>${value}</li>`).join("");
           return `<section class="deep-card" id="${id}">
             ${shot(item.proof, item.title)}
             <div class="deep-body">
@@ -997,6 +1120,7 @@
               <h3>${item.title}</h3>
               <p>${item.summary}</p>
               <ul class="mini-list">${item.steps.map(step => `<li>${step}</li>`).join("")}</ul>
+              ${inventory ? `<h4>${item.inventoryTitle || "Inventory"}</h4><ul class="inventory">${inventory}</ul>` : ""}
               ${evidence ? `<h4>Related Screenshots</h4><ul class="mini-list">${evidence}</ul>` : ""}
             </div>
           </section>`;
