@@ -190,6 +190,19 @@ Added after the user requested full visible lists for EnConvo Cloud Plan models 
 - Added an observed AI Model provider inventory to the global AI Model configuration section, including the lower providers down to Vercel AI Gateway.
 - No model was selected, no provider was set as default, no credentials were opened, and no provider settings were changed.
 
+## Global AI Model Selected Provider Expansion
+
+Added after the user selected a focused set of additional AI Model providers instead of documenting every provider in the full inventory.
+
+- Captured `global-ai-model/anthropic-01-overview.png` and `global-ai-model/anthropic-02-model-menu.png` for Anthropic / Claude.
+- Captured `global-ai-model/gemini-01-overview.png` and `global-ai-model/gemini-02-model-menu.png` for Google Gemini AI.
+- Captured `global-ai-model/ollama-01-overview.png` and `global-ai-model/ollama-02-model-menu.png` for Ollama.
+- Captured `global-ai-model/groq-01-overview.png` and `global-ai-model/groq-02-model-menu.png` for Groq AI.
+- Captured `global-ai-model/zai-01-overview.png` and `global-ai-model/zai-02-model-menu.png` for Z.AI / GLM.
+- Added these as direct AI Model sibling sections after OpenAI: Anthropic, Google Gemini AI, Ollama, Groq AI, and Z.AI / GLM.
+- Added an `etc.` note to the provider inventory to clarify that the guide expands selected examples rather than documenting every provider in the full inventory.
+- No credential was edited or validated, no OAuth flow was started, no model was selected, no local model service was started, and no default provider was changed.
+
 ## Global Text-to-Speech Configuration
 
 Added after the user requested the next expanded section for `Global Providers Settings > Text-to-Speech`.
@@ -255,3 +268,20 @@ Added after the user requested three more provider sections under `Global Provid
 - Captured `global-text-to-speech/tts-28-qwen3-model-manager.png` for the Qwen3 MLX All Models manager.
 - Captured `global-text-to-speech/tts-29-qwen3-voice-menu.png` for the Qwen3 MLX voice menu.
 - No API key was entered, no model was loaded or deleted, no refresh/play action was triggered, no voice/model/default provider was changed, and no credential was validated.
+
+## Global AI Model Credential Coverage
+
+Added after the user requested the newly added AI Model provider sections to include the credential authentication paths.
+
+- Captured `global-ai-model/anthropic-03-oauth-credential-sheet.png` for the Anthropic OAuth2 credential branch.
+- Captured `global-ai-model/anthropic-04-credential-type-menu.png` for the Anthropic credential type menu showing ApiKey and OAuth2.
+- Captured `global-ai-model/anthropic-05-apikey-setup.png` for the Anthropic ApiKey setup branch.
+- Captured `global-ai-model/gemini-03-oauth-credential-sheet.png` for the Google Gemini AI OAuth2 credential branch.
+- Captured `global-ai-model/gemini-04-credential-type-menu.png` for the Google Gemini AI credential type menu showing ApiKey and OAuth2.
+- Captured `global-ai-model/gemini-05-apikey-setup.png` for the Google Gemini AI ApiKey setup branch.
+- Captured `global-ai-model/groq-03-apikey-setup.png` for the Groq AI ApiKey setup branch.
+- Captured `global-ai-model/zai-03-apikey-setup.png` for the Z.AI / GLM ApiKey setup branch.
+- Updated Anthropic and Google Gemini AI to follow the same credential sequence as OpenAI: credential type, ApiKey setup, OAuth2 setup, then model selection.
+- Updated Groq AI and Z.AI / GLM as API-key-only provider examples in the observed UI.
+- Kept Ollama documented as a local API/service setup path; no OAuth2 credential branch was observed for Ollama.
+- Credential type was temporarily changed inside Anthropic and Google Gemini AI sheets to capture both branches, then returned to OAuth2. No API key was entered, no credential was validated, no OAuth reconnect/connect action was triggered, no model/default provider was changed, and no local service was started.

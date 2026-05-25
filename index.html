@@ -408,7 +408,20 @@
           ["global-ai-model/openai-04-credential-type-menu.png", "OpenAI Credential Type Menu", "Credentials Type menu showing OAuth2 and ApiKey options.", "Use Credentials Type to choose how OpenAI should connect. OAuth2 uses account authorization; ApiKey uses a masked API key field and base URL settings.", "Private"],
           ["global-ai-model/openai-05-apikey-setup.png", "OpenAI ApiKey Setup", "OpenAI credential setup with ApiKey selected.", "Use ApiKey when you want EnConvo to call OpenAI with an API key. Keep the key masked, confirm the API type and base URL, then validate only when you are ready to test the credential.", "Private"],
           ["global-ai-model/openai-06-apikey-api-type-menu.png", "OpenAI API Type Menu", "Choose the API type for an OpenAI ApiKey credential.", "Use API Type to choose the OpenAI-compatible request mode exposed by the credential sheet. Standard OpenAI setups typically use the default OpenAI API type and base URL.", "Private"],
-          ["global-ai-model/openai-03-oauth-sheet.png", "OpenAI OAuth2 Credential Sheet", "OpenAI credential setup with OAuth2 selected.", "Use OAuth2 when you want to connect through browser authorization. The sheet shows account connection state and the Connect or Reconnect action. Start that flow only when you are ready to authorize the account.", "Private"]
+          ["global-ai-model/openai-03-oauth-sheet.png", "OpenAI OAuth2 Credential Sheet", "OpenAI credential setup with OAuth2 selected.", "Use OAuth2 when you want to connect through browser authorization. The sheet shows account connection state and the Connect or Reconnect action. Start that flow only when you are ready to authorize the account.", "Private"],
+          ["global-ai-model/anthropic-04-credential-type-menu.png", "Anthropic Credential Type Menu", "Choose how the Anthropic credential should authenticate.", "Select OAuth2 for browser-based Anthropic account authorization, or ApiKey when you want to enter a Claude API key and keep the standard Anthropic API base URL.", "Private"],
+          ["global-ai-model/anthropic-05-apikey-setup.png", "Anthropic API Key Setup", "Use the ApiKey branch for a Claude API key credential.", "Enter or confirm the masked Claude API key, keep the Anthropic API Base URL on https://api.anthropic.com unless you intentionally use a compatible proxy, then validate only when you are ready to test the credential.", "Private"],
+          ["global-ai-model/anthropic-03-oauth-credential-sheet.png", "Anthropic OAuth2 Credential Sheet", "Use the OAuth2 branch for browser-based Anthropic authorization.", "Use OAuth2 when you want EnConvo to connect through Anthropic account authorization. Review the connection state and use Reconnect only when you intentionally need to refresh the account link.", "Private"],
+          ["global-ai-model/anthropic-02-model-menu.png", "Anthropic Model Menu", "Choose the Claude model for the global AI Model default.", "Use the model menu to choose the Claude family and version that should power new agents when Anthropic is the global default. Pair the model with an appropriate Reasoning Effort before changing the default provider.", "Provider"],
+          ["global-ai-model/gemini-04-credential-type-menu.png", "Google Gemini AI Credential Type Menu", "Choose how the Gemini credential should authenticate.", "Select OAuth2 for browser-based Google authorization, or ApiKey when you want to enter a Google AI API key and base URL manually.", "Private"],
+          ["global-ai-model/gemini-05-apikey-setup.png", "Google Gemini AI API Key Setup", "Use the ApiKey branch for a Google AI API key credential.", "Enter or confirm the masked Google AI API key, keep the Google AI API Base URL on the default generativelanguage.googleapis.com endpoint unless you intentionally use a compatible endpoint, then validate only when ready.", "Private"],
+          ["global-ai-model/gemini-03-oauth-credential-sheet.png", "Google Gemini AI OAuth2 Credential Sheet", "Use the OAuth2 branch for browser-based Google authorization.", "Use OAuth2 when you want EnConvo to connect through a Google account. Review the connected account state and reconnect only when you intend to repair or change the account link.", "Private"],
+          ["global-ai-model/gemini-02-model-menu.png", "Google Gemini AI Model Menu", "Choose the Gemini model for the global AI Model default.", "Use this menu to choose the Gemini model version. Gemini also exposes Google Search Tool, URL Context Tool, and Show thoughts switches, so enable those only when the global model should use those capabilities.", "Provider"],
+          ["global-ai-model/ollama-02-model-menu.png", "Ollama Model Menu", "Choose a local or locally proxied model for Ollama.", "Use this menu after Ollama is running and the desired models are available. Local models depend on the Ollama service and installed model list on this Mac; this provider does not use an OAuth2 setup sheet.", "Local"],
+          ["global-ai-model/groq-03-apikey-setup.png", "Groq AI API Key Setup", "Use the API-key sheet to configure Groq access.", "Enter or confirm the masked Groq API key, keep the Groq API Base URL on https://api.groq.com/openai/v1 unless you intentionally use a compatible gateway, then validate only when ready.", "Private"],
+          ["global-ai-model/groq-02-model-menu.png", "Groq AI Model Menu", "Choose a Groq-hosted model for the global AI Model default.", "Use this menu after the Groq credential is configured. Choose the model that fits the workload, then adjust Temperature before setting Groq AI as the default.", "Private"],
+          ["global-ai-model/zai-03-apikey-setup.png", "Z.AI GLM API Key Setup", "Use the API-key sheet to configure Z.AI access.", "Enter or confirm the masked Z.AI API key, then validate only when you are ready to test the credential. Z.AI does not expose an OAuth2 branch in this provider sheet.", "Private"],
+          ["global-ai-model/zai-02-model-menu.png", "Z.AI GLM Model Menu", "Choose a Z.AI / GLM model after the credential is configured.", "If the model list is empty, configure or validate the Z.AI credential first, then refresh the model list before setting Z.AI as the default provider.", "Private"]
         ],
         deepDive: [
           {
@@ -521,7 +534,8 @@
               "Straico AI",
               "AIMagicX",
               "1min AI",
-              "Vercel AI Gateway"
+              "Vercel AI Gateway",
+              "etc. - this guide expands selected provider examples below instead of documenting every provider in the full inventory."
             ],
             badge: "Provider"
           },
@@ -544,6 +558,159 @@
               "global-ai-model/openai-05-apikey-setup.png",
               "global-ai-model/openai-06-apikey-api-type-menu.png",
               "global-ai-model/openai-03-oauth-sheet.png"
+            ],
+            badge: "Private"
+          },
+          {
+            title: "Anthropic Global Provider Setup",
+            proof: "global-ai-model/anthropic-01-overview.png",
+            summary: "Anthropic is the direct-provider path for Claude models. Use it when the global default should inherit an Anthropic credential, Claude model selection, reasoning effort, and temperature behavior.",
+            steps: [
+              "Open Settings > Global Providers Settings > AI Model.",
+              "Choose Anthropic from AI Model Provider.",
+              "Confirm the Credential Provider points to the Anthropic credential you want to use.",
+              "Click the pencil beside Credential Provider and open Credentials Type.",
+              "Choose OAuth2 for browser-based Anthropic account authorization, or choose ApiKey to enter a Claude API key and Anthropic API base URL.",
+              "Open Model Name and choose the Claude model that new agents should inherit.",
+              "Choose Reasoning Effort based on the normal complexity of your work.",
+              "Use Set as Default Provider only when Anthropic should become the app-wide default."
+            ],
+            evidence: [
+              "global-ai-model/anthropic-01-overview.png",
+              "global-ai-model/anthropic-04-credential-type-menu.png",
+              "global-ai-model/anthropic-05-apikey-setup.png",
+              "global-ai-model/anthropic-03-oauth-credential-sheet.png",
+              "global-ai-model/anthropic-02-model-menu.png"
+            ],
+            inventoryTitle: "Observed Anthropic Controls",
+            inventory: [
+              "Credential Provider: Anthropic",
+              "Credentials Type: OAuth2 or ApiKey",
+              "ApiKey branch: Claude API key field, Anthropic API Base URL, Validate",
+              "OAuth2 branch: account connection state and Reconnect to Anthropic",
+              "Selected model: Claude Opus 4.7",
+              "Visible models: Claude Sonnet 4.6, Claude Opus 4.6, Claude Opus 4.5, Claude Haiku 4.5, Claude Sonnet 4.5",
+              "Reasoning Effort: High",
+              "Temperature: 1"
+            ],
+            badge: "Private"
+          },
+          {
+            title: "Google Gemini AI Global Provider Setup",
+            proof: "global-ai-model/gemini-01-overview.png",
+            summary: "Google Gemini AI is the direct-provider path for Gemini models. It also exposes Gemini-specific capability switches such as Google Search Tool, URL Context Tool, and Show thoughts.",
+            steps: [
+              "Choose Google Gemini AI from AI Model Provider.",
+              "Confirm the Credential Provider points to the Gemini credential you want to use.",
+              "Click the pencil beside Credential Provider and open Credentials Type.",
+              "Choose OAuth2 for browser-based Google account authorization, or choose ApiKey to enter a Google AI API key and base URL.",
+              "Open Model Name and choose the Gemini model for new agents to inherit.",
+              "Set Reasoning Effort and Temperature for the default behavior you want.",
+              "Enable Google Search Tool, URL Context Tool, or Show thoughts only when those capabilities should be available from the global default.",
+              "Use Set as Default Provider only when Gemini should become the app-wide default."
+            ],
+            evidence: [
+              "global-ai-model/gemini-01-overview.png",
+              "global-ai-model/gemini-04-credential-type-menu.png",
+              "global-ai-model/gemini-05-apikey-setup.png",
+              "global-ai-model/gemini-03-oauth-credential-sheet.png",
+              "global-ai-model/gemini-02-model-menu.png"
+            ],
+            inventoryTitle: "Observed Google Gemini AI Controls",
+            inventory: [
+              "Credential Provider: Gemini AI",
+              "Credentials Type: OAuth2 or ApiKey",
+              "ApiKey branch: Google AI API key field, Google AI API Base URL, Validate",
+              "OAuth2 branch: Google account connection state and Reconnect to Gemini AI",
+              "Selected model: Gemini 3.5 Flash",
+              "Visible models: Gemini 3.1 Flash-Lite Preview, Gemini 3.1 Pro Preview, Gemini 3 Pro Preview, Gemini 3 Flash Preview, Gemini 2.5 Pro, Gemini 2.5 Flash",
+              "Reasoning Effort: None",
+              "Google Search Tool, URL Context Tool, and Show thoughts switches"
+            ],
+            badge: "Private"
+          },
+          {
+            title: "Ollama Global Provider Setup",
+            proof: "global-ai-model/ollama-01-overview.png",
+            summary: "Ollama is the local-model path. It depends on the Ollama service running on this Mac and uses the local HTTP API, commonly at http://127.0.0.1:11434.",
+            steps: [
+              "Choose Ollama from AI Model Provider.",
+              "Check the Ollama setup area and local API service state. Start Ollama only when you intend to run local models.",
+              "Open Model Name after the Ollama model list is available.",
+              "Choose the local model that should power new agents.",
+              "Adjust Temperature for the local model behavior.",
+              "Use Set as Default Provider only when Ollama should become the app-wide default."
+            ],
+            evidence: [
+              "global-ai-model/ollama-01-overview.png",
+              "global-ai-model/ollama-02-model-menu.png"
+            ],
+            inventoryTitle: "Observed Ollama Controls",
+            inventory: [
+              "Setup state: Ready / Stopped",
+              "Local API note: http://127.0.0.1:11434",
+              "Selected model: qwen3.6-27b-uncensored:q4_k_p",
+              "Visible models include cloud and local entries such as ministral, kimi, gemma, cua/fara, deepseek, and qwen",
+              "Temperature: 1"
+            ],
+            badge: "Local"
+          },
+          {
+            title: "Groq AI Global Provider Setup",
+            proof: "global-ai-model/groq-01-overview.png",
+            summary: "Groq AI is a direct-provider path for Groq-hosted models. Configure the Groq credential first, then choose the model and temperature before making it the global default.",
+            steps: [
+              "Choose Groq AI from AI Model Provider.",
+              "Confirm the Credential Provider points to the Groq AI credential.",
+              "Click the pencil beside Credential Provider to open the Groq API-key setup sheet.",
+              "Enter or confirm the masked Groq API key and keep the Groq API Base URL on the standard OpenAI-compatible endpoint unless you intentionally use a gateway.",
+              "Open Model Name after the credential is ready.",
+              "Choose the Groq-hosted model that matches the workload.",
+              "Adjust Temperature for response style.",
+              "Use Set as Default Provider only when Groq AI should become the app-wide default."
+            ],
+            evidence: [
+              "global-ai-model/groq-01-overview.png",
+              "global-ai-model/groq-03-apikey-setup.png",
+              "global-ai-model/groq-02-model-menu.png"
+            ],
+            inventoryTitle: "Observed Groq AI Controls",
+            inventory: [
+              "Credential Provider: Groq AI",
+              "Authentication: API key only in the observed provider sheet",
+              "Groq API Base URL: https://api.groq.com/openai/v1",
+              "Model menu includes: canopylabs/orpheus-v1-english, openai/gpt-oss-safeguard-20b, groq/compound-mini, Alibaba Cloud qwen/qwen3-32b",
+              "Additional visible models include Meta Llama variants and groq/compound",
+              "Temperature: 1"
+            ],
+            badge: "Private"
+          },
+          {
+            title: "Z.AI GLM Global Provider Setup",
+            proof: "global-ai-model/zai-01-overview.png",
+            summary: "Z.AI is the GLM provider path. Configure the Z.AI credential first so EnConvo can load available GLM model choices.",
+            steps: [
+              "Choose Z.AI from AI Model Provider.",
+              "Confirm the Credential Provider points to the Z.AI credential.",
+              "Click the pencil beside Credential Provider to open the Z.AI API-key setup sheet.",
+              "Enter or confirm the masked Z.AI API key. This observed sheet does not expose an OAuth2 credential type.",
+              "If Model Name is empty, configure or validate the Z.AI credential first.",
+              "Refresh the model list after the credential is ready.",
+              "Choose the GLM model you want new agents to inherit.",
+              "Use Set as Default Provider only when Z.AI / GLM should become the app-wide default."
+            ],
+            evidence: [
+              "global-ai-model/zai-01-overview.png",
+              "global-ai-model/zai-03-apikey-setup.png",
+              "global-ai-model/zai-02-model-menu.png"
+            ],
+            inventoryTitle: "Observed Z.AI GLM Controls",
+            inventory: [
+              "Credential Provider: Z.AI",
+              "Authentication: API key only in the observed provider sheet",
+              "Model Name: provider-loaded menu",
+              "Temperature: 1",
+              "Model list may appear empty until the credential is configured and refreshed"
             ],
             badge: "Private"
           }
@@ -1228,7 +1395,12 @@
       "global-ai-model": [
         { title: "Provider Inventory", pagePrefixes: ["AI Model Provider List"], deepTitles: ["AI Model Provider Inventory"], deepFirst: true },
         { title: "EnConvo Cloud Plan", pagePrefixes: ["EnConvo Cloud Plan"], deepTitles: ["EnConvo Cloud Plan Setup"], deepFirst: true },
-        { title: "OpenAI", pagePrefixes: ["OpenAI"], deepPrefixes: ["OpenAI"], deepFirst: true }
+        { title: "OpenAI", pagePrefixes: ["OpenAI"], deepPrefixes: ["OpenAI"], deepFirst: true },
+        { title: "Anthropic", pagePrefixes: ["Anthropic"], deepTitles: ["Anthropic Global Provider Setup"], deepFirst: true },
+        { title: "Google Gemini AI", pagePrefixes: ["Google Gemini AI"], deepTitles: ["Google Gemini AI Global Provider Setup"], deepFirst: true },
+        { title: "Ollama", pagePrefixes: ["Ollama"], deepTitles: ["Ollama Global Provider Setup"], deepFirst: true },
+        { title: "Groq AI", pagePrefixes: ["Groq AI"], deepTitles: ["Groq AI Global Provider Setup"], deepFirst: true },
+        { title: "Z.AI / GLM", pagePrefixes: ["Z.AI GLM"], deepTitles: ["Z.AI GLM Global Provider Setup"], deepFirst: true }
       ],
       "global-text-to-speech": [
         {
