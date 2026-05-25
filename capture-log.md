@@ -232,6 +232,7 @@ Added after the user requested provider subsection deduplication and missing cre
 - Captured `global-text-to-speech/tts-16-openai-credential-oauth-sheet.png` for the OpenAI TTS OAuth2 credential editor opened from the pencil icon.
 - Captured `global-text-to-speech/tts-17-openai-credential-type-menu.png` for the OpenAI TTS credential type menu.
 - Captured `global-text-to-speech/tts-18-openai-credential-apikey-setup.png` for the OpenAI TTS ApiKey setup branch.
+- Removed the standalone OpenAI TTS credential menu leaf from the public guide flow so the OpenAI subsection moves directly from configuration to credential type, ApiKey setup, and OAuth2 setup.
 - Captured `global-text-to-speech/tts-19-gemini-credential-apikey-setup.png` for the Gemini TTS ApiKey setup branch.
 - Corrected the Gemini TTS documentation to show ApiKey setup only; unsupported authentication references and screenshots were removed after review.
 - Account identifiers in OpenAI OAuth2 credential screenshots were redacted before saving public screenshots.
