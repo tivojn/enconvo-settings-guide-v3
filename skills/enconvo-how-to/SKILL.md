@@ -1,13 +1,13 @@
 ---
 name: enconvo-how-to
-description: Answer practical "how do I..." questions about EnConvo Settings, agents, provider defaults, credentials, tools, skills, shortcuts, dictation, knowledgebase, account, developer panes, and related EnConvo configuration workflows using the local EnConvo Settings User Guide v3.
+description: Answer practical "how do I..." questions about EnConvo Settings, agents, provider defaults, provider-specific setup, credentials, tools, skills, shortcuts, dictation, knowledgebase, account, developer panes, and related EnConvo configuration workflows using the local EnConvo Settings User Guide v3.
 metadata:
   short-description: EnConvo Settings how-to answers
 ---
 
 # EnConvo How-To
 
-Use this skill when the user asks how to do something in EnConvo Settings, especially questions about creating or configuring agents, choosing models, credentials, tools, skills, shortcuts, dictation, knowledgebase, account settings, developer tools, or other settings panes.
+Use this skill when the user asks how to do something in EnConvo Settings, especially questions about creating or configuring agents, choosing models, configuring provider defaults, setting up OAuth/API-key credentials, tools, skills, shortcuts, dictation, knowledgebase, account settings, developer tools, or other settings panes.
 
 ## Answer Style
 
@@ -17,6 +17,7 @@ Use this skill when the user asks how to do something in EnConvo Settings, espec
   - Or click EnConvo in the macOS menu bar and choose Settings.
 - Name the left-sidebar path with arrows, for example `Agents > Agent List`.
 - Then name the exact control or tab to click.
+- For provider questions, include the provider branch when known, for example `Global Providers Settings > AI Model > OpenAI`, `Global Providers Settings > Text-to-Speech > Edge TTS`, or `Agents > Agent List > Mavis > AI Model`.
 - End with a source link to the exact relevant section in the guide when a matching anchor is known.
 - Keep answers short unless the user asks for a walkthrough.
 - If a step involves secrets, API keys, OAuth codes, callback URLs, account data, logs, recordings, or memory, remind the user to keep those private.
