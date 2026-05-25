@@ -1,0 +1,10 @@
+interface:
+  display_name: "EnConvo How-To"
+  short_description: "Answers EnConvo Settings questions"
+  icon_small: "./assets/enconvo_icon_gold_no_bg.png"
+  icon_large: "./assets/enconvo_icon_gold_no_bg.png"
+  brand_color: "#D6A84F"
+  default_prompt: "Use $enconvo-how-to to explain how to configure something in EnConvo Settings."
+
+policy:
+  allow_implicit_invocation: true
