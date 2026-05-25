@@ -396,58 +396,48 @@
         intro: "Use this section when choosing the app-wide AI model provider. These settings become the default model behavior for new agents unless an agent has its own AI Model override.",
         pages: [
           ["global-ai-model/enconvo-cloud-plan-01-overview.png", "EnConvo Cloud Plan Overview", "Provider setup with EnConvo Cloud Plan selected.", "Choose EnConvo Cloud Plan when you want EnConvo-managed access through your subscription instead of maintaining a separate provider credential. Review the provider, model, reasoning effort, and temperature before making it the default provider.", "Provider"],
-          ["global-ai-model/enconvo-cloud-plan-02-model-menu.png", "EnConvo Cloud Plan Model Menu", "Choose the Cloud Plan model that new agents should inherit by default.", "Use the Model Name menu to choose the global default model. The visible list can include models from multiple model families, depending on your plan and the live EnConvo catalog.", "Provider"],
-          ["global-ai-model/cloud-plan-model-list-01-top.png", "EnConvo Cloud Plan Model List: Top", "Top of the Cloud Plan model menu.", "The model menu is searchable and scrollable. The top segment shows Claude, OpenAI OSS, and the currently selected Gemini option.", "Provider"],
-          ["global-ai-model/cloud-plan-model-list-02-gemini.png", "EnConvo Cloud Plan Model List: Gemini", "Gemini model family segment.", "Scroll the same Model Name menu to see the Gemini Flash, Pro, image-preview, and preview model variants.", "Provider"],
-          ["global-ai-model/cloud-plan-model-list-04-deepseek-grok.png", "EnConvo Cloud Plan Model List: DeepSeek And Grok", "DeepSeek and Grok model segment.", "This segment shows DeepSeek variants, including free entries where the live UI labels them as free, plus Grok.", "Provider"],
-          ["global-ai-model/cloud-plan-model-list-05-mistral-glm-mimo.png", "EnConvo Cloud Plan Model List: Mistral, GLM, Xiaomi", "Bottom of the Cloud Plan model menu.", "The lower segment includes Mistral, GLM, and Xiaomi MiMo options.", "Provider"],
-          ["global-ai-model/enconvo-cloud-plan-03-reasoning-menu.png", "EnConvo Cloud Plan Reasoning Menu", "Choose how much reasoning effort the Cloud Plan model should use.", "Use Reasoning Effort to tune how much reasoning budget the default model should use. Higher reasoning can be useful for complex work, while lower settings can be better for lighter everyday tasks.", "Provider"],
-          ["global-ai-model/provider-list-01-top.png", "AI Model Provider List: Top", "Top of the AI Model provider column.", "The provider column is also scrollable. The top segment includes EnConvo-managed providers, OpenAI, Anthropic, Gemini, local-provider options, and other common LLM platforms.", "Provider"],
-          ["global-ai-model/provider-list-02-lower.png", "AI Model Provider List: Lower", "Lower segment of the AI Model provider column.", "Scroll the provider column to reveal additional third-party LLM platforms such as OpenRouter, Fireworks, Together AI, Poe, Kimi, DashScope, Sambanova, and Cerebras.", "Provider"],
-          ["global-ai-model/provider-list-03-bottom.png", "AI Model Provider List: Bottom", "Bottom of the AI Model provider column.", "The bottom segment confirms the final visible providers, including Arli AI, Straico AI, AIMagicX, 1min AI, and Vercel AI Gateway.", "Provider"],
-          ["global-ai-model/openai-04-credential-type-menu.png", "OpenAI Credential Type Menu", "Credentials Type menu showing OAuth2 and ApiKey options.", "Use Credentials Type to choose how OpenAI should connect. OAuth2 uses account authorization; ApiKey uses a masked API key field and base URL settings.", "Private"],
-          ["global-ai-model/openai-05-apikey-setup.png", "OpenAI ApiKey Setup", "OpenAI credential setup with ApiKey selected.", "Use ApiKey when you want EnConvo to call OpenAI with an API key. Keep the key masked, confirm the API type and base URL, then validate only when you are ready to test the credential.", "Private"],
+          ["global-ai-model/enconvo-cloud-plan-gpt-54-mini-example.png", "EnConvo Cloud Plan GPT-5.4 mini Example", "Use GPT-5.4 mini as a typical Cloud Plan model example.", "Open Model Name, choose GPT-5.4 mini, then adjust Temperature only if you want a different response style. Use Set as Default Provider only when this Cloud Plan setup should become the app-wide default.", "Provider"],
+          ["global-ai-model/openai-04-credential-type-menu.png", "OpenAI Credential Type Menu", "Credentials Type menu showing OAuth2 and ApiKey options.", "Use Credentials Type to choose how OpenAI should connect. OAuth2 uses account authorization; ApiKey uses an API key field and base URL settings.", "Private"],
+          ["global-ai-model/openai-05-apikey-setup.png", "OpenAI ApiKey Setup", "OpenAI credential setup with ApiKey selected.", "Use ApiKey when you want EnConvo to call OpenAI with an API key. Enter the API key, confirm the API type and base URL, then validate only when you are ready to test the credential.", "Private"],
           ["global-ai-model/openai-06-apikey-api-type-menu.png", "OpenAI API Type Menu", "Choose the API type for an OpenAI ApiKey credential.", "Use API Type to choose the OpenAI-compatible request mode exposed by the credential sheet. Standard OpenAI setups typically use the default OpenAI API type and base URL.", "Private"],
           ["global-ai-model/openai-03-oauth-sheet.png", "OpenAI OAuth2 Credential Sheet", "OpenAI credential setup with OAuth2 selected.", "Use OAuth2 when you want to connect through browser authorization. The sheet shows account connection state and the Connect or Reconnect action. Start that flow only when you are ready to authorize the account.", "Private"],
           ["global-ai-model/anthropic-04-credential-type-menu.png", "Anthropic Credential Type Menu", "Choose how the Anthropic credential should authenticate.", "Select OAuth2 for browser-based Anthropic account authorization, or ApiKey when you want to enter a Claude API key and keep the standard Anthropic API base URL.", "Private"],
-          ["global-ai-model/anthropic-05-apikey-setup.png", "Anthropic API Key Setup", "Use the ApiKey branch for a Claude API key credential.", "Enter or confirm the masked Claude API key, keep the Anthropic API Base URL on https://api.anthropic.com unless you intentionally use a compatible proxy, then validate only when you are ready to test the credential.", "Private"],
+          ["global-ai-model/anthropic-05-apikey-setup.png", "Anthropic API Key Setup", "Use the ApiKey branch for a Claude API key credential.", "Enter the Claude API key, keep the Anthropic API Base URL on https://api.anthropic.com unless you intentionally use a compatible proxy, then validate only when you are ready to test the credential.", "Private"],
           ["global-ai-model/anthropic-03-oauth-credential-sheet.png", "Anthropic OAuth2 Credential Sheet", "Use the OAuth2 branch for browser-based Anthropic authorization.", "Use OAuth2 when you want EnConvo to connect through Anthropic account authorization. Review the connection state and use Reconnect only when you intentionally need to refresh the account link.", "Private"],
           ["global-ai-model/anthropic-02-model-menu.png", "Anthropic Model Menu", "Choose the Claude model for the global AI Model default.", "Use the model menu to choose the Claude family and version that should power new agents when Anthropic is the global default. Pair the model with an appropriate Reasoning Effort before changing the default provider.", "Provider"],
           ["global-ai-model/gemini-04-credential-type-menu.png", "Google Gemini AI Credential Type Menu", "Choose how the Gemini credential should authenticate.", "Select OAuth2 for browser-based Google authorization, or ApiKey when you want to enter a Google AI API key and base URL manually.", "Private"],
-          ["global-ai-model/gemini-05-apikey-setup.png", "Google Gemini AI API Key Setup", "Use the ApiKey branch for a Google AI API key credential.", "Enter or confirm the masked Google AI API key, keep the Google AI API Base URL on the default generativelanguage.googleapis.com endpoint unless you intentionally use a compatible endpoint, then validate only when ready.", "Private"],
+          ["global-ai-model/gemini-05-apikey-setup.png", "Google Gemini AI API Key Setup", "Use the ApiKey branch for a Google AI API key credential.", "Enter the Google AI API key, keep the Google AI API Base URL on the default generativelanguage.googleapis.com endpoint unless you intentionally use a compatible endpoint, then validate only when ready.", "Private"],
           ["global-ai-model/gemini-03-oauth-credential-sheet.png", "Google Gemini AI OAuth2 Credential Sheet", "Use the OAuth2 branch for browser-based Google authorization.", "Use OAuth2 when you want EnConvo to connect through a Google account. Review the connected account state and reconnect only when you intend to repair or change the account link.", "Private"],
           ["global-ai-model/gemini-02-model-menu.png", "Google Gemini AI Model Menu", "Choose the Gemini model for the global AI Model default.", "Use this menu to choose the Gemini model version. Gemini also exposes Google Search Tool, URL Context Tool, and Show thoughts switches, so enable those only when the global model should use those capabilities.", "Provider"],
           ["global-ai-model/ollama-02-model-menu.png", "Ollama Model Menu", "Choose a local or locally proxied model for Ollama.", "Use this menu after Ollama is running and the desired models are available. Local models depend on the Ollama service and installed model list on this Mac; this provider does not use an OAuth2 setup sheet.", "Local"],
-          ["global-ai-model/groq-03-apikey-setup.png", "Groq AI API Key Setup", "Use the API-key sheet to configure Groq access.", "Enter or confirm the masked Groq API key, keep the Groq API Base URL on https://api.groq.com/openai/v1 unless you intentionally use a compatible gateway, then validate only when ready.", "Private"],
+          ["global-ai-model/groq-03-apikey-setup.png", "Groq AI API Key Setup", "Use the API-key sheet to configure Groq access.", "Enter the Groq API key, keep the Groq API Base URL on https://api.groq.com/openai/v1 unless you intentionally use a compatible gateway, then validate only when ready.", "Private"],
           ["global-ai-model/groq-02-model-menu.png", "Groq AI Model Menu", "Choose a Groq-hosted model for the global AI Model default.", "Use this menu after the Groq credential is configured. Choose the model that fits the workload, then adjust Temperature before setting Groq AI as the default.", "Private"],
-          ["global-ai-model/zai-03-apikey-setup.png", "Z.AI GLM API Key Setup", "Use the API-key sheet to configure Z.AI access.", "Enter or confirm the masked Z.AI API key, then validate only when you are ready to test the credential. Z.AI does not expose an OAuth2 branch in this provider sheet.", "Private"],
+          ["global-ai-model/zai-03-apikey-setup.png", "Z.AI GLM API Key Setup", "Use the API-key sheet to configure Z.AI access.", "Enter the Z.AI API key, then validate only when you are ready to test the credential. Z.AI does not expose an OAuth2 branch in this provider sheet.", "Private"],
           ["global-ai-model/zai-02-model-menu.png", "Z.AI GLM Model Menu", "Choose a Z.AI / GLM model after the credential is configured.", "If the model list is empty, configure or validate the Z.AI credential first, then refresh the model list before setting Z.AI as the default provider.", "Private"]
         ],
         deepDive: [
           {
             title: "EnConvo Cloud Plan Setup",
             proof: "global-ai-model/enconvo-cloud-plan-01-overview.png",
-            summary: "EnConvo Cloud Plan is the easiest global AI Model path when you want EnConvo to manage model access through your subscription. The live model catalog is searchable and scrollable, and can change as EnConvo updates plan availability.",
+            summary: "EnConvo Cloud Plan is the easiest global AI Model path when you want EnConvo to manage model access through your subscription. Use GPT-5.4 mini as a typical example, or choose another model from the Cloud Plan model list when your workload needs a different model family.",
             steps: [
               "Open Settings > Global Providers Settings > AI Model.",
               "Choose EnConvo Cloud Plan from AI Model Provider.",
-              "Open Model Name and choose the model family and model version you want new agents to inherit.",
-              "Open Reasoning Effort and choose the reasoning level that fits your normal workload.",
+              "Open Model Name and choose GPT-5.4 mini as the example Cloud Plan model.",
               "Adjust Temperature only if you intentionally want more deterministic or more varied responses.",
               "Click Set as Default Provider only when you want EnConvo Cloud Plan to become the app-wide default."
             ],
             evidence: [
               "global-ai-model/enconvo-cloud-plan-01-overview.png",
-              "global-ai-model/enconvo-cloud-plan-02-model-menu.png",
-              "global-ai-model/cloud-plan-model-list-01-top.png",
-              "global-ai-model/cloud-plan-model-list-02-gemini.png",
-              "global-ai-model/cloud-plan-model-list-03-gemini-details.png",
-              "global-ai-model/cloud-plan-model-list-04-deepseek-grok.png",
-              "global-ai-model/cloud-plan-model-list-05-mistral-glm-mimo.png",
-              "global-ai-model/enconvo-cloud-plan-03-reasoning-menu.png"
+              "global-ai-model/enconvo-cloud-plan-gpt-54-mini-example.png"
             ],
-            inventoryTitle: "Observed Cloud Plan Models",
+            inventoryTitle: "Cloud Plan Models",
             inventory: [
+              "GPT-5.5",
+              "GPT-5.4",
+              "GPT-5.4 mini",
+              "GPT-5.4 nano",
+              "GPT-5.2",
               "Claude Opus 4.1",
               "Claude Opus 4",
               "Claude 3.7 Sonnet",
@@ -485,21 +475,18 @@
           },
           {
             title: "AI Model Provider Inventory",
-            proof: "global-ai-model/provider-list-03-bottom.png",
-            summary: "The AI Model provider column is a scrollable inventory of configurable model platforms. Most third-party providers follow the same general setup pattern shown in the OpenAI example: choose the provider, pick or create a credential provider, open the pencil for credential setup, then choose model and runtime options.",
+            proof: "global-ai-model/provider-list-01-top.png",
+            summary: "The AI Model provider column is where you choose the platform EnConvo should use for app-wide model defaults. Use the list below to find the provider you want, then open that provider section for configuration details.",
             steps: [
               "Open Settings > Global Providers Settings > AI Model.",
               "Use the provider column in the middle pane to choose a platform.",
-              "Scroll the provider column to reveal providers beyond the first viewport.",
-              "For direct third-party platforms, use the OpenAI workflow as the general model: credential provider menu, pencil for setup, credential type, API key or OAuth2 if supported, model selection, reasoning effort when available, temperature, and Set as Default Provider only when ready.",
-              "Some entries are EnConvo-native or agent-specific surfaces rather than direct third-party API platforms, but they appear in the same provider column and can be selected from the same place."
+              "For direct third-party platforms, configure the credential first, then choose the model and runtime options.",
+              "Use Set as Default Provider only after the provider, credential, and model choice are ready."
             ],
             evidence: [
-              "global-ai-model/provider-list-01-top.png",
-              "global-ai-model/provider-list-02-lower.png",
-              "global-ai-model/provider-list-03-bottom.png"
+              "global-ai-model/provider-list-01-top.png"
             ],
-            inventoryTitle: "Observed AI Model Providers",
+            inventoryTitle: "AI Model Providers",
             inventory: [
               "EnConvo Cloud Plan",
               "OpenAI",
@@ -548,7 +535,7 @@
               "Choose OpenAI from AI Model Provider.",
               "Open Credential Provider to select an existing OpenAI credential or create a new one.",
               "Click the pencil beside Credential Provider to open the selected OpenAI credential setup sheet.",
-              "Use OAuth2 when you want browser-based account authorization. Use ApiKey when you want to enter a masked OpenAI API key and base URL.",
+              "Use OAuth2 when you want browser-based account authorization. Use ApiKey when you want to enter an OpenAI API key and base URL.",
               "For ApiKey setup, confirm API Type and base URL before validating the credential.",
               "Return to the AI Model pane, choose Model Name, Reasoning Effort, and Temperature, then use Set as Default Provider only when the OpenAI setup should become the app-wide default."
             ],
@@ -582,7 +569,7 @@
               "global-ai-model/anthropic-03-oauth-credential-sheet.png",
               "global-ai-model/anthropic-02-model-menu.png"
             ],
-            inventoryTitle: "Observed Anthropic Controls",
+            inventoryTitle: "Anthropic Controls",
             inventory: [
               "Credential Provider: Anthropic",
               "Credentials Type: OAuth2 or ApiKey",
@@ -616,7 +603,7 @@
               "global-ai-model/gemini-03-oauth-credential-sheet.png",
               "global-ai-model/gemini-02-model-menu.png"
             ],
-            inventoryTitle: "Observed Google Gemini AI Controls",
+            inventoryTitle: "Google Gemini AI Controls",
             inventory: [
               "Credential Provider: Gemini AI",
               "Credentials Type: OAuth2 or ApiKey",
@@ -645,7 +632,7 @@
               "global-ai-model/ollama-01-overview.png",
               "global-ai-model/ollama-02-model-menu.png"
             ],
-            inventoryTitle: "Observed Ollama Controls",
+            inventoryTitle: "Ollama Controls",
             inventory: [
               "Setup state: Ready / Stopped",
               "Local API note: http://127.0.0.1:11434",
@@ -663,7 +650,7 @@
               "Choose Groq AI from AI Model Provider.",
               "Confirm the Credential Provider points to the Groq AI credential.",
               "Click the pencil beside Credential Provider to open the Groq API-key setup sheet.",
-              "Enter or confirm the masked Groq API key and keep the Groq API Base URL on the standard OpenAI-compatible endpoint unless you intentionally use a gateway.",
+              "Enter the Groq API key and keep the Groq API Base URL on the standard OpenAI-compatible endpoint unless you intentionally use a gateway.",
               "Open Model Name after the credential is ready.",
               "Choose the Groq-hosted model that matches the workload.",
               "Adjust Temperature for response style.",
@@ -674,10 +661,10 @@
               "global-ai-model/groq-03-apikey-setup.png",
               "global-ai-model/groq-02-model-menu.png"
             ],
-            inventoryTitle: "Observed Groq AI Controls",
+            inventoryTitle: "Groq AI Controls",
             inventory: [
               "Credential Provider: Groq AI",
-              "Authentication: API key only in the observed provider sheet",
+              "Authentication: API key only in this provider sheet",
               "Groq API Base URL: https://api.groq.com/openai/v1",
               "Model menu includes: canopylabs/orpheus-v1-english, openai/gpt-oss-safeguard-20b, groq/compound-mini, Alibaba Cloud qwen/qwen3-32b",
               "Additional visible models include Meta Llama variants and groq/compound",
@@ -693,7 +680,7 @@
               "Choose Z.AI from AI Model Provider.",
               "Confirm the Credential Provider points to the Z.AI credential.",
               "Click the pencil beside Credential Provider to open the Z.AI API-key setup sheet.",
-              "Enter or confirm the masked Z.AI API key. This observed sheet does not expose an OAuth2 credential type.",
+              "Enter the Z.AI API key. This provider sheet does not expose an OAuth2 credential type.",
               "If Model Name is empty, configure or validate the Z.AI credential first.",
               "Refresh the model list after the credential is ready.",
               "Choose the GLM model you want new agents to inherit.",
@@ -704,10 +691,10 @@
               "global-ai-model/zai-03-apikey-setup.png",
               "global-ai-model/zai-02-model-menu.png"
             ],
-            inventoryTitle: "Observed Z.AI GLM Controls",
+            inventoryTitle: "Z.AI GLM Controls",
             inventory: [
               "Credential Provider: Z.AI",
-              "Authentication: API key only in the observed provider sheet",
+              "Authentication: API key only in this provider sheet",
               "Model Name: provider-loaded menu",
               "Temperature: 1",
               "Model list may appear empty until the credential is configured and refreshed"
@@ -729,13 +716,13 @@
           ["global-text-to-speech/tts-05-xai-cloud-voice-menu.png", "xAI TTS Cloud Plan Voice Menu", "Choose the Cloud Plan xAI voice preset.", "Pick a voice that matches the assistant's tone. For example, use warmer voices for conversational agents and clearer, firmer voices for instructional agents.", "Voice"],
           ["global-text-to-speech/tts-06-xai-cloud-language-menu.png", "xAI TTS Cloud Plan Language Menu", "Choose how the Cloud Plan voice handles language.", "Use Auto Detect for multilingual agents, or choose a fixed language when the agent should always speak in one language.", "Voice"],
           ["global-text-to-speech/tts-17-openai-credential-type-menu.png", "OpenAI TTS Credential Type Menu", "Choose the OpenAI authentication method for this credential.", "Select OAuth2 for browser account authorization, or ApiKey when you want to paste a provider key and configure API type and base URL manually.", "Private"],
-          ["global-text-to-speech/tts-18-openai-credential-apikey-setup.png", "OpenAI TTS ApiKey Setup", "Use ApiKey when you want to connect OpenAI TTS with a provider key.", "Paste the masked API key, confirm API Type and base URL, then validate only when you are ready to test the credential.", "Private"],
+          ["global-text-to-speech/tts-18-openai-credential-apikey-setup.png", "OpenAI TTS ApiKey Setup", "Use ApiKey when you want to connect OpenAI TTS with a provider key.", "Paste the API key, confirm API Type and base URL, then validate only when you are ready to test the credential.", "Private"],
           ["global-text-to-speech/tts-16-openai-credential-oauth-sheet.png", "OpenAI TTS OAuth2 Credential Sheet", "Use OAuth2 when you want browser-based OpenAI account authorization.", "Review the connected account state before using Connect or Reconnect. Do not refresh authorization unless you intend to change or repair the account connection.", "Private"],
-          ["global-text-to-speech/tts-19-gemini-credential-apikey-setup.png", "Gemini TTS ApiKey Setup", "Use ApiKey to connect Gemini TTS with a Gemini provider key.", "Paste the masked Gemini API key, confirm the base URL, then validate only when you are ready to test the credential.", "Private"],
+          ["global-text-to-speech/tts-19-gemini-credential-apikey-setup.png", "Gemini TTS ApiKey Setup", "Use ApiKey to connect Gemini TTS with a Gemini provider key.", "Paste the Gemini API key, confirm the base URL, then validate only when you are ready to test the credential.", "Private"],
           ["global-text-to-speech/tts-10-gemini-model-menu.png", "Gemini TTS Model Menu", "Choose the Gemini model that should generate speech.", "Select the model that matches the quality and latency target for this global TTS provider before setting Gemini TTS as the default.", "Voice"],
           ["global-text-to-speech/tts-11-gemini-voice-menu.png", "Gemini TTS Voice Menu", "Choose the Gemini speaking voice.", "Use the voice descriptions to match the assistant's tone, such as brighter, firmer, upbeat, or more informative speech.", "Voice"],
           ["global-text-to-speech/tts-14-xai-credential-type-menu.png", "xAI TTS Credential Type Menu", "Choose how xAI TTS should authenticate.", "Select OAuth2 for browser account authorization, or ApiKey when you want to paste an xAI key directly.", "Private"],
-          ["global-text-to-speech/tts-15-xai-credential-apikey-setup.png", "xAI TTS ApiKey Setup", "Use ApiKey when you want to connect xAI TTS with a provider key.", "Paste the masked xAI API key, then validate only after confirming the key is correct and you are ready to test it.", "Private"],
+          ["global-text-to-speech/tts-15-xai-credential-apikey-setup.png", "xAI TTS ApiKey Setup", "Use ApiKey when you want to connect xAI TTS with a provider key.", "Paste the xAI API key, then validate only after confirming the key is correct and you are ready to test it.", "Private"],
           ["global-text-to-speech/tts-13-xai-credential-oauth-sheet.png", "xAI TTS OAuth2 Credential Sheet", "Use OAuth2 when you want browser-based xAI account authorization.", "Review the connected account area before using Connect or Reconnect. Refresh authorization only when you intend to change or repair the xAI account connection.", "Private"],
           ["global-text-to-speech/tts-21-elevenlabs-credential-menu.png", "Eleven Labs TTS Credential Menu", "Choose which Eleven Labs credential should load models and voices.", "Select an existing credential or create a new one. After the credential is configured, refresh the provider so EnConvo can populate model and voice choices.", "Private"],
           ["global-text-to-speech/tts-22-elevenlabs-apikey-setup.png", "Eleven Labs TTS ApiKey Setup", "Use this sheet to connect Eleven Labs with an API key.", "Paste the Eleven Labs API key, then validate only when you are ready to test it. After validation, return to the provider page and choose a model and voice.", "Private"],
@@ -763,7 +750,7 @@
               "global-text-to-speech/tts-05-xai-cloud-voice-menu.png",
               "global-text-to-speech/tts-06-xai-cloud-language-menu.png"
             ],
-            inventoryTitle: "Observed EnConvo Cloud Plan TTS Providers",
+            inventoryTitle: "EnConvo Cloud Plan TTS Providers",
             inventory: [
               "xAI TTS (EnConvo Cloud Plan)",
               "Gemini TTS (EnConvo Cloud Plan)",
@@ -791,7 +778,7 @@
               "global-text-to-speech/tts-09-gemini-overview.png",
               "global-text-to-speech/tts-12-xai-direct-overview.png"
             ],
-            inventoryTitle: "Observed TTS Providers",
+            inventoryTitle: "TTS Providers",
             inventory: [
               "xAI TTS (EnConvo Cloud Plan)",
               "Gemini TTS (EnConvo Cloud Plan)",
@@ -831,7 +818,7 @@
               "global-text-to-speech/tts-02-edge-voice-menu.png",
               "global-text-to-speech/tts-03-edge-output-format-menu.png"
             ],
-            inventoryTitle: "Observed Edge TTS Output Formats",
+            inventoryTitle: "Edge TTS Output Formats",
             inventory: [
               "audio-24khz-48kbitrate-mono-mp3: Standard quality for voice notes and messages",
               "audio-24khz-96kbitrate-mono-mp3: Higher quality for presentations and content",
@@ -847,7 +834,7 @@
               "Choose OpenAI TTS in the provider column.",
               "Open Credential Provider to select an existing OpenAI credential or create a new credential.",
               "Use the pencil to open the selected credential setup sheet.",
-              "Choose OAuth2 for browser-based authorization, or ApiKey to enter a masked API key, API type, and base URL.",
+              "Choose OAuth2 for browser-based authorization, or ApiKey to enter an API key, API type, and base URL.",
               "Choose Model Name, Voice, and Speech Speed.",
               "Use Set as Default Provider only when OpenAI TTS should become the app-wide voice default."
             ],
@@ -857,7 +844,7 @@
               "global-text-to-speech/tts-18-openai-credential-apikey-setup.png",
               "global-text-to-speech/tts-16-openai-credential-oauth-sheet.png"
             ],
-            inventoryTitle: "Observed OpenAI TTS Controls",
+            inventoryTitle: "OpenAI TTS Controls",
             inventory: [
               "Credential Provider: OpenAI",
               "Credential editor: OAuth2 or ApiKey",
@@ -876,7 +863,7 @@
               "Choose Gemini TTS in the provider column.",
               "Open Credential Provider to select or create the Gemini credential.",
               "Use the pencil to open the selected Gemini credential setup sheet.",
-              "Use ApiKey to enter a masked Gemini key and base URL.",
+              "Use ApiKey to enter a Gemini API key and base URL.",
               "Open Model Name to choose the Gemini TTS model.",
               "Open Voice to choose the speaking style.",
               "Use Set as Default Provider only when Gemini TTS should become the app-wide voice default."
@@ -887,7 +874,7 @@
               "global-text-to-speech/tts-10-gemini-model-menu.png",
               "global-text-to-speech/tts-11-gemini-voice-menu.png"
             ],
-            inventoryTitle: "Observed Gemini TTS Controls",
+            inventoryTitle: "Gemini TTS Controls",
             inventory: [
               "Credential Provider: Gemini",
               "Credential editor: ApiKey",
@@ -907,7 +894,7 @@
               "Click the pencil beside Credential Provider to open the credential setup sheet.",
               "Use Credentials Type to choose OAuth2 or ApiKey.",
               "Use OAuth2 when you want browser-based authorization for the selected xAI account.",
-              "Use ApiKey when you want to enter a masked xAI API key directly, then validate only when you are ready to test that credential.",
+              "Use ApiKey when you want to enter an xAI API key directly, then validate only when you are ready to test that credential.",
               "Return to the Text-to-Speech pane, choose Voice and Language, and set it as the default only when this provider should become the global voice default."
             ],
             evidence: [
@@ -916,7 +903,7 @@
               "global-text-to-speech/tts-15-xai-credential-apikey-setup.png",
               "global-text-to-speech/tts-13-xai-credential-oauth-sheet.png"
             ],
-            inventoryTitle: "Observed xAI TTS Controls",
+            inventoryTitle: "xAI TTS Controls",
             inventory: [
               "Credential Provider: X.AI-GROK",
               "Credentials Type: OAuth2 or ApiKey",
@@ -944,7 +931,7 @@
               "global-text-to-speech/tts-23-elevenlabs-model-menu.png",
               "global-text-to-speech/tts-24-elevenlabs-voice-menu.png"
             ],
-            inventoryTitle: "Observed Eleven Labs TTS Controls",
+            inventoryTitle: "Eleven Labs TTS Controls",
             inventory: [
               "Credential Provider: Eleven Labs",
               "Credential editor: Eleven Labs API key",
@@ -970,7 +957,7 @@
               "global-text-to-speech/tts-25-kokoro-mlx-overview.png",
               "global-text-to-speech/tts-26-kokoro-voice-menu.png"
             ],
-            inventoryTitle: "Observed Kokoro MLX TTS Controls",
+            inventoryTitle: "Kokoro MLX TTS Controls",
             inventory: [
               "Model: Kokoro 82M (bf16)",
               "Local model size: 366 MB",
@@ -997,7 +984,7 @@
               "global-text-to-speech/tts-28-qwen3-model-manager.png",
               "global-text-to-speech/tts-29-qwen3-voice-menu.png"
             ],
-            inventoryTitle: "Observed Qwen3 MLX TTS Controls",
+            inventoryTitle: "Qwen3 MLX TTS Controls",
             inventory: [
               "Current model: Qwen3-TTS 0.6B CustomVoice (bf16)",
               "Additional visible model: Qwen3-TTS 1.7B CustomVoice (bf16)",
@@ -1153,9 +1140,9 @@
           ["agent-mavis/agent-definition-expanded-character.png", "Agent Definition: Expanded Leaves", "Expanded User Message and CHARACTER.md rows.", "Rows with chevrons are real nested editors with Insert variable and Fullscreen controls.", "Private"],
           ["agent-mavis/ai-model-01-full.png", "AI Model", "Agent-level LLM override.", "In this example, Mavis uses Anthropic, Claude Opus 4.7, reasoning High, and temperature 1. Use these fields when an agent should differ from the global model defaults. The pencil beside Credential Provider opens provider setup; the gear opens Credential Management.", "Provider"],
           ["agent-mavis/ai-model-credential-oauth-type-dropdown.png", "AI Model: Credential Type Dropdown", "Anthropic credential sheet with the Credentials Type menu open.", "Credentials Type lets you choose how Anthropic connects for this agent. OAuth2 uses a browser login flow, while ApiKey uses a provider key and base URL.", "Private"],
-          ["agent-mavis/ai-model-credential-apikey-setup.png", "AI Model: ApiKey Setup", "ApiKey branch with masked key field, base URL, and Validate action.", "Use this branch when connecting Anthropic by API key. Keep the key masked, confirm the Anthropic API Base URL, then validate the credential when you are ready to test it.", "Private"],
+          ["agent-mavis/ai-model-credential-apikey-setup.png", "AI Model: ApiKey Setup", "ApiKey branch with key field, base URL, and Validate action.", "Use this branch when connecting Anthropic by API key. Enter the key, confirm the Anthropic API Base URL, then validate the credential when you are ready to test it.", "Private"],
           ["agent-mavis/anthropic-apikey-01-choose-apikey.png", "AI Model: Anthropic ApiKey Choose", "Credential sheet with ApiKey selected.", "This is the first step of the API-key setup branch reached from Mavis > AI Model > Credential Provider pencil.", "Private"],
-          ["agent-mavis/anthropic-apikey-02-enter-key.png", "AI Model: Anthropic ApiKey Enter Key", "Secure key field in use.", "Enter or confirm the Anthropic API key in the secure field. Keep the value masked and do not share the raw key.", "Private"],
+          ["agent-mavis/anthropic-apikey-02-enter-key.png", "AI Model: Anthropic ApiKey Enter Key", "Secure key field in use.", "Enter the Anthropic API key in the secure field. Do not share the raw key.", "Private"],
           ["agent-mavis/anthropic-apikey-03-validate.png", "AI Model: Anthropic ApiKey Validate", "ApiKey branch at the validation step.", "Click Validate when you want EnConvo to test the credential. Keep the base URL as https://api.anthropic.com unless you intentionally use a compatible proxy.", "Private"],
           ["agent-mavis/anthropic-apikey-04-valid.png", "AI Model: Anthropic ApiKey Valid", "Validation result showing the API key is valid.", "This is the success confirmation for the API-key branch. Record the status, not the secret.", "Private"],
           ["agent-mavis/anthropic-oauth-01-choose-oauth2.png", "AI Model: Anthropic OAuth2 Choose", "Credential sheet with OAuth2 chosen as the credential type.", "This is the browser-login branch selector reached from Mavis > AI Model > Credential Provider pencil.", "Private"],
@@ -1166,7 +1153,7 @@
           ["agent-mavis/anthropic-oauth-06-complete-login-done.png", "AI Model: Anthropic OAuth2 Complete Login", "EnConvo OAuth flow after login completion.", "Paste the copied code into EnConvo, complete login, and verify the credential returns to a connected Anthropic state.", "Private"],
           ["agent-mavis/tools-01-summary.png", "Tools Summary", "Agent tool boundary summary.", "Use this to see the enabled tool set before opening the manager.", "Tools"],
           ["agent-mavis/tools-manage-full-scroll.png", "Tools Manager", "Select Tools manager inventory.", "Use the manager to review which tools are available to this agent. Enabled tools define what the agent can do during a session.", "Tools"],
-          ["agent-mavis/text-to-speech-01-full.png", "Text to Speech", "Agent-level voice override.", "Observed setup: xAI TTS through Enconvo Cloud Plan, Ara voice, Auto Detect language.", "Voice"],
+          ["agent-mavis/text-to-speech-01-full.png", "Text to Speech", "Agent-level voice override.", "Example setup: xAI TTS through Enconvo Cloud Plan, Ara voice, Auto Detect language.", "Voice"],
           ["agent-mavis/more-full-scroll.png", "More", "Advanced runtime and behavior settings.", "Includes dynamic context, live screen, tutor mode, run mode, response language, post-action, and memory controls.", "Runtime"]
         ],
         deepDive: [
@@ -1222,11 +1209,11 @@
           {
             title: "Anthropic ApiKey Setup Cycle",
             proof: "agent-mavis/anthropic-apikey-04-valid.png",
-            summary: "The credential sheet has an ApiKey branch with masked key entry, base URL, Validate action, and success/failure result.",
+            summary: "The credential sheet has an ApiKey branch with key entry, base URL, Validate action, and success/failure result.",
             steps: [
               "Open AI Model > Credential Provider pencil.",
               "Open Credentials Type and choose ApiKey.",
-              "Enter the API key in the masked field and confirm the base URL.",
+              "Enter the API key and confirm the base URL.",
               "Click Validate to test the credential and confirm the result."
             ],
             evidence: [
@@ -1264,7 +1251,7 @@
             steps: [
               "Access path A: global Settings > AI Model > Anthropic provider credential setup.",
               "Access path B: Settings > Agents > Agent List > Mavis > AI Model > Credential Provider pencil.",
-              "ApiKey path: open the credential sheet, choose ApiKey, enter the masked key, confirm the base URL, click Validate, and confirm the API key valid result.",
+              "ApiKey path: open the credential sheet, choose ApiKey, enter the API key, confirm the base URL, click Validate, and confirm the API key valid result.",
               "OAuth2 path: choose OAuth2, click Connect or Reconnect to Anthropic, authorize in the browser, copy the code, paste it into EnConvo, complete login, and confirm the connected state.",
               "Keep raw API keys, OAuth authorization codes, callback URLs, and tokens private."
             ],
@@ -1290,7 +1277,7 @@
             summary: "This walkthrough shows the ApiKey branch from the Mavis AI Model entry path.",
             steps: [
               "Choose ApiKey in the Anthropic credential sheet.",
-              "Enter or confirm the Anthropic API key in the secure field. Keep the value masked.",
+              "Enter the Anthropic API key in the secure field.",
               "Keep the Anthropic API Base URL set to https://api.anthropic.com for the standard Anthropic endpoint. Advanced setups can use a compatible proxy URL.",
               "Click Validate only as part of an explicit setup or verification request.",
               "Confirm the validation result shows API key is valid."

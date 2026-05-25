@@ -285,3 +285,13 @@ Added after the user requested the newly added AI Model provider sections to inc
 - Updated Groq AI and Z.AI / GLM as API-key-only provider examples in the observed UI.
 - Kept Ollama documented as a local API/service setup path; no OAuth2 credential branch was observed for Ollama.
 - Credential type was temporarily changed inside Anthropic and Google Gemini AI sheets to capture both branches, then returned to OAuth2. No API key was entered, no credential was validated, no OAuth reconnect/connect action was triggered, no model/default provider was changed, and no local service was started.
+
+## Global AI Model Guide Copy Cleanup
+
+Added after the user requested the AI Model guide to read less like screenshot notes and more like a user manual.
+
+- Captured `global-ai-model/enconvo-cloud-plan-gpt-54-mini-example.png` for the EnConvo Cloud Plan GPT-5.4 mini example.
+- Simplified the AI Model Provider Inventory section to one provider-column screenshot plus the provider list.
+- Simplified the EnConvo Cloud Plan section to the setup screenshot, the GPT-5.4 mini example, and the Cloud Plan model list.
+- Removed `Observed` wording from public inventory headings and removed `masked API key` phrasing from the public guide copy.
+- No API key was entered, no credential was validated, no OAuth reconnect/connect action was triggered, and no default provider was changed.
