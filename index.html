@@ -390,7 +390,7 @@
       },
       {
         id: "global-ai-model",
-        title: "AI Model Configuration",
+        title: "AI Model",
         parent: "global-providers",
         parentPage: "AI Model",
         intro: "Use this section when choosing the app-wide AI model provider. These settings become the default model behavior for new agents unless an agent has its own AI Model override.",
@@ -1229,9 +1229,9 @@
 
     const childNavGroups = {
       "global-ai-model": [
-        { title: "EnConvo Cloud Plan", pagePrefixes: ["EnConvo Cloud Plan"], deepTitles: ["EnConvo Cloud Plan Setup"] },
-        { title: "Provider Inventory", pagePrefixes: ["AI Model Provider List"], deepTitles: ["AI Model Provider Inventory"] },
-        { title: "OpenAI", pagePrefixes: ["OpenAI"], deepPrefixes: ["OpenAI"] }
+        { title: "Provider Inventory", pagePrefixes: ["AI Model Provider List"], deepTitles: ["AI Model Provider Inventory"], deepFirst: true },
+        { title: "EnConvo Cloud Plan", pagePrefixes: ["EnConvo Cloud Plan"], deepTitles: ["EnConvo Cloud Plan Setup"], deepFirst: true },
+        { title: "OpenAI", pagePrefixes: ["OpenAI"], deepPrefixes: ["OpenAI"], deepFirst: true }
       ],
       "global-text-to-speech": [
         {
@@ -1324,7 +1324,7 @@
         ? `<details class="branch" data-depth="${depth + 1}"${navOpen(depth + 1)}><summary><span>Other</span></summary><div class="tree">${ungroupedPages}${ungroupedDeep}</div></details>`
         : "";
 
-      if (child.id === "global-text-to-speech") return `${grouped}${overflow}`;
+      if (child.id === "global-ai-model" || child.id === "global-text-to-speech") return `${grouped}${overflow}`;
       return `<details class="branch" data-depth="${depth}"${navOpen(depth)}><summary><a href="#${child.id}">${child.title}</a></summary><div class="tree">${grouped}${overflow}</div></details>`;
     }
 
@@ -1414,7 +1414,7 @@
     }
 
     function renderChildSection(section) {
-      if (section.id === "global-text-to-speech") {
+      if (section.id === "global-ai-model" || section.id === "global-text-to-speech") {
         return `<section id="${section.id}">
           <h3>${section.title}</h3>
           <p>${section.intro}</p>
