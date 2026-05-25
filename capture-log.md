@@ -341,9 +341,20 @@ Added after the user requested the missing full OpenAI OAuth2 cycle for Global P
 - Captured `global-ai-model/openai-oauth-cycle-02-connecting.png` for the EnConvo connecting state immediately after starting authorization.
 - Captured `global-ai-model/openai-oauth-cycle-03-browser-account.png` for the OpenAI browser account chooser.
 - Captured `global-ai-model/openai-oauth-cycle-04-browser-consent.png` for the OpenAI consent page.
-- Captured `global-ai-model/openai-oauth-cycle-05-browser-success.png` for the browser success page. This screenshot was cropped to avoid saving the callback URL or authorization code from the address bar.
+- Captured `global-ai-model/openai-oauth-cycle-05-browser-success.png` for the browser success page. The callback URL and authorization code area in the browser address bar should be treated as private.
 - Captured `global-ai-model/openai-oauth-cycle-06-enconvo-connected.png` for the returned EnConvo connected state.
 - The live OAuth flow completed and returned OpenAI to Connected status in EnConvo. No authorization code, callback URL, token, or raw credential was stored in the guide.
+
+## Global AI Model Full-Window Credential Recapture
+
+Added after the user noted that several AI Model credential screenshots were cropped or cut off.
+
+- Created a backup of the previous target screenshots outside the public repo at `/Users/zanearcher/Documents/Codex/2026-05-25/use-ai-tutor-skill-to-help/enconvo-settings-guide-v3-private-backup/full-window-recapture-20260525-203501/`.
+- Replaced `global-ai-model/gemini-03-oauth-credential-sheet.png`, `global-ai-model/gemini-04-credential-type-menu.png`, and `global-ai-model/gemini-05-apikey-setup.png` with full-window captures.
+- Replaced `global-ai-model/openai-oauth-cycle-05-browser-success.png` and `global-ai-model/openai-oauth-cycle-06-enconvo-connected.png` with full-window captures.
+- Replaced `global-ai-model/anthropic-03-oauth-credential-sheet.png`, `global-ai-model/anthropic-04-credential-type-menu.png`, and `global-ai-model/anthropic-05-apikey-setup.png` with full-window captures.
+- Applied privacy cover boxes only to visible personal identity areas and the OpenAI browser callback URL area. API-key fields were left as captured unless they also contained personal identity.
+- Anthropic and Google Gemini AI credential type was temporarily switched to ApiKey for screenshots and restored to OAuth2 after capture. No credential was validated, no OAuth reconnect/connect action was triggered, and no default provider was changed.
 
 ## Global AI Model Anthropic OAuth2 Cycle
 
