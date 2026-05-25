@@ -204,7 +204,7 @@
       <a href="#global-providers">Global Providers</a>
       <a href="#agents">Agents</a>
       <a href="#agent-mavis">Agent Configuration (Mavis)</a>
-      <a href="capture-log.md">Capture Log</a>
+      <a href="capture-log.md">Project Notes</a>
     </div>
   </nav>
   <div class="layout">
@@ -217,19 +217,19 @@
         <div class="breadcrumbs">Docs / Settings / User Guide v3</div>
         <article>
           <h1 id="introduction">EnConvo Settings User Guide v3</h1>
-          <p class="lead">A full-scale local manual for EnConvo Settings. This version starts from the live app model: global provider defaults first, then agent-level overrides, then each settings family and the Mavis agent proof map.</p>
+          <p class="lead">A full-scale manual for EnConvo Settings. Start with global provider defaults, then use agent-level settings when a specific agent needs its own model, tools, voice, memory, or runtime behavior.</p>
           <div class="note">
             <strong>Configuration model.</strong>
             <p>Global Providers Settings define app-wide defaults for model, voice, search, generation, fetch, and OCR providers. New agents inherit those defaults. Agent List pages are per-agent override surfaces, so an agent can use a different model, credential provider, voice, tool set, memory behavior, or run mode.</p>
           </div>
           <div class="note">
-            <strong>Screenshot evidence.</strong>
-            <p>Every first-level settings page is backed by a local screenshot. The Agent Configuration (Mavis) example also includes stitched full-scroll composites and setup-cycle screenshots for Anthropic ApiKey and OAuth2 credential branches.</p>
+            <strong>Visual reference.</strong>
+            <p>Each settings page includes a screenshot so you can match the instructions to the EnConvo interface. The Agent Configuration (Mavis) example also shows the Anthropic ApiKey and OAuth2 credential flows.</p>
           </div>
           <div id="guide"></div>
         </article>
         <footer>
-          Local assets: <code>screenshots/</code>. Audit trail: <code>capture-log.md</code>. Keep this guide private unless screenshots are redacted.
+          Local assets: <code>screenshots/</code>. Project notes: <code>capture-log.md</code>. Review sensitive screenshots before sharing this guide outside your workspace.
         </footer>
       </main>
     </div>
@@ -261,13 +261,13 @@
         pages: [
           ["08-agent-list.png", "Agent List", "Create, inspect, and edit individual agents.", "Open an agent here to configure its prompt, model override, tools, voice, memory, runtime settings, and post-actions.", "Core"],
           ["09-voice-trigger.png", "Voice Trigger", "Voice activation and spoken-entry behavior.", "Use this to bind voice phrases or listening behavior to agents.", "Voice"],
-          ["10-memory-management.png", "Memory Management", "Review and control stored memory.", "Treat this pane as private because it can expose personal or workflow-specific memories.", "Private"],
-          ["11-im-channels.png", "IM Channels", "External messaging channel integrations.", "Use this for channel-connected agents; treat account and channel details as private.", "Private"],
+          ["10-memory-management.png", "Memory Management", "Review and control stored memory.", "This pane can contain personal or workflow-specific memories, so review it carefully before sharing screenshots.", "Private"],
+          ["11-im-channels.png", "IM Channels", "External messaging channel integrations.", "Use this for channel-connected agents. Account and channel details should be kept private.", "Private"],
           ["12-browser-companion.png", "Browser Companion", "Browser helper and companion behavior.", "Use this when agents need browser-side context or interaction.", "Browser"],
           ["13-computer-use.png", "Computer-Use", "Desktop automation and computer-control settings.", "Use this for agents that inspect or operate local apps.", "Automation"],
           ["14-scheduled-jobs.png", "Scheduled Jobs", "Recurring agent jobs and schedule controls.", "Use this to automate repeated tasks; verify schedule, timezone, and run target before enabling.", "Automation"],
           ["15-skills.png", "Skills", "Installed skills and callable capability modules.", "Use this to inspect what specialized workflows agents can invoke.", "Extension"],
-          ["16-variables.png", "Variables", "Reusable values available to prompts and agent templates.", "Use this for shared prompt variables; treat secrets and local paths as private.", "Private"]
+          ["16-variables.png", "Variables", "Reusable values available to prompts and agent templates.", "Use this for shared prompt variables. Keep secrets and local paths private.", "Private"]
         ]
       },
       {
@@ -275,8 +275,8 @@
         title: "Context",
         intro: "Context settings control what EnConvo can see, remember, and attach from the current environment.",
         pages: [
-          ["17-context-awareness.png", "Context Awareness", "Global context capture and awareness behavior.", "Use this to define how much app, screen, or workflow context EnConvo may use.", "Context"],
-          ["18-appshots.png", "Appshots", "Application snapshot capture and history surface.", "Treat screenshots and app names as private when sharing the guide.", "Private"]
+          ["17-context-awareness.png", "Context Awareness", "Global context availability and awareness behavior.", "Use this to define how much app, screen, or workflow context EnConvo may use.", "Context"],
+          ["18-appshots.png", "Appshots", "Application snapshot history and configuration.", "Appshots can include app names and screen content. Review them before sharing.", "Private"]
         ]
       },
       {
@@ -285,7 +285,7 @@
         intro: "Extensions add installable capabilities and integrations to EnConvo.",
         pages: [
           ["19-extension-store.png", "Store", "Browse available extensions.", "Use this to discover and install new EnConvo capabilities.", "Extension"],
-          ["20-installed-extensions.png", "Installed", "Review installed extensions.", "Use this to update, disable, or audit installed extension surfaces.", "Extension"]
+          ["20-installed-extensions.png", "Installed", "Review installed extensions.", "Use this to update, disable, or inspect installed extension surfaces.", "Extension"]
         ]
       },
       {
@@ -309,7 +309,7 @@
         title: "Credential Management",
         intro: "Credential Management is the central place for provider credentials. Provider panes and agent overrides can navigate here through gear controls.",
         pages: [
-          ["30-credential-management.png", "Credential Management", "Central provider-account and credential inventory.", "Treat as private. Do not expose API keys, OAuth tokens, authorization codes, callback URLs, or account identifiers in public documentation.", "Private"]
+          ["30-credential-management.png", "Credential Management", "Central provider-account and credential inventory.", "Keep API keys, OAuth tokens, authorization codes, callback URLs, and account identifiers private.", "Private"]
         ]
       },
       {
@@ -319,10 +319,10 @@
         pages: [
           ["31-dictation-models.png", "Dictation Models", "Speech model provider and model list.", "Use this to choose local or cloud dictation models.", "Voice"],
           ["32-dictation.png", "Dictation", "Dictation behavior and controls.", "Use this to tune live speech-to-text workflows.", "Voice"],
-          ["33-dictation-history.png", "Dictation History", "Historical dictation records.", "Treat as private because it can expose spoken content.", "Private"],
+          ["33-dictation-history.png", "Dictation History", "Historical dictation records.", "This page can expose spoken content, so review entries before sharing.", "Private"],
           ["34-dictionary.png", "Dictionary", "Custom vocabulary and recognition hints.", "Use this for names, terms, and words that require more reliable recognition.", "Voice"],
           ["35-transcription-models.png", "Transcription Models", "Transcription provider and model list.", "Use this for file-based audio or video transcription.", "Voice"],
-          ["36-recordings.png", "Recordings", "Saved recordings and recording management.", "Treat as private because audio files and titles can reveal personal information.", "Private"]
+          ["36-recordings.png", "Recordings", "Saved recordings and recording management.", "Audio files and titles can reveal personal information. Review them before sharing.", "Private"]
         ]
       },
       {
@@ -339,7 +339,7 @@
         title: "KnowledgeBase",
         intro: "KnowledgeBase settings control the user's local or connected knowledge sources.",
         pages: [
-          ["39-knowledgebase.png", "KnowledgeBase", "Knowledge source inventory and configuration.", "Treat as private when source names, paths, or indexed content are visible.", "Private"]
+          ["39-knowledgebase.png", "KnowledgeBase", "Knowledge source inventory and configuration.", "Knowledge source names, paths, and indexed content may be sensitive.", "Private"]
         ]
       },
       {
@@ -347,9 +347,9 @@
         title: "Account",
         intro: "Account panes include profile, subscription, and usage information.",
         pages: [
-          ["40-my-profile.png", "My Profile", "Profile details and account identity.", "Treat as private.", "Private"],
-          ["41-account.png", "Account", "Account, plan, and subscription controls.", "Treat as private.", "Private"],
-          ["42-points-usage.png", "Points Usage", "Credit or point consumption history.", "Use this to review cost and plan consumption; treat usage history as private.", "Private"]
+          ["40-my-profile.png", "My Profile", "Profile details and account identity.", "Use this page to confirm profile and identity details. Keep account information private.", "Private"],
+          ["41-account.png", "Account", "Account, plan, and subscription controls.", "Use this page for subscription and account management. Keep account details private.", "Private"],
+          ["42-points-usage.png", "Points Usage", "Credit or point consumption history.", "Use this to review cost and plan consumption. Usage history may be sensitive.", "Private"]
         ]
       },
       {
@@ -368,8 +368,8 @@
         intro: "Developer panes expose local debugging, logs, API surfaces, and command-line setup.",
         pages: [
           ["46-developer-tools.png", "Developer Tools", "Developer utilities and diagnostics.", "Use with care; some controls may affect local debugging state.", "Developer"],
-          ["47-logging.png", "Logging", "Log output and logging controls.", "Treat logs as private because they may include paths, account data, or request metadata.", "Private"],
-          ["48-apis.png", "APIs", "API settings and local integration details.", "Treat endpoints, keys, and tokens as private.", "Private"],
+          ["47-logging.png", "Logging", "Log output and logging controls.", "Logs may include paths, account data, or request metadata. Review them before sharing.", "Private"],
+          ["48-apis.png", "APIs", "API settings and local integration details.", "Keep endpoints, keys, and tokens private.", "Private"],
           ["49-cli-guide.png", "CLI Guide", "Command-line usage instructions.", "Use this to integrate EnConvo with shell workflows.", "Developer"]
         ]
       },
@@ -378,9 +378,9 @@
         title: "Create New Agent",
         parent: "agents",
         parentPage: "Agent List",
-        intro: "This section documents the create-agent control in the middle Agent List column. It is a page-level action for adding agents, separate from configuring an existing selected agent.",
+        intro: "Use the create-agent control in the middle Agent List column when you want to add a new assistant. This is separate from configuring an agent that already exists.",
         pages: [
-          ["agent-mavis/agent-list-create-new-agent-menu.png", "Create New Agent Menu", "Bottom action menu in the Agent List column.", "Click Create New Agent at the bottom of the middle Agent List column. The pop-up offers New Agent for default EnConvo model settings, New OpenClaw Agent for an OpenClaw-first setup, and New Hermes Agent for a Hermes-first setup. Document the menu, but do not select an option unless the user wants to create an agent.", "Core"]
+          ["agent-mavis/agent-list-create-new-agent-menu.png", "Create New Agent Menu", "Bottom action menu in the Agent List column.", "Click Create New Agent at the bottom of the middle Agent List column. Choose New Agent for the default EnConvo model settings, New OpenClaw Agent for an OpenClaw-first setup, or New Hermes Agent for a Hermes-first setup.", "Core"]
         ]
       },
       {
@@ -388,28 +388,28 @@
         title: "Agent Configuration (Mavis)",
         parent: "agents",
         parentPage: "Agent List",
-        intro: "This section documents how to configure or modify an individual agent, using Mavis as the worked example. Agent-level tabs can override global provider defaults and expose nested configuration leaves behind dropdowns, chevrons, pencil icons, gear icons, and fullscreen controls.",
+        intro: "This section explains how to configure or modify an individual agent, using Mavis as the worked example. Agent-level tabs can override global provider defaults and expose additional options through dropdowns, chevrons, pencil icons, gear icons, and fullscreen controls.",
         pages: [
-          ["agent-mavis/agent-list-change-icon-dialog.png", "Change Agent Portrait", "Portrait picker opened from the Mavis agent header.", "In Agent Configuration, click the portrait/icon beside the selected agent name. For Mavis, this opens the Change Icon dialog, where the user can choose a local PNG, JPG, GIF, or SVG file and review the current portrait file path. Close the dialog after documentation unless the user explicitly wants to choose a new file.", "Private"],
-          ["agent-mavis/agent-definition-01-top.png", "Agent Definition: Top", "Instruction and core definition controls.", "Capture the top of the prompt surface before expanding nested rows.", "Agent"],
-          ["agent-mavis/agent-definition-02-lower.png", "Agent Definition: Lower", "User Message, working folder, and attached context files.", "Scroll the tab body; do not assume the first viewport is complete.", "Segment"],
-          ["agent-mavis/agent-definition-full-scroll.png", "Agent Definition: Full Scroll", "Composite proof of the full Agent Definition tab.", "Use this to explain where lower prompt and file leaves live.", "Composite"],
+          ["agent-mavis/agent-list-change-icon-dialog.png", "Change Agent Portrait", "Portrait picker opened from the Mavis agent header.", "In Agent Configuration, click the portrait/icon beside the selected agent name. For Mavis, this opens the Change Icon dialog, where you can choose a local PNG, JPG, GIF, or SVG file and review the current portrait file path.", "Private"],
+          ["agent-mavis/agent-definition-01-top.png", "Agent Definition: Top", "Instruction and core definition controls.", "Use the Instruction editor to define the agent's core behavior, role, and operating rules.", "Agent"],
+          ["agent-mavis/agent-definition-02-lower.png", "Agent Definition: Lower", "User Message, working folder, and attached context files.", "Scroll the Agent Definition tab to review User Message, Working Folder, and attached context files below the main instruction editor.", "Segment"],
+          ["agent-mavis/agent-definition-full-scroll.png", "Agent Definition: Full Scroll", "Full-page view of the Agent Definition tab.", "Use this view to understand how the instruction editor, user-message wrapper, working folder, and attached files fit together.", "Composite"],
           ["agent-mavis/agent-definition-expanded-character.png", "Agent Definition: Expanded Leaves", "Expanded User Message and CHARACTER.md rows.", "Rows with chevrons are real nested editors with Insert variable and Fullscreen controls.", "Private"],
-          ["agent-mavis/ai-model-01-full.png", "AI Model", "Agent-level LLM override.", "Observed setup: Anthropic, Claude Opus 4.7, reasoning High, temperature 1. Treat as this setup's state, not a universal default. The pencil beside Credential Provider opens the provider setup sheet; the gear is a cross-page entrance to Credential Management.", "Provider"],
-          ["agent-mavis/ai-model-credential-oauth-type-dropdown.png", "AI Model: Credential Type Dropdown", "Anthropic credential sheet with the Credentials Type menu open.", "This is the missing lower level under the AI Model tab. Credentials Type branches into OAuth2 and ApiKey, so both branches belong under Mavis AI Model instead of being treated as separate global topics.", "Private"],
-          ["agent-mavis/ai-model-credential-apikey-setup.png", "AI Model: ApiKey Setup", "ApiKey branch with masked key field, base URL, and Validate action.", "Use this branch when Anthropic is connected by API key. Keep the key masked, document the Anthropic API Base URL, the Required badge, the visibility control, the Validate button, and the result state.", "Private"],
+          ["agent-mavis/ai-model-01-full.png", "AI Model", "Agent-level LLM override.", "In this example, Mavis uses Anthropic, Claude Opus 4.7, reasoning High, and temperature 1. Use these fields when an agent should differ from the global model defaults. The pencil beside Credential Provider opens provider setup; the gear opens Credential Management.", "Provider"],
+          ["agent-mavis/ai-model-credential-oauth-type-dropdown.png", "AI Model: Credential Type Dropdown", "Anthropic credential sheet with the Credentials Type menu open.", "Credentials Type lets you choose how Anthropic connects for this agent. OAuth2 uses a browser login flow, while ApiKey uses a provider key and base URL.", "Private"],
+          ["agent-mavis/ai-model-credential-apikey-setup.png", "AI Model: ApiKey Setup", "ApiKey branch with masked key field, base URL, and Validate action.", "Use this branch when connecting Anthropic by API key. Keep the key masked, confirm the Anthropic API Base URL, then validate the credential when you are ready to test it.", "Private"],
           ["agent-mavis/anthropic-apikey-01-choose-apikey.png", "AI Model: Anthropic ApiKey Choose", "Credential sheet with ApiKey selected.", "This is the first step of the API-key setup branch reached from Mavis > AI Model > Credential Provider pencil.", "Private"],
-          ["agent-mavis/anthropic-apikey-02-enter-key.png", "AI Model: Anthropic ApiKey Enter Key", "Secure key field in use.", "Enter or confirm the Anthropic API key in the secure field. The guide must show only masked dots or masked placeholders, never the raw value.", "Private"],
-          ["agent-mavis/anthropic-apikey-03-validate.png", "AI Model: Anthropic ApiKey Validate", "ApiKey branch at the validation step.", "Click Validate only when the user explicitly wants to test the credential. Keep the base URL as https://api.anthropic.com unless a compatible proxy is intentionally configured.", "Private"],
+          ["agent-mavis/anthropic-apikey-02-enter-key.png", "AI Model: Anthropic ApiKey Enter Key", "Secure key field in use.", "Enter or confirm the Anthropic API key in the secure field. Keep the value masked and do not share the raw key.", "Private"],
+          ["agent-mavis/anthropic-apikey-03-validate.png", "AI Model: Anthropic ApiKey Validate", "ApiKey branch at the validation step.", "Click Validate when you want EnConvo to test the credential. Keep the base URL as https://api.anthropic.com unless you intentionally use a compatible proxy.", "Private"],
           ["agent-mavis/anthropic-apikey-04-valid.png", "AI Model: Anthropic ApiKey Valid", "Validation result showing the API key is valid.", "This is the success confirmation for the API-key branch. Record the status, not the secret.", "Private"],
           ["agent-mavis/anthropic-oauth-01-choose-oauth2.png", "AI Model: Anthropic OAuth2 Choose", "Credential sheet with OAuth2 chosen as the credential type.", "This is the browser-login branch selector reached from Mavis > AI Model > Credential Provider pencil.", "Private"],
-          ["agent-mavis/anthropic-oauth-02-connect-anthropic.png", "AI Model: Anthropic OAuth2 Connect", "OAuth2 branch showing the Connect or Reconnect action.", "Click Connect or Reconnect to Anthropic to start the browser authorization handoff only when setup is requested.", "Private"],
-          ["agent-mavis/anthropic-oauth-03-authorize.png", "AI Model: Anthropic OAuth2 Browser Authorize", "Browser authorization page for connecting the Claude account.", "Review account identity and requested access in the browser. This evidence stays private because it can expose account information.", "Private"],
-          ["agent-mavis/anthropic-oauth-04-copy-code.png", "AI Model: Anthropic OAuth2 Copy Code", "Claude Platform authentication-code page with Copy Code action.", "Click Copy Code during setup, but never write the authorization code, callback URL, or token-like values into guide prose, logs, filenames, or alt text.", "Private"],
+          ["agent-mavis/anthropic-oauth-02-connect-anthropic.png", "AI Model: Anthropic OAuth2 Connect", "OAuth2 branch showing the Connect or Reconnect action.", "Click Connect or Reconnect to Anthropic to start the browser authorization flow.", "Private"],
+          ["agent-mavis/anthropic-oauth-03-authorize.png", "AI Model: Anthropic OAuth2 Browser Authorize", "Browser authorization page for connecting the Claude account.", "Review the account identity and requested access in the browser before authorizing.", "Private"],
+          ["agent-mavis/anthropic-oauth-04-copy-code.png", "AI Model: Anthropic OAuth2 Copy Code", "Claude Platform authentication-code page with Copy Code action.", "Click Copy Code during setup, then return to EnConvo. Keep the authorization code and callback URL private.", "Private"],
           ["agent-mavis/anthropic-oauth-05-copied-code.png", "AI Model: Anthropic OAuth2 Code Copied", "Browser page after the authorization code has been copied.", "This confirms the handoff value is on the clipboard. Return to EnConvo immediately and continue in the OAuth Authentication dialog.", "Private"],
           ["agent-mavis/anthropic-oauth-06-complete-login-done.png", "AI Model: Anthropic OAuth2 Complete Login", "EnConvo OAuth flow after login completion.", "Paste the copied code into EnConvo, complete login, and verify the credential returns to a connected Anthropic state.", "Private"],
           ["agent-mavis/tools-01-summary.png", "Tools Summary", "Agent tool boundary summary.", "Use this to see the enabled tool set before opening the manager.", "Tools"],
-          ["agent-mavis/tools-manage-full-scroll.png", "Tools Manager", "Select Tools manager inventory.", "The v3 recapture shows the live manager sheet. A deeper audit can still add separate lower-scroll and row-expanded captures.", "Tools"],
+          ["agent-mavis/tools-manage-full-scroll.png", "Tools Manager", "Select Tools manager inventory.", "Use the manager to review which tools are available to this agent. Enabled tools define what the agent can do during a session.", "Tools"],
           ["agent-mavis/text-to-speech-01-full.png", "Text to Speech", "Agent-level voice override.", "Observed setup: xAI TTS through Enconvo Cloud Plan, Ara voice, Auto Detect language.", "Voice"],
           ["agent-mavis/more-full-scroll.png", "More", "Advanced runtime and behavior settings.", "Includes dynamic context, live screen, tutor mode, run mode, response language, post-action, and memory controls.", "Runtime"]
         ],
@@ -422,7 +422,7 @@
               "Open Mavis from Agent List and select Agent Definition.",
               "Scroll from Instruction to User Message, Working Folder, and attached files.",
               "Expand User Message and each file row such as CHARACTER.md or IDENTITY.md.",
-              "Document Insert variable, Fullscreen, open, and delete controls without exposing private content."
+              "Use Insert variable and Fullscreen when editing prompt templates. Open attached files only when you need to review or edit their content, and use delete controls carefully."
             ],
             badge: "Private"
           },
@@ -434,11 +434,11 @@
               "Open AI Model from the Mavis tab row.",
               "Expand AI Model Provider. The provider menu includes the global provider option plus custom providers such as Enconvo Cloud Plan, OpenAI, Anthropic, Minimax AI, Google Gemini AI, Ollama, Deep Seek, Groq AI, Azure OpenAI, and X.AI-GROK when visible.",
               "Expand Credential Provider. The menu shows the current Anthropic credential plus Create new Credential.",
-              "Expand Model Name and Reasoning Effort. Capture the visible model list and effort options such as None, Medium, and High with their descriptions.",
+              "Expand Model Name and Reasoning Effort to choose the model and reasoning level for this agent.",
               "Click the pencil beside Credential Provider as a sub-setting entrance. It opens the Anthropic credential sheet with Credentials Type, Anthropic API Base URL, connected OAuth identity, and Connect/Reconnect to Anthropic.",
-              "Inside the sheet, expand Credentials Type. Document both ApiKey and OAuth2 branches as children of Mavis AI Model.",
-              "Click the gear beside Credential Provider as a cross-page entrance. It navigates to Credential Management, so capture/log the destination and return to Agents > Agent List > Mavis before continuing.",
-              "Do not validate, reconnect, refresh, move sliders, or change credentials unless explicitly asked."
+              "Inside the sheet, expand Credentials Type to choose either ApiKey or OAuth2.",
+              "Click the gear beside Credential Provider to open Credential Management when you need to manage provider credentials outside the agent tab.",
+              "Use Validate, Reconnect, refresh controls, sliders, and credential changes only when you intend to update the agent setup."
             ],
             evidence: [
               "agent-mavis/ai-model-credential-oauth-type-dropdown.png",
@@ -455,7 +455,7 @@
               "Pencil result: an Anthropic credential sheet opens in place, with Credentials Type, provider base URL, account connection state, and setup actions.",
               "Credential Type result: the dropdown has a searchable branch selector for OAuth2 and ApiKey.",
               "Gear path: Agents > Agent List > Mavis > AI Model > Credential Provider gear.",
-              "Gear result: EnConvo navigates to Credential Management. The destination may focus another provider entry, so the guide must document the actual landing pane and then return to Mavis AI Model."
+              "Gear result: EnConvo navigates to Credential Management. Use this when you need the full credential list or provider-level account settings, then return to Mavis AI Model when finished."
             ],
             evidence: [
               "agent-mavis/ai-model-credential-oauth-type-dropdown.png",
@@ -470,8 +470,8 @@
             steps: [
               "Open AI Model > Credential Provider pencil.",
               "Open Credentials Type and choose ApiKey.",
-              "Document masked API key field and base URL without storing the key.",
-              "If validation is requested, capture before click, validation in progress if visible, and final result."
+              "Enter the API key in the masked field and confirm the base URL.",
+              "Click Validate to test the credential and confirm the result."
             ],
             evidence: [
               "agent-mavis/anthropic-apikey-01-choose-apikey.png",
@@ -487,9 +487,9 @@
             summary: "The OAuth2 branch crosses from EnConvo to the browser and back through an authorization-code dialog.",
             steps: [
               "Choose OAuth2 in the Anthropic credential sheet.",
-              "Capture Connect/Reconnect to Anthropic before opening the browser.",
-              "Capture the browser authorization page and copy-code state without revealing tokens.",
-              "Return to EnConvo, paste the code into OAuth Authentication, complete login, and capture Connected/Reconnect state."
+              "Click Connect or Reconnect to Anthropic to open the browser authorization page.",
+              "Authorize the account in the browser and copy the authentication code.",
+              "Return to EnConvo, paste the code into OAuth Authentication, complete login, and confirm the Connected or Reconnect state."
             ],
             evidence: [
               "agent-mavis/anthropic-oauth-01-choose-oauth2.png",
@@ -502,16 +502,15 @@
             badge: "Private"
           },
           {
-            title: "Anthropic Screenshot Evidence Checklist",
+            title: "Anthropic Setup Checklist",
             proof: "agent-mavis/ai-model-credential-apikey-setup.png",
-            summary: "This is the proof standard for the Anthropic setup flow under Mavis AI Model. Both ApiKey and OAuth2 must be backed by step screenshots, while secrets stay out of prose and filenames.",
+            summary: "Use this checklist when setting up Anthropic credentials under Mavis AI Model. It covers both ApiKey and OAuth2 setup paths.",
             steps: [
               "Access path A: global Settings > AI Model > Anthropic provider credential setup.",
               "Access path B: Settings > Agents > Agent List > Mavis > AI Model > Credential Provider pencil.",
-              "Required ApiKey evidence: credential sheet opened, Credentials Type dropdown open, ApiKey branch selected, masked key entered, Validate clicked, and API key valid result.",
-              "Required OAuth2 evidence: OAuth2 branch selected, Connect/Reconnect to Anthropic, browser authorization page, Claude Platform Copy Code page, copied state, EnConvo OAuth Authentication dialog, Complete Login, and final connected sheet.",
-              "Current v3 proof chain includes the credential-type dropdown, ApiKey setup screenshot, four ApiKey branch screenshots, and six OAuth2 screenshots.",
-              "Do not store raw API keys, OAuth authorization codes, callback URLs with codes, or tokens in screenshots captions, guide prose, logs, filenames, or alt text."
+              "ApiKey path: open the credential sheet, choose ApiKey, enter the masked key, confirm the base URL, click Validate, and confirm the API key valid result.",
+              "OAuth2 path: choose OAuth2, click Connect or Reconnect to Anthropic, authorize in the browser, copy the code, paste it into EnConvo, complete login, and confirm the connected state.",
+              "Keep raw API keys, OAuth authorization codes, callback URLs, and tokens private."
             ],
             evidence: [
               "agent-mavis/ai-model-credential-oauth-type-dropdown.png",
@@ -530,15 +529,15 @@
             badge: "Private"
           },
           {
-            title: "Anthropic API Key Screenshot Walkthrough",
+            title: "Anthropic API Key Setup Walkthrough",
             proof: "agent-mavis/anthropic-apikey-01-choose-apikey.png",
-            summary: "This is the screenshot-backed ApiKey branch from the Mavis AI Model entry path.",
+            summary: "This walkthrough shows the ApiKey branch from the Mavis AI Model entry path.",
             steps: [
               "Choose ApiKey in the Anthropic credential sheet.",
-              "Enter or confirm the Anthropic API key in the secure field. The field should stay masked in screenshots.",
-              "Keep the Anthropic API Base URL set to https://api.anthropic.com unless the user intentionally uses a compatible proxy.",
+              "Enter or confirm the Anthropic API key in the secure field. Keep the value masked.",
+              "Keep the Anthropic API Base URL set to https://api.anthropic.com for the standard Anthropic endpoint. Advanced setups can use a compatible proxy URL.",
               "Click Validate only as part of an explicit setup or verification request.",
-              "Confirm the validation result shows API key is valid, and record only the status."
+              "Confirm the validation result shows API key is valid."
             ],
             evidence: [
               "agent-mavis/anthropic-apikey-01-choose-apikey.png",
@@ -549,9 +548,9 @@
             badge: "Private"
           },
           {
-            title: "Anthropic OAuth2 Screenshot Walkthrough",
+            title: "Anthropic OAuth2 Setup Walkthrough",
             proof: "agent-mavis/anthropic-oauth-01-choose-oauth2.png",
-            summary: "This is the screenshot-backed OAuth2 branch from the Mavis AI Model entry path.",
+            summary: "This walkthrough shows the OAuth2 branch from the Mavis AI Model entry path.",
             steps: [
               "Choose OAuth2 in the Anthropic credential sheet.",
               "Click Connect or Reconnect to Anthropic from the OAuth2 branch.",
@@ -576,9 +575,10 @@
             summary: "Tools > Manage is a nested manager. Scrolling shows inventory; chevrons reveal row-level settings.",
             steps: [
               "Open Tools, then click Manage.",
-              "Capture top, middle, lower, and bottom scroll segments.",
-              "For an exhaustive guide, expand every row chevron and document each row's revealed controls.",
-              "Avoid toggling tools unless the user explicitly asks for configuration changes."
+              "Review enabled tools at the top of the manager.",
+              "Scroll through the tool groups to see optional app, AI, media, knowledge, and writing capabilities.",
+              "Expand row chevrons when you need row-level settings.",
+              "Toggle tools only when you want to change what this agent can use."
             ],
             evidence: [
               "agent-mavis/tools-manage-01-top.png",
@@ -591,12 +591,12 @@
           {
             title: "More Runtime Settings",
             proof: "agent-mavis/more-full-scroll.png",
-            summary: "More is a long runtime-control tab. It must be scrolled and its dropdowns audited.",
+            summary: "More is a long runtime-control tab. Scroll through it to review all dropdowns, switches, and runtime options.",
             steps: [
-              "Open More and capture the top viewport.",
-              "Scroll deliberately through lower and bottom segments.",
+              "Open More and review the top runtime settings.",
+              "Scroll through lower and bottom runtime sections.",
               "Open Dynamic Context, Live Screen, Tutor Mode, Run Mode, Response Language, and Post Action dropdowns.",
-              "Document switches and sliders without changing them."
+              "Adjust switches and sliders only when you want to change the agent's runtime behavior."
             ],
             evidence: [
               "agent-mavis/more-01-top.png",
@@ -740,7 +740,7 @@
             <h4>${item.title}</h4>
             <p>${item.summary}</p>
             <ul class="mini-list">${item.steps.map(step => `<li>${step}</li>`).join("")}</ul>
-            ${evidence ? `<h4>Step Evidence</h4><ul class="mini-list">${evidence}</ul>` : ""}
+            ${evidence ? `<h4>Related Screenshots</h4><ul class="mini-list">${evidence}</ul>` : ""}
           </div>
         </section>`;
       }).join("");
@@ -782,7 +782,7 @@
               <h3>${item.title}</h3>
               <p>${item.summary}</p>
               <ul class="mini-list">${item.steps.map(step => `<li>${step}</li>`).join("")}</ul>
-              ${evidence ? `<h4>Step Evidence</h4><ul class="mini-list">${evidence}</ul>` : ""}
+              ${evidence ? `<h4>Related Screenshots</h4><ul class="mini-list">${evidence}</ul>` : ""}
             </div>
           </section>`;
         }).join("");
