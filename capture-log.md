@@ -170,6 +170,7 @@ Added after the user requested an expanded configuration section for `Global Pro
 - No API key was entered, no credential was validated, no OAuth login was started, no Reconnect action was triggered, and no Set as Default Provider action was clicked.
 - OpenAI account details visible in credential sheets were redacted before the public screenshots were saved.
 - Reorganized the AI Model navigation to remove the extra `AI Model Configuration` layer. The direct AI Model children now follow the same structure style as Text-to-Speech: `Provider Inventory`, `EnConvo Cloud Plan`, then `OpenAI`.
+- Removed redundant standalone `OpenAI Overview` and `OpenAI Credential Menu` leaves from the AI Model OpenAI subsection. The OpenAI subsection now moves from setup into `OpenAI Credential Type Menu`, `OpenAI ApiKey Setup`, `OpenAI API Type Menu`, and `OpenAI OAuth2 Credential Sheet`.
 
 ## Global AI Model Inventory Pass
 
