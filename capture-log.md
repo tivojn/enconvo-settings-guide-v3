@@ -295,3 +295,24 @@ Added after the user requested the AI Model guide to read less like screenshot n
 - Simplified the EnConvo Cloud Plan section to the setup screenshot, the GPT-5.4 mini example, and the Cloud Plan model list.
 - Removed `Observed` wording from public inventory headings and removed `masked API key` phrasing from the public guide copy.
 - No API key was entered, no credential was validated, no OAuth reconnect/connect action was triggered, and no default provider was changed.
+
+## Remaining Global Provider Sections
+
+Added after the user requested the remaining global provider panes to follow the AI Model and Text-to-Speech guide pattern.
+
+- Captured `global-web-search/web-search-01-xai-default.png` for the current Web Search default, xAI X Search.
+- Captured `global-web-search/web-search-02-xai-model-menu.png` for the xAI X Search model menu.
+- Captured `global-image-generation/image-generation-01-openai-default.png` for the current Image Generation default, OpenAI.
+- Captured `global-image-generation/image-generation-02-openai-model-menu.png` for the OpenAI image model menu.
+- Captured `global-image-generation/image-generation-03-cloud-models.png` for EnConvo Cloud image models.
+- Captured `global-video-generation/video-generation-01-xai-default.png` for the current Video Generation default, xAI.
+- Captured `global-video-generation/video-generation-02-xai-model-menu.png` for the xAI video model menu.
+- Captured `global-video-generation/video-generation-03-aspect-ratio-menu.png` for the video aspect ratio menu.
+- Captured `global-video-generation/video-generation-04-resolution-menu.png` for the video resolution menu.
+- Captured `global-web-fetch/web-fetch-01-local-default.png` for the current Web Fetch default, Local Fetch.
+- Captured `global-ocr/ocr-01-ai-model-default.png` for the current OCR default, AI Model OCR.
+- Captured `global-ocr/ocr-02-ai-model-provider-menu.png` for the OCR AI Model Provider menu.
+- Captured `global-ocr/ocr-03-model-menu.png` for the OCR model menu.
+- Captured `global-ocr/ocr-04-reasoning-menu.png` for the OCR reasoning effort menu.
+- Added full guide sections for Web Search, Image Generation, Video Generation, Web Fetch, and OCR under Global Providers Settings.
+- No provider was changed, no credential was edited or validated, no OAuth flow was started, no generation/fetch/OCR run was triggered, and no default provider was changed.

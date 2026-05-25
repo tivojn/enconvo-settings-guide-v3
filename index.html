@@ -998,6 +998,255 @@
         ]
       },
       {
+        id: "global-web-search",
+        title: "Web Search",
+        parent: "global-providers",
+        parentPage: "Web Search",
+        intro: "Use this section to choose the app-wide search provider that agents inherit when they need web or social-search context.",
+        pages: [
+          ["global-web-search/web-search-01-xai-default.png", "xAI X Search Default", "Current Web Search default using xAI X Search.", "Use xAI X Search when search should use xAI's built-in X search tool. Confirm the credential provider and model, then keep Current Default Provider unchanged unless you intentionally switch to a different search provider.", "Provider"],
+          ["global-web-search/web-search-02-xai-model-menu.png", "xAI X Search Model Menu", "Choose the model used by the Web Search provider.", "Use the Model Name menu to choose the model that should run search-backed responses. The current default example uses Grok 4.3 for xAI X Search.", "Provider"]
+        ],
+        deepDive: [
+          {
+            title: "Provider Inventory",
+            proof: "global-web-search/web-search-01-xai-default.png",
+            summary: "The Web Search provider column controls which search backend EnConvo uses globally. Direct providers usually require a credential; Cloud Plan providers use EnConvo-managed access.",
+            steps: [
+              "Open Settings > Global Providers Settings > Web Search.",
+              "Choose the search provider from the middle provider column.",
+              "For direct providers, confirm the Credential Provider before choosing a model or setting the provider as default.",
+              "Use Cloud Plan entries when you want EnConvo-managed access through your subscription.",
+              "Use Set as Default Provider only after the provider and credential are ready."
+            ],
+            inventoryTitle: "Web Search Providers",
+            inventory: ["Gemini", "Tavily", "Bing", "Google Custom", "Exa", "Brave", "Tavily (Enconvo Cloud)", "xAI X Search (Enconvo Cloud)", "xAI X Search"],
+            badge: "Provider"
+          },
+          {
+            title: "xAI X Search Configuration",
+            proof: "global-web-search/web-search-01-xai-default.png",
+            summary: "xAI X Search is the current default Web Search provider in this guide. It searches X posts, profiles, and threads through xAI's search tool.",
+            steps: [
+              "Choose xAI X Search from Web Search Provider.",
+              "Confirm Credential Provider is X.AI-GROK.",
+              "Open Model Name and choose Grok 4.3 for this provider.",
+              "Use Current Default Provider as the confirmation that this provider is already the app-wide Web Search default."
+            ],
+            evidence: ["global-web-search/web-search-01-xai-default.png", "global-web-search/web-search-02-xai-model-menu.png"],
+            inventoryTitle: "xAI X Search Controls",
+            inventory: ["Credential Provider: X.AI-GROK", "Model Name: Grok 4.3", "Default state: Current Default Provider"],
+            badge: "Private"
+          }
+        ]
+      },
+      {
+        id: "global-image-generation",
+        title: "Image Generation",
+        parent: "global-providers",
+        parentPage: "Image Generation",
+        intro: "Use this section to choose the app-wide image generation provider and model for text-to-image and image editing workflows.",
+        pages: [
+          ["global-image-generation/image-generation-01-openai-default.png", "OpenAI Image Generation Default", "Current custom-provider default using OpenAI.", "Use the Custom Providers tab when you want a provider credential you manage. Confirm the OpenAI credential provider, choose the image model, then keep Current Default Provider unchanged unless you intentionally change the global image default.", "Media"],
+          ["global-image-generation/image-generation-02-openai-model-menu.png", "OpenAI Image Model Menu", "Choose the OpenAI image generation model.", "Use GPT Image 2 for the default image model shown here. Other visible choices include GPT Image 1.5, GPT Image 1, and GPT Image 1 Mini, each with different quality, capability, and cost tradeoffs.", "Media"],
+          ["global-image-generation/image-generation-03-cloud-models.png", "EnConvo Cloud Image Model List", "Managed Cloud Plan image models.", "Use the Enconvo Cloud tab when you want EnConvo-managed image model access. Choose Settings on a model only when you want to inspect or configure that model before making it the default route.", "Media"]
+        ],
+        deepDive: [
+          {
+            title: "Provider Inventory",
+            proof: "global-image-generation/image-generation-01-openai-default.png",
+            summary: "Image Generation separates managed EnConvo Cloud models from custom providers. Custom providers use a provider credential; Cloud models use EnConvo-managed access.",
+            steps: [
+              "Open Settings > Global Providers Settings > Image Generation.",
+              "Use Enconvo Cloud for subscription-backed image models.",
+              "Use Custom Providers for Google Gemini, Fal.ai, OpenAI, Azure AI, Together, Straico, xAI, and Cloud-backed custom entries.",
+              "Configure credentials before relying on a custom provider.",
+              "Use Current Default Provider or Set as Default Provider to confirm which image provider is app-wide."
+            ],
+            inventoryTitle: "Image Generation Providers",
+            inventory: ["Google Gemini", "Fal.ai", "OpenAI", "Azure AI", "Together", "Straico", "xAI", "OpenAI (Enconvo Cloud)", "Google Gemini (Enconvo Cloud)"],
+            badge: "Media"
+          },
+          {
+            title: "EnConvo Cloud Image Models",
+            proof: "global-image-generation/image-generation-03-cloud-models.png",
+            summary: "The Enconvo Cloud tab lists managed image models that can generate or edit images without maintaining separate provider credentials.",
+            steps: [
+              "Open the Enconvo Cloud tab.",
+              "Choose GPT Image 2 when you want OpenAI Cloud access for high-capability image generation.",
+              "Choose Nano Banana Pro or Nano Banana 2 when you want Google Gemini Cloud image models.",
+              "Use Settings only when you intentionally want to inspect model-level options.",
+              "Return to Custom Providers when you need a credential-backed provider instead."
+            ],
+            inventoryTitle: "Cloud Image Models",
+            inventory: [
+              "GPT Image 2: OpenAI (Enconvo Cloud), Text to Image, Image Edit",
+              "Nano Banana Pro: Google Gemini (Enconvo Cloud), Text to Image, Image Edit",
+              "Nano Banana 2: Google Gemini (Enconvo Cloud), Text to Image, Image Edit"
+            ],
+            badge: "Media"
+          },
+          {
+            title: "OpenAI Image Generation Configuration",
+            proof: "global-image-generation/image-generation-01-openai-default.png",
+            summary: "OpenAI is the current custom-provider default for Image Generation. Configure the credential provider first, then choose the model that should be inherited globally.",
+            steps: [
+              "Open the Custom Providers tab.",
+              "Choose OpenAI from the provider column.",
+              "Confirm Credential Provider is OpenAI.",
+              "Open Model Name and choose GPT Image 2 or another visible OpenAI image model.",
+              "Use Current Default Provider as confirmation that OpenAI is already the global image default."
+            ],
+            evidence: ["global-image-generation/image-generation-01-openai-default.png", "global-image-generation/image-generation-02-openai-model-menu.png"],
+            inventoryTitle: "OpenAI Image Controls",
+            inventory: ["Credential Provider: OpenAI", "Model Name: GPT Image 2", "Visible model choices: GPT Image 2, GPT Image 1.5, GPT Image 1, GPT Image 1 Mini", "Default state: Current Default Provider"],
+            badge: "Private"
+          }
+        ]
+      },
+      {
+        id: "global-video-generation",
+        title: "Video Generation",
+        parent: "global-providers",
+        parentPage: "Video Generation",
+        intro: "Use this section to choose the app-wide video generation provider, model, duration, aspect ratio, and resolution.",
+        pages: [
+          ["global-video-generation/video-generation-01-xai-default.png", "xAI Video Generation Default", "Current Video Generation default using xAI.", "Use this provider when generated video should use xAI Grok Imagine Video. Confirm the credential provider, model, duration, aspect ratio, and resolution before relying on it as the global video default.", "Media"],
+          ["global-video-generation/video-generation-02-xai-model-menu.png", "xAI Video Model Menu", "Choose the xAI video generation model.", "Use Grok Imagine Video for the current xAI video provider. Open this menu when you need to verify or change the model before setting the provider as default.", "Media"],
+          ["global-video-generation/video-generation-03-aspect-ratio-menu.png", "Video Aspect Ratio Menu", "Choose the output framing for generated videos.", "Use Landscape (16:9) for wide video. Other visible options include Square, Portrait, and alternate landscape or portrait ratios for different publishing surfaces.", "Media"],
+          ["global-video-generation/video-generation-04-resolution-menu.png", "Video Resolution Menu", "Choose the output resolution.", "Use 720p for the current default example. Choose 480p when you need a lighter output or faster/lower-cost generation.", "Media"]
+        ],
+        deepDive: [
+          {
+            title: "Provider Inventory",
+            proof: "global-video-generation/video-generation-01-xai-default.png",
+            summary: "Video Generation providers define the global backend and output defaults used by video-generation commands.",
+            steps: [
+              "Open Settings > Global Providers Settings > Video Generation.",
+              "Choose the provider from the provider column.",
+              "For direct providers, confirm Credential Provider before choosing the video model.",
+              "Set Duration, Aspect Ratio, and Resolution to match the output format you expect most often.",
+              "Use Set as Default Provider only after the provider and output defaults are ready."
+            ],
+            inventoryTitle: "Video Generation Providers",
+            inventory: ["Enconvo Cloud Plan", "OpenAI", "Fal.ai", "xAI (Enconvo Cloud)", "xAI"],
+            badge: "Media"
+          },
+          {
+            title: "xAI Video Generation Configuration",
+            proof: "global-video-generation/video-generation-01-xai-default.png",
+            summary: "xAI is the current Video Generation default in this guide. It uses Grok Imagine Video with a 10-second, landscape, 720p output setup.",
+            steps: [
+              "Choose xAI from Video Generation Provider.",
+              "Confirm Credential Provider is X.AI-GROK.",
+              "Open Model Name and choose Grok Imagine Video.",
+              "Set Duration to the expected default clip length.",
+              "Open Aspect Ratio and choose the framing that matches the target surface.",
+              "Open Resolution and choose the output quality.",
+              "Use Current Default Provider as confirmation that xAI is already the app-wide video default."
+            ],
+            evidence: [
+              "global-video-generation/video-generation-01-xai-default.png",
+              "global-video-generation/video-generation-02-xai-model-menu.png",
+              "global-video-generation/video-generation-03-aspect-ratio-menu.png",
+              "global-video-generation/video-generation-04-resolution-menu.png"
+            ],
+            inventoryTitle: "xAI Video Controls",
+            inventory: ["Credential Provider: X.AI-GROK", "Model Name: Grok Imagine Video", "Duration: 10", "Aspect Ratio: Landscape (16:9)", "Resolution: 720p", "Additional resolution choice: 480p"],
+            badge: "Private"
+          }
+        ]
+      },
+      {
+        id: "global-web-fetch",
+        title: "Web Fetch",
+        parent: "global-providers",
+        parentPage: "Web Fetch",
+        intro: "Use this section to choose how EnConvo fetches and extracts web page content when an agent or command reads a URL.",
+        pages: [
+          ["global-web-fetch/web-fetch-01-local-default.png", "Local Fetch Default", "Current Web Fetch default using Local Fetch.", "Use Local Fetch when EnConvo should scrape webpages locally without a third-party credential. Adjust Max Length, Start Index, and Raw HTML only when you need a different extraction shape.", "Provider"]
+        ],
+        deepDive: [
+          {
+            title: "Provider Inventory",
+            proof: "global-web-fetch/web-fetch-01-local-default.png",
+            summary: "Web Fetch providers decide how URL content is retrieved before it is summarized, analyzed, or passed into an agent.",
+            steps: [
+              "Open Settings > Global Providers Settings > Web Fetch.",
+              "Choose Local Fetch when local webpage extraction is enough.",
+              "Choose Jina AI Link Reader or Firecrawl Link Reader when you want an external extraction provider.",
+              "Choose Enconvo Cloud Plan when you want managed Cloud Plan fetching.",
+              "Use Set as Default Provider only after the extraction behavior matches your normal workflow."
+            ],
+            inventoryTitle: "Web Fetch Providers",
+            inventory: ["Local Fetch (locally, free)", "Jina AI Link Reader", "Firecrawl Link Reader", "Enconvo Cloud Plan"],
+            badge: "Provider"
+          },
+          {
+            title: "Local Fetch Configuration",
+            proof: "global-web-fetch/web-fetch-01-local-default.png",
+            summary: "Local Fetch is the current Web Fetch default. It is the simplest option because it runs locally and does not require a provider credential.",
+            steps: [
+              "Choose Local Fetch from Web Fetch Provider.",
+              "Set Max Length to control the maximum extracted content length.",
+              "Set Start Index when you need extraction to begin later in the page text.",
+              "Turn Raw HTML on only when the downstream workflow needs HTML instead of extracted readable text.",
+              "Use Current Default Provider as confirmation that Local Fetch is already the app-wide Web Fetch default."
+            ],
+            inventoryTitle: "Local Fetch Controls",
+            inventory: ["Max Length: 20000", "Start Index: 0", "Raw HTML: off", "Default state: Current Default Provider"],
+            badge: "Provider"
+          }
+        ]
+      },
+      {
+        id: "global-ocr",
+        title: "OCR",
+        parent: "global-providers",
+        parentPage: "OCR",
+        intro: "Use this section to choose the app-wide OCR provider for extracting text from screenshots, images, and documents.",
+        pages: [
+          ["global-ocr/ocr-01-ai-model-default.png", "AI Model OCR Default", "Current OCR default using an AI Model OCR provider.", "Use AI Model OCR when OCR should use an AI model instead of a local/native recognizer. Confirm the AI model provider, model name, reasoning effort, and temperature before relying on it globally.", "Provider"],
+          ["global-ocr/ocr-02-ai-model-provider-menu.png", "OCR AI Model Provider Menu", "Choose which AI Model provider OCR should use.", "Use the AI Model Provider menu to inherit EnConvo Cloud Plan or choose another configured provider. The current example uses EnConvo Cloud Plan.", "Provider"],
+          ["global-ocr/ocr-03-model-menu.png", "OCR Model Menu", "Choose the model used for AI Model OCR.", "Use Gemini 3.1 Flash Lite for the current OCR example. Choose a stronger model only when OCR quality needs more reasoning or vision capability.", "Provider"],
+          ["global-ocr/ocr-04-reasoning-menu.png", "OCR Reasoning Effort Menu", "Choose how much reasoning the OCR model should use.", "Use Minimal for fast OCR extraction. Increase to Low, Medium, or High only when the OCR task needs more interpretation or difficult layout handling.", "Provider"]
+        ],
+        deepDive: [
+          {
+            title: "Provider Inventory",
+            proof: "global-ocr/ocr-01-ai-model-default.png",
+            summary: "OCR providers control the default engine used when EnConvo extracts text from images or documents. AI Model OCR uses model-backed extraction; Apple Native OCR uses the local system recognizer; Mistral OCR can run through Cloud Plan or direct provider configuration.",
+            steps: [
+              "Open Settings > Global Providers Settings > OCR.",
+              "Choose AI Model OCR when you want model-backed extraction.",
+              "Choose Apple Native OCR when you want local system OCR.",
+              "Choose Mistral OCR through Cloud Plan or direct provider setup when you want a dedicated OCR model.",
+              "Use Set as Default Provider only after the OCR provider and model settings match your normal extraction needs."
+            ],
+            inventoryTitle: "OCR Providers",
+            inventory: ["AI Model OCR", "Apple Native OCR", "Mistral OCR (Enconvo Cloud Plan)", "Mistral OCR"],
+            badge: "Provider"
+          },
+          {
+            title: "AI Model OCR Configuration",
+            proof: "global-ocr/ocr-01-ai-model-default.png",
+            summary: "AI Model OCR is the current OCR default. It uses EnConvo Cloud Plan with Gemini 3.1 Flash Lite, Minimal reasoning, and temperature 0.",
+            steps: [
+              "Choose AI Model OCR from OCR Provider.",
+              "Open AI Model Provider and choose EnConvo Cloud Plan or another configured provider.",
+              "Open Model Name and choose the model that should handle OCR extraction.",
+              "Open Reasoning Effort and choose Minimal for fast OCR, or a higher level for harder visual layouts.",
+              "Keep Temperature at 0 when OCR should be deterministic.",
+              "Use Current Default Provider as confirmation that AI Model OCR is already the app-wide OCR default."
+            ],
+            evidence: ["global-ocr/ocr-01-ai-model-default.png", "global-ocr/ocr-02-ai-model-provider-menu.png", "global-ocr/ocr-03-model-menu.png", "global-ocr/ocr-04-reasoning-menu.png"],
+            inventoryTitle: "AI Model OCR Controls",
+            inventory: ["AI Model Provider: EnConvo Cloud Plan", "Model Name: Gemini 3.1 Flash Lite", "Reasoning Effort: Minimal", "Temperature: 0", "Default state: Current Default Provider"],
+            badge: "Provider"
+          }
+        ]
+      },
+      {
         id: "agents",
         title: "Agents",
         intro: "Agents are the assistants and workflows users actually run. These settings control their definitions, triggers, tools, memory, channels, and automation surfaces.",
@@ -1411,6 +1660,27 @@
         { title: "Kokoro MLX TTS", pagePrefixes: ["Kokoro MLX TTS"], deepTitles: ["Kokoro MLX TTS Configuration"], deepFirst: true },
         { title: "Qwen3 MLX TTS", pagePrefixes: ["Qwen3 MLX TTS"], deepTitles: ["Qwen3 MLX TTS Configuration"], deepFirst: true }
       ],
+      "global-web-search": [
+        { title: "Provider Inventory", deepTitles: ["Provider Inventory"], deepFirst: true },
+        { title: "xAI X Search", pagePrefixes: ["xAI X Search"], deepTitles: ["xAI X Search Configuration"], deepFirst: true }
+      ],
+      "global-image-generation": [
+        { title: "Provider Inventory", deepTitles: ["Provider Inventory"], deepFirst: true },
+        { title: "EnConvo Cloud Image Models", pagePrefixes: ["EnConvo Cloud Image"], deepTitles: ["EnConvo Cloud Image Models"], deepFirst: true },
+        { title: "OpenAI Image Generation", pagePrefixes: ["OpenAI Image"], deepTitles: ["OpenAI Image Generation Configuration"], deepFirst: true }
+      ],
+      "global-video-generation": [
+        { title: "Provider Inventory", deepTitles: ["Provider Inventory"], deepFirst: true },
+        { title: "xAI Video Generation", pagePrefixes: ["xAI Video", "Video Aspect Ratio", "Video Resolution"], deepTitles: ["xAI Video Generation Configuration"], deepFirst: true }
+      ],
+      "global-web-fetch": [
+        { title: "Provider Inventory", deepTitles: ["Provider Inventory"], deepFirst: true },
+        { title: "Local Fetch", pagePrefixes: ["Local Fetch"], deepTitles: ["Local Fetch Configuration"], deepFirst: true }
+      ],
+      "global-ocr": [
+        { title: "Provider Inventory", deepTitles: ["Provider Inventory"], deepFirst: true },
+        { title: "AI Model OCR", pagePrefixes: ["AI Model OCR", "OCR AI Model Provider", "OCR Model", "OCR Reasoning"], deepTitles: ["AI Model OCR Configuration"], deepFirst: true }
+      ],
       "agent-mavis": [
         { title: "Change Agent Portrait", pagePrefixes: ["Change Agent Portrait"] },
         { title: "Agent Definition", pagePrefixes: ["Agent Definition"], deepTitles: ["Agent Definition Leaves"] },
@@ -1420,6 +1690,16 @@
         { title: "More", pagePrefixes: ["More"], deepTitles: ["More Runtime Settings"] }
       ]
     };
+
+    const flatChildSectionIds = new Set([
+      "global-ai-model",
+      "global-text-to-speech",
+      "global-web-search",
+      "global-image-generation",
+      "global-video-generation",
+      "global-web-fetch",
+      "global-ocr"
+    ]);
 
     function pageLink(section, page, className = "") {
       const label = page[1];
@@ -1480,7 +1760,7 @@
         ? `<details class="branch" data-depth="${depth + 1}"${navOpen(depth + 1)}><summary><span>Other</span></summary><div class="tree">${ungroupedPages}${ungroupedDeep}</div></details>`
         : "";
 
-      if (child.id === "global-ai-model" || child.id === "global-text-to-speech") return `${grouped}${overflow}`;
+      if (flatChildSectionIds.has(child.id)) return `${grouped}${overflow}`;
       return `<details class="branch" data-depth="${depth}"${navOpen(depth)}><summary><a href="#${child.id}">${child.title}</a></summary><div class="tree">${grouped}${overflow}</div></details>`;
     }
 
@@ -1570,7 +1850,7 @@
     }
 
     function renderChildSection(section) {
-      if (section.id === "global-ai-model" || section.id === "global-text-to-speech") {
+      if (flatChildSectionIds.has(section.id)) {
         return `<section id="${section.id}">
           <h3>${section.title}</h3>
           <p>${section.intro}</p>
