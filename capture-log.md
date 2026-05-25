@@ -357,3 +357,14 @@ Added after the user requested the same full OAuth2 setup coverage for Global Pr
 - Copied `agent-mavis/anthropic-oauth-05-copied-code.png` to `global-ai-model/anthropic-oauth-cycle-05-code-copied.png`.
 - Copied `agent-mavis/anthropic-oauth-06-complete-login-done.png` to `global-ai-model/anthropic-oauth-cycle-06-complete-login.png`.
 - No live Anthropic OAuth2 authorization was rerun in this pass, and no authorization code, callback URL, token, or raw credential was added to guide prose.
+
+## Personal Identity Screenshot Redaction
+
+Added after the user asked to keep API keys/tokens as-is for now but hide visible personal names and email addresses in screenshots before publishing.
+
+- Created an unredacted backup outside the public repo at `/Users/zanearcher/Documents/Codex/2026-05-25/use-ai-tutor-skill-to-help/enconvo-settings-guide-v3-private-backup/personal-info-redaction-20260525-201812/`.
+- Applied mosaic redaction boxes over visible personal name/email areas while keeping the original screenshot filenames unchanged so the guide image references remain valid.
+- Redacted OpenAI identity surfaces in `global-ai-model/openai-03-oauth-sheet.png`, `global-ai-model/openai-oauth-cycle-02-connecting.png`, `global-ai-model/openai-oauth-cycle-03-browser-account.png`, `global-ai-model/openai-oauth-cycle-04-browser-consent.png`, `global-ai-model/openai-oauth-cycle-06-enconvo-connected.png`, and `global-image-generation/image-generation-06-openai-credential-oauth-sheet.png`.
+- Redacted xAI identity surfaces in `global-web-search/web-search-05-xai-credential-oauth-sheet.png` and `global-video-generation/video-generation-07-xai-credential-oauth-sheet.png`.
+- Redacted Anthropic identity surfaces in `global-ai-model/anthropic-oauth-cycle-01-choose-oauth2.png`, `global-ai-model/anthropic-oauth-cycle-02-connect-anthropic.png`, `global-ai-model/anthropic-oauth-cycle-05-code-copied.png`, `global-ai-model/anthropic-oauth-cycle-06-complete-login.png`, `agent-mavis/anthropic-oauth-01-choose-oauth2.png`, `agent-mavis/anthropic-oauth-02-connect-anthropic.png`, `agent-mavis/anthropic-oauth-05-copied-code.png`, and `agent-mavis/anthropic-oauth-06-complete-login-done.png`.
+- Redacted account identity text in `41-account.png`. `40-my-profile.png` was reviewed and left unchanged because no personal name or email address was visible.
