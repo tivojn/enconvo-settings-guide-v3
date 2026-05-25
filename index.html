@@ -264,19 +264,6 @@
     }
     .mini-list { margin: 8px 0 0; padding-left: 18px; }
     .mini-list li { margin: 5px 0; }
-    .related-shot {
-      display: inline-flex;
-      align-items: center;
-      min-height: 28px;
-      padding: 3px 9px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      color: #334155;
-      background: #fff;
-      font: inherit;
-      cursor: zoom-in;
-    }
-    .related-shot:hover { background: var(--primary-soft); }
     .inventory {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
@@ -584,8 +571,6 @@
           ["global-text-to-speech/tts-10-gemini-model-menu.png", "Gemini TTS Model Menu", "Model Name menu opened for Gemini TTS.", "Use Model Name to select the Gemini TTS model that should generate speech for the global provider default.", "Voice"],
           ["global-text-to-speech/tts-11-gemini-voice-menu.png", "Gemini TTS Voice Menu", "Voice menu opened for Gemini TTS.", "Use Voice to pick the Gemini speaking style. The visible list includes names with short style descriptions, which helps match the voice to the assistant's tone.", "Voice"],
           ["global-text-to-speech/tts-19-gemini-credential-apikey-setup.png", "Gemini TTS ApiKey Setup", "Gemini credential setup opened from the pencil icon with ApiKey selected.", "Use ApiKey when you want to provide a masked Gemini API key and base URL directly. Validate only when you are ready to test the credential.", "Private"],
-          ["global-text-to-speech/tts-20-gemini-credential-type-menu.png", "Gemini TTS Credential Type Menu", "Credentials Type menu opened inside the Gemini credential setup sheet.", "This menu shows that Gemini TTS can use ApiKey or OAuth2 authentication from the credential editor.", "Private"],
-          ["global-text-to-speech/tts-21-gemini-credential-oauth-sheet.png", "Gemini TTS OAuth2 Credential Sheet", "Gemini credential setup with OAuth2 selected.", "Use OAuth2 when you want browser-based Gemini authorization. Account identifiers are redacted here; do not connect unless you intend to start authorization.", "Private"],
           ["global-text-to-speech/tts-13-xai-credential-oauth-sheet.png", "xAI TTS OAuth2 Credential Sheet", "xAI credential setup opened from the pencil icon with OAuth2 selected.", "Use OAuth2 when you want browser-based account authorization. The connected account area is redacted here; do not reconnect unless you intend to refresh the authorization.", "Private"],
           ["global-text-to-speech/tts-14-xai-credential-type-menu.png", "xAI TTS Credential Type Menu", "Credentials Type menu opened inside the xAI credential setup sheet.", "This menu confirms that xAI TTS supports both ApiKey and OAuth2 authentication branches.", "Private"],
           ["global-text-to-speech/tts-15-xai-credential-apikey-setup.png", "xAI TTS ApiKey Setup", "xAI credential setup with ApiKey selected.", "Use ApiKey when you want to provide a masked xAI key directly. Validate only after confirming the key is correct and you are ready to test the credential.", "Private"]
@@ -717,12 +702,12 @@
           {
             title: "Gemini TTS Configuration",
             proof: "global-text-to-speech/tts-09-gemini-overview.png",
-            summary: "Gemini TTS is a direct-provider path for spoken output through a Gemini credential. Use the Credential Provider pencil to choose ApiKey or OAuth2, then choose the TTS model and speaking voice.",
+            summary: "Gemini TTS is a direct-provider path for spoken output through a Gemini credential. Use the Credential Provider pencil to configure an ApiKey credential, then choose the TTS model and speaking voice.",
             steps: [
               "Choose Gemini TTS in the provider column.",
               "Open Credential Provider to select or create the Gemini credential.",
               "Use the pencil to open the selected Gemini credential setup sheet.",
-              "Choose ApiKey to enter a masked Gemini key and base URL, or OAuth2 when browser authorization is preferred.",
+              "Use ApiKey to enter a masked Gemini key and base URL.",
               "Open Model Name to choose the Gemini TTS model.",
               "Open Voice to choose the speaking style.",
               "Use Set as Default Provider only when Gemini TTS should become the app-wide voice default."
@@ -730,15 +715,13 @@
             evidence: [
               "global-text-to-speech/tts-09-gemini-overview.png",
               "global-text-to-speech/tts-19-gemini-credential-apikey-setup.png",
-              "global-text-to-speech/tts-20-gemini-credential-type-menu.png",
-              "global-text-to-speech/tts-21-gemini-credential-oauth-sheet.png",
               "global-text-to-speech/tts-10-gemini-model-menu.png",
               "global-text-to-speech/tts-11-gemini-voice-menu.png"
             ],
             inventoryTitle: "Observed Gemini TTS Controls",
             inventory: [
               "Credential Provider: Gemini",
-              "Credential editor: ApiKey or OAuth2",
+              "Credential editor: ApiKey",
               "Model Name: gemini-3.1-flash-tts-preview",
               "Voice: Zephyr -- Bright",
               "Additional visible voices: Puck -- Upbeat, Charon -- Informative, Kore -- Firm, Fenrir -- Excitable, Leda -- Youthful, Orus -- Firm, Aoede -- Breezy"
@@ -1156,10 +1139,6 @@
       return `<figure class="shot"><button class="shot-button" type="button" data-src="screenshots/${src}" data-title="${caption}" aria-label="Open ${caption} screenshot"><img src="screenshots/${src}" alt="${caption} screenshot"></button><figcaption class="shot-caption"><span>${caption}</span><span>Click to enlarge</span></figcaption></figure>`;
     }
 
-    function relatedShot(src, index) {
-      return `<button class="related-shot" type="button" data-src="screenshots/${src}" data-title="Related screenshot ${index}" aria-label="Open related screenshot ${index}">Open related screenshot ${index}</button>`;
-    }
-
     const childNavGroups = {
       "global-ai-model": [
         { title: "EnConvo Cloud Plan", pagePrefixes: ["EnConvo Cloud Plan"], deepTitles: ["EnConvo Cloud Plan Setup"] },
@@ -1301,7 +1280,6 @@
 
     function renderDeepCard(section, item, heading = "h4") {
       const id = `${section.id}-${slug(item.title)}`;
-      const evidence = (item.evidence || []).map((src, index) => `<li>${relatedShot(src, index + 1)}</li>`).join("");
       const inventory = (item.inventory || []).map(value => `<li>${value}</li>`).join("");
       return `<section class="deep-card" id="${id}">
           ${shot(item.proof, item.title)}
@@ -1311,7 +1289,6 @@
             <p>${item.summary}</p>
             <ul class="mini-list">${item.steps.map(step => `<li>${step}</li>`).join("")}</ul>
             ${inventory ? `<h4>${item.inventoryTitle || "Inventory"}</h4><ul class="inventory">${inventory}</ul>` : ""}
-            ${evidence ? `<h4>Related Screenshots</h4><ul class="mini-list">${evidence}</ul>` : ""}
           </div>
         </section>`;
     }
