@@ -1274,34 +1274,74 @@
         .join("");
     }
 
-    function renderChildSection(section) {
-      const cards = section.pages.map(page => {
-        const [src, title, summary, guidance, tag] = page;
-        const id = `${section.id}-${slug(title)}`;
-        return `<section class="page-card" id="${id}">
+    function renderPageCard(section, page) {
+      const [src, title, summary, guidance, tag] = page;
+      const id = `${section.id}-${slug(title)}`;
+      return `<section class="page-card" id="${id}">
           <span class="${badgeClass(tag)}">${tag}</span>
           <h4>${title}</h4>
           <p>${summary}</p>
           <p>${guidance}</p>
           ${shot(src, title)}
         </section>`;
-      }).join("");
-      const deep = (section.deepDive || []).map(item => {
-        const id = `${section.id}-${slug(item.title)}`;
-        const evidence = (item.evidence || []).map((src, index) => `<li>${relatedShot(src, index + 1)}</li>`).join("");
-        const inventory = (item.inventory || []).map(value => `<li>${value}</li>`).join("");
-        return `<section class="deep-card" id="${id}">
+    }
+
+    function renderDeepCard(section, item, heading = "h4") {
+      const id = `${section.id}-${slug(item.title)}`;
+      const evidence = (item.evidence || []).map((src, index) => `<li>${relatedShot(src, index + 1)}</li>`).join("");
+      const inventory = (item.inventory || []).map(value => `<li>${value}</li>`).join("");
+      return `<section class="deep-card" id="${id}">
           ${shot(item.proof, item.title)}
           <div class="deep-body">
             <span class="${badgeClass(item.badge)}">${item.badge}</span>
-            <h4>${item.title}</h4>
+            <${heading}>${item.title}</${heading}>
             <p>${item.summary}</p>
             <ul class="mini-list">${item.steps.map(step => `<li>${step}</li>`).join("")}</ul>
             ${inventory ? `<h4>${item.inventoryTitle || "Inventory"}</h4><ul class="inventory">${inventory}</ul>` : ""}
             ${evidence ? `<h4>Related Screenshots</h4><ul class="mini-list">${evidence}</ul>` : ""}
           </div>
         </section>`;
-      }).join("");
+    }
+
+    function renderOrderedChildBody(section) {
+      const groups = childNavGroups[section.id] || [];
+      const usedPages = new Set();
+      const usedDeep = new Set();
+      const renderGroup = group => {
+        const pages = section.pages.filter(page => !usedPages.has(page) && matchesPrefix(page[1], group.pagePrefixes || [group.title]));
+        const deep = (section.deepDive || []).filter(item => {
+          if (usedDeep.has(item)) return false;
+          const exact = (group.deepTitles || []).includes(item.title);
+          const prefixed = matchesPrefix(item.title, group.deepPrefixes || []);
+          return exact || prefixed;
+        });
+        pages.forEach(page => usedPages.add(page));
+        deep.forEach(item => usedDeep.add(item));
+        const pageCards = pages.map(page => renderPageCard(section, page));
+        const deepCards = deep.map(item => renderDeepCard(section, item));
+        const childCards = (group.children || []).map(renderGroup);
+        return group.deepFirst
+          ? [...deepCards, ...pageCards, ...childCards].join("")
+          : [...pageCards, ...deepCards, ...childCards].join("");
+      };
+      const grouped = groups.map(renderGroup).join("");
+      const overflow = [
+        ...section.pages.filter(page => !usedPages.has(page)).map(page => renderPageCard(section, page)),
+        ...(section.deepDive || []).filter(item => !usedDeep.has(item)).map(item => renderDeepCard(section, item))
+      ].join("");
+      return grouped + overflow;
+    }
+
+    function renderChildSection(section) {
+      if (section.id === "global-text-to-speech") {
+        return `<section id="${section.id}">
+          <h3>${section.title}</h3>
+          <p>${section.intro}</p>
+          ${renderOrderedChildBody(section)}
+        </section>`;
+      }
+      const cards = section.pages.map(page => renderPageCard(section, page)).join("");
+      const deep = (section.deepDive || []).map(item => renderDeepCard(section, item)).join("");
       return `<section id="${section.id}">
         <h3>${section.title}</h3>
         <p>${section.intro}</p>
@@ -1330,22 +1370,7 @@
             ${nested}
           </section>`;
         }).join("");
-        const deep = (section.deepDive || []).map(item => {
-          const id = `${section.id}-${slug(item.title)}`;
-          const evidence = (item.evidence || []).map((src, index) => `<li>${relatedShot(src, index + 1)}</li>`).join("");
-          const inventory = (item.inventory || []).map(value => `<li>${value}</li>`).join("");
-          return `<section class="deep-card" id="${id}">
-            ${shot(item.proof, item.title)}
-            <div class="deep-body">
-              <span class="${badgeClass(item.badge)}">${item.badge}</span>
-              <h3>${item.title}</h3>
-              <p>${item.summary}</p>
-              <ul class="mini-list">${item.steps.map(step => `<li>${step}</li>`).join("")}</ul>
-              ${inventory ? `<h4>${item.inventoryTitle || "Inventory"}</h4><ul class="inventory">${inventory}</ul>` : ""}
-              ${evidence ? `<h4>Related Screenshots</h4><ul class="mini-list">${evidence}</ul>` : ""}
-            </div>
-          </section>`;
-        }).join("");
+        const deep = (section.deepDive || []).map(item => renderDeepCard(section, item, "h3")).join("");
         return `<section id="${section.id}">
           <h2>${section.title}</h2>
           <p>${section.intro}</p>
