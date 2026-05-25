@@ -144,6 +144,7 @@
     .page-card { padding: 0; }
     .deep-card { margin: 26px 0; }
     .deep-body { padding: 0; }
+    .embedded-section { margin-top: 26px; }
     .badge {
       display: inline-flex;
       align-items: center;
@@ -1870,19 +1871,17 @@
       return grouped + overflow;
     }
 
-    function renderChildSection(section) {
+    function renderChildSection(section, embedded = false) {
       if (flatChildSectionIds.has(section.id)) {
-        return `<section id="${section.id}">
-          <h3>${section.title}</h3>
-          <p>${section.intro}</p>
+        return `<section id="${section.id}" class="${embedded ? "embedded-section" : ""}">
+          ${embedded ? "" : `<h3>${section.title}</h3><p>${section.intro}</p>`}
           ${renderOrderedChildBody(section)}
         </section>`;
       }
       const cards = section.pages.map(page => renderPageCard(section, page)).join("");
       const deep = (section.deepDive || []).map(item => renderDeepCard(section, item)).join("");
-      return `<section id="${section.id}">
-        <h3>${section.title}</h3>
-        <p>${section.intro}</p>
+      return `<section id="${section.id}" class="${embedded ? "embedded-section" : ""}">
+        ${embedded ? "" : `<h3>${section.title}</h3><p>${section.intro}</p>`}
         <div class="grid">${cards}</div>
         ${deep}
       </section>`;
@@ -1895,14 +1894,19 @@
         const cards = section.pages.map(page => {
           const [src, title, summary, guidance, tag] = page;
           const id = `${section.id}-${slug(title)}`;
-          const nested = children
-            .filter(child => child.parentPage === title)
-            .map(renderChildSection)
+          const pageChildren = children.filter(child => child.parentPage === title);
+          const embeddedIntros = pageChildren
+            .filter(child => flatChildSectionIds.has(child.id))
+            .map(child => `<p>${child.intro}</p>`)
+            .join("");
+          const nested = pageChildren
+            .map(child => renderChildSection(child, flatChildSectionIds.has(child.id)))
             .join("");
           return `<section class="page-card" id="${id}">
             <h3>${title}</h3>
             <p>${summary}</p>
             <p>${guidance}</p>
+            ${embeddedIntros}
             ${shot(src, title)}
             ${nested}
           </section>`;

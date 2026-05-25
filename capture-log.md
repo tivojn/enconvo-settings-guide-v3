@@ -399,3 +399,11 @@ Added after the user asked the HTML body to start directly with the actual setti
 - Changed screenshot rendering to a frameless full-width image button with no caption or "Click to enlarge" text.
 - Flattened page-card, deep-card, and inventory styling so sections read as a simpler document rather than card-in-card panels.
 - No screenshots were edited, no guide hierarchy was changed, and no deployment was run in this pass.
+
+## Duplicate Section Merge
+
+Added after the user noted that Global Provider sections rendered a parent card and then a repeated child section with the same title and similar screenshot.
+
+- Updated the HTML renderer so flat Global Provider child sections, such as AI Model, Text-to-Speech, Web Search, Image Generation, Video Generation, Web Fetch, and OCR, are embedded into the parent page section instead of rendering a second repeated title block.
+- Combined the child intro text into the parent section's instruction flow, then rendered the detailed provider subsections below it.
+- Preserved screenshots, anchors, sidebar tree structure, and the underlying `sections` data.
