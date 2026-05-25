@@ -158,3 +158,14 @@ Added after the user pointed out two missing Agent List interfaces.
 - The Change Icon dialog documents where to choose a local portrait file and shows the current file path; no file was chosen and the portrait was not changed.
 - Moved the create-agent menu to its own child section at `Agents > Agent List > Create New Agent`, parallel to `Agent Configuration (Mavis)`.
 - Moved the portrait-change screenshot into `Agents > Agent List > Agent Configuration (Mavis)`, before `Agent Definition`, because it changes the selected agent's portrait and belongs to the agent configuration structure.
+
+## Global AI Model Deep Dive
+
+Added after the user requested a first-section deep dive for `Global Providers Settings > AI Model`.
+
+- Captured `global-ai-model/enconvo-cloud-plan-01-overview.png`, `global-ai-model/enconvo-cloud-plan-02-model-menu.png`, and `global-ai-model/enconvo-cloud-plan-03-reasoning-menu.png` for the EnConvo Cloud Plan path.
+- Captured `global-ai-model/openai-01-overview.png`, `global-ai-model/openai-02-credential-menu.png`, `global-ai-model/openai-03-oauth-sheet.png`, `global-ai-model/openai-04-credential-type-menu.png`, `global-ai-model/openai-05-apikey-setup.png`, and `global-ai-model/openai-06-apikey-api-type-menu.png` for the OpenAI path.
+- Documented the EnConvo Cloud Plan model menu and reasoning menu as the subscription-managed global provider route.
+- Documented the OpenAI provider overview, credential menu, OAuth2 sheet, credential-type dropdown, ApiKey branch, and API Type menu.
+- No API key was entered, no credential was validated, no OAuth login was started, no Reconnect action was triggered, and no Set as Default Provider action was clicked.
+- OpenAI account details visible in credential sheets were redacted before the public screenshots were saved.

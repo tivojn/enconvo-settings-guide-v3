@@ -225,7 +225,7 @@
           </div>
           <div class="note">
             <strong>Visual reference.</strong>
-            <p>Each settings page includes a screenshot so you can match the instructions to the EnConvo interface. The Agent Configuration (Mavis) example also shows the Anthropic ApiKey and OAuth2 credential flows.</p>
+            <p>Each settings page includes a screenshot so you can match the instructions to the EnConvo interface. The AI Model deep dive shows global provider setup examples for EnConvo Cloud Plan and OpenAI. The Agent Configuration (Mavis) example shows per-agent Anthropic ApiKey and OAuth2 credential flows.</p>
           </div>
           <div id="guide"></div>
         </article>
@@ -253,6 +253,68 @@
           ["05-video-generation.png", "Video Generation", "Default video model provider and generation configuration.", "Use this for video-generation commands and agents.", "Media"],
           ["06-web-fetch.png", "Web Fetch", "Default web page fetch and extraction provider.", "Use this to control URL-reading behavior across commands and agents.", "Provider"],
           ["07-ocr.png", "OCR", "Default optical character recognition provider.", "Use this for image, screenshot, and document text extraction.", "Provider"]
+        ]
+      },
+      {
+        id: "global-ai-model",
+        title: "AI Model Deep Dive",
+        parent: "global-providers",
+        parentPage: "AI Model",
+        intro: "Use this section when choosing the app-wide AI model provider. These settings become the default model behavior for new agents unless an agent has its own AI Model override.",
+        pages: [
+          ["global-ai-model/enconvo-cloud-plan-01-overview.png", "EnConvo Cloud Plan Overview", "Provider setup with EnConvo Cloud Plan selected.", "Choose EnConvo Cloud Plan when you want EnConvo-managed access through your subscription instead of maintaining a separate provider credential. Review the provider, model, reasoning effort, and temperature before making it the default provider.", "Provider"],
+          ["global-ai-model/enconvo-cloud-plan-02-model-menu.png", "EnConvo Cloud Plan Model Menu", "Model Name menu opened for EnConvo Cloud Plan.", "Use the Model Name menu to choose the global default model. The visible list can include models from multiple model families, depending on your plan and the live EnConvo catalog.", "Provider"],
+          ["global-ai-model/enconvo-cloud-plan-03-reasoning-menu.png", "EnConvo Cloud Plan Reasoning Menu", "Reasoning Effort menu opened for EnConvo Cloud Plan.", "Use Reasoning Effort to tune how much reasoning budget the default model should use. Higher reasoning can be useful for complex work, while lower settings can be better for lighter everyday tasks.", "Provider"],
+          ["global-ai-model/openai-01-overview.png", "OpenAI Overview", "Provider setup with OpenAI selected.", "Choose OpenAI when you want the global AI model to use your OpenAI account or OpenAI-compatible endpoint. Review the credential provider, model, reasoning effort, and temperature before setting it as the default.", "Provider"],
+          ["global-ai-model/openai-02-credential-menu.png", "OpenAI Credential Menu", "Credential Provider menu opened for OpenAI.", "Use Credential Provider to choose an existing OpenAI credential or create a new credential. The pencil opens the selected credential setup sheet; the gear opens the broader credential management area.", "Private"],
+          ["global-ai-model/openai-03-oauth-sheet.png", "OpenAI OAuth2 Credential Sheet", "OpenAI credential setup with OAuth2 selected.", "Use OAuth2 when you want to connect through browser authorization. The sheet shows account connection state and the Connect or Reconnect action. Start that flow only when you are ready to authorize the account.", "Private"],
+          ["global-ai-model/openai-04-credential-type-menu.png", "OpenAI Credential Type Menu", "Credentials Type menu showing OAuth2 and ApiKey options.", "Use Credentials Type to choose how OpenAI should connect. OAuth2 uses account authorization; ApiKey uses a masked API key field and base URL settings.", "Private"],
+          ["global-ai-model/openai-05-apikey-setup.png", "OpenAI ApiKey Setup", "OpenAI credential setup with ApiKey selected.", "Use ApiKey when you want EnConvo to call OpenAI with an API key. Keep the key masked, confirm the API type and base URL, then validate only when you are ready to test the credential.", "Private"],
+          ["global-ai-model/openai-06-apikey-api-type-menu.png", "OpenAI API Type Menu", "API Type menu opened inside the OpenAI ApiKey branch.", "Use API Type to choose the OpenAI-compatible request mode exposed by the credential sheet. Standard OpenAI setups typically use the default OpenAI API type and base URL.", "Private"]
+        ],
+        deepDive: [
+          {
+            title: "EnConvo Cloud Plan Setup",
+            proof: "global-ai-model/enconvo-cloud-plan-01-overview.png",
+            summary: "EnConvo Cloud Plan is the easiest global AI Model path when you want EnConvo to manage model access through your subscription.",
+            steps: [
+              "Open Settings > Global Providers Settings > AI Model.",
+              "Choose EnConvo Cloud Plan from AI Model Provider.",
+              "Open Model Name and choose the model family and model version you want new agents to inherit.",
+              "Open Reasoning Effort and choose the reasoning level that fits your normal workload.",
+              "Adjust Temperature only if you intentionally want more deterministic or more varied responses.",
+              "Click Set as Default Provider only when you want EnConvo Cloud Plan to become the app-wide default."
+            ],
+            evidence: [
+              "global-ai-model/enconvo-cloud-plan-01-overview.png",
+              "global-ai-model/enconvo-cloud-plan-02-model-menu.png",
+              "global-ai-model/enconvo-cloud-plan-03-reasoning-menu.png"
+            ],
+            badge: "Provider"
+          },
+          {
+            title: "OpenAI Global Provider Setup",
+            proof: "global-ai-model/openai-01-overview.png",
+            summary: "OpenAI is the direct-provider path when you want the global AI Model default to use your OpenAI account, OAuth connection, API key, or OpenAI-compatible endpoint.",
+            steps: [
+              "Open Settings > Global Providers Settings > AI Model.",
+              "Choose OpenAI from AI Model Provider.",
+              "Open Credential Provider to select an existing OpenAI credential or create a new one.",
+              "Click the pencil beside Credential Provider to open the selected OpenAI credential setup sheet.",
+              "Use OAuth2 when you want browser-based account authorization. Use ApiKey when you want to enter a masked OpenAI API key and base URL.",
+              "For ApiKey setup, confirm API Type and base URL before validating the credential.",
+              "Return to the AI Model pane, choose Model Name, Reasoning Effort, and Temperature, then use Set as Default Provider only when the OpenAI setup should become the app-wide default."
+            ],
+            evidence: [
+              "global-ai-model/openai-01-overview.png",
+              "global-ai-model/openai-02-credential-menu.png",
+              "global-ai-model/openai-03-oauth-sheet.png",
+              "global-ai-model/openai-04-credential-type-menu.png",
+              "global-ai-model/openai-05-apikey-setup.png",
+              "global-ai-model/openai-06-apikey-api-type-menu.png"
+            ],
+            badge: "Private"
+          }
         ]
       },
       {
@@ -627,6 +689,10 @@
     }
 
     const childNavGroups = {
+      "global-ai-model": [
+        { title: "EnConvo Cloud Plan", pagePrefixes: ["EnConvo Cloud Plan"], deepTitles: ["EnConvo Cloud Plan Setup"] },
+        { title: "OpenAI", pagePrefixes: ["OpenAI"], deepPrefixes: ["OpenAI"] }
+      ],
       "agent-mavis": [
         { title: "Change Agent Portrait", pagePrefixes: ["Change Agent Portrait"] },
         { title: "Agent Definition", pagePrefixes: ["Agent Definition"], deepTitles: ["Agent Definition Leaves"] },
