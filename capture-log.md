@@ -379,3 +379,23 @@ Added after the user asked to keep API keys/tokens as-is for now but hide visibl
 - Redacted xAI identity surfaces in `global-web-search/web-search-05-xai-credential-oauth-sheet.png` and `global-video-generation/video-generation-07-xai-credential-oauth-sheet.png`.
 - Redacted Anthropic identity surfaces in `global-ai-model/anthropic-oauth-cycle-01-choose-oauth2.png`, `global-ai-model/anthropic-oauth-cycle-02-connect-anthropic.png`, `global-ai-model/anthropic-oauth-cycle-05-code-copied.png`, `global-ai-model/anthropic-oauth-cycle-06-complete-login.png`, `agent-mavis/anthropic-oauth-01-choose-oauth2.png`, `agent-mavis/anthropic-oauth-02-connect-anthropic.png`, `agent-mavis/anthropic-oauth-05-copied-code.png`, and `agent-mavis/anthropic-oauth-06-complete-login-done.png`.
 - Redacted account identity text in `41-account.png`. `40-my-profile.png` was reviewed and left unchanged because no personal name or email address was visible.
+
+## User-Guide Copy Review
+
+Added after the user asked for a full text pass so the guide reads as a configuration manual rather than screenshot descriptions.
+
+- Rewrote `index.html` guide text only; screenshots, image paths, hierarchy, sidebar structure, CSS, and JavaScript behavior were preserved.
+- Reworked page-card summaries and guidance across Global Providers, AI Model, Text-to-Speech, Web Search, Image Generation, Video Generation, Web Fetch, OCR, Agents, Context, Extensions, Primary Function Area, Dictation, Account, General, Developer, Create New Agent, and Agent Configuration (Mavis).
+- Reworked selected workflow inventories so they explain what users should configure or verify instead of listing UI status labels.
+- Reduced screenshot-description wording such as "showing", "visible", "selected", "current", and similar capture-note phrasing in user-facing guide copy.
+- No screenshots were recaptured, no settings were changed, no provider credentials were opened, and no deployment was run in this pass.
+
+## Guide Layout Simplification
+
+Added after the user asked the HTML body to start directly with the actual settings guide content and to remove nested card-like framing.
+
+- Removed the visible top introduction block from the rendered document body so the guide starts at Global Providers Settings.
+- Removed visible badge labels such as Private, Provider, Voice, Media, and Runtime from rendered page and workflow cards.
+- Changed screenshot rendering to a frameless full-width image button with no caption or "Click to enlarge" text.
+- Flattened page-card, deep-card, and inventory styling so sections read as a simpler document rather than card-in-card panels.
+- No screenshots were edited, no guide hierarchy was changed, and no deployment was run in this pass.

@@ -123,33 +123,27 @@
     .sidebar .leaf { padding-left: 18px; }
     .sidebar .deep-link { color: #6b7280; }
     .doc-shell { display: flex; justify-content: center; min-width: 0; }
-    .doc { width: min(100%, 980px); padding: 40px 48px 82px; }
-    .breadcrumbs { margin-bottom: 14px; color: var(--muted); font-size: 13px; }
+    .doc { width: min(100%, 980px); padding: 30px 48px 82px; }
+    .breadcrumbs { display: none; }
     h1, h2, h3, h4 { line-height: 1.25; letter-spacing: 0; scroll-margin-top: 78px; }
     h1 { margin: 0 0 14px; font-size: 44px; font-weight: 820; }
-    h2 { margin: 46px 0 12px; padding-top: 22px; border-top: 1px solid var(--border); font-size: 30px; }
+    h2 { margin: 42px 0 12px; padding-top: 0; border-top: 0; font-size: 30px; }
+    #global-providers > h2 { margin-top: 0; }
     h3 { margin: 30px 0 10px; font-size: 22px; }
     h4 { margin: 24px 0 8px; font-size: 18px; }
     p { margin: 0 0 14px; }
     .lead { color: #343b47; font-size: 18px; line-height: 1.7; }
-    .note {
-      margin: 20px 0;
-      padding: 14px 16px;
-      border: 1px solid #f0c047;
-      border-left: 5px solid #e3a700;
-      border-radius: 7px;
-      background: var(--warn);
-    }
-    .grid { display: grid; gap: 18px; }
+    .note { display: none; }
+    .grid { display: grid; gap: 28px; }
     .page-card, .deep-card {
-      border: 1px solid #e1e6ee;
-      border-radius: 8px;
-      background: #fbfcfe;
-      overflow: hidden;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      overflow: visible;
     }
-    .page-card { padding: 15px 16px; }
-    .deep-card { margin: 14px 0; }
-    .deep-body { padding: 15px 16px; }
+    .page-card { padding: 0; }
+    .deep-card { margin: 26px 0; }
+    .deep-body { padding: 0; }
     .badge {
       display: inline-flex;
       align-items: center;
@@ -165,9 +159,9 @@
     .badge.private { background: #fff1f2; color: #be123c; }
     .shot {
       display: block;
-      margin-top: 12px;
-      border: 1px solid var(--border);
-      border-radius: 7px;
+      margin: 14px 0 0;
+      border: 0;
+      border-radius: 0;
       background: #fff;
       overflow: hidden;
     }
@@ -180,20 +174,8 @@
       cursor: zoom-in;
       text-align: left;
     }
-    .shot img { display: block; width: 100%; height: auto; transition: transform .18s ease, filter .18s ease; }
-    .shot-button:hover img { transform: scale(1.008); filter: saturate(1.03); }
-    .shot-caption {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 8px 10px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      background: #fff;
-      font-size: 12.5px;
-    }
-    .shot-caption span:last-child { color: #7b8796; white-space: nowrap; }
+    .shot img { display: block; width: 100%; height: auto; border-radius: 4px; transition: filter .18s ease; }
+    .shot-button:hover img { filter: saturate(1.03) brightness(.99); }
     .lightbox[hidden] { display: none; }
     .lightbox {
       position: fixed;
@@ -265,21 +247,20 @@
     .mini-list { margin: 8px 0 0; padding-left: 18px; }
     .mini-list li { margin: 5px 0; }
     .inventory {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 7px 16px;
+      display: block;
       margin: 12px 0 0;
-      padding: 0;
-      list-style: none;
+      padding-left: 20px;
+      list-style: disc;
     }
     .inventory li {
-      padding: 6px 9px;
-      border: 1px solid #e7ebf2;
-      border-radius: 6px;
-      background: #fff;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
       color: #334155;
-      font-size: 13px;
-      line-height: 1.35;
+      font-size: 14px;
+      line-height: 1.55;
+      margin: 5px 0;
     }
     .toc strong { display: block; margin-bottom: 10px; font-size: 13px; }
     .toc a { display: block; padding: 5px 0 5px 10px; color: var(--muted); font-size: 12.75px; }
@@ -308,7 +289,7 @@
       .doc { padding: 28px 20px 58px; }
       h1 { font-size: 34px; }
       h2 { font-size: 26px; }
-      .page-card { padding: 13px 12px; }
+      .page-card { padding: 0; }
       .lightbox-bar { align-items: flex-start; }
       .lightbox-actions { flex-wrap: wrap; justify-content: flex-end; }
       .lightbox-stage { padding: 12px; place-items: start center; }
@@ -318,7 +299,7 @@
 </head>
 <body>
   <nav class="navbar">
-    <a class="brand" href="#introduction"><img class="mark" src="assets/enconvo_icon_gold_no_bg.png" alt="" aria-hidden="true"><span>EnConvo Settings</span><span>v3</span></a>
+    <a class="brand" href="#global-providers"><img class="mark" src="assets/enconvo_icon_gold_no_bg.png" alt="" aria-hidden="true"><span>EnConvo Settings</span><span>v3</span></a>
     <div class="toplinks">
       <a href="#global-providers">Global Providers</a>
       <a href="#agents">Agents</a>
@@ -333,18 +314,7 @@
     </aside>
     <div class="doc-shell">
       <main class="doc">
-        <div class="breadcrumbs">Docs / Settings / User Guide v3</div>
         <article>
-          <h1 id="introduction">EnConvo Settings User Guide v3</h1>
-          <p class="lead">A full-scale manual for EnConvo Settings. Start with global provider defaults, then use agent-level settings when a specific agent needs its own model, tools, voice, memory, or runtime behavior.</p>
-          <div class="note">
-            <strong>Configuration model.</strong>
-            <p>Global Providers Settings define app-wide defaults for model, voice, search, generation, fetch, and OCR providers. New agents inherit those defaults. Agent List pages are per-agent override surfaces, so an agent can use a different model, credential provider, voice, tool set, memory behavior, or run mode.</p>
-          </div>
-          <div class="note">
-            <strong>Visual reference.</strong>
-            <p>Each settings page includes a screenshot so you can match the instructions to the EnConvo interface. The AI Model and Text-to-Speech configuration sections show provider setup examples, inventories, menus, and credential surfaces. The Agent Configuration (Mavis) example shows per-agent Anthropic ApiKey and OAuth2 credential flows.</p>
-          </div>
           <div id="guide"></div>
         </article>
         <footer>
@@ -379,13 +349,13 @@
         title: "Global Providers Settings",
         intro: "These panes set EnConvo-wide provider defaults. Agents inherit these defaults unless their own settings override them.",
         pages: [
-          ["01-ai-model.png", "AI Model", "Default LLM provider, credential provider, model name, reasoning effort, and temperature.", "Use this to choose the baseline model behavior for new agents. Enconvo Cloud Plan is the subscription-backed convenience provider; the live UI may expose mainstream OpenAI, Anthropic, Gemini, DeepSeek, GLM, Kimi, and related model families through the plan.", "Provider"],
-          ["02-text-to-speech.png", "Text-to-Speech", "Default spoken-output provider, credential provider, voice, and language.", "Use this when agents should speak responses or when a global voice should be inherited.", "Voice"],
-          ["03-web-search.png", "Web Search", "Default search provider and search credential surface.", "Use this when agents need current web research and should inherit the same search backend.", "Provider"],
-          ["04-image-generation.png", "Image Generation", "Default image model provider and generation configuration.", "Use this for agents or commands that create raster images.", "Media"],
-          ["05-video-generation.png", "Video Generation", "Default video model provider and generation configuration.", "Use this for video-generation commands and agents.", "Media"],
-          ["06-web-fetch.png", "Web Fetch", "Default web page fetch and extraction provider.", "Use this to control URL-reading behavior across commands and agents.", "Provider"],
-          ["07-ocr.png", "OCR", "Default optical character recognition provider.", "Use this for image, screenshot, and document text extraction.", "Provider"]
+          ["01-ai-model.png", "AI Model", "Choose the app-wide model provider that new agents inherit.", "Start here before configuring individual agents. Select the provider, credential, model, reasoning effort, and temperature that should be the normal baseline, then use agent-level AI Model settings only for exceptions.", "Provider"],
+          ["02-text-to-speech.png", "Text-to-Speech", "Choose the app-wide voice provider for spoken responses.", "Configure the provider, credential, voice, language, output format, and speech speed that agents should inherit. Use a direct provider when you manage its credential, or a Cloud Plan option when EnConvo should manage access.", "Voice"],
+          ["03-web-search.png", "Web Search", "Choose the backend EnConvo uses when agents need search context.", "Configure this before relying on agents for current web or social-search research. Confirm the search credential and model, then set the provider as default only after the connection is ready.", "Provider"],
+          ["04-image-generation.png", "Image Generation", "Choose the default provider for image creation and editing workflows.", "Use this page to decide whether image generation should run through EnConvo Cloud models or through a credential you manage. Confirm the model before making it the global default.", "Media"],
+          ["05-video-generation.png", "Video Generation", "Choose the default provider and output settings for generated videos.", "Set the provider, credential, model, duration, aspect ratio, and resolution that video commands should inherit. Treat these as production defaults because they affect cost, speed, and output format.", "Media"],
+          ["06-web-fetch.png", "Web Fetch", "Choose how EnConvo retrieves URL content for agents and commands.", "Use Local Fetch for simple webpage extraction, or configure a provider-backed reader when you need stronger extraction. Tune length, start index, and raw HTML only for workflows that need those changes.", "Provider"],
+          ["07-ocr.png", "OCR", "Choose the default engine for extracting text from images and documents.", "Use this when agents need to read images, UI captures, PDFs, or scanned documents. Pick a local recognizer for simple private OCR, or an AI-model OCR provider when layout interpretation matters.", "Provider"]
         ]
       },
       {
@@ -395,18 +365,18 @@
         parentPage: "AI Model",
         intro: "Use this section when choosing the app-wide AI model provider. These settings become the default model behavior for new agents unless an agent has its own AI Model override.",
         pages: [
-          ["global-ai-model/enconvo-cloud-plan-01-overview.png", "EnConvo Cloud Plan Overview", "Provider setup with EnConvo Cloud Plan selected.", "Choose EnConvo Cloud Plan when you want EnConvo-managed access through your subscription instead of maintaining a separate provider credential. Review the provider, model, reasoning effort, and temperature before making it the default provider.", "Provider"],
+          ["global-ai-model/enconvo-cloud-plan-01-overview.png", "EnConvo Cloud Plan Overview", "Use EnConvo Cloud Plan when you want model access managed by your subscription.", "Choose this route when you do not want to maintain separate provider credentials. Select the model, reasoning effort, and temperature that should become the app-wide baseline, then set it as default only after those choices match your normal workflow.", "Provider"],
           ["global-ai-model/enconvo-cloud-plan-gpt-54-mini-example.png", "EnConvo Cloud Plan GPT-5.4 mini Example", "Use GPT-5.4 mini as a typical Cloud Plan model example.", "Open Model Name, choose GPT-5.4 mini, then adjust Temperature only if you want a different response style. Use Set as Default Provider only when this Cloud Plan setup should become the app-wide default.", "Provider"],
-          ["global-ai-model/openai-04-credential-type-menu.png", "OpenAI Credential Type Menu", "Credentials Type menu showing OAuth2 and ApiKey options.", "Use Credentials Type to choose how OpenAI should connect. OAuth2 uses account authorization; ApiKey uses an API key field and base URL settings.", "Private"],
-          ["global-ai-model/openai-05-apikey-setup.png", "OpenAI ApiKey Setup", "OpenAI credential setup with ApiKey selected.", "Use ApiKey when you want EnConvo to call OpenAI with an API key. Enter the API key, confirm the API type and base URL, then validate only when you are ready to test the credential.", "Private"],
+          ["global-ai-model/openai-04-credential-type-menu.png", "OpenAI Credential Type Menu", "Choose whether OpenAI should connect by browser authorization or API key.", "Select OAuth2 when you want EnConvo to authorize through an OpenAI account. Select ApiKey when you want to paste a provider key, choose the API type, and control the base URL manually.", "Private"],
+          ["global-ai-model/openai-05-apikey-setup.png", "OpenAI ApiKey Setup", "Configure OpenAI with a provider key and endpoint settings.", "Use ApiKey when EnConvo should call OpenAI directly with your key. Enter the API key, confirm the API type and base URL, then validate only when you are ready to test the credential.", "Private"],
           ["global-ai-model/openai-06-apikey-api-type-menu.png", "OpenAI API Type Menu", "Choose the API type for an OpenAI ApiKey credential.", "Use API Type to choose the OpenAI-compatible request mode exposed by the credential sheet. Standard OpenAI setups typically use the default OpenAI API type and base URL.", "Private"],
-          ["global-ai-model/openai-03-oauth-sheet.png", "OpenAI OAuth2 Credential Sheet", "OpenAI credential setup with OAuth2 selected.", "Use OAuth2 when you want to connect through browser authorization. The sheet shows account connection state and the Connect or Reconnect action. Start that flow only when you are ready to authorize the account.", "Private"],
+          ["global-ai-model/openai-03-oauth-sheet.png", "OpenAI OAuth2 Credential Sheet", "Connect OpenAI through browser-based account authorization.", "Use OAuth2 when you want EnConvo to rely on an authorized OpenAI account instead of a pasted API key. Start Connect or Reconnect only when you are ready to complete the browser flow.", "Private"],
           ["global-ai-model/openai-oauth-cycle-01-connect-sheet.png", "OpenAI OAuth2 Connect or Reconnect", "Start the OpenAI OAuth2 browser authorization cycle.", "Click Connect or Reconnect to OpenAI only when you are ready to refresh the account authorization. EnConvo will hand the flow to the browser and wait for the callback.", "Private"],
           ["global-ai-model/openai-oauth-cycle-02-connecting.png", "OpenAI OAuth2 Connecting State", "EnConvo waits while the browser authorization starts.", "After clicking Connect or Reconnect, the button changes to Connecting. Leave EnConvo open and continue in the browser window that appears.", "Private"],
           ["global-ai-model/openai-oauth-cycle-03-browser-account.png", "OpenAI OAuth2 Browser Account", "Choose the OpenAI account in the browser.", "Select the account you want EnConvo to use. Confirm the account identity before continuing, especially when Chrome has multiple OpenAI accounts signed in.", "Private"],
           ["global-ai-model/openai-oauth-cycle-04-browser-consent.png", "OpenAI OAuth2 Browser Consent", "Review the OpenAI consent page before continuing.", "Read the authorization details, then continue only if this is the account and permission set you want EnConvo to use.", "Private"],
-          ["global-ai-model/openai-oauth-cycle-05-browser-success.png", "OpenAI OAuth2 Browser Success", "The browser confirms the OpenAI account is connected to EnConvo.", "After the success page appears, return to EnConvo. The browser address can contain a temporary authorization code, so keep that area private when documenting the flow.", "Private"],
-          ["global-ai-model/openai-oauth-cycle-06-enconvo-connected.png", "OpenAI OAuth2 Connected State", "EnConvo returns to the OpenAI credential sheet with Connected status.", "Verify the Connected state before closing the sheet. The Reconnect button is available here if you later need to refresh or change the OpenAI account link.", "Private"],
+          ["global-ai-model/openai-oauth-cycle-05-browser-success.png", "OpenAI OAuth2 Browser Success", "Finish the browser step and return to EnConvo.", "When the browser reports success, go back to the EnConvo credential sheet. Keep the browser address private because it may contain a temporary authorization code during the handoff.", "Private"],
+          ["global-ai-model/openai-oauth-cycle-06-enconvo-connected.png", "OpenAI OAuth2 Connected State", "Confirm OpenAI authorization before closing the credential sheet.", "Close the sheet only after the OpenAI credential reports Connected. Use Reconnect later only when you need to repair authorization or switch the linked account.", "Private"],
           ["global-ai-model/anthropic-04-credential-type-menu.png", "Anthropic Credential Type Menu", "Choose how the Anthropic credential should authenticate.", "Select OAuth2 for browser-based Anthropic account authorization, or ApiKey when you want to enter a Claude API key and keep the standard Anthropic API base URL.", "Private"],
           ["global-ai-model/anthropic-05-apikey-setup.png", "Anthropic API Key Setup", "Use the ApiKey branch for a Claude API key credential.", "Enter the Claude API key, keep the Anthropic API Base URL on https://api.anthropic.com unless you intentionally use a compatible proxy, then validate only when you are ready to test the credential.", "Private"],
           ["global-ai-model/anthropic-03-oauth-credential-sheet.png", "Anthropic OAuth2 Credential Sheet", "Use the OAuth2 branch for browser-based Anthropic authorization.", "Use OAuth2 when you want EnConvo to connect through Anthropic account authorization. Review the connection state and use Reconnect only when you intentionally need to refresh the account link.", "Private"],
@@ -414,7 +384,7 @@
           ["global-ai-model/anthropic-oauth-cycle-02-connect-anthropic.png", "Anthropic OAuth2 Connect or Reconnect", "Start the Anthropic OAuth2 browser authorization cycle.", "Click Connect or Reconnect to Anthropic only when you are ready to authorize the account in the browser.", "Private"],
           ["global-ai-model/anthropic-oauth-cycle-03-browser-authorize.png", "Anthropic OAuth2 Browser Authorize", "Review the Anthropic browser authorization page.", "Confirm the account and requested access, then authorize only if this is the Anthropic account you want EnConvo to use.", "Private"],
           ["global-ai-model/anthropic-oauth-cycle-04-copy-code.png", "Anthropic OAuth2 Copy Code", "Copy the Anthropic authorization code from the browser.", "Use Copy Code, then return immediately to EnConvo. Treat the authorization code and callback URL as private.", "Private"],
-          ["global-ai-model/anthropic-oauth-cycle-05-code-copied.png", "Anthropic OAuth2 Code Copied", "The browser confirms the authorization code has been copied.", "After the code is copied, switch back to EnConvo and continue in the OAuth Authentication dialog.", "Private"],
+          ["global-ai-model/anthropic-oauth-cycle-05-code-copied.png", "Anthropic OAuth2 Code Copied", "Return to EnConvo after copying the Anthropic authorization code.", "After copying the code, switch back to EnConvo immediately and continue in the OAuth Authentication dialog. Treat the copied code as a temporary secret.", "Private"],
           ["global-ai-model/anthropic-oauth-cycle-06-complete-login.png", "Anthropic OAuth2 Complete Login", "Finish the Anthropic OAuth2 handoff in EnConvo.", "Paste the copied code into EnConvo, complete login, then verify that the credential returns to a connected Anthropic state.", "Private"],
           ["global-ai-model/anthropic-02-model-menu.png", "Anthropic Model Menu", "Choose the Claude model for the global AI Model default.", "Use the model menu to choose the Claude family and version that should power new agents when Anthropic is the global default. Pair the model with an appropriate Reasoning Effort before changing the default provider.", "Provider"],
           ["global-ai-model/gemini-04-credential-type-menu.png", "Google Gemini AI Credential Type Menu", "Choose how the Gemini credential should authenticate.", "Select OAuth2 for browser-based Google authorization, or ApiKey when you want to enter a Google AI API key and base URL manually.", "Private"],
@@ -534,7 +504,7 @@
               "AIMagicX",
               "1min AI",
               "Vercel AI Gateway",
-              "etc. - this guide expands selected provider examples below instead of documenting every provider in the full inventory."
+              "etc. - this guide expands representative provider examples below instead of documenting every provider in the full inventory."
             ],
             badge: "Provider"
           },
@@ -546,7 +516,7 @@
               "Open Settings > Global Providers Settings > AI Model.",
               "Choose OpenAI from AI Model Provider.",
               "Open Credential Provider to select an existing OpenAI credential or create a new one.",
-              "Click the pencil beside Credential Provider to open the selected OpenAI credential setup sheet.",
+              "Click the pencil beside Credential Provider to open the OpenAI credential setup sheet.",
               "Use OAuth2 when you want browser-based account authorization. Use ApiKey when you want to enter an OpenAI API key and base URL.",
               "For OAuth2 setup, click Connect or Reconnect to OpenAI, choose the OpenAI account in Chrome, review the consent page, then return to EnConvo after the browser success page.",
               "Verify the credential sheet returns to Connected before closing it.",
@@ -568,13 +538,13 @@
             ],
             inventoryTitle: "OpenAI OAuth2 Cycle",
             inventory: [
-              "OpenAI credential sheet: OAuth2 selected",
-              "Connect/Reconnect to OpenAI starts browser authorization",
-              "Connecting state: keep EnConvo open and continue in Chrome",
-              "Chrome account chooser: select the intended OpenAI account",
-              "OpenAI consent page: review details, then continue",
-              "Browser success page: account connected to EnConvo",
-              "EnConvo credential sheet: Connected status and Reconnect button"
+              "Choose OAuth2 in the OpenAI credential sheet when you want account-based authorization.",
+              "Use Connect or Reconnect to OpenAI to start the browser authorization flow.",
+              "Keep EnConvo open while Chrome handles the account chooser and consent page.",
+              "Select the intended OpenAI account, especially when multiple accounts are signed in.",
+              "Review the OpenAI consent page before continuing.",
+              "Return to EnConvo after the browser success page.",
+              "Close the credential sheet only after Connected appears; use Reconnect later to repair or switch the account."
             ],
             badge: "Private"
           },
@@ -609,15 +579,13 @@
             ],
             inventoryTitle: "Anthropic Controls",
             inventory: [
-              "Credential Provider: Anthropic",
-              "Credentials Type: OAuth2 or ApiKey",
-              "ApiKey branch: Claude API key field, Anthropic API Base URL, Validate",
-              "OAuth2 branch: account connection state and Reconnect to Anthropic",
-              "OAuth2 cycle: browser authorize, copy code, return to EnConvo, complete login",
-              "Selected model: Claude Opus 4.7",
-              "Visible models: Claude Sonnet 4.6, Claude Opus 4.6, Claude Opus 4.5, Claude Haiku 4.5, Claude Sonnet 4.5",
-              "Reasoning Effort: High",
-              "Temperature: 1"
+              "Set Credential Provider to the Anthropic credential you want the global default to use.",
+              "Use Credentials Type to choose OAuth2 for account authorization or ApiKey for direct Claude API access.",
+              "In the ApiKey branch, enter the Claude API key, confirm the Anthropic API Base URL, then validate when ready.",
+              "In the OAuth2 branch, authorize in the browser, copy the code, return to EnConvo, and complete login.",
+              "Choose the Claude model that should power new agents when Anthropic is the global default.",
+              "Use Reasoning Effort to match the normal complexity of your Anthropic workloads.",
+              "Adjust Temperature only when you want a different response style."
             ],
             badge: "Private"
           },
@@ -644,14 +612,13 @@
             ],
             inventoryTitle: "Google Gemini AI Controls",
             inventory: [
-              "Credential Provider: Gemini AI",
-              "Credentials Type: OAuth2 or ApiKey",
-              "ApiKey branch: Google AI API key field, Google AI API Base URL, Validate",
-              "OAuth2 branch: Google account connection state and Reconnect to Gemini AI",
-              "Selected model: Gemini 3.5 Flash",
-              "Visible models: Gemini 3.1 Flash-Lite Preview, Gemini 3.1 Pro Preview, Gemini 3 Pro Preview, Gemini 3 Flash Preview, Gemini 2.5 Pro, Gemini 2.5 Flash",
-              "Reasoning Effort: None",
-              "Google Search Tool, URL Context Tool, and Show thoughts switches"
+              "Set Credential Provider to the Gemini credential that should serve the global default.",
+              "Use Credentials Type to choose OAuth2 for Google account authorization or ApiKey for direct Google AI API access.",
+              "In the ApiKey branch, enter the Google AI API key, confirm the base URL, then validate when ready.",
+              "In the OAuth2 branch, review the account connection and reconnect only when you need to repair or change it.",
+              "Choose the Gemini model that should power new agents.",
+              "Set Reasoning Effort and Temperature for the default Gemini response behavior.",
+              "Enable Google Search Tool, URL Context Tool, or Show thoughts only when new agents should inherit those capabilities."
             ],
             badge: "Private"
           },
@@ -673,11 +640,11 @@
             ],
             inventoryTitle: "Ollama Controls",
             inventory: [
-              "Setup state: Ready / Stopped",
-              "Local API note: http://127.0.0.1:11434",
-              "Selected model: qwen3.6-27b-uncensored:q4_k_p",
-              "Visible models include cloud and local entries such as ministral, kimi, gemma, cua/fara, deepseek, and qwen",
-              "Temperature: 1"
+              "Confirm the Ollama service is ready before relying on this provider.",
+              "Use the local API endpoint, commonly http://127.0.0.1:11434, unless your Ollama service runs elsewhere.",
+              "Choose an installed local model from Model Name after the model list loads.",
+              "Install or pull missing models in Ollama before expecting them to appear in EnConvo.",
+              "Adjust Temperature only after choosing the model."
             ],
             badge: "Local"
           },
@@ -702,12 +669,11 @@
             ],
             inventoryTitle: "Groq AI Controls",
             inventory: [
-              "Credential Provider: Groq AI",
-              "Authentication: API key only in this provider sheet",
-              "Groq API Base URL: https://api.groq.com/openai/v1",
-              "Model menu includes: canopylabs/orpheus-v1-english, openai/gpt-oss-safeguard-20b, groq/compound-mini, Alibaba Cloud qwen/qwen3-32b",
-              "Additional visible models include Meta Llama variants and groq/compound",
-              "Temperature: 1"
+              "Set Credential Provider to the Groq AI credential before opening the model menu.",
+              "Use the API-key sheet for Groq; this provider does not expose an OAuth2 branch here.",
+              "Keep the Groq API Base URL on https://api.groq.com/openai/v1 unless you intentionally route through a compatible gateway.",
+              "Choose a Groq-hosted model that matches the workload after the credential is ready.",
+              "Adjust Temperature before setting Groq AI as the global default."
             ],
             badge: "Private"
           },
@@ -732,11 +698,11 @@
             ],
             inventoryTitle: "Z.AI GLM Controls",
             inventory: [
-              "Credential Provider: Z.AI",
-              "Authentication: API key only in this provider sheet",
-              "Model Name: provider-loaded menu",
-              "Temperature: 1",
-              "Model list may appear empty until the credential is configured and refreshed"
+              "Set Credential Provider to the Z.AI credential before choosing a GLM model.",
+              "Use the API-key sheet for Z.AI; this provider does not expose an OAuth2 branch here.",
+              "Configure or validate the credential if the model menu is empty.",
+              "Refresh the model list after the credential is ready.",
+              "Adjust Temperature before setting Z.AI / GLM as the global default."
             ],
             badge: "Private"
           }
@@ -749,7 +715,7 @@
         parentPage: "Text-to-Speech",
         intro: "Use this section when choosing the app-wide spoken-output provider. Treat it like the AI Model page: Cloud Plan TTS is the EnConvo-managed route, while Provider Inventory contains direct providers, local providers, and credential-based provider setup.",
         pages: [
-          ["global-text-to-speech/tts-02-edge-voice-menu.png", "Edge TTS Voice Menu", "Choose the Edge voice that should speak by default.", "Use the searchable Voice menu to pick the language, locale, and speaker style that best fits the assistant. Preview audio only when you intentionally want to test the selected voice.", "Voice"],
+          ["global-text-to-speech/tts-02-edge-voice-menu.png", "Edge TTS Voice Menu", "Choose the Edge voice that should speak by default.", "Use the searchable Voice menu to pick the language, locale, and speaker style that best fits the assistant. Preview audio only when you intentionally want to test the voice choice.", "Voice"],
           ["global-text-to-speech/tts-03-edge-output-format-menu.png", "Edge TTS Output Format Menu", "Choose the audio format Edge TTS should generate.", "Select a standard MP3 option for general voice output, a higher-bitrate MP3 for presentation-quality audio, or Opus/WebM when smaller streaming files are preferred.", "Voice"],
           ["global-text-to-speech/tts-04-xai-cloud-overview.png", "xAI TTS Cloud Plan Overview", "Use this Cloud Plan page when you want EnConvo to manage the provider credential for you.", "Confirm the Credential Provider is EnConvo Cloud, choose the voice and language behavior, then set it as the default only when this Cloud Plan voice should be inherited by agents.", "Voice"],
           ["global-text-to-speech/tts-05-xai-cloud-voice-menu.png", "xAI TTS Cloud Plan Voice Menu", "Choose the Cloud Plan xAI voice preset.", "Pick a voice that matches the assistant's tone. For example, use warmer voices for conversational agents and clearer, firmer voices for instructional agents.", "Voice"],
@@ -767,7 +733,7 @@
           ["global-text-to-speech/tts-22-elevenlabs-apikey-setup.png", "Eleven Labs TTS ApiKey Setup", "Use this sheet to connect Eleven Labs with an API key.", "Paste the Eleven Labs API key, then validate only when you are ready to test it. After validation, return to the provider page and choose a model and voice.", "Private"],
           ["global-text-to-speech/tts-23-elevenlabs-model-menu.png", "Eleven Labs TTS Model Menu", "Choose an Eleven Labs model after the API key is configured.", "If the model list is empty, finish the API-key credential setup first, then refresh the model list. Choose the model that matches your desired quality, latency, and cost profile.", "Voice"],
           ["global-text-to-speech/tts-24-elevenlabs-voice-menu.png", "Eleven Labs TTS Voice Menu", "Choose an Eleven Labs voice after the API key is configured.", "If the voice list is empty, confirm the credential and refresh the voice list. Pick the voice that should become the global spoken-output style before setting this provider as default.", "Voice"],
-          ["global-text-to-speech/tts-26-kokoro-voice-menu.png", "Kokoro MLX TTS Voice Menu", "Choose a local Kokoro voice preset.", "Use the voice code and label to pick language and speaker style. For example, Japanese and Mandarin presets are visible here; choose the preset that matches the agent's target language.", "Voice"],
+          ["global-text-to-speech/tts-26-kokoro-voice-menu.png", "Kokoro MLX TTS Voice Menu", "Choose a local Kokoro voice preset.", "Use the voice code and label to match language and speaker style. Pick the preset that matches the agent's target language before setting Kokoro MLX as the global voice default.", "Voice"],
           ["global-text-to-speech/tts-28-qwen3-model-manager.png", "Qwen3 MLX TTS Model Manager", "Choose or manage the local Qwen3 TTS model variant.", "Use the model manager to load a different local model, compare Base, CustomVoice, and VoiceDesign variants, or manage local storage. Use Delete only when you intentionally want to remove a model.", "Local"],
           ["global-text-to-speech/tts-29-qwen3-voice-menu.png", "Qwen3 MLX TTS Voice Menu", "Choose the Qwen3 speaker profile.", "Pick a predefined voice, then use the Instruction field on the provider page to guide the delivery style, emotion, or speaking tone.", "Voice"]
         ],
@@ -780,7 +746,7 @@
               "Open Settings > Global Providers Settings > Text-to-Speech.",
               "Choose one of the providers marked EnConvo Cloud Plan in the provider column.",
               "Confirm Credential Provider is EnConvo Cloud.",
-              "Open Voice and Language when those controls are available for the selected Cloud Plan provider.",
+              "Open Voice and Language controls for the Cloud Plan provider when you need to tune the speaking style.",
               "Use Auto Detect for flexible multilingual output, or choose a fixed language when the assistant should always speak one language.",
               "Use Set as Default Provider only when this Cloud Plan voice should become the app-wide spoken-output default."
             ],
@@ -850,7 +816,7 @@
               "Open Voice to search or choose a voice and locale.",
               "Use the play button beside Voice when you intentionally want to preview audio.",
               "Open Output Format to choose quality and file format.",
-              "Leave Current Default Provider unchanged unless you intentionally switch defaults."
+              "Keep the default unchanged unless you intentionally want another app-wide voice route."
             ],
             evidence: [
               "global-text-to-speech/tts-01-overview-edge.png",
@@ -868,11 +834,11 @@
           {
             title: "OpenAI TTS Configuration",
             proof: "global-text-to-speech/tts-07-openai-overview.png",
-            summary: "OpenAI TTS is the direct-provider path for spoken output through an OpenAI credential. Use the Credential Provider pencil to configure authentication, then choose model, voice, and speech speed on the provider page.",
+            summary: "OpenAI TTS is the direct-provider path for spoken output through an OpenAI credential. Configure authentication first, then choose the model, voice, and speech speed that should be inherited globally.",
             steps: [
               "Choose OpenAI TTS in the provider column.",
               "Open Credential Provider to select an existing OpenAI credential or create a new credential.",
-              "Use the pencil to open the selected credential setup sheet.",
+              "Click the pencil beside Credential Provider to edit the OpenAI credential.",
               "Choose OAuth2 for browser-based authorization, or ApiKey to enter an API key, API type, and base URL.",
               "Choose Model Name, Voice, and Speech Speed.",
               "Use Set as Default Provider only when OpenAI TTS should become the app-wide voice default."
@@ -885,23 +851,23 @@
             ],
             inventoryTitle: "OpenAI TTS Controls",
             inventory: [
-              "Credential Provider: OpenAI",
-              "Credential editor: OAuth2 or ApiKey",
-              "Model Name: tts-1",
-              "Voice: alloy",
-              "Speech Speed: 1.2x",
-              "Credential menu: OpenAI or Create new Credential"
+              "Set Credential Provider to the OpenAI credential that should generate speech.",
+              "Choose OAuth2 for browser authorization or ApiKey for direct provider-key setup.",
+              "Choose Model Name after the credential is ready.",
+              "Choose Voice to set the default speaking style.",
+              "Use Speech Speed to tune playback pace.",
+              "Use Create new Credential only when you need a separate OpenAI TTS credential."
             ],
             badge: "Private"
           },
           {
             title: "Gemini TTS Configuration",
             proof: "global-text-to-speech/tts-09-gemini-overview.png",
-            summary: "Gemini TTS is a direct-provider path for spoken output through a Gemini credential. Use the Credential Provider pencil to configure an ApiKey credential, then choose the TTS model and speaking voice.",
+            summary: "Gemini TTS is a direct-provider path for spoken output through a Gemini credential. Configure the ApiKey credential first, then choose the TTS model and speaking voice.",
             steps: [
               "Choose Gemini TTS in the provider column.",
               "Open Credential Provider to select or create the Gemini credential.",
-              "Use the pencil to open the selected Gemini credential setup sheet.",
+              "Click the pencil beside Credential Provider to edit the Gemini credential.",
               "Use ApiKey to enter a Gemini API key and base URL.",
               "Open Model Name to choose the Gemini TTS model.",
               "Open Voice to choose the speaking style.",
@@ -915,11 +881,11 @@
             ],
             inventoryTitle: "Gemini TTS Controls",
             inventory: [
-              "Credential Provider: Gemini",
-              "Credential editor: ApiKey",
-              "Model Name: gemini-3.1-flash-tts-preview",
-              "Voice: Zephyr -- Bright",
-              "Additional visible voices: Puck -- Upbeat, Charon -- Informative, Kore -- Firm, Fenrir -- Excitable, Leda -- Youthful, Orus -- Firm, Aoede -- Breezy"
+              "Set Credential Provider to the Gemini credential that should generate speech.",
+              "Use ApiKey to enter a Gemini provider key and base URL.",
+              "Choose Model Name after the credential is ready.",
+              "Choose Voice according to the desired speaking tone.",
+              "Use the voice labels, such as bright, upbeat, informative, or firm, to match the agent's personality."
             ],
             badge: "Private"
           },
@@ -932,7 +898,7 @@
               "Open Credential Provider to select the xAI credential.",
               "Click the pencil beside Credential Provider to open the credential setup sheet.",
               "Use Credentials Type to choose OAuth2 or ApiKey.",
-              "Use OAuth2 when you want browser-based authorization for the selected xAI account.",
+              "Use OAuth2 when you want browser-based authorization for the xAI account.",
               "Use ApiKey when you want to enter an xAI API key directly, then validate only when you are ready to test that credential.",
               "Return to the Text-to-Speech pane, choose Voice and Language, and set it as the default only when this provider should become the global voice default."
             ],
@@ -944,10 +910,10 @@
             ],
             inventoryTitle: "xAI TTS Controls",
             inventory: [
-              "Credential Provider: X.AI-GROK",
-              "Credentials Type: OAuth2 or ApiKey",
-              "Voice: Ara (warm, friendly)",
-              "Language: Auto Detect"
+              "Set Credential Provider to the X.AI-GROK credential.",
+              "Use Credentials Type to choose OAuth2 or ApiKey.",
+              "Choose Voice according to the assistant tone you want.",
+              "Use Auto Detect for multilingual output, or choose a fixed language for single-language agents."
             ],
             badge: "Private"
           },
@@ -972,11 +938,11 @@
             ],
             inventoryTitle: "Eleven Labs TTS Controls",
             inventory: [
-              "Credential Provider: Eleven Labs",
-              "Credential editor: Eleven Labs API key",
-              "Model Name: provider-loaded menu",
-              "Voice: provider-loaded menu",
-              "Speech Speed: 1.2x"
+              "Set Credential Provider to the Eleven Labs credential that should load models and voices.",
+              "Use the API-key editor to enter and validate the Eleven Labs key.",
+              "Choose Model Name after the credential-backed list loads.",
+              "Choose Voice after the voice list is available.",
+              "Use Speech Speed to tune playback pace before setting this provider as default."
             ],
             badge: "Private"
           },
@@ -986,7 +952,7 @@
             summary: "Kokoro MLX TTS is a local, on-device provider that runs through the mlx_manage extension on Apple Silicon. It uses downloaded local model weights and does not require a third-party credential.",
             steps: [
               "Choose Kokoro (mlx) in the provider column.",
-              "Review the selected local model card and confirm it is downloaded before relying on it.",
+              "Confirm the local Kokoro model is downloaded before relying on it.",
               "Use Manage models when you need to review or change local model storage.",
               "Open Voice to choose a Kokoro preset; the voice code and label indicate language and speaker style.",
               "Use Speech Speed to tune playback pace.",
@@ -998,11 +964,11 @@
             ],
             inventoryTitle: "Kokoro MLX TTS Controls",
             inventory: [
-              "Model: Kokoro 82M (bf16)",
-              "Local model size: 366 MB",
-              "Selected voice: zm_yunxi -- Mandarin Male (Yunxi)",
-              "Visible voice examples: Japanese Female, Japanese Male, Mandarin Male",
-              "Speech Speed: 1x"
+              "Choose the downloaded Kokoro model variant that should run locally.",
+              "Check local model size before downloading or keeping multiple variants.",
+              "Choose a voice preset that matches the target language and speaker style.",
+              "Use the voice menu to switch between available language and gender presets.",
+              "Use Speech Speed to tune playback pace."
             ],
             badge: "Local"
           },
@@ -1012,7 +978,7 @@
             summary: "Qwen3 MLX TTS is a local, on-device provider with multiple downloaded Qwen3-TTS model variants. It supports predefined voices and an Instruction field for voice style or emotion guidance.",
             steps: [
               "Choose Qwen3 (mlx) in the provider column.",
-              "Review the selected local model card and the additional visible model cards.",
+              "Confirm the local Qwen3 model you want is downloaded and ready.",
               "Open View All Models to inspect all Qwen3-TTS variants and their download or load state.",
               "Open Voice to choose a predefined speaker profile.",
               "Use Instruction to describe the target speaking style, such as natural, friendly, happy, or excited.",
@@ -1025,12 +991,11 @@
             ],
             inventoryTitle: "Qwen3 MLX TTS Controls",
             inventory: [
-              "Current model: Qwen3-TTS 0.6B CustomVoice (bf16)",
-              "Additional visible model: Qwen3-TTS 1.7B CustomVoice (bf16)",
-              "All Models count: 5",
-              "Visible model variants: CustomVoice, VoiceDesign, Base",
-              "Selected voice: Vivian -- Chinese Female",
-              "Instruction: Speak in a natural, friendly tone."
+              "Choose a Qwen3-TTS model variant based on quality, size, and local performance.",
+              "Use View All Models to compare downloaded, loadable, and removable variants.",
+              "Use CustomVoice, VoiceDesign, or Base variants according to the voice workflow you need.",
+              "Choose a predefined voice profile before setting the provider as default.",
+              "Use Instruction to guide tone, emotion, or speaking style."
             ],
             badge: "Local"
           }
@@ -1043,7 +1008,7 @@
         parentPage: "Web Search",
         intro: "Use this section to choose the app-wide search provider that agents inherit when they need web or social-search context.",
         pages: [
-          ["global-web-search/web-search-01-xai-default.png", "xAI X Search Default", "Current Web Search default using xAI X Search.", "Use xAI X Search when search should use xAI's built-in X search tool. Confirm the credential provider and model, then keep Current Default Provider unchanged unless you intentionally switch to a different search provider.", "Provider"],
+          ["global-web-search/web-search-01-xai-default.png", "xAI X Search Default", "Use xAI X Search when agents should search X posts, profiles, or threads.", "Confirm the X.AI-GROK credential provider and model before relying on this search backend. Keep the default unchanged when this is already the intended app-wide search provider.", "Provider"],
           ["global-web-search/web-search-02-xai-model-menu.png", "xAI X Search Model Menu", "Choose the model used by the Web Search provider.", "Use the Model Name menu to choose the model that should run search-backed responses. The current default example uses Grok 4.3 for xAI X Search.", "Provider"],
           ["global-web-search/web-search-03-xai-credential-apikey-sheet.png", "xAI X Search ApiKey Credential Setup", "Configure xAI authentication with an API key.", "Click the pencil beside Credential Provider to open this sheet. Choose ApiKey, enter the xAI API key only when you are ready to configure the credential, then use Validate only when you intentionally want EnConvo to test the key.", "Private"],
           ["global-web-search/web-search-04-xai-credential-type-menu.png", "xAI X Search Credential Type Menu", "Choose the authentication method for the xAI credential.", "Use ApiKey for a direct xAI key. Use OAuth2 when you want browser-based account authorization instead. The menu is the safe place to confirm which authentication methods this provider supports.", "Private"],
@@ -1068,18 +1033,18 @@
           {
             title: "xAI X Search Configuration",
             proof: "global-web-search/web-search-01-xai-default.png",
-            summary: "xAI X Search is the current default Web Search provider in this guide. It searches X posts, profiles, and threads through xAI's search tool.",
+            summary: "xAI X Search is the Web Search route for X posts, profiles, and threads. Configure the xAI credential first, then choose the model that should handle search-backed responses.",
             steps: [
               "Choose xAI X Search from Web Search Provider.",
               "Confirm Credential Provider is X.AI-GROK.",
               "Click the pencil beside Credential Provider when you need to configure the xAI credential.",
               "Choose ApiKey for direct key setup, or OAuth2 for browser-based account authorization.",
               "Open Model Name and choose Grok 4.3 for this provider.",
-              "Use Current Default Provider as the confirmation that this provider is already the app-wide Web Search default."
+              "Check the provider status before switching defaults, and change it only when you intend to update app-wide Web Search behavior."
             ],
             evidence: ["global-web-search/web-search-01-xai-default.png", "global-web-search/web-search-02-xai-model-menu.png", "global-web-search/web-search-03-xai-credential-apikey-sheet.png", "global-web-search/web-search-04-xai-credential-type-menu.png", "global-web-search/web-search-05-xai-credential-oauth-sheet.png"],
             inventoryTitle: "xAI X Search Controls",
-            inventory: ["Credential Provider: X.AI-GROK", "Credential editor: ApiKey or OAuth2", "ApiKey branch: API Key field and Validate button", "OAuth2 branch: account card and Connect to X.AI-GROK button", "Model Name: Grok 4.3", "Default state: Current Default Provider"],
+            inventory: ["Set Credential Provider to the X.AI-GROK credential.", "Use the credential editor to choose ApiKey or OAuth2.", "Use ApiKey when you want direct key setup and validation.", "Use OAuth2 when you want browser-based account authorization.", "Choose the model that should run search-backed responses.", "Check the provider status before changing the app-wide search default."],
             badge: "Private"
           }
         ]
@@ -1091,8 +1056,8 @@
         parentPage: "Image Generation",
         intro: "Use this section to choose the app-wide image generation provider and model for text-to-image and image editing workflows.",
         pages: [
-          ["global-image-generation/image-generation-01-openai-default.png", "OpenAI Image Generation Default", "Current custom-provider default using OpenAI.", "Use the Custom Providers tab when you want a provider credential you manage. Confirm the OpenAI credential provider, choose the image model, then keep Current Default Provider unchanged unless you intentionally change the global image default.", "Media"],
-          ["global-image-generation/image-generation-02-openai-model-menu.png", "OpenAI Image Model Menu", "Choose the OpenAI image generation model.", "Use GPT Image 2 for the default image model shown here. Other visible choices include GPT Image 1.5, GPT Image 1, and GPT Image 1 Mini, each with different quality, capability, and cost tradeoffs.", "Media"],
+          ["global-image-generation/image-generation-01-openai-default.png", "OpenAI Image Generation Default", "Use OpenAI when image generation should run through a credential you manage.", "Open Custom Providers, confirm the OpenAI credential provider, choose the image model, then keep the default unchanged unless you intentionally want to switch the global image provider.", "Media"],
+          ["global-image-generation/image-generation-02-openai-model-menu.png", "OpenAI Image Model Menu", "Choose the OpenAI image model for generation and editing.", "Choose GPT Image 2 when you want the strongest default OpenAI image route. Use lighter or older model choices only when cost, compatibility, or latency matters more than capability.", "Media"],
           ["global-image-generation/image-generation-03-cloud-models.png", "EnConvo Cloud Image Model List", "Managed Cloud Plan image models.", "Use the Enconvo Cloud tab when you want EnConvo-managed image model access. Choose Settings on a model only when you want to inspect or configure that model before making it the default route.", "Media"],
           ["global-image-generation/image-generation-04-openai-credential-apikey-sheet.png", "OpenAI Image ApiKey Credential Setup", "Configure OpenAI image generation with an API key.", "Click the pencil beside Credential Provider to open this sheet. Choose ApiKey, select the API Type, enter the OpenAI API key and base URL only when you are ready, then validate only when you intentionally want to test the credential.", "Private"],
           ["global-image-generation/image-generation-05-openai-credential-type-menu.png", "OpenAI Image Credential Type Menu", "Choose the authentication method for the OpenAI credential.", "Use ApiKey for direct OpenAI API access. Use OAuth2 when you want browser-based OpenAI account authorization. Confirm this before choosing the image model as the global default.", "Private"],
@@ -1108,7 +1073,7 @@
               "Use Enconvo Cloud for subscription-backed image models.",
               "Use Custom Providers for Google Gemini, Fal.ai, OpenAI, Azure AI, Together, Straico, xAI, and Cloud-backed custom entries.",
               "Configure credentials before relying on a custom provider.",
-              "Use Current Default Provider or Set as Default Provider to confirm which image provider is app-wide."
+              "Check the provider status before changing which image provider is app-wide."
             ],
             inventoryTitle: "Image Generation Providers",
             inventory: ["Google Gemini", "Fal.ai", "OpenAI", "Azure AI", "Together", "Straico", "xAI", "OpenAI (Enconvo Cloud)", "Google Gemini (Enconvo Cloud)"],
@@ -1136,7 +1101,7 @@
           {
             title: "OpenAI Image Generation Configuration",
             proof: "global-image-generation/image-generation-01-openai-default.png",
-            summary: "OpenAI is the current custom-provider default for Image Generation. Configure the credential provider first, then choose the model that should be inherited globally.",
+            summary: "OpenAI is the custom-provider route for Image Generation when you want to use an OpenAI credential you manage. Configure the credential first, then choose the model that should be inherited globally.",
             steps: [
               "Open the Custom Providers tab.",
               "Choose OpenAI from the provider column.",
@@ -1144,12 +1109,12 @@
               "Click the pencil beside Credential Provider when you need to configure the OpenAI credential.",
               "Choose ApiKey for direct API-key setup, or OAuth2 for browser-based account authorization.",
               "For ApiKey setup, choose API Type and enter the API key and base URL only when you are ready to configure it.",
-              "Open Model Name and choose GPT Image 2 or another visible OpenAI image model.",
-              "Use Current Default Provider as confirmation that OpenAI is already the global image default."
+              "Open Model Name and choose GPT Image 2 or another OpenAI image model.",
+              "Check the provider status before changing the default; switch only when OpenAI should be the app-wide image route."
             ],
             evidence: ["global-image-generation/image-generation-01-openai-default.png", "global-image-generation/image-generation-02-openai-model-menu.png", "global-image-generation/image-generation-04-openai-credential-apikey-sheet.png", "global-image-generation/image-generation-05-openai-credential-type-menu.png", "global-image-generation/image-generation-06-openai-credential-oauth-sheet.png"],
             inventoryTitle: "OpenAI Image Controls",
-            inventory: ["Credential Provider: OpenAI", "Credential editor: ApiKey or OAuth2", "ApiKey branch: API Type, OpenAI API Key, OpenAI API Base URL, Validate button", "OAuth2 branch: account card and Connect to OpenAI button", "Model Name: GPT Image 2", "Visible model choices: GPT Image 2, GPT Image 1.5, GPT Image 1, GPT Image 1 Mini", "Default state: Current Default Provider"],
+            inventory: ["Set Credential Provider to the OpenAI credential.", "Use ApiKey for direct API-key setup or OAuth2 for browser authorization.", "In the ApiKey branch, confirm API Type, API key, base URL, and validation when ready.", "In the OAuth2 branch, connect only when you are ready to start browser authorization.", "Choose GPT Image 2 or another image model based on quality, compatibility, and cost.", "Check the provider status before changing the global image route."],
             badge: "Private"
           }
         ]
@@ -1161,10 +1126,10 @@
         parentPage: "Video Generation",
         intro: "Use this section to choose the app-wide video generation provider, model, duration, aspect ratio, and resolution.",
         pages: [
-          ["global-video-generation/video-generation-01-xai-default.png", "xAI Video Generation Default", "Current Video Generation default using xAI.", "Use this provider when generated video should use xAI Grok Imagine Video. Confirm the credential provider, model, duration, aspect ratio, and resolution before relying on it as the global video default.", "Media"],
+          ["global-video-generation/video-generation-01-xai-default.png", "xAI Video Generation Default", "Use xAI when generated video should use Grok Imagine Video.", "Confirm the X.AI-GROK credential, model, duration, aspect ratio, and resolution before relying on this as the global video route. These settings affect output format, latency, and cost.", "Media"],
           ["global-video-generation/video-generation-02-xai-model-menu.png", "xAI Video Model Menu", "Choose the xAI video generation model.", "Use Grok Imagine Video for the current xAI video provider. Open this menu when you need to verify or change the model before setting the provider as default.", "Media"],
-          ["global-video-generation/video-generation-03-aspect-ratio-menu.png", "Video Aspect Ratio Menu", "Choose the output framing for generated videos.", "Use Landscape (16:9) for wide video. Other visible options include Square, Portrait, and alternate landscape or portrait ratios for different publishing surfaces.", "Media"],
-          ["global-video-generation/video-generation-04-resolution-menu.png", "Video Resolution Menu", "Choose the output resolution.", "Use 720p for the current default example. Choose 480p when you need a lighter output or faster/lower-cost generation.", "Media"],
+          ["global-video-generation/video-generation-03-aspect-ratio-menu.png", "Video Aspect Ratio Menu", "Choose the frame shape for generated videos.", "Use Landscape (16:9) for wide desktop or YouTube-style output. Choose square or portrait ratios when the target surface is social, mobile, or vertical-first.", "Media"],
+          ["global-video-generation/video-generation-04-resolution-menu.png", "Video Resolution Menu", "Choose the output resolution.", "Use 720p when quality matters more than file size or generation cost. Choose 480p for drafts, faster iteration, or lighter outputs.", "Media"],
           ["global-video-generation/video-generation-05-xai-credential-apikey-sheet.png", "xAI Video ApiKey Credential Setup", "Configure xAI video generation with an API key.", "Click the pencil beside Credential Provider to open this sheet. Choose ApiKey and enter the xAI API key only when you are ready to configure the credential. Use Validate only when you intentionally want to test it.", "Private"],
           ["global-video-generation/video-generation-06-xai-credential-type-menu.png", "xAI Video Credential Type Menu", "Choose the authentication method for the xAI credential.", "Use ApiKey for a direct xAI key. Use OAuth2 when you want browser-based account authorization. This is the same X.AI-GROK credential used by the xAI provider.", "Private"],
           ["global-video-generation/video-generation-07-xai-credential-oauth-sheet.png", "xAI Video OAuth2 Credential Setup", "Configure xAI through OAuth2 authorization.", "Choose OAuth2 when you want EnConvo to connect through an xAI account. Click Connect only when you are ready to start the browser authorization flow.", "Private"]
@@ -1188,7 +1153,7 @@
           {
             title: "xAI Video Generation Configuration",
             proof: "global-video-generation/video-generation-01-xai-default.png",
-            summary: "xAI is the current Video Generation default in this guide. It uses Grok Imagine Video with a 10-second, landscape, 720p output setup.",
+            summary: "xAI is the Video Generation route for Grok Imagine Video. Configure the xAI credential, then set duration, framing, and resolution to match the output you normally need.",
             steps: [
               "Choose xAI from Video Generation Provider.",
               "Confirm Credential Provider is X.AI-GROK.",
@@ -1198,7 +1163,7 @@
               "Set Duration to the expected default clip length.",
               "Open Aspect Ratio and choose the framing that matches the target surface.",
               "Open Resolution and choose the output quality.",
-              "Use Current Default Provider as confirmation that xAI is already the app-wide video default."
+              "Check the provider status before changing the default; switch only when xAI should be the app-wide video route."
             ],
             evidence: [
               "global-video-generation/video-generation-01-xai-default.png",
@@ -1210,7 +1175,7 @@
               "global-video-generation/video-generation-07-xai-credential-oauth-sheet.png"
             ],
             inventoryTitle: "xAI Video Controls",
-            inventory: ["Credential Provider: X.AI-GROK", "Credential editor: ApiKey or OAuth2", "ApiKey branch: API Key field and Validate button", "OAuth2 branch: account card and Connect to X.AI-GROK button", "Model Name: Grok Imagine Video", "Duration: 10", "Aspect Ratio: Landscape (16:9)", "Resolution: 720p", "Additional resolution choice: 480p"],
+            inventory: ["Set Credential Provider to the X.AI-GROK credential.", "Use ApiKey for direct key setup or OAuth2 for browser authorization.", "Use the ApiKey branch when you want direct validation through an xAI key.", "Use the OAuth2 branch when you want account-based authorization.", "Choose Grok Imagine Video as the generation model.", "Set Duration for the normal clip length.", "Set Aspect Ratio for the target publishing surface.", "Set Resolution according to quality, cost, and draft needs."],
             badge: "Private"
           }
         ]
@@ -1222,7 +1187,7 @@
         parentPage: "Web Fetch",
         intro: "Use this section to choose how EnConvo fetches and extracts web page content when an agent or command reads a URL.",
         pages: [
-          ["global-web-fetch/web-fetch-01-local-default.png", "Local Fetch Default", "Current Web Fetch default using Local Fetch.", "Use Local Fetch when EnConvo should scrape webpages locally without a third-party credential. Adjust Max Length, Start Index, and Raw HTML only when you need a different extraction shape.", "Provider"]
+          ["global-web-fetch/web-fetch-01-local-default.png", "Local Fetch Default", "Use Local Fetch when EnConvo should extract webpages without a third-party credential.", "Keep Local Fetch for simple URL reading. Adjust Max Length, Start Index, and Raw HTML only when the downstream command needs a different amount or format of webpage content.", "Provider"]
         ],
         deepDive: [
           {
@@ -1243,16 +1208,16 @@
           {
             title: "Local Fetch Configuration",
             proof: "global-web-fetch/web-fetch-01-local-default.png",
-            summary: "Local Fetch is the current Web Fetch default. It is the simplest option because it runs locally and does not require a provider credential.",
+            summary: "Local Fetch is the simplest Web Fetch route because it runs locally and does not require a provider credential.",
             steps: [
               "Choose Local Fetch from Web Fetch Provider.",
               "Set Max Length to control the maximum extracted content length.",
               "Set Start Index when you need extraction to begin later in the page text.",
               "Turn Raw HTML on only when the downstream workflow needs HTML instead of extracted readable text.",
-              "Use Current Default Provider as confirmation that Local Fetch is already the app-wide Web Fetch default."
+              "Check the provider status before changing the default; switch only when another fetch provider better matches your workflow."
             ],
             inventoryTitle: "Local Fetch Controls",
-            inventory: ["Max Length: 20000", "Start Index: 0", "Raw HTML: off", "Default state: Current Default Provider"],
+            inventory: ["Use Max Length to cap how much page content EnConvo extracts.", "Use Start Index when extraction should begin later in the page text.", "Turn Raw HTML on only when the next step needs HTML rather than readable text.", "Check the provider status before changing the app-wide fetch route."],
             badge: "Provider"
           }
         ]
@@ -1262,11 +1227,11 @@
         title: "OCR",
         parent: "global-providers",
         parentPage: "OCR",
-        intro: "Use this section to choose the app-wide OCR provider for extracting text from screenshots, images, and documents.",
+        intro: "Use this section to choose the app-wide OCR provider for extracting text from UI captures, images, and documents.",
         pages: [
-          ["global-ocr/ocr-01-ai-model-default.png", "AI Model OCR Default", "Current OCR default using an AI Model OCR provider.", "Use AI Model OCR when OCR should use an AI model instead of a local/native recognizer. Confirm the AI model provider, model name, reasoning effort, and temperature before relying on it globally.", "Provider"],
-          ["global-ocr/ocr-02-ai-model-provider-menu.png", "OCR AI Model Provider Menu", "Choose which AI Model provider OCR should use.", "Use the AI Model Provider menu to inherit EnConvo Cloud Plan or choose another configured provider. The current example uses EnConvo Cloud Plan.", "Provider"],
-          ["global-ocr/ocr-03-model-menu.png", "OCR Model Menu", "Choose the model used for AI Model OCR.", "Use Gemini 3.1 Flash Lite for the current OCR example. Choose a stronger model only when OCR quality needs more reasoning or vision capability.", "Provider"],
+          ["global-ocr/ocr-01-ai-model-default.png", "AI Model OCR Default", "Use AI Model OCR when text extraction should use a model-backed provider.", "Choose this route when OCR needs layout interpretation or visual reasoning beyond local/native recognition. Confirm the AI model provider, model name, reasoning effort, and temperature before relying on it globally.", "Provider"],
+          ["global-ocr/ocr-02-ai-model-provider-menu.png", "OCR AI Model Provider Menu", "Choose which AI Model provider OCR should call.", "Use EnConvo Cloud Plan when OCR should use subscription-backed access, or choose another configured provider when you want OCR to use a specific model credential.", "Provider"],
+          ["global-ocr/ocr-03-model-menu.png", "OCR Model Menu", "Choose the model used for AI Model OCR.", "Use Gemini 3.1 Flash Lite for fast everyday OCR. Choose a stronger model only when tables, handwriting, dense UI captures, or complex layouts require more visual reasoning.", "Provider"],
           ["global-ocr/ocr-04-reasoning-menu.png", "OCR Reasoning Effort Menu", "Choose how much reasoning the OCR model should use.", "Use Minimal for fast OCR extraction. Increase to Low, Medium, or High only when the OCR task needs more interpretation or difficult layout handling.", "Provider"]
         ],
         deepDive: [
@@ -1288,18 +1253,18 @@
           {
             title: "AI Model OCR Configuration",
             proof: "global-ocr/ocr-01-ai-model-default.png",
-            summary: "AI Model OCR is the current OCR default. It uses EnConvo Cloud Plan with Gemini 3.1 Flash Lite, Minimal reasoning, and temperature 0.",
+            summary: "AI Model OCR is the model-backed OCR route. Use EnConvo Cloud Plan with a fast Gemini model for routine extraction, and increase model strength or reasoning only for harder visual layouts.",
             steps: [
               "Choose AI Model OCR from OCR Provider.",
               "Open AI Model Provider and choose EnConvo Cloud Plan or another configured provider.",
               "Open Model Name and choose the model that should handle OCR extraction.",
               "Open Reasoning Effort and choose Minimal for fast OCR, or a higher level for harder visual layouts.",
               "Keep Temperature at 0 when OCR should be deterministic.",
-              "Use Current Default Provider as confirmation that AI Model OCR is already the app-wide OCR default."
+              "Check the provider status before changing the default; switch only when another OCR route should handle app-wide extraction."
             ],
             evidence: ["global-ocr/ocr-01-ai-model-default.png", "global-ocr/ocr-02-ai-model-provider-menu.png", "global-ocr/ocr-03-model-menu.png", "global-ocr/ocr-04-reasoning-menu.png"],
             inventoryTitle: "AI Model OCR Controls",
-            inventory: ["AI Model Provider: EnConvo Cloud Plan", "Model Name: Gemini 3.1 Flash Lite", "Reasoning Effort: Minimal", "Temperature: 0", "Default state: Current Default Provider"],
+            inventory: ["Choose AI Model Provider according to the credential or Cloud Plan route OCR should use.", "Choose Model Name based on OCR difficulty and latency needs.", "Use Minimal reasoning for fast extraction; increase it only for difficult layouts.", "Keep Temperature at 0 when extraction should stay deterministic.", "Check the provider status before changing the app-wide OCR route."],
             badge: "Provider"
           }
         ]
@@ -1310,14 +1275,14 @@
         intro: "Agents are the assistants and workflows users actually run. These settings control their definitions, triggers, tools, memory, channels, and automation surfaces.",
         pages: [
           ["08-agent-list.png", "Agent List", "Create, inspect, and edit individual agents.", "Open an agent here to configure its prompt, model override, tools, voice, memory, runtime settings, and post-actions.", "Core"],
-          ["09-voice-trigger.png", "Voice Trigger", "Voice activation and spoken-entry behavior.", "Use this to bind voice phrases or listening behavior to agents.", "Voice"],
-          ["10-memory-management.png", "Memory Management", "Review and control stored memory.", "This pane can contain personal or workflow-specific memories, so review it carefully before sharing screenshots.", "Private"],
-          ["11-im-channels.png", "IM Channels", "External messaging channel integrations.", "Use this for channel-connected agents. Account and channel details should be kept private.", "Private"],
-          ["12-browser-companion.png", "Browser Companion", "Browser helper and companion behavior.", "Use this when agents need browser-side context or interaction.", "Browser"],
-          ["13-computer-use.png", "Computer-Use", "Desktop automation and computer-control settings.", "Use this for agents that inspect or operate local apps.", "Automation"],
+          ["09-voice-trigger.png", "Voice Trigger", "Configure how voice phrases or spoken entry points activate agents.", "Use this page when an agent should be reachable by voice. Review trigger phrases, listening behavior, and activation scope before enabling hands-free workflows.", "Voice"],
+          ["10-memory-management.png", "Memory Management", "Control what EnConvo stores as reusable memory.", "Review stored memories before enabling or sharing memory-backed agents. Delete or edit entries that are outdated, private, or no longer useful to the agent's behavior.", "Private"],
+          ["11-im-channels.png", "IM Channels", "Connect agents to external messaging channels.", "Use this page only when an agent should receive or respond through a chat channel. Confirm the account, channel, and permission scope before enabling the integration.", "Private"],
+          ["12-browser-companion.png", "Browser Companion", "Configure browser-side helper behavior for agents.", "Use this when agents need context from web pages or browser workflows. Confirm what browser context can be shared before allowing an agent to rely on it.", "Browser"],
+          ["13-computer-use.png", "Computer-Use", "Configure desktop automation permissions for agents.", "Use this for agents that inspect or operate local apps. Enable computer-use capabilities only for agents that need them, and keep automation boundaries clear.", "Automation"],
           ["14-scheduled-jobs.png", "Scheduled Jobs", "Recurring agent jobs and schedule controls.", "Use this to automate repeated tasks; verify schedule, timezone, and run target before enabling.", "Automation"],
-          ["15-skills.png", "Skills", "Installed skills and callable capability modules.", "Use this to inspect what specialized workflows agents can invoke.", "Extension"],
-          ["16-variables.png", "Variables", "Reusable values available to prompts and agent templates.", "Use this for shared prompt variables. Keep secrets and local paths private.", "Private"]
+          ["15-skills.png", "Skills", "Manage specialized workflows agents can invoke.", "Use this page to review installed skills and decide which capabilities should be available to agents. Disable or remove skills that should not be callable in normal workflows.", "Extension"],
+          ["16-variables.png", "Variables", "Create reusable values for prompts and agent templates.", "Use variables for shared prompt text, paths, or configuration values. Avoid storing secrets here unless the variable system is intended for that sensitive value.", "Private"]
         ]
       },
       {
@@ -1325,8 +1290,8 @@
         title: "Context",
         intro: "Context settings control what EnConvo can see, remember, and attach from the current environment.",
         pages: [
-          ["17-context-awareness.png", "Context Awareness", "Global context availability and awareness behavior.", "Use this to define how much app, screen, or workflow context EnConvo may use.", "Context"],
-          ["18-appshots.png", "Appshots", "Application snapshot history and configuration.", "Appshots can include app names and screen content. Review them before sharing.", "Private"]
+          ["17-context-awareness.png", "Context Awareness", "Control how much environment context EnConvo may use.", "Use this page to decide whether agents can use app, desktop, or workflow context. Choose the smallest context scope that still supports the workflows you need.", "Context"],
+          ["18-appshots.png", "Appshots", "Review and manage application snapshot context.", "Use Appshots when you need EnConvo to remember recent app context. Treat entries as private because they can include app names, workflow state, and workspace content.", "Private"]
         ]
       },
       {
@@ -1334,8 +1299,8 @@
         title: "Extensions",
         intro: "Extensions add installable capabilities and integrations to EnConvo.",
         pages: [
-          ["19-extension-store.png", "Store", "Browse available extensions.", "Use this to discover and install new EnConvo capabilities.", "Extension"],
-          ["20-installed-extensions.png", "Installed", "Review installed extensions.", "Use this to update, disable, or inspect installed extension surfaces.", "Extension"]
+          ["19-extension-store.png", "Store", "Find installable extensions for EnConvo.", "Use the store when you need a new integration or capability. Review what the extension does before installing it into the working environment.", "Extension"],
+          ["20-installed-extensions.png", "Installed", "Manage extensions already installed in EnConvo.", "Use this page to inspect, update, disable, or remove installed extensions. Keep only the extensions that support your active workflows.", "Extension"]
         ]
       },
       {
@@ -1343,15 +1308,15 @@
         title: "Primary Function Area",
         intro: "These panes configure EnConvo's visible entry points and desktop interaction surfaces.",
         pages: [
-          ["21-companion-orb.png", "Companion Orb", "Floating companion entry point.", "Use this to tune the always-available assistant surface.", "UI"],
-          ["22-popbar.png", "PopBar", "Selection-triggered action bar.", "Use this for text selection workflows and quick commands.", "UI"],
-          ["23-smartbar.png", "SmartBar", "Smart contextual command bar.", "Use this to control context-aware quick actions.", "UI"],
-          ["24-dynamic-island.png", "Dynamic Island", "Status and interaction surface.", "Use this to tune compact progress and response behavior.", "UI"],
-          ["25-ai-cursor.png", "AI Cursor", "Cursor-adjacent AI interaction.", "Use this when cursor-based assistance should be available.", "UI"],
-          ["26-screen-doodle.png", "Screen Doodle", "Drawing and annotation surface.", "Use this for on-screen explanation and markup workflows.", "UI"],
-          ["27-sidebar.png", "Sidebar", "General sidebar behavior.", "Use this to configure the main side panel.", "UI"],
-          ["28-app-sidebar.png", "App Sidebar", "Per-app sidebar behavior.", "Use this for app-aware assistant access.", "UI"],
-          ["29-chat-window.png", "Chat Window", "Main chat window configuration.", "Use this to tune the default conversation surface.", "UI"]
+          ["21-companion-orb.png", "Companion Orb", "Configure the floating entry point for quick access to EnConvo.", "Use this page to decide when the companion surface should be available and how intrusive it should be during normal desktop work.", "UI"],
+          ["22-popbar.png", "PopBar", "Configure the action bar for highlighted text.", "Use PopBar for selection-based workflows such as rewrite, summarize, translate, or send-to-agent actions. Tune it so frequent text actions are fast without interrupting normal selection behavior.", "UI"],
+          ["23-smartbar.png", "SmartBar", "Configure contextual quick actions.", "Use SmartBar when EnConvo should offer actions based on the current context. Keep the action set focused so the bar remains useful during repeated work.", "UI"],
+          ["24-dynamic-island.png", "Dynamic Island", "Configure compact status and interaction behavior.", "Use this page to control how EnConvo reports progress, responses, or running tasks in a small desktop surface.", "UI"],
+          ["25-ai-cursor.png", "AI Cursor", "Configure cursor-adjacent assistance.", "Use AI Cursor when help should appear close to the text cursor or pointer. Enable it only when nearby suggestions improve the editing workflow.", "UI"],
+          ["26-screen-doodle.png", "Screen Doodle", "Configure drawing and annotation tools.", "Use Screen Doodle when you need to mark up the desktop for explanation, tutoring, or visual notes. Review drawing controls before using it in live demonstrations.", "UI"],
+          ["27-sidebar.png", "Sidebar", "Configure the main EnConvo side panel.", "Use this page to tune how the sidebar opens, behaves, and stays available during conversations or app workflows.", "UI"],
+          ["28-app-sidebar.png", "App Sidebar", "Configure app-aware sidebar behavior.", "Use App Sidebar when different apps need different assistant access patterns. Review per-app behavior before relying on it for repeated workflows.", "UI"],
+          ["29-chat-window.png", "Chat Window", "Configure the main conversation surface.", "Use this page to tune the default chat experience, including how conversations open, persist, and fit into your desktop workflow.", "UI"]
         ]
       },
       {
@@ -1367,12 +1332,12 @@
         title: "Dictation & Transcription",
         intro: "These panes configure speech-to-text models, dictation behavior, transcription history, vocabulary, and recordings.",
         pages: [
-          ["31-dictation-models.png", "Dictation Models", "Speech model provider and model list.", "Use this to choose local or cloud dictation models.", "Voice"],
-          ["32-dictation.png", "Dictation", "Dictation behavior and controls.", "Use this to tune live speech-to-text workflows.", "Voice"],
-          ["33-dictation-history.png", "Dictation History", "Historical dictation records.", "This page can expose spoken content, so review entries before sharing.", "Private"],
-          ["34-dictionary.png", "Dictionary", "Custom vocabulary and recognition hints.", "Use this for names, terms, and words that require more reliable recognition.", "Voice"],
-          ["35-transcription-models.png", "Transcription Models", "Transcription provider and model list.", "Use this for file-based audio or video transcription.", "Voice"],
-          ["36-recordings.png", "Recordings", "Saved recordings and recording management.", "Audio files and titles can reveal personal information. Review them before sharing.", "Private"]
+          ["31-dictation-models.png", "Dictation Models", "Choose the model used for live speech-to-text.", "Use local models when privacy and offline use matter, or cloud models when accuracy and language coverage are more important. Confirm the model before relying on dictation in daily work.", "Voice"],
+          ["32-dictation.png", "Dictation", "Configure live dictation behavior.", "Use this page to tune how EnConvo listens, transcribes, and inserts spoken text. Review trigger behavior before using dictation in sensitive apps.", "Voice"],
+          ["33-dictation-history.png", "Dictation History", "Review previous dictation entries.", "Use history to recover or inspect prior dictation output. Treat it as private because entries can include spoken content from work, messages, or notes.", "Private"],
+          ["34-dictionary.png", "Dictionary", "Add vocabulary hints for better recognition.", "Use Dictionary for names, symbols, product terms, abbreviations, and domain vocabulary that dictation commonly mishears. Keep the list focused so recognition hints stay useful.", "Voice"],
+          ["35-transcription-models.png", "Transcription Models", "Choose the model used for file-based transcription.", "Use this page before transcribing audio or video files. Pick a local or cloud model based on privacy, language, accuracy, and runtime needs.", "Voice"],
+          ["36-recordings.png", "Recordings", "Manage saved recordings used for transcription or review.", "Use Recordings to inspect, replay, or remove saved audio. Treat file names and audio content as private unless you intentionally share them.", "Private"]
         ]
       },
       {
@@ -1380,8 +1345,8 @@
         title: "AI Commands",
         intro: "AI Commands are reusable command-style workflows separate from full agent configuration.",
         pages: [
-          ["37-ai-command-store.png", "Store", "Browse AI command templates.", "Use this to add new quick commands.", "Command"],
-          ["38-ai-command-list.png", "List", "Manage installed or custom AI commands.", "Use this to inspect, edit, or remove command workflows.", "Command"]
+          ["37-ai-command-store.png", "Store", "Find reusable command templates.", "Use the store when you want to add a quick command without creating a full agent. Review the command purpose before installing it.", "Command"],
+          ["38-ai-command-list.png", "List", "Manage installed and custom AI commands.", "Use this page to edit, disable, remove, or inspect command workflows. Keep frequently used commands easy to identify and remove stale experiments.", "Command"]
         ]
       },
       {
@@ -1389,7 +1354,7 @@
         title: "KnowledgeBase",
         intro: "KnowledgeBase settings control the user's local or connected knowledge sources.",
         pages: [
-          ["39-knowledgebase.png", "KnowledgeBase", "Knowledge source inventory and configuration.", "Knowledge source names, paths, and indexed content may be sensitive.", "Private"]
+          ["39-knowledgebase.png", "KnowledgeBase", "Manage knowledge sources available to EnConvo.", "Use this page to add, inspect, refresh, or remove knowledge sources. Review source names, file paths, and indexed content before sharing because they can reveal private workspace details.", "Private"]
         ]
       },
       {
@@ -1397,9 +1362,9 @@
         title: "Account",
         intro: "Account panes include profile, subscription, and usage information.",
         pages: [
-          ["40-my-profile.png", "My Profile", "Profile details and account identity.", "Use this page to confirm profile and identity details. Keep account information private.", "Private"],
-          ["41-account.png", "Account", "Account, plan, and subscription controls.", "Use this page for subscription and account management. Keep account details private.", "Private"],
-          ["42-points-usage.png", "Points Usage", "Credit or point consumption history.", "Use this to review cost and plan consumption. Usage history may be sensitive.", "Private"]
+          ["40-my-profile.png", "My Profile", "Review the profile identity attached to EnConvo.", "Use this page to confirm the signed-in account before configuring Cloud Plan providers or OAuth-based features. Keep profile details private.", "Private"],
+          ["41-account.png", "Account", "Manage account, plan, and subscription settings.", "Use this page when you need to check subscription status, plan controls, or account management options. Keep account details private when sharing the guide.", "Private"],
+          ["42-points-usage.png", "Points Usage", "Review point or credit consumption.", "Use this page to understand usage and cost patterns before changing provider defaults. Treat usage history as private because it can reveal workflow volume.", "Private"]
         ]
       },
       {
@@ -1407,9 +1372,9 @@
         title: "General",
         intro: "General settings cover app-wide behavior, shortcuts, and version information.",
         pages: [
-          ["43-general-settings.png", "General Settings", "General app preferences.", "Use this for baseline EnConvo app behavior.", "General"],
-          ["44-shortcut-settings.png", "Shortcut Settings", "Keyboard shortcut map and trigger bindings.", "Use this to avoid conflicts with macOS or other apps.", "Shortcut"],
-          ["45-about.png", "About", "Version, build, and product information.", "Use this when reporting bugs or verifying installed app version.", "General"]
+          ["43-general-settings.png", "General Settings", "Configure baseline EnConvo app behavior.", "Use this page for preferences that affect the whole app, then verify the behavior in normal use before changing more specific agent settings.", "General"],
+          ["44-shortcut-settings.png", "Shortcut Settings", "Configure keyboard shortcuts and trigger bindings.", "Use this page to avoid conflicts with macOS, browsers, editors, or other utilities. Test new shortcuts immediately after changing them.", "Shortcut"],
+          ["45-about.png", "About", "Check version, build, and product information.", "Use this page when reporting bugs, comparing installed versions, or confirming that a guide matches the EnConvo build you are using.", "General"]
         ]
       },
       {
@@ -1417,10 +1382,10 @@
         title: "Developer",
         intro: "Developer panes expose local debugging, logs, API surfaces, and command-line setup.",
         pages: [
-          ["46-developer-tools.png", "Developer Tools", "Developer utilities and diagnostics.", "Use with care; some controls may affect local debugging state.", "Developer"],
-          ["47-logging.png", "Logging", "Log output and logging controls.", "Logs may include paths, account data, or request metadata. Review them before sharing.", "Private"],
-          ["48-apis.png", "APIs", "API settings and local integration details.", "Keep endpoints, keys, and tokens private.", "Private"],
-          ["49-cli-guide.png", "CLI Guide", "Command-line usage instructions.", "Use this to integrate EnConvo with shell workflows.", "Developer"]
+          ["46-developer-tools.png", "Developer Tools", "Use diagnostics only when troubleshooting or integrating EnConvo.", "Review developer controls carefully because they can affect local debugging state, logs, or integration behavior.", "Developer"],
+          ["47-logging.png", "Logging", "Inspect logs and logging controls.", "Use logs for troubleshooting, but review them before sharing because they may include paths, account data, request metadata, or provider details.", "Private"],
+          ["48-apis.png", "APIs", "Configure API and local integration settings.", "Use this page only when another tool or workflow needs EnConvo API access. Keep endpoints, keys, and tokens private.", "Private"],
+          ["49-cli-guide.png", "CLI Guide", "Use EnConvo from command-line workflows.", "Follow this page when wiring EnConvo into shell commands or automation. Confirm paths and commands before adding them to scripts.", "Developer"]
         ]
       },
       {
@@ -1440,28 +1405,28 @@
         parentPage: "Agent List",
         intro: "This section explains how to configure or modify an individual agent, using Mavis as the worked example. Agent-level tabs can override global provider defaults and expose additional options through dropdowns, chevrons, pencil icons, gear icons, and fullscreen controls.",
         pages: [
-          ["agent-mavis/agent-list-change-icon-dialog.png", "Change Agent Portrait", "Choose a custom portrait file for the selected agent.", "In Agent Configuration, click the portrait/icon beside the selected agent name. For Mavis, this opens the Change Icon dialog, where you can choose a local PNG, JPG, GIF, or SVG file and review the current portrait file path.", "Private"],
-          ["agent-mavis/agent-definition-01-top.png", "Agent Definition: Top", "Instruction and core definition controls.", "Use the Instruction editor to define the agent's core behavior, role, and operating rules.", "Agent"],
+          ["agent-mavis/agent-list-change-icon-dialog.png", "Change Agent Portrait", "Update the portrait used to identify this agent.", "In Agent Configuration, click the portrait/icon beside the agent name. For Mavis, this opens the Change Icon dialog, where you can choose a local PNG, JPG, GIF, or SVG file and confirm the portrait path before saving.", "Private"],
+          ["agent-mavis/agent-definition-01-top.png", "Agent Definition: Top", "Write the agent's primary instruction and operating rules.", "Use the Instruction editor to define the agent's role, boundaries, tone, workflow expectations, and special behavior before tuning models or tools.", "Agent"],
           ["agent-mavis/agent-definition-02-lower.png", "Agent Definition: Lower", "User Message, working folder, and attached context files.", "Scroll the Agent Definition tab to review User Message, Working Folder, and attached context files below the main instruction editor.", "Segment"],
           ["agent-mavis/agent-definition-full-scroll.png", "Agent Definition: Full Scroll", "Full-page view of the Agent Definition tab.", "Use this view to understand how the instruction editor, user-message wrapper, working folder, and attached files fit together.", "Composite"],
-          ["agent-mavis/agent-definition-expanded-character.png", "Agent Definition: Expanded Leaves", "Expanded User Message and CHARACTER.md rows.", "Rows with chevrons are real nested editors with Insert variable and Fullscreen controls.", "Private"],
+          ["agent-mavis/agent-definition-expanded-character.png", "Agent Definition: Expanded Leaves", "Edit nested prompt rows and attached agent files.", "Open chevron rows such as User Message and CHARACTER.md when you need to adjust wrapper prompts or file-backed identity text. Use Insert variable and Fullscreen for careful prompt editing.", "Private"],
           ["agent-mavis/ai-model-01-full.png", "AI Model", "Agent-level LLM override.", "In this example, Mavis uses Anthropic, Claude Opus 4.7, reasoning High, and temperature 1. Use these fields when an agent should differ from the global model defaults. The pencil beside Credential Provider opens provider setup; the gear opens Credential Management.", "Provider"],
           ["agent-mavis/ai-model-credential-oauth-type-dropdown.png", "AI Model: Credential Type Dropdown", "Anthropic credential sheet with the Credentials Type menu open.", "Credentials Type lets you choose how Anthropic connects for this agent. OAuth2 uses a browser login flow, while ApiKey uses a provider key and base URL.", "Private"],
           ["agent-mavis/ai-model-credential-apikey-setup.png", "AI Model: ApiKey Setup", "ApiKey branch with key field, base URL, and Validate action.", "Use this branch when connecting Anthropic by API key. Enter the key, confirm the Anthropic API Base URL, then validate the credential when you are ready to test it.", "Private"],
-          ["agent-mavis/anthropic-apikey-01-choose-apikey.png", "AI Model: Anthropic ApiKey Choose", "Credential sheet with ApiKey selected.", "This is the first step of the API-key setup branch reached from Mavis > AI Model > Credential Provider pencil.", "Private"],
-          ["agent-mavis/anthropic-apikey-02-enter-key.png", "AI Model: Anthropic ApiKey Enter Key", "Secure key field in use.", "Enter the Anthropic API key in the secure field. Do not share the raw key.", "Private"],
+          ["agent-mavis/anthropic-apikey-01-choose-apikey.png", "AI Model: Anthropic ApiKey Choose", "Switch the Anthropic credential to direct API-key authentication.", "Open Mavis > AI Model > Credential Provider pencil, then choose ApiKey when this agent should use a Claude API key instead of browser-based Anthropic authorization.", "Private"],
+          ["agent-mavis/anthropic-apikey-02-enter-key.png", "AI Model: Anthropic ApiKey Enter Key", "Enter the Claude API key for this agent credential.", "Paste the Anthropic API key in the secure field and keep the raw key private. Confirm you are editing the intended credential before validating.", "Private"],
           ["agent-mavis/anthropic-apikey-03-validate.png", "AI Model: Anthropic ApiKey Validate", "ApiKey branch at the validation step.", "Click Validate when you want EnConvo to test the credential. Keep the base URL as https://api.anthropic.com unless you intentionally use a compatible proxy.", "Private"],
-          ["agent-mavis/anthropic-apikey-04-valid.png", "AI Model: Anthropic ApiKey Valid", "Validation result showing the API key is valid.", "This is the success confirmation for the API-key branch. Record the status, not the secret.", "Private"],
-          ["agent-mavis/anthropic-oauth-01-choose-oauth2.png", "AI Model: Anthropic OAuth2 Choose", "Credential sheet with OAuth2 chosen as the credential type.", "This is the browser-login branch selector reached from Mavis > AI Model > Credential Provider pencil.", "Private"],
-          ["agent-mavis/anthropic-oauth-02-connect-anthropic.png", "AI Model: Anthropic OAuth2 Connect", "OAuth2 branch showing the Connect or Reconnect action.", "Click Connect or Reconnect to Anthropic to start the browser authorization flow.", "Private"],
-          ["agent-mavis/anthropic-oauth-03-authorize.png", "AI Model: Anthropic OAuth2 Browser Authorize", "Browser authorization page for connecting the Claude account.", "Review the account identity and requested access in the browser before authorizing.", "Private"],
-          ["agent-mavis/anthropic-oauth-04-copy-code.png", "AI Model: Anthropic OAuth2 Copy Code", "Claude Platform authentication-code page with Copy Code action.", "Click Copy Code during setup, then return to EnConvo. Keep the authorization code and callback URL private.", "Private"],
-          ["agent-mavis/anthropic-oauth-05-copied-code.png", "AI Model: Anthropic OAuth2 Code Copied", "Browser page after the authorization code has been copied.", "This confirms the handoff value is on the clipboard. Return to EnConvo immediately and continue in the OAuth Authentication dialog.", "Private"],
-          ["agent-mavis/anthropic-oauth-06-complete-login-done.png", "AI Model: Anthropic OAuth2 Complete Login", "EnConvo OAuth flow after login completion.", "Paste the copied code into EnConvo, complete login, and verify the credential returns to a connected Anthropic state.", "Private"],
-          ["agent-mavis/tools-01-summary.png", "Tools Summary", "Agent tool boundary summary.", "Use this to see the enabled tool set before opening the manager.", "Tools"],
-          ["agent-mavis/tools-manage-full-scroll.png", "Tools Manager", "Select Tools manager inventory.", "Use the manager to review which tools are available to this agent. Enabled tools define what the agent can do during a session.", "Tools"],
-          ["agent-mavis/text-to-speech-01-full.png", "Text to Speech", "Agent-level voice override.", "Example setup: xAI TTS through Enconvo Cloud Plan, Ara voice, Auto Detect language.", "Voice"],
-          ["agent-mavis/more-full-scroll.png", "More", "Advanced runtime and behavior settings.", "Includes dynamic context, live screen, tutor mode, run mode, response language, post-action, and memory controls.", "Runtime"]
+          ["agent-mavis/anthropic-apikey-04-valid.png", "AI Model: Anthropic ApiKey Valid", "Confirm the Claude API key works before closing the sheet.", "After validation succeeds, record only the connection status and close the sheet when the agent should use this credential. Do not copy the raw key into notes or documentation.", "Private"],
+          ["agent-mavis/anthropic-oauth-01-choose-oauth2.png", "AI Model: Anthropic OAuth2 Choose", "Switch the Anthropic credential to browser-based authorization.", "Choose OAuth2 when this agent should connect through an Anthropic account rather than a Claude API key. Continue only when you are ready to complete the browser flow.", "Private"],
+          ["agent-mavis/anthropic-oauth-02-connect-anthropic.png", "AI Model: Anthropic OAuth2 Connect", "Start or refresh the Anthropic browser authorization flow.", "Click Connect or Reconnect to Anthropic only when you intend to authorize the account. EnConvo will hand the next step to the browser.", "Private"],
+          ["agent-mavis/anthropic-oauth-03-authorize.png", "AI Model: Anthropic OAuth2 Browser Authorize", "Authorize the intended Anthropic account in the browser.", "Review the account identity and requested access before authorizing. Stop here if the browser is signed into the wrong Anthropic account.", "Private"],
+          ["agent-mavis/anthropic-oauth-04-copy-code.png", "AI Model: Anthropic OAuth2 Copy Code", "Copy the temporary Anthropic authorization code.", "Click Copy Code during setup, then return to EnConvo. Keep the authorization code and callback URL private because they are part of the login handoff.", "Private"],
+          ["agent-mavis/anthropic-oauth-05-copied-code.png", "AI Model: Anthropic OAuth2 Code Copied", "Return to EnConvo after the code is copied.", "Once the handoff code is on the clipboard, switch back to EnConvo immediately and continue in the OAuth Authentication dialog.", "Private"],
+          ["agent-mavis/anthropic-oauth-06-complete-login-done.png", "AI Model: Anthropic OAuth2 Complete Login", "Finish the OAuth handoff inside EnConvo.", "Paste the copied code into EnConvo, complete login, and verify the credential returns to a connected Anthropic state before closing the dialog.", "Private"],
+          ["agent-mavis/tools-01-summary.png", "Tools Summary", "Review what this agent is allowed to do.", "Use the summary to confirm the agent's enabled tool boundary before opening the manager. Tool access directly affects what the agent can call during a session.", "Tools"],
+          ["agent-mavis/tools-manage-full-scroll.png", "Tools Manager", "Choose which tools this agent can use.", "Use the manager to enable only the tools Mavis needs. Expand tool rows for sub-settings, and avoid enabling broad capabilities unless they are required by the agent's job.", "Tools"],
+          ["agent-mavis/text-to-speech-01-full.png", "Text to Speech", "Override the global voice settings for this agent.", "Use this tab when Mavis should speak differently from the global Text-to-Speech default. Choose the provider, credential, voice, and language that match this agent's role.", "Voice"],
+          ["agent-mavis/more-full-scroll.png", "More", "Tune advanced runtime behavior for this agent.", "Use More to configure dynamic context, live desktop context, tutor mode, run mode, response language, post-action, and memory behavior. Change these controls only when they match the agent's intended operating style.", "Runtime"]
         ],
         deepDive: [
           {
@@ -1479,11 +1444,11 @@
           {
             title: "AI Model Override",
             proof: "agent-mavis/ai-model-01-full.png",
-            summary: "This tab controls the agent-level model provider, credential provider, model name, reasoning effort, and temperature. Its pencil and gear controls open deeper configuration surfaces.",
+            summary: "Use this tab when Mavis needs a model setup that differs from the global AI Model default. Configure the provider, credential, model, reasoning effort, and temperature in one place.",
             steps: [
               "Open AI Model from the Mavis tab row.",
-              "Expand AI Model Provider. The provider menu includes the global provider option plus custom providers such as Enconvo Cloud Plan, OpenAI, Anthropic, Minimax AI, Google Gemini AI, Ollama, Deep Seek, Groq AI, Azure OpenAI, and X.AI-GROK when visible.",
-              "Expand Credential Provider. The menu shows the current Anthropic credential plus Create new Credential.",
+              "Expand AI Model Provider and choose Global Provider when Mavis should inherit the app default, or choose a direct provider when Mavis needs its own model path.",
+              "Expand Credential Provider to select the credential Mavis should use, or create a new credential when the right one does not exist yet.",
               "Expand Model Name and Reasoning Effort to choose the model and reasoning level for this agent.",
               "Click the pencil beside Credential Provider as a sub-setting entrance. It opens the Anthropic credential sheet with Credentials Type, Anthropic API Base URL, connected OAuth identity, and Connect/Reconnect to Anthropic.",
               "Inside the sheet, expand Credentials Type to choose either ApiKey or OAuth2.",
@@ -1581,13 +1546,13 @@
           {
             title: "Anthropic API Key Setup Walkthrough",
             proof: "agent-mavis/anthropic-apikey-01-choose-apikey.png",
-            summary: "This walkthrough shows the ApiKey branch from the Mavis AI Model entry path.",
+            summary: "Use this sequence when Mavis should connect to Anthropic with a Claude API key instead of OAuth2.",
             steps: [
               "Choose ApiKey in the Anthropic credential sheet.",
               "Enter the Anthropic API key in the secure field.",
               "Keep the Anthropic API Base URL set to https://api.anthropic.com for the standard Anthropic endpoint. Advanced setups can use a compatible proxy URL.",
               "Click Validate only as part of an explicit setup or verification request.",
-              "Confirm the validation result shows API key is valid."
+              "Confirm the validation result before closing the credential sheet."
             ],
             evidence: [
               "agent-mavis/anthropic-apikey-01-choose-apikey.png",
@@ -1600,13 +1565,13 @@
           {
             title: "Anthropic OAuth2 Setup Walkthrough",
             proof: "agent-mavis/anthropic-oauth-01-choose-oauth2.png",
-            summary: "This walkthrough shows the OAuth2 branch from the Mavis AI Model entry path.",
+            summary: "Use this sequence when Mavis should connect to Anthropic through browser-based account authorization.",
             steps: [
               "Choose OAuth2 in the Anthropic credential sheet.",
               "Click Connect or Reconnect to Anthropic from the OAuth2 branch.",
-              "Authorize the request in the browser account screen.",
-              "On the Claude Platform authentication-code page, click Copy Code. Treat the displayed code and callback URL as private.",
-              "Confirm the browser shows the copied state.",
+              "Authorize the request in the browser only after confirming the account identity.",
+              "On the Claude Platform authentication-code page, click Copy Code. Treat the authorization code and callback URL as private.",
+              "After copying the code, return to EnConvo without sharing the code.",
               "Return to EnConvo, paste the authorization code into the OAuth Authentication dialog, click Complete Login, and confirm the final connected state."
             ],
             evidence: [
@@ -1622,7 +1587,7 @@
           {
             title: "Tools Manager",
             proof: "agent-mavis/tools-manage-full-scroll.png",
-            summary: "Tools > Manage is a nested manager. Scrolling shows inventory; chevrons reveal row-level settings.",
+            summary: "Use Tools > Manage to choose the capabilities Mavis can call, and expand tool rows when you need row-level settings.",
             steps: [
               "Open Tools, then click Manage.",
               "Review enabled tools at the top of the manager.",
@@ -1641,11 +1606,11 @@
           {
             title: "More Runtime Settings",
             proof: "agent-mavis/more-full-scroll.png",
-            summary: "More is a long runtime-control tab. Scroll through it to review all dropdowns, switches, and runtime options.",
+            summary: "Use More to control how Mavis behaves at runtime, including context access, live desktop awareness, tutor behavior, run mode, response language, post-actions, and memory.",
             steps: [
               "Open More and review the top runtime settings.",
               "Scroll through lower and bottom runtime sections.",
-              "Open Dynamic Context, Live Screen, Tutor Mode, Run Mode, Response Language, and Post Action dropdowns.",
+              "Open Dynamic Context, Live Screen, Tutor Mode, Run Mode, Response Language, and Post Action dropdowns to choose the runtime behavior Mavis should use.",
               "Adjust switches and sliders only when you want to change the agent's runtime behavior."
             ],
             evidence: [
@@ -1682,7 +1647,7 @@
     }
 
     function shot(src, caption) {
-      return `<figure class="shot"><button class="shot-button" type="button" data-src="screenshots/${src}" data-title="${caption}" aria-label="Open ${caption} screenshot"><img src="screenshots/${src}" alt="${caption} screenshot"></button><figcaption class="shot-caption"><span>${caption}</span><span>Click to enlarge</span></figcaption></figure>`;
+      return `<figure class="shot"><button class="shot-button" type="button" data-src="screenshots/${src}" data-title="${caption}" aria-label="Open screenshot"><img src="screenshots/${src}" alt=""></button></figure>`;
     }
 
     const childNavGroups = {
@@ -1855,7 +1820,6 @@
       const [src, title, summary, guidance, tag] = page;
       const id = `${section.id}-${slug(title)}`;
       return `<section class="page-card" id="${id}">
-          <span class="${badgeClass(tag)}">${tag}</span>
           <h4>${title}</h4>
           <p>${summary}</p>
           <p>${guidance}</p>
@@ -1869,7 +1833,6 @@
       return `<section class="deep-card" id="${id}">
           ${shot(item.proof, item.title)}
           <div class="deep-body">
-            <span class="${badgeClass(item.badge)}">${item.badge}</span>
             <${heading}>${item.title}</${heading}>
             <p>${item.summary}</p>
             <ul class="mini-list">${item.steps.map(step => `<li>${step}</li>`).join("")}</ul>
@@ -1937,7 +1900,6 @@
             .map(renderChildSection)
             .join("");
           return `<section class="page-card" id="${id}">
-            <span class="${badgeClass(tag)}">${tag}</span>
             <h3>${title}</h3>
             <p>${summary}</p>
             <p>${guidance}</p>
@@ -1969,8 +1931,8 @@
       viewer.hidden = false;
       viewerZoom = 1;
       viewerImage.src = src;
-      viewerImage.alt = `${title} screenshot`;
-      viewerTitle.textContent = title;
+      viewerImage.alt = "";
+      viewerTitle.textContent = "";
       viewerOriginal.href = src;
       applyViewerZoom();
       viewerClose.focus();
