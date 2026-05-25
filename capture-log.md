@@ -316,3 +316,19 @@ Added after the user requested the remaining global provider panes to follow the
 - Captured `global-ocr/ocr-04-reasoning-menu.png` for the OCR reasoning effort menu.
 - Added full guide sections for Web Search, Image Generation, Video Generation, Web Fetch, and OCR under Global Providers Settings.
 - No provider was changed, no credential was edited or validated, no OAuth flow was started, no generation/fetch/OCR run was triggered, and no default provider was changed.
+
+## Global Provider Credential Sheets
+
+Added after the user noted that Web Search, Image Generation, and Video Generation needed credential-provider pencil coverage.
+
+- Captured `global-web-search/web-search-03-xai-credential-apikey-sheet.png` for the xAI X Search X.AI-GROK ApiKey sheet.
+- Captured `global-web-search/web-search-04-xai-credential-type-menu.png` for the xAI X Search credential type menu.
+- Captured `global-web-search/web-search-05-xai-credential-oauth-sheet.png` for the xAI X Search OAuth2 sheet.
+- Captured `global-image-generation/image-generation-04-openai-credential-apikey-sheet.png` for the OpenAI Image Generation ApiKey sheet.
+- Captured `global-image-generation/image-generation-05-openai-credential-type-menu.png` for the OpenAI Image Generation credential type menu.
+- Captured `global-image-generation/image-generation-06-openai-credential-oauth-sheet.png` for the OpenAI Image Generation OAuth2 sheet.
+- Captured `global-video-generation/video-generation-05-xai-credential-apikey-sheet.png` for the xAI Video Generation X.AI-GROK ApiKey sheet.
+- Captured `global-video-generation/video-generation-06-xai-credential-type-menu.png` for the xAI Video Generation credential type menu.
+- Captured `global-video-generation/video-generation-07-xai-credential-oauth-sheet.png` for the xAI Video Generation OAuth2 sheet.
+- Restored the open credential editors back to the ApiKey branch before closing them.
+- No API key was entered, no existing key was copied, no Validate button was clicked, no OAuth Connect button was clicked, and no default provider was changed.

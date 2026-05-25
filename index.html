@@ -1005,7 +1005,10 @@
         intro: "Use this section to choose the app-wide search provider that agents inherit when they need web or social-search context.",
         pages: [
           ["global-web-search/web-search-01-xai-default.png", "xAI X Search Default", "Current Web Search default using xAI X Search.", "Use xAI X Search when search should use xAI's built-in X search tool. Confirm the credential provider and model, then keep Current Default Provider unchanged unless you intentionally switch to a different search provider.", "Provider"],
-          ["global-web-search/web-search-02-xai-model-menu.png", "xAI X Search Model Menu", "Choose the model used by the Web Search provider.", "Use the Model Name menu to choose the model that should run search-backed responses. The current default example uses Grok 4.3 for xAI X Search.", "Provider"]
+          ["global-web-search/web-search-02-xai-model-menu.png", "xAI X Search Model Menu", "Choose the model used by the Web Search provider.", "Use the Model Name menu to choose the model that should run search-backed responses. The current default example uses Grok 4.3 for xAI X Search.", "Provider"],
+          ["global-web-search/web-search-03-xai-credential-apikey-sheet.png", "xAI X Search ApiKey Credential Setup", "Configure xAI authentication with an API key.", "Click the pencil beside Credential Provider to open this sheet. Choose ApiKey, enter the xAI API key only when you are ready to configure the credential, then use Validate only when you intentionally want EnConvo to test the key.", "Private"],
+          ["global-web-search/web-search-04-xai-credential-type-menu.png", "xAI X Search Credential Type Menu", "Choose the authentication method for the xAI credential.", "Use ApiKey for a direct xAI key. Use OAuth2 when you want browser-based account authorization instead. The menu is the safe place to confirm which authentication methods this provider supports.", "Private"],
+          ["global-web-search/web-search-05-xai-credential-oauth-sheet.png", "xAI X Search OAuth2 Credential Setup", "Configure xAI through OAuth2 authorization.", "Choose OAuth2 when you want to connect an xAI account through the browser flow. Click Connect only when you are ready to start authorization; the guide does not require starting the OAuth flow.", "Private"]
         ],
         deepDive: [
           {
@@ -1030,12 +1033,14 @@
             steps: [
               "Choose xAI X Search from Web Search Provider.",
               "Confirm Credential Provider is X.AI-GROK.",
+              "Click the pencil beside Credential Provider when you need to configure the xAI credential.",
+              "Choose ApiKey for direct key setup, or OAuth2 for browser-based account authorization.",
               "Open Model Name and choose Grok 4.3 for this provider.",
               "Use Current Default Provider as the confirmation that this provider is already the app-wide Web Search default."
             ],
-            evidence: ["global-web-search/web-search-01-xai-default.png", "global-web-search/web-search-02-xai-model-menu.png"],
+            evidence: ["global-web-search/web-search-01-xai-default.png", "global-web-search/web-search-02-xai-model-menu.png", "global-web-search/web-search-03-xai-credential-apikey-sheet.png", "global-web-search/web-search-04-xai-credential-type-menu.png", "global-web-search/web-search-05-xai-credential-oauth-sheet.png"],
             inventoryTitle: "xAI X Search Controls",
-            inventory: ["Credential Provider: X.AI-GROK", "Model Name: Grok 4.3", "Default state: Current Default Provider"],
+            inventory: ["Credential Provider: X.AI-GROK", "Credential editor: ApiKey or OAuth2", "ApiKey branch: API Key field and Validate button", "OAuth2 branch: account card and Connect to X.AI-GROK button", "Model Name: Grok 4.3", "Default state: Current Default Provider"],
             badge: "Private"
           }
         ]
@@ -1049,7 +1054,10 @@
         pages: [
           ["global-image-generation/image-generation-01-openai-default.png", "OpenAI Image Generation Default", "Current custom-provider default using OpenAI.", "Use the Custom Providers tab when you want a provider credential you manage. Confirm the OpenAI credential provider, choose the image model, then keep Current Default Provider unchanged unless you intentionally change the global image default.", "Media"],
           ["global-image-generation/image-generation-02-openai-model-menu.png", "OpenAI Image Model Menu", "Choose the OpenAI image generation model.", "Use GPT Image 2 for the default image model shown here. Other visible choices include GPT Image 1.5, GPT Image 1, and GPT Image 1 Mini, each with different quality, capability, and cost tradeoffs.", "Media"],
-          ["global-image-generation/image-generation-03-cloud-models.png", "EnConvo Cloud Image Model List", "Managed Cloud Plan image models.", "Use the Enconvo Cloud tab when you want EnConvo-managed image model access. Choose Settings on a model only when you want to inspect or configure that model before making it the default route.", "Media"]
+          ["global-image-generation/image-generation-03-cloud-models.png", "EnConvo Cloud Image Model List", "Managed Cloud Plan image models.", "Use the Enconvo Cloud tab when you want EnConvo-managed image model access. Choose Settings on a model only when you want to inspect or configure that model before making it the default route.", "Media"],
+          ["global-image-generation/image-generation-04-openai-credential-apikey-sheet.png", "OpenAI Image ApiKey Credential Setup", "Configure OpenAI image generation with an API key.", "Click the pencil beside Credential Provider to open this sheet. Choose ApiKey, select the API Type, enter the OpenAI API key and base URL only when you are ready, then validate only when you intentionally want to test the credential.", "Private"],
+          ["global-image-generation/image-generation-05-openai-credential-type-menu.png", "OpenAI Image Credential Type Menu", "Choose the authentication method for the OpenAI credential.", "Use ApiKey for direct OpenAI API access. Use OAuth2 when you want browser-based OpenAI account authorization. Confirm this before choosing the image model as the global default.", "Private"],
+          ["global-image-generation/image-generation-06-openai-credential-oauth-sheet.png", "OpenAI Image OAuth2 Credential Setup", "Configure OpenAI through OAuth2 authorization.", "Choose OAuth2 when you want EnConvo to authorize through an OpenAI account. Click Connect only when you are ready to start the browser authorization flow.", "Private"]
         ],
         deepDive: [
           {
@@ -1094,12 +1102,15 @@
               "Open the Custom Providers tab.",
               "Choose OpenAI from the provider column.",
               "Confirm Credential Provider is OpenAI.",
+              "Click the pencil beside Credential Provider when you need to configure the OpenAI credential.",
+              "Choose ApiKey for direct API-key setup, or OAuth2 for browser-based account authorization.",
+              "For ApiKey setup, choose API Type and enter the API key and base URL only when you are ready to configure it.",
               "Open Model Name and choose GPT Image 2 or another visible OpenAI image model.",
               "Use Current Default Provider as confirmation that OpenAI is already the global image default."
             ],
-            evidence: ["global-image-generation/image-generation-01-openai-default.png", "global-image-generation/image-generation-02-openai-model-menu.png"],
+            evidence: ["global-image-generation/image-generation-01-openai-default.png", "global-image-generation/image-generation-02-openai-model-menu.png", "global-image-generation/image-generation-04-openai-credential-apikey-sheet.png", "global-image-generation/image-generation-05-openai-credential-type-menu.png", "global-image-generation/image-generation-06-openai-credential-oauth-sheet.png"],
             inventoryTitle: "OpenAI Image Controls",
-            inventory: ["Credential Provider: OpenAI", "Model Name: GPT Image 2", "Visible model choices: GPT Image 2, GPT Image 1.5, GPT Image 1, GPT Image 1 Mini", "Default state: Current Default Provider"],
+            inventory: ["Credential Provider: OpenAI", "Credential editor: ApiKey or OAuth2", "ApiKey branch: API Type, OpenAI API Key, OpenAI API Base URL, Validate button", "OAuth2 branch: account card and Connect to OpenAI button", "Model Name: GPT Image 2", "Visible model choices: GPT Image 2, GPT Image 1.5, GPT Image 1, GPT Image 1 Mini", "Default state: Current Default Provider"],
             badge: "Private"
           }
         ]
@@ -1114,7 +1125,10 @@
           ["global-video-generation/video-generation-01-xai-default.png", "xAI Video Generation Default", "Current Video Generation default using xAI.", "Use this provider when generated video should use xAI Grok Imagine Video. Confirm the credential provider, model, duration, aspect ratio, and resolution before relying on it as the global video default.", "Media"],
           ["global-video-generation/video-generation-02-xai-model-menu.png", "xAI Video Model Menu", "Choose the xAI video generation model.", "Use Grok Imagine Video for the current xAI video provider. Open this menu when you need to verify or change the model before setting the provider as default.", "Media"],
           ["global-video-generation/video-generation-03-aspect-ratio-menu.png", "Video Aspect Ratio Menu", "Choose the output framing for generated videos.", "Use Landscape (16:9) for wide video. Other visible options include Square, Portrait, and alternate landscape or portrait ratios for different publishing surfaces.", "Media"],
-          ["global-video-generation/video-generation-04-resolution-menu.png", "Video Resolution Menu", "Choose the output resolution.", "Use 720p for the current default example. Choose 480p when you need a lighter output or faster/lower-cost generation.", "Media"]
+          ["global-video-generation/video-generation-04-resolution-menu.png", "Video Resolution Menu", "Choose the output resolution.", "Use 720p for the current default example. Choose 480p when you need a lighter output or faster/lower-cost generation.", "Media"],
+          ["global-video-generation/video-generation-05-xai-credential-apikey-sheet.png", "xAI Video ApiKey Credential Setup", "Configure xAI video generation with an API key.", "Click the pencil beside Credential Provider to open this sheet. Choose ApiKey and enter the xAI API key only when you are ready to configure the credential. Use Validate only when you intentionally want to test it.", "Private"],
+          ["global-video-generation/video-generation-06-xai-credential-type-menu.png", "xAI Video Credential Type Menu", "Choose the authentication method for the xAI credential.", "Use ApiKey for a direct xAI key. Use OAuth2 when you want browser-based account authorization. This is the same X.AI-GROK credential used by the xAI provider.", "Private"],
+          ["global-video-generation/video-generation-07-xai-credential-oauth-sheet.png", "xAI Video OAuth2 Credential Setup", "Configure xAI through OAuth2 authorization.", "Choose OAuth2 when you want EnConvo to connect through an xAI account. Click Connect only when you are ready to start the browser authorization flow.", "Private"]
         ],
         deepDive: [
           {
@@ -1139,6 +1153,8 @@
             steps: [
               "Choose xAI from Video Generation Provider.",
               "Confirm Credential Provider is X.AI-GROK.",
+              "Click the pencil beside Credential Provider when you need to configure the xAI credential.",
+              "Choose ApiKey for direct key setup, or OAuth2 for browser-based account authorization.",
               "Open Model Name and choose Grok Imagine Video.",
               "Set Duration to the expected default clip length.",
               "Open Aspect Ratio and choose the framing that matches the target surface.",
@@ -1149,10 +1165,13 @@
               "global-video-generation/video-generation-01-xai-default.png",
               "global-video-generation/video-generation-02-xai-model-menu.png",
               "global-video-generation/video-generation-03-aspect-ratio-menu.png",
-              "global-video-generation/video-generation-04-resolution-menu.png"
+              "global-video-generation/video-generation-04-resolution-menu.png",
+              "global-video-generation/video-generation-05-xai-credential-apikey-sheet.png",
+              "global-video-generation/video-generation-06-xai-credential-type-menu.png",
+              "global-video-generation/video-generation-07-xai-credential-oauth-sheet.png"
             ],
             inventoryTitle: "xAI Video Controls",
-            inventory: ["Credential Provider: X.AI-GROK", "Model Name: Grok Imagine Video", "Duration: 10", "Aspect Ratio: Landscape (16:9)", "Resolution: 720p", "Additional resolution choice: 480p"],
+            inventory: ["Credential Provider: X.AI-GROK", "Credential editor: ApiKey or OAuth2", "ApiKey branch: API Key field and Validate button", "OAuth2 branch: account card and Connect to X.AI-GROK button", "Model Name: Grok Imagine Video", "Duration: 10", "Aspect Ratio: Landscape (16:9)", "Resolution: 720p", "Additional resolution choice: 480p"],
             badge: "Private"
           }
         ]
