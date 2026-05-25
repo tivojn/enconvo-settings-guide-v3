@@ -1,0 +1,4 @@
+interface:
+  display_name: "EnConvo User Guide Maker"
+  short_description: "Build screenshot-backed EnConvo guides"
+  default_prompt: "Use $enconvo-userguide-maker to capture EnConvo Settings and update a screenshot-backed HTML user guide."
