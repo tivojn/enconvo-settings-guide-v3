@@ -332,3 +332,28 @@ Added after the user noted that Web Search, Image Generation, and Video Generati
 - Captured `global-video-generation/video-generation-07-xai-credential-oauth-sheet.png` for the xAI Video Generation OAuth2 sheet.
 - Restored the open credential editors back to the ApiKey branch before closing them.
 - No API key was entered, no existing key was copied, no Validate button was clicked, no OAuth Connect button was clicked, and no default provider was changed.
+
+## Global AI Model OpenAI OAuth2 Cycle
+
+Added after the user requested the missing full OpenAI OAuth2 cycle for Global Providers Settings > AI Model > OpenAI.
+
+- Captured `global-ai-model/openai-oauth-cycle-01-connect-sheet.png` for the OpenAI OAuth2 sheet before starting authorization.
+- Captured `global-ai-model/openai-oauth-cycle-02-connecting.png` for the EnConvo connecting state immediately after starting authorization.
+- Captured `global-ai-model/openai-oauth-cycle-03-browser-account.png` for the OpenAI browser account chooser.
+- Captured `global-ai-model/openai-oauth-cycle-04-browser-consent.png` for the OpenAI consent page.
+- Captured `global-ai-model/openai-oauth-cycle-05-browser-success.png` for the browser success page. This screenshot was cropped to avoid saving the callback URL or authorization code from the address bar.
+- Captured `global-ai-model/openai-oauth-cycle-06-enconvo-connected.png` for the returned EnConvo connected state.
+- The live OAuth flow completed and returned OpenAI to Connected status in EnConvo. No authorization code, callback URL, token, or raw credential was stored in the guide.
+
+## Global AI Model Anthropic OAuth2 Cycle
+
+Added after the user requested the same full OAuth2 setup coverage for Global Providers Settings > AI Model > Anthropic.
+
+- Reused the existing Mavis Anthropic OAuth2 screenshots because the browser authorization cycle and EnConvo handoff are the same credential flow.
+- Copied `agent-mavis/anthropic-oauth-01-choose-oauth2.png` to `global-ai-model/anthropic-oauth-cycle-01-choose-oauth2.png`.
+- Copied `agent-mavis/anthropic-oauth-02-connect-anthropic.png` to `global-ai-model/anthropic-oauth-cycle-02-connect-anthropic.png`.
+- Copied `agent-mavis/anthropic-oauth-03-authorize.png` to `global-ai-model/anthropic-oauth-cycle-03-browser-authorize.png`.
+- Copied `agent-mavis/anthropic-oauth-04-copy-code.png` to `global-ai-model/anthropic-oauth-cycle-04-copy-code.png`.
+- Copied `agent-mavis/anthropic-oauth-05-copied-code.png` to `global-ai-model/anthropic-oauth-cycle-05-code-copied.png`.
+- Copied `agent-mavis/anthropic-oauth-06-complete-login-done.png` to `global-ai-model/anthropic-oauth-cycle-06-complete-login.png`.
+- No live Anthropic OAuth2 authorization was rerun in this pass, and no authorization code, callback URL, token, or raw credential was added to guide prose.
