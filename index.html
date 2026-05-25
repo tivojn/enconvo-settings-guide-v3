@@ -356,7 +356,7 @@
           </div>
           <div class="note">
             <strong>Visual reference.</strong>
-            <p>Each settings page includes a screenshot so you can match the instructions to the EnConvo interface. The AI Model deep dive shows global provider setup examples for EnConvo Cloud Plan and OpenAI. The Agent Configuration (Mavis) example shows per-agent Anthropic ApiKey and OAuth2 credential flows.</p>
+            <p>Each settings page includes a screenshot so you can match the instructions to the EnConvo interface. The AI Model and Text-to-Speech configuration sections show provider setup examples, inventories, menus, and credential surfaces. The Agent Configuration (Mavis) example shows per-agent Anthropic ApiKey and OAuth2 credential flows.</p>
           </div>
           <div id="guide"></div>
         </article>
@@ -403,7 +403,7 @@
       },
       {
         id: "global-ai-model",
-        title: "AI Model Deep Dive",
+        title: "AI Model Configuration",
         parent: "global-providers",
         parentPage: "AI Model",
         intro: "Use this section when choosing the app-wide AI model provider. These settings become the default model behavior for new agents unless an agent has its own AI Model override.",
@@ -560,6 +560,148 @@
               "global-ai-model/openai-04-credential-type-menu.png",
               "global-ai-model/openai-05-apikey-setup.png",
               "global-ai-model/openai-06-apikey-api-type-menu.png"
+            ],
+            badge: "Private"
+          }
+        ]
+      },
+      {
+        id: "global-text-to-speech",
+        title: "Text-to-Speech Configuration",
+        parent: "global-providers",
+        parentPage: "Text-to-Speech",
+        intro: "Use this section when choosing the app-wide spoken-output provider. These settings control the default voice provider, voice, language, format, and speed behavior that agents can inherit.",
+        pages: [
+          ["global-text-to-speech/tts-01-overview-edge.png", "Edge TTS Overview", "Default Text-to-Speech provider setup with Edge TTS selected.", "Edge TTS is a no-key provider based on Microsoft Edge's Read Aloud API. Use it when you want a free global voice provider with many neural voices and output format control.", "Voice"],
+          ["global-text-to-speech/tts-02-edge-voice-menu.png", "Edge TTS Voice Menu", "Voice menu opened for Edge TTS.", "Use the searchable Voice menu to choose the default spoken voice. Edge TTS exposes many online natural voices across languages and locales.", "Voice"],
+          ["global-text-to-speech/tts-03-edge-output-format-menu.png", "Edge TTS Output Format Menu", "Output Format menu opened for Edge TTS.", "Use Output Format to choose the audio encoding and quality target, such as standard MP3 for voice notes, higher-bitrate MP3 for presentations, or Opus/WebM for smaller streaming files.", "Voice"],
+          ["global-text-to-speech/tts-04-xai-cloud-overview.png", "xAI TTS Cloud Plan Overview", "Cloud-plan TTS provider setup with xAI TTS selected.", "Choose a Cloud Plan TTS provider when you want EnConvo-managed speech access through the subscription-backed credential. Review the credential provider, voice, language, and Set as Default Provider action.", "Voice"],
+          ["global-text-to-speech/tts-05-xai-cloud-voice-menu.png", "xAI TTS Cloud Plan Voice Menu", "Voice menu opened for xAI TTS through EnConvo Cloud Plan.", "The xAI Cloud Plan voice menu shows expressive voice presets such as Eve, Ara, Rex, Sal, and Leo. Pick a voice that fits the assistant's speaking tone.", "Voice"],
+          ["global-text-to-speech/tts-06-xai-cloud-language-menu.png", "xAI TTS Cloud Plan Language Menu", "Language menu opened for xAI TTS through EnConvo Cloud Plan.", "Use Auto Detect for general multilingual use, or choose a fixed language when the agent should speak in a specific language.", "Voice"],
+          ["global-text-to-speech/tts-07-openai-overview.png", "OpenAI TTS Overview", "Direct-provider Text-to-Speech setup with OpenAI TTS selected.", "Choose OpenAI TTS when spoken output should use your OpenAI credential. This path exposes credential provider, model name, voice, speech speed, and Set as Default Provider.", "Private"],
+          ["global-text-to-speech/tts-08-openai-credential-menu.png", "OpenAI TTS Credential Menu", "Credential Provider menu opened for OpenAI TTS.", "Use Credential Provider to select an existing OpenAI credential or create a new one. The pencil opens credential setup, and the gear opens broader credential management.", "Private"]
+        ],
+        deepDive: [
+          {
+            title: "TTS Provider Inventory",
+            proof: "global-text-to-speech/tts-01-overview-edge.png",
+            summary: "The Text-to-Speech provider column is a global voice-provider inventory. Some providers use EnConvo Cloud Plan credentials, some use local or no-key options, and some use direct provider credentials.",
+            steps: [
+              "Open Settings > Global Providers Settings > Text-to-Speech.",
+              "Use the provider column to choose the voice backend.",
+              "Cloud Plan entries use EnConvo-managed credentials when available.",
+              "Direct provider entries can expose Credential Provider, pencil setup, model, voice, and speed controls.",
+              "Use Set as Default Provider only when the chosen TTS provider should become the app-wide spoken-output default."
+            ],
+            evidence: [
+              "global-text-to-speech/tts-01-overview-edge.png",
+              "global-text-to-speech/tts-04-xai-cloud-overview.png",
+              "global-text-to-speech/tts-07-openai-overview.png"
+            ],
+            inventoryTitle: "Observed TTS Providers",
+            inventory: [
+              "xAI TTS (EnConvo Cloud Plan)",
+              "Gemini TTS (EnConvo Cloud Plan)",
+              "Edge TTS",
+              "xAI TTS",
+              "Gemini TTS",
+              "OpenAI TTS",
+              "Microsoft TTS (EnConvo Cloud Plan)",
+              "Microsoft TTS",
+              "Eleven Labs TTS",
+              "System TTS",
+              "Speechify TTS",
+              "MiniMax TTS (EnConvo Cloud Plan)",
+              "MiniMax TTS",
+              "Straico TTS",
+              "Kokoro (mlx)",
+              "Qwen3 (mlx)",
+              "Xiaomi MiMo TTS",
+              "Xiaomi MiMo TTS (EnConvo Cloud Plan)"
+            ],
+            badge: "Voice"
+          },
+          {
+            title: "Edge TTS Setup",
+            proof: "global-text-to-speech/tts-01-overview-edge.png",
+            summary: "Edge TTS is the current default in the captured setup. It does not require an API key and exposes preview text, voice selection, and output format.",
+            steps: [
+              "Choose Edge TTS in the provider column.",
+              "Edit Text for previewing voice only when you want to test a different sample phrase.",
+              "Open Voice to search or choose a voice and locale.",
+              "Use the play button beside Voice when you intentionally want to preview audio.",
+              "Open Output Format to choose quality and file format.",
+              "Leave Current Default Provider unchanged unless you intentionally switch defaults."
+            ],
+            evidence: [
+              "global-text-to-speech/tts-01-overview-edge.png",
+              "global-text-to-speech/tts-02-edge-voice-menu.png",
+              "global-text-to-speech/tts-03-edge-output-format-menu.png"
+            ],
+            inventoryTitle: "Observed Edge TTS Output Formats",
+            inventory: [
+              "audio-24khz-48kbitrate-mono-mp3: Standard quality for voice notes and messages",
+              "audio-24khz-96kbitrate-mono-mp3: Higher quality for presentations and content",
+              "webm-24khz-16bit-mono-opus: Smaller Opus/WebM files for streaming"
+            ],
+            badge: "Voice"
+          },
+          {
+            title: "Cloud Plan TTS Setup",
+            proof: "global-text-to-speech/tts-04-xai-cloud-overview.png",
+            summary: "Cloud Plan TTS providers use EnConvo Cloud as the credential provider and offer provider-specific voice and language menus.",
+            steps: [
+              "Choose a provider such as xAI TTS (EnConvo Cloud Plan).",
+              "Confirm Credential Provider is EnConvo Cloud.",
+              "Open Voice and choose the speaking style.",
+              "Open Language and keep Auto Detect for flexible multilingual use, or choose a fixed language.",
+              "Use Set as Default Provider only when this Cloud Plan voice should become the global spoken-output default."
+            ],
+            evidence: [
+              "global-text-to-speech/tts-04-xai-cloud-overview.png",
+              "global-text-to-speech/tts-05-xai-cloud-voice-menu.png",
+              "global-text-to-speech/tts-06-xai-cloud-language-menu.png"
+            ],
+            inventoryTitle: "Observed xAI Cloud Plan Voices And Languages",
+            inventory: [
+              "Eve: energetic, upbeat",
+              "Ara: warm, friendly",
+              "Rex: confident, clear",
+              "Sal: smooth, balanced",
+              "Leo: authoritative, strong",
+              "Auto Detect",
+              "English",
+              "Chinese",
+              "Japanese",
+              "Korean",
+              "French",
+              "German",
+              "Spanish (Spain)"
+            ],
+            badge: "Voice"
+          },
+          {
+            title: "OpenAI TTS Setup",
+            proof: "global-text-to-speech/tts-07-openai-overview.png",
+            summary: "OpenAI TTS is the direct-provider path for spoken output through an OpenAI credential. It follows the same credential-provider pattern used elsewhere in EnConvo Settings.",
+            steps: [
+              "Choose OpenAI TTS in the provider column.",
+              "Open Credential Provider to select an existing OpenAI credential or create a new credential.",
+              "Use the pencil to edit the selected credential only when you intend to update provider setup.",
+              "Choose Model Name, Voice, and Speech Speed.",
+              "Use Set as Default Provider only when OpenAI TTS should become the app-wide voice default."
+            ],
+            evidence: [
+              "global-text-to-speech/tts-07-openai-overview.png",
+              "global-text-to-speech/tts-08-openai-credential-menu.png"
+            ],
+            inventoryTitle: "Observed OpenAI TTS Controls",
+            inventory: [
+              "Credential Provider: OpenAI",
+              "Model Name: tts-1",
+              "Voice: alloy",
+              "Speech Speed: 1.2x",
+              "Credential menu: OpenAI or Create new Credential"
             ],
             badge: "Private"
           }
@@ -955,6 +1097,12 @@
         { title: "EnConvo Cloud Plan", pagePrefixes: ["EnConvo Cloud Plan"], deepTitles: ["EnConvo Cloud Plan Setup"] },
         { title: "Provider Inventory", pagePrefixes: ["AI Model Provider List"], deepTitles: ["AI Model Provider Inventory"] },
         { title: "OpenAI", pagePrefixes: ["OpenAI"], deepPrefixes: ["OpenAI"] }
+      ],
+      "global-text-to-speech": [
+        { title: "Provider Inventory", deepTitles: ["TTS Provider Inventory"] },
+        { title: "Edge TTS", pagePrefixes: ["Edge TTS"], deepTitles: ["Edge TTS Setup"] },
+        { title: "Cloud Plan TTS", pagePrefixes: ["xAI TTS Cloud Plan"], deepTitles: ["Cloud Plan TTS Setup"] },
+        { title: "OpenAI TTS", pagePrefixes: ["OpenAI TTS"], deepTitles: ["OpenAI TTS Setup"] }
       ],
       "agent-mavis": [
         { title: "Change Agent Portrait", pagePrefixes: ["Change Agent Portrait"] },

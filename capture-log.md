@@ -159,9 +159,9 @@ Added after the user pointed out two missing Agent List interfaces.
 - Moved the create-agent menu to its own child section at `Agents > Agent List > Create New Agent`, parallel to `Agent Configuration (Mavis)`.
 - Moved the portrait-change screenshot into `Agents > Agent List > Agent Configuration (Mavis)`, before `Agent Definition`, because it changes the selected agent's portrait and belongs to the agent configuration structure.
 
-## Global AI Model Deep Dive
+## Global AI Model Configuration
 
-Added after the user requested a first-section deep dive for `Global Providers Settings > AI Model`.
+Added after the user requested an expanded configuration section for `Global Providers Settings > AI Model`.
 
 - Captured `global-ai-model/enconvo-cloud-plan-01-overview.png`, `global-ai-model/enconvo-cloud-plan-02-model-menu.png`, and `global-ai-model/enconvo-cloud-plan-03-reasoning-menu.png` for the EnConvo Cloud Plan path.
 - Captured `global-ai-model/openai-01-overview.png`, `global-ai-model/openai-02-credential-menu.png`, `global-ai-model/openai-03-oauth-sheet.png`, `global-ai-model/openai-04-credential-type-menu.png`, `global-ai-model/openai-05-apikey-setup.png`, and `global-ai-model/openai-06-apikey-api-type-menu.png` for the OpenAI path.
@@ -184,6 +184,20 @@ Added after the user requested full visible lists for EnConvo Cloud Plan models 
   - `global-ai-model/provider-list-01-top.png`
   - `global-ai-model/provider-list-02-lower.png`
   - `global-ai-model/provider-list-03-bottom.png`
-- Added an observed Cloud Plan model inventory to the EnConvo Cloud Plan deep dive.
-- Added an observed AI Model provider inventory to the global AI Model deep dive, including the lower providers down to Vercel AI Gateway.
+- Added an observed Cloud Plan model inventory to the EnConvo Cloud Plan configuration section.
+- Added an observed AI Model provider inventory to the global AI Model configuration section, including the lower providers down to Vercel AI Gateway.
 - No model was selected, no provider was set as default, no credentials were opened, and no provider settings were changed.
+
+## Global Text-to-Speech Configuration
+
+Added after the user requested the next expanded section for `Global Providers Settings > Text-to-Speech`.
+
+- Captured `global-text-to-speech/tts-01-overview-edge.png` for the default Edge TTS provider overview.
+- Captured `global-text-to-speech/tts-02-edge-voice-menu.png` for the Edge TTS voice menu.
+- Captured `global-text-to-speech/tts-03-edge-output-format-menu.png` for the Edge TTS output-format menu.
+- Captured `global-text-to-speech/tts-04-xai-cloud-overview.png` for xAI TTS through EnConvo Cloud Plan.
+- Captured `global-text-to-speech/tts-05-xai-cloud-voice-menu.png` for xAI Cloud Plan voice choices.
+- Captured `global-text-to-speech/tts-06-xai-cloud-language-menu.png` for xAI Cloud Plan language choices.
+- Captured `global-text-to-speech/tts-07-openai-overview.png` for OpenAI TTS direct-provider configuration.
+- Captured `global-text-to-speech/tts-08-openai-credential-menu.png` for the OpenAI TTS credential menu.
+- No preview/play button was triggered, no voice was selected, no output format was selected, no credential was opened, and no default provider was changed.
