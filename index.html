@@ -572,18 +572,20 @@
         parentPage: "Text-to-Speech",
         intro: "Use this section when choosing the app-wide spoken-output provider. Treat it like the AI Model page: Cloud Plan TTS is the EnConvo-managed route, while Provider Inventory contains direct providers, local providers, and credential-based provider setup.",
         pages: [
-          ["global-text-to-speech/tts-01-overview-edge.png", "Edge TTS Overview", "Default Text-to-Speech provider setup with Edge TTS selected.", "Edge TTS is a no-key provider based on Microsoft Edge's Read Aloud API. Use it when you want a free global voice provider with many neural voices and output format control.", "Voice"],
           ["global-text-to-speech/tts-02-edge-voice-menu.png", "Edge TTS Voice Menu", "Voice menu opened for Edge TTS.", "Use the searchable Voice menu to choose the default spoken voice. Edge TTS exposes many online natural voices across languages and locales.", "Voice"],
           ["global-text-to-speech/tts-03-edge-output-format-menu.png", "Edge TTS Output Format Menu", "Output Format menu opened for Edge TTS.", "Use Output Format to choose the audio encoding and quality target, such as standard MP3 for voice notes, higher-bitrate MP3 for presentations, or Opus/WebM for smaller streaming files.", "Voice"],
           ["global-text-to-speech/tts-04-xai-cloud-overview.png", "xAI TTS Cloud Plan Overview", "Cloud-plan TTS provider setup with xAI TTS selected.", "Choose a Cloud Plan TTS provider when you want EnConvo-managed speech access through the subscription-backed credential. Review the credential provider, voice, language, and Set as Default Provider action.", "Voice"],
           ["global-text-to-speech/tts-05-xai-cloud-voice-menu.png", "xAI TTS Cloud Plan Voice Menu", "Voice menu opened for xAI TTS through EnConvo Cloud Plan.", "The xAI Cloud Plan voice menu shows expressive voice presets such as Eve, Ara, Rex, Sal, and Leo. Pick a voice that fits the assistant's speaking tone.", "Voice"],
           ["global-text-to-speech/tts-06-xai-cloud-language-menu.png", "xAI TTS Cloud Plan Language Menu", "Language menu opened for xAI TTS through EnConvo Cloud Plan.", "Use Auto Detect for general multilingual use, or choose a fixed language when the agent should speak in a specific language.", "Voice"],
-          ["global-text-to-speech/tts-07-openai-overview.png", "OpenAI TTS Overview", "Direct-provider Text-to-Speech setup with OpenAI TTS selected.", "Choose OpenAI TTS when spoken output should use your OpenAI credential. This path exposes credential provider, model name, voice, speech speed, and Set as Default Provider.", "Private"],
           ["global-text-to-speech/tts-08-openai-credential-menu.png", "OpenAI TTS Credential Menu", "Credential Provider menu opened for OpenAI TTS.", "Use Credential Provider to select an existing OpenAI credential or create a new one. The pencil opens credential setup, and the gear opens broader credential management.", "Private"],
-          ["global-text-to-speech/tts-09-gemini-overview.png", "Gemini TTS Overview", "Direct-provider Text-to-Speech setup with Gemini TTS selected.", "Choose Gemini TTS when spoken output should use a Gemini credential. This provider exposes credential provider, model name, voice, and the default-provider action.", "Private"],
+          ["global-text-to-speech/tts-16-openai-credential-oauth-sheet.png", "OpenAI TTS OAuth2 Credential Sheet", "OpenAI credential setup opened from the pencil icon with OAuth2 selected.", "Use OAuth2 when you want browser-based OpenAI account authorization. Account identifiers are redacted here; do not reconnect unless you intend to refresh authorization.", "Private"],
+          ["global-text-to-speech/tts-17-openai-credential-type-menu.png", "OpenAI TTS Credential Type Menu", "Credentials Type menu opened inside the OpenAI credential setup sheet.", "This menu shows the OpenAI authentication branches available from the pencil editor, including ApiKey and OAuth2.", "Private"],
+          ["global-text-to-speech/tts-18-openai-credential-apikey-setup.png", "OpenAI TTS ApiKey Setup", "OpenAI credential setup with ApiKey selected.", "Use ApiKey when you want to provide a masked OpenAI key directly. Confirm API Type and base URL before using Validate.", "Private"],
           ["global-text-to-speech/tts-10-gemini-model-menu.png", "Gemini TTS Model Menu", "Model Name menu opened for Gemini TTS.", "Use Model Name to select the Gemini TTS model that should generate speech for the global provider default.", "Voice"],
           ["global-text-to-speech/tts-11-gemini-voice-menu.png", "Gemini TTS Voice Menu", "Voice menu opened for Gemini TTS.", "Use Voice to pick the Gemini speaking style. The visible list includes names with short style descriptions, which helps match the voice to the assistant's tone.", "Voice"],
-          ["global-text-to-speech/tts-12-xai-direct-overview.png", "xAI TTS Overview", "Direct-provider Text-to-Speech setup with xAI TTS selected.", "Choose xAI TTS when spoken output should use your own xAI credential rather than the EnConvo Cloud Plan credential.", "Private"],
+          ["global-text-to-speech/tts-19-gemini-credential-apikey-setup.png", "Gemini TTS ApiKey Setup", "Gemini credential setup opened from the pencil icon with ApiKey selected.", "Use ApiKey when you want to provide a masked Gemini API key and base URL directly. Validate only when you are ready to test the credential.", "Private"],
+          ["global-text-to-speech/tts-20-gemini-credential-type-menu.png", "Gemini TTS Credential Type Menu", "Credentials Type menu opened inside the Gemini credential setup sheet.", "This menu shows that Gemini TTS can use ApiKey or OAuth2 authentication from the credential editor.", "Private"],
+          ["global-text-to-speech/tts-21-gemini-credential-oauth-sheet.png", "Gemini TTS OAuth2 Credential Sheet", "Gemini credential setup with OAuth2 selected.", "Use OAuth2 when you want browser-based Gemini authorization. Account identifiers are redacted here; do not connect unless you intend to start authorization.", "Private"],
           ["global-text-to-speech/tts-13-xai-credential-oauth-sheet.png", "xAI TTS OAuth2 Credential Sheet", "xAI credential setup opened from the pencil icon with OAuth2 selected.", "Use OAuth2 when you want browser-based account authorization. The connected account area is redacted here; do not reconnect unless you intend to refresh the authorization.", "Private"],
           ["global-text-to-speech/tts-14-xai-credential-type-menu.png", "xAI TTS Credential Type Menu", "Credentials Type menu opened inside the xAI credential setup sheet.", "This menu confirms that xAI TTS supports both ApiKey and OAuth2 authentication branches.", "Private"],
           ["global-text-to-speech/tts-15-xai-credential-apikey-setup.png", "xAI TTS ApiKey Setup", "xAI credential setup with ApiKey selected.", "Use ApiKey when you want to provide a masked xAI key directly. Validate only after confirming the key is correct and you are ready to test the credential.", "Private"]
@@ -658,7 +660,7 @@
             badge: "Voice"
           },
           {
-            title: "Edge TTS Setup",
+            title: "Edge TTS Configuration",
             proof: "global-text-to-speech/tts-01-overview-edge.png",
             summary: "Edge TTS is the current default in the captured setup. It does not require an API key and exposes preview text, voice selection, and output format.",
             steps: [
@@ -683,23 +685,28 @@
             badge: "Voice"
           },
           {
-            title: "OpenAI TTS Setup",
+            title: "OpenAI TTS Configuration",
             proof: "global-text-to-speech/tts-07-openai-overview.png",
-            summary: "OpenAI TTS is the direct-provider path for spoken output through an OpenAI credential. It follows the same credential-provider pattern used elsewhere in EnConvo Settings.",
+            summary: "OpenAI TTS is the direct-provider path for spoken output through an OpenAI credential. Use the Credential Provider pencil to configure authentication, then choose model, voice, and speech speed on the provider page.",
             steps: [
               "Choose OpenAI TTS in the provider column.",
               "Open Credential Provider to select an existing OpenAI credential or create a new credential.",
-              "Use the pencil to edit the selected credential only when you intend to update provider setup.",
+              "Use the pencil to open the selected credential setup sheet.",
+              "Choose OAuth2 for browser-based authorization, or ApiKey to enter a masked API key, API type, and base URL.",
               "Choose Model Name, Voice, and Speech Speed.",
               "Use Set as Default Provider only when OpenAI TTS should become the app-wide voice default."
             ],
             evidence: [
               "global-text-to-speech/tts-07-openai-overview.png",
-              "global-text-to-speech/tts-08-openai-credential-menu.png"
+              "global-text-to-speech/tts-08-openai-credential-menu.png",
+              "global-text-to-speech/tts-16-openai-credential-oauth-sheet.png",
+              "global-text-to-speech/tts-17-openai-credential-type-menu.png",
+              "global-text-to-speech/tts-18-openai-credential-apikey-setup.png"
             ],
             inventoryTitle: "Observed OpenAI TTS Controls",
             inventory: [
               "Credential Provider: OpenAI",
+              "Credential editor: OAuth2 or ApiKey",
               "Model Name: tts-1",
               "Voice: alloy",
               "Speech Speed: 1.2x",
@@ -708,24 +715,30 @@
             badge: "Private"
           },
           {
-            title: "Gemini TTS Setup",
+            title: "Gemini TTS Configuration",
             proof: "global-text-to-speech/tts-09-gemini-overview.png",
-            summary: "Gemini TTS is a direct-provider path for spoken output through a Gemini credential. It exposes credential provider, model, voice, and the default-provider action.",
+            summary: "Gemini TTS is a direct-provider path for spoken output through a Gemini credential. Use the Credential Provider pencil to choose ApiKey or OAuth2, then choose the TTS model and speaking voice.",
             steps: [
               "Choose Gemini TTS in the provider column.",
               "Open Credential Provider to select or create the Gemini credential.",
+              "Use the pencil to open the selected Gemini credential setup sheet.",
+              "Choose ApiKey to enter a masked Gemini key and base URL, or OAuth2 when browser authorization is preferred.",
               "Open Model Name to choose the Gemini TTS model.",
               "Open Voice to choose the speaking style.",
               "Use Set as Default Provider only when Gemini TTS should become the app-wide voice default."
             ],
             evidence: [
               "global-text-to-speech/tts-09-gemini-overview.png",
+              "global-text-to-speech/tts-19-gemini-credential-apikey-setup.png",
+              "global-text-to-speech/tts-20-gemini-credential-type-menu.png",
+              "global-text-to-speech/tts-21-gemini-credential-oauth-sheet.png",
               "global-text-to-speech/tts-10-gemini-model-menu.png",
               "global-text-to-speech/tts-11-gemini-voice-menu.png"
             ],
             inventoryTitle: "Observed Gemini TTS Controls",
             inventory: [
               "Credential Provider: Gemini",
+              "Credential editor: ApiKey or OAuth2",
               "Model Name: gemini-3.1-flash-tts-preview",
               "Voice: Zephyr -- Bright",
               "Additional visible voices: Puck -- Upbeat, Charon -- Informative, Kore -- Firm, Fenrir -- Excitable, Leda -- Youthful, Orus -- Firm, Aoede -- Breezy"
@@ -733,7 +746,7 @@
             badge: "Private"
           },
           {
-            title: "xAI TTS Setup",
+            title: "xAI TTS Configuration",
             proof: "global-text-to-speech/tts-12-xai-direct-overview.png",
             summary: "xAI TTS is the direct-provider path for spoken output through an xAI credential. The pencil beside Credential Provider opens a credential setup sheet with both OAuth2 and ApiKey authentication.",
             steps: [
@@ -1167,10 +1180,10 @@
             { title: "xAI TTS", pagePrefixes: ["xAI TTS Cloud Plan"] }
           ]
         },
-        { title: "Edge TTS", pagePrefixes: ["Edge TTS"], deepTitles: ["Edge TTS Setup"] },
-        { title: "OpenAI TTS", pagePrefixes: ["OpenAI TTS"], deepTitles: ["OpenAI TTS Setup"] },
-        { title: "Gemini TTS", pagePrefixes: ["Gemini TTS"], deepTitles: ["Gemini TTS Setup"] },
-        { title: "xAI TTS", pagePrefixes: ["xAI TTS"], deepTitles: ["xAI TTS Setup"] }
+        { title: "Edge TTS", pagePrefixes: ["Edge TTS"], deepTitles: ["Edge TTS Configuration"], deepFirst: true },
+        { title: "OpenAI TTS", pagePrefixes: ["OpenAI TTS"], deepTitles: ["OpenAI TTS Configuration"], deepFirst: true },
+        { title: "Gemini TTS", pagePrefixes: ["Gemini TTS"], deepTitles: ["Gemini TTS Configuration"], deepFirst: true },
+        { title: "xAI TTS", pagePrefixes: ["xAI TTS"], deepTitles: ["xAI TTS Configuration"], deepFirst: true }
       ],
       "agent-mavis": [
         { title: "Change Agent Portrait", pagePrefixes: ["Change Agent Portrait"] },

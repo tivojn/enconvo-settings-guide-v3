@@ -221,3 +221,19 @@ Added after the user requested the TTS section to follow the same global-provide
 - Captured `global-text-to-speech/tts-15-xai-credential-apikey-setup.png` for the xAI TTS ApiKey setup branch.
 - Account identifiers in the xAI OAuth2 credential sheet were redacted before saving public screenshots.
 - No preview/play button was triggered, no voice was selected, no credential was validated, no reconnect action was triggered, and no default provider was changed.
+
+## Global Text-to-Speech Provider Cleanup
+
+Added after the user requested provider subsection deduplication and missing credential-pencil coverage.
+
+- Removed redundant provider overview leaves for Edge TTS, OpenAI TTS, Gemini TTS, and xAI TTS from the sidebar/body flow.
+- Renamed each provider guide entry to a single configuration section: Edge TTS Configuration, OpenAI TTS Configuration, Gemini TTS Configuration, and xAI TTS Configuration.
+- Kept Edge TTS focused on preview text, voice, and output format because it has no credential provider or pencil editor.
+- Captured `global-text-to-speech/tts-16-openai-credential-oauth-sheet.png` for the OpenAI TTS OAuth2 credential editor opened from the pencil icon.
+- Captured `global-text-to-speech/tts-17-openai-credential-type-menu.png` for the OpenAI TTS credential type menu.
+- Captured `global-text-to-speech/tts-18-openai-credential-apikey-setup.png` for the OpenAI TTS ApiKey setup branch.
+- Captured `global-text-to-speech/tts-19-gemini-credential-apikey-setup.png` for the Gemini TTS ApiKey setup branch.
+- Captured `global-text-to-speech/tts-20-gemini-credential-type-menu.png` for the Gemini TTS credential type menu.
+- Captured `global-text-to-speech/tts-21-gemini-credential-oauth-sheet.png` for the Gemini TTS OAuth2 credential editor.
+- Account identifiers in OpenAI and Gemini OAuth2 credential screenshots were redacted before saving public screenshots.
+- No API key was entered, no OAuth connect/reconnect action was triggered, no credential was validated, no voice/model was changed, and no default provider was changed.
