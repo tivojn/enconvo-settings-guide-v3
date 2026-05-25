@@ -207,6 +207,9 @@ Added after the user requested the next expanded section for `Global Providers S
 Added after the user requested the TTS section to follow the same global-provider structure as AI Model.
 
 - Reorganized the guide into `EnConvo Cloud Plan TTS` and `Provider Inventory`.
+- Removed the extra `Text-to-Speech Configuration` level from the left navigation so `EnConvo Cloud Plan TTS` and `Provider Inventory` sit directly under `Text-to-Speech`.
+- Nested Edge TTS, OpenAI TTS, Gemini TTS, and xAI TTS under `Provider Inventory`.
+- Reordered `EnConvo Cloud Plan TTS` so the main Cloud Plan guidance appears before the xAI Cloud Plan screenshots.
 - Documented the observed Cloud Plan TTS providers: xAI TTS, Gemini TTS, Microsoft TTS, MiniMax TTS, and Xiaomi MiMo TTS.
 - Captured `global-text-to-speech/tts-09-gemini-overview.png` for Gemini TTS direct-provider setup.
 - Captured `global-text-to-speech/tts-10-gemini-model-menu.png` for the Gemini TTS model menu.

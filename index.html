@@ -567,7 +567,7 @@
       },
       {
         id: "global-text-to-speech",
-        title: "Text-to-Speech Configuration",
+        title: "Text-to-Speech",
         parent: "global-providers",
         parentPage: "Text-to-Speech",
         intro: "Use this section when choosing the app-wide spoken-output provider. Treat it like the AI Model page: Cloud Plan TTS is the EnConvo-managed route, while Provider Inventory contains direct providers, local providers, and credential-based provider setup.",
@@ -1154,12 +1154,25 @@
         { title: "OpenAI", pagePrefixes: ["OpenAI"], deepPrefixes: ["OpenAI"] }
       ],
       "global-text-to-speech": [
-        { title: "EnConvo Cloud Plan TTS", pagePrefixes: ["xAI TTS Cloud Plan"], deepTitles: ["EnConvo Cloud Plan TTS"] },
-        { title: "Provider Inventory", deepTitles: ["Provider Inventory"] },
-        { title: "Edge TTS", pagePrefixes: ["Edge TTS"], deepTitles: ["Edge TTS Setup"] },
-        { title: "OpenAI TTS", pagePrefixes: ["OpenAI TTS"], deepTitles: ["OpenAI TTS Setup"] },
-        { title: "Gemini TTS", pagePrefixes: ["Gemini TTS"], deepTitles: ["Gemini TTS Setup"] },
-        { title: "xAI TTS", pagePrefixes: ["xAI TTS"], deepTitles: ["xAI TTS Setup"] }
+        {
+          title: "EnConvo Cloud Plan TTS",
+          deepTitles: ["EnConvo Cloud Plan TTS"],
+          deepFirst: true,
+          children: [
+            { title: "xAI TTS", pagePrefixes: ["xAI TTS Cloud Plan"] }
+          ]
+        },
+        {
+          title: "Provider Inventory",
+          deepTitles: ["Provider Inventory"],
+          deepFirst: true,
+          children: [
+            { title: "Edge TTS", pagePrefixes: ["Edge TTS"], deepTitles: ["Edge TTS Setup"] },
+            { title: "OpenAI TTS", pagePrefixes: ["OpenAI TTS"], deepTitles: ["OpenAI TTS Setup"] },
+            { title: "Gemini TTS", pagePrefixes: ["Gemini TTS"], deepTitles: ["Gemini TTS Setup"] },
+            { title: "xAI TTS", pagePrefixes: ["xAI TTS"], deepTitles: ["xAI TTS Setup"] }
+          ]
+        }
       ],
       "agent-mavis": [
         { title: "Change Agent Portrait", pagePrefixes: ["Change Agent Portrait"] },
@@ -1204,7 +1217,7 @@
 
       const usedPages = new Set();
       const usedDeep = new Set();
-      const grouped = groups.map(group => {
+      const renderGroup = (group, groupDepth) => {
         const pages = child.pages.filter(page => !usedPages.has(page) && matchesPrefix(page[1], group.pagePrefixes || [group.title]));
         const deep = (child.deepDive || []).filter(item => {
           if (usedDeep.has(item)) return false;
@@ -1214,12 +1227,15 @@
         });
         pages.forEach(page => usedPages.add(page));
         deep.forEach(item => usedDeep.add(item));
-        const links = [
-          ...pages.map(page => pageLink(child, page, "leaf")),
-          ...deep.map(item => deepLink(child, item, "leaf deep-link"))
-        ].join("");
-        return `<details class="branch" data-depth="${depth + 1}"${navOpen(depth + 1)}><summary><span>${group.title}</span></summary><div class="tree">${links}</div></details>`;
-      }).join("");
+        const pageLinks = pages.map(page => pageLink(child, page, "leaf"));
+        const deepLinks = deep.map(item => deepLink(child, item, "leaf deep-link"));
+        const childLinks = (group.children || []).map(childGroup => renderGroup(childGroup, groupDepth + 1));
+        const links = group.deepFirst
+          ? [...deepLinks, ...pageLinks, ...childLinks].join("")
+          : [...pageLinks, ...deepLinks, ...childLinks].join("");
+        return `<details class="branch" data-depth="${groupDepth}"${navOpen(groupDepth)}><summary><span>${group.title}</span></summary><div class="tree">${links}</div></details>`;
+      };
+      const grouped = groups.map(group => renderGroup(group, depth + 1)).join("");
 
       const ungroupedPages = child.pages.filter(page => !usedPages.has(page)).map(page => pageLink(child, page, "leaf")).join("");
       const ungroupedDeep = (child.deepDive || []).filter(item => !usedDeep.has(item)).map(item => deepLink(child, item, "leaf deep-link")).join("");
@@ -1227,6 +1243,7 @@
         ? `<details class="branch" data-depth="${depth + 1}"${navOpen(depth + 1)}><summary><span>Other</span></summary><div class="tree">${ungroupedPages}${ungroupedDeep}</div></details>`
         : "";
 
+      if (child.id === "global-text-to-speech") return `${grouped}${overflow}`;
       return `<details class="branch" data-depth="${depth}"${navOpen(depth)}><summary><a href="#${child.id}">${child.title}</a></summary><div class="tree">${grouped}${overflow}</div></details>`;
     }
 
