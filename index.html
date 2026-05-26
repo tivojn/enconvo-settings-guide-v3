@@ -263,6 +263,40 @@
       line-height: 1.55;
       margin: 5px 0;
     }
+    .shortcut-groups {
+      display: grid;
+      gap: 18px;
+      margin: 18px 0 6px;
+    }
+    .shortcut-group h5 {
+      margin: 0 0 8px;
+      color: #475569;
+      font-size: 13px;
+      font-weight: 780;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+    .shortcut-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+    }
+    .shortcut-table th,
+    .shortcut-table td {
+      padding: 9px 10px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+    .shortcut-table th {
+      color: #64748b;
+      font-size: 12px;
+      font-weight: 760;
+      text-transform: uppercase;
+    }
+    .shortcut-table td:first-child { font-weight: 700; color: #1f2937; }
+    .shortcut-table code { white-space: nowrap; }
     .toc strong { display: block; margin-bottom: 10px; font-size: 13px; }
     .toc a { display: block; padding: 5px 0 5px 10px; color: var(--muted); font-size: 12.75px; }
     code { padding: .13rem .3rem; border-radius: 4px; background: var(--soft); font: .9em ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -1374,7 +1408,39 @@
         intro: "General settings cover app-wide behavior, shortcuts, and version information.",
         pages: [
           ["43-general-settings.png", "General Settings", "Configure baseline EnConvo app behavior.", "Use this page for preferences that affect the whole app, then verify the behavior in normal use before changing more specific agent settings.", "General"],
-          ["44-shortcut-settings.png", "Shortcut Settings", "Configure keyboard shortcuts and trigger bindings.", "Use this page to avoid conflicts with macOS, browsers, editors, or other utilities. Test new shortcuts immediately after changing them.", "Shortcut"],
+          ["44-shortcut-settings.png", "Shortcut Settings", "Configure keyboard shortcuts and trigger bindings.", "Use this page to review EnConvo's default hotkeys, avoid conflicts with macOS, browsers, editors, or other utilities, and test new shortcuts immediately after changing them.", "Shortcut", {
+            shortcutGroups: [
+              {
+                title: "Windows",
+                items: [
+                  ["Show Smart Bar", "Open the main Smart Bar.", "⇧+⌘+D", ""],
+                  ["Show Chat Window", "Open the full chat window.", "⌥+⌘+D", "Normal"],
+                  ["Show Sidebar", "Open the floating sidebar.", "⇧+⌘+U", "Normal"],
+                  ["Show App Sidebar", "Open the application sidebar.", "⇧+⌘+T", "Normal"],
+                  ["Dynamic Island", "Show, expand, or collapse Dynamic Island.", "Not assigned", ""]
+                ]
+              },
+              {
+                title: "Voice",
+                items: [
+                  ["Dictation", "Start voice-to-text dictation.", "Right ⌘", "Hold or Toggle"],
+                  ["Voice Command", "Run commands from voice input.", "Right ⌥", "Hold or Toggle"]
+                ]
+              },
+              {
+                title: "Actions",
+                items: [
+                  ["Clear Conversation", "Clear the current Smart Bar conversation.", "⌥+K", "Normal"],
+                  ["Pin Smart Bar", "Keep the current Smart Bar window pinned.", "⌘+P", "Normal"],
+                  ["Settings", "Open EnConvo settings.", "⌘+,", "Normal"],
+                  ["Screen Doodle", "Toggle the full-screen doodle overlay.", "⇧+⌘+7", ""],
+                  ["Screenshot", "Capture a selected screen area.", "⌃+S", "Normal"],
+                  ["Translate", "Translate selected text or input.", "⌥+D", "Normal"],
+                  ["Silent OCR", "Capture an area and copy OCR text to the clipboard.", "⌥+S", "Normal"]
+                ]
+              }
+            ]
+          }],
           ["45-about.png", "About", "Check version, build, and product information.", "Use this page when reporting bugs, comparing installed versions, or confirming that a guide matches the EnConvo build you are using.", "General"]
         ]
       },
@@ -1818,14 +1884,35 @@
     }
 
     function renderPageCard(section, page) {
-      const [src, title, summary, guidance, tag] = page;
+      const [src, title, summary, guidance, tag, details] = page;
       const id = `${section.id}-${slug(title)}`;
       return `<section class="page-card" id="${id}">
           <h4>${title}</h4>
           <p>${summary}</p>
           <p>${guidance}</p>
+          ${renderPageDetails(details)}
           ${shot(src, title)}
         </section>`;
+    }
+
+    function renderPageDetails(details) {
+      if (!details || !details.shortcutGroups) return "";
+      const groups = details.shortcutGroups.map(group => {
+        const rows = group.items.map(item => {
+          const [name, description, shortcut, mode] = item;
+          const modeCell = mode ? mode : "—";
+          const shortcutCell = shortcut === "Not assigned" ? shortcut : `<code>${shortcut}</code>`;
+          return `<tr><td>${name}</td><td>${description}</td><td>${shortcutCell}</td><td>${modeCell}</td></tr>`;
+        }).join("");
+        return `<div class="shortcut-group">
+          <h5>${group.title} (${group.items.length})</h5>
+          <table class="shortcut-table">
+            <thead><tr><th>Command</th><th>What It Does</th><th>Default Shortcut</th><th>Trigger Mode</th></tr></thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>`;
+      }).join("");
+      return `<div class="shortcut-groups">${groups}</div>`;
     }
 
     function renderDeepCard(section, item, heading = "h4") {
@@ -1892,7 +1979,7 @@
       guide.innerHTML = topSections.map(section => {
         const children = sections.filter(child => child.parent === section.id);
         const cards = section.pages.map(page => {
-          const [src, title, summary, guidance, tag] = page;
+          const [src, title, summary, guidance, tag, details] = page;
           const id = `${section.id}-${slug(title)}`;
           const pageChildren = children.filter(child => child.parentPage === title);
           const embeddedIntros = pageChildren
@@ -1907,6 +1994,7 @@
             <p>${summary}</p>
             <p>${guidance}</p>
             ${embeddedIntros}
+            ${renderPageDetails(details)}
             ${shot(src, title)}
             ${nested}
           </section>`;

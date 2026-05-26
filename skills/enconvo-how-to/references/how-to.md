@@ -221,3 +221,29 @@ Global path: `Credential Management > Credential Management`.
 - Logs: `Developer > Logging`. Logs may include paths, account data, request metadata, or provider details. Source: `#developer-logging`.
 - API settings: `Developer > APIs`. Keep endpoints, keys, and tokens private. Source: `#developer-apis`.
 - CLI instructions: `Developer > CLI Guide`. Source: `#developer-cli-guide`.
+
+## Default Shortcut Settings
+
+Path: `General > Shortcut Settings`.
+
+Use this list when the user asks for EnConvo's default shortcuts. Source: `#general-shortcut-settings`.
+
+Windows:
+- Show Smart Bar: `⇧+⌘+D`. Opens the main Smart Bar.
+- Show Chat Window: `⌥+⌘+D`, trigger mode `Normal`. Opens the full chat window.
+- Show Sidebar: `⇧+⌘+U`, trigger mode `Normal`. Opens the floating sidebar.
+- Show App Sidebar: `⇧+⌘+T`, trigger mode `Normal`. Opens the application sidebar.
+- Dynamic Island: not assigned by default. Shows, expands, or collapses Dynamic Island.
+
+Voice:
+- Dictation: `Right ⌘`, trigger mode `Hold or Toggle`. Starts voice-to-text dictation.
+- Voice Command: `Right ⌥`, trigger mode `Hold or Toggle`. Runs commands from voice input.
+
+Actions:
+- Clear Conversation: `⌥+K`, trigger mode `Normal`. Clears the current Smart Bar conversation.
+- Pin Smart Bar: `⌘+P`, trigger mode `Normal`. Keeps the current Smart Bar window pinned.
+- Settings: `⌘+,`, trigger mode `Normal`. Opens EnConvo settings.
+- Screen Doodle: `⇧+⌘+7`. Toggles the full-screen doodle overlay.
+- Screenshot: `⌃+S`, trigger mode `Normal`. Captures a selected screen area.
+- Translate: `⌥+D`, trigger mode `Normal`. Translates selected text or input.
+- Silent OCR: `⌥+S`, trigger mode `Normal`. Captures an area and copies OCR text to the clipboard.
