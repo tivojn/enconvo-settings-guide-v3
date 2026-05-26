@@ -208,6 +208,13 @@ Use `Dictation & Transcription` for EnConvo's default STT/ASR configuration. STT
 - Transcription models: `Dictation & Transcription > Transcription Models`. Choose the default STT/ASR provider for file-based tools, such as transcribing an audio file or a video's soundtrack. Source: `#dictation-transcription-transcription-models`.
 - Recordings: `Dictation & Transcription > Recordings`. Treat audio files, titles, and transcripts as private. Source: `#dictation-transcription-recordings`.
 
+Post Action Commands for live dictation:
+- Path: `Dictation & Transcription > Dictation`.
+- Use Post Action Commands when recognized live dictation should be processed by an EnConvo command before output. For example, `Dictation Translate` can let a user speak Chinese and output the translated target language; `Change Tone Professional` can turn casual spoken wording into a professional version.
+- To add one, click `Add Command` under `Post Action Commands`, search `Professional`, then choose `Change Tone Professional` from Writing Toolkit. Confirm the command appears in the Post Action Commands list.
+- Users can choose any built-in EnConvo command or their own custom command here.
+- When the user starts live voice input with the Right Command key, the small bottom-center input indicator has a command/options button on the right. Use that control to pick the professional post action before completing dictation. Source: `#dictation-transcription-dictation`.
+
 Supported Dictation Models:
 - EnConvo Cloud Plan: Soniox STT Realtime v4; Soniox STT Async v4; GPT-4o Mini Transcribe; GPT-4o Transcribe; Whisper-1; xAI Speech-to-Text; xAI Speech-to-Text Realtime; Voxtral Mini; Whisper Large V3 Turbo; Whisper Large V3; Gemini 3.1 Flash Lite; Microsoft Azure Realtime; Microsoft Azure Fast Transcription; AssemblyAI Universal-Streaming; AssemblyAI Universal; Volcengine Realtime (BigASR); Volcengine Flash (BigASR Turbo); ElevenLabs Scribe v2 Realtime; ElevenLabs Scribe v2.
 - Third Party Custom Provider via API key: Soniox STT Realtime v4; Soniox STT Async v4; GPT-4o Mini Transcribe; GPT-4o Transcribe; Whisper-1; xAI Speech-to-Text; xAI Speech-to-Text Realtime; Voxtral Mini; Whisper Large V3 Turbo; Whisper Large V3; Gemini 3.1 Flash Lite; Microsoft Azure Realtime; Microsoft Azure Fast Transcription; AssemblyAI Universal-Streaming; AssemblyAI Universal; Volcengine Realtime (BigASR); Volcengine Flash (BigASR Turbo); ElevenLabs Scribe v2 Realtime; ElevenLabs Scribe v2.

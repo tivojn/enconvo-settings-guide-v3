@@ -264,13 +264,15 @@
       margin: 5px 0;
     }
     .shortcut-groups,
-    .model-groups {
+    .model-groups,
+    .workflow-groups {
       display: grid;
       gap: 18px;
       margin: 18px 0 6px;
     }
     .shortcut-group h5,
-    .model-group h5 {
+    .model-group h5,
+    .workflow-group h5 {
       margin: 0 0 8px;
       color: #475569;
       font-size: 13px;
@@ -301,6 +303,10 @@
     .shortcut-table code { white-space: nowrap; }
     .model-group ul { margin: 8px 0 0; padding-left: 19px; }
     .model-group li { margin: 4px 0; color: #334155; }
+    .workflow-group ol,
+    .workflow-group ul { margin: 8px 0 0; padding-left: 20px; }
+    .workflow-group li { margin: 5px 0; color: #334155; line-height: 1.55; }
+    .workflow-shot .shot { max-width: 360px; margin-top: 12px; }
     .toc strong { display: block; margin-bottom: 10px; font-size: 13px; }
     .toc a { display: block; padding: 5px 0 5px 10px; color: var(--muted); font-size: 12.75px; }
     code { padding: .13rem .3rem; border-radius: 4px; background: var(--soft); font: .9em ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -1443,7 +1449,27 @@
               }
             ]
           }],
-          ["32-dictation.png", "Dictation", "Configure default live dictation and voice-input behavior.", "Use this page to tune how EnConvo listens, transcribes, inserts spoken text, and handles live voice triggers. Review trigger behavior before using dictation or voice command in sensitive apps.", "Voice"],
+          ["32-dictation.png", "Dictation", "Configure default live dictation and voice-input behavior.", "Use this page to tune how EnConvo listens, transcribes, inserts spoken text, and handles live voice triggers. Review trigger behavior before using dictation or voice command in sensitive apps.", "Voice", {
+            workflowGroups: [
+              {
+                title: "Post Action Commands",
+                summary: "Post Action Commands run an EnConvo command after live dictation or voice input, so the recognized wording can be translated, polished, or rewritten before it is inserted.",
+                steps: [
+                  "Open Dictation & Transcription > Dictation and find Post Action Commands.",
+                  "Click Add Command to open the Add Post Action Command sheet.",
+                  "Search for Professional, then choose Change Tone Professional from Writing Toolkit.",
+                  "Confirm Change Tone Professional appears in the Post Action Commands list with the existing commands, such as Dictation Polish and Dictation Translate.",
+                  "Use the Right Command dictation hotkey to start live voice input. In the small bottom-center input indicator, use the right-side command/options button to pick the professional command before completing dictation."
+                ],
+                examples: [
+                  "Dictation Translate: speak Chinese, then pass the recognized text through EnConvo's translation command to produce the target language.",
+                  "Change Tone Professional: speak casually, then let the command rewrite the wording in a professional tone."
+                ],
+                image: "dictation-post-action-indicator.png",
+                imageTitle: "Dictation input indicator with post-action options"
+              }
+            ]
+          }],
           ["33-dictation-history.png", "Dictation History", "Review previous dictation entries.", "Use history to recover or inspect prior dictation output. Treat it as private because entries can include spoken content from work, messages, or notes.", "Private"],
           ["34-dictionary.png", "Dictionary", "Add vocabulary hints for better recognition.", "Use Dictionary for names, symbols, product terms, abbreviations, and domain vocabulary that dictation commonly mishears. Keep the list focused so recognition hints stay useful.", "Voice"],
           ["35-transcription-models.png", "Transcription Models", "Choose the default STT/ASR provider for file-based transcription.", "Use Transcription Models for tools that transcribe an audio file or a video's soundtrack. Pick a local or cloud provider based on privacy, language, accuracy, and runtime needs.", "Voice", {
@@ -2031,7 +2057,7 @@
 
     function renderPageDetails(details) {
       if (!details) return "";
-      return `${renderShortcutDetails(details)}${renderModelDetails(details)}`;
+      return `${renderShortcutDetails(details)}${renderModelDetails(details)}${renderWorkflowDetails(details)}`;
     }
 
     function renderShortcutDetails(details) {
@@ -2065,6 +2091,25 @@
         </div>`;
       }).join("");
       return `<div class="model-groups">${groups}</div>`;
+    }
+
+    function renderWorkflowDetails(details) {
+      if (!details || !details.workflowGroups) return "";
+      const groups = details.workflowGroups.map(group => {
+        const steps = (group.steps || []).map(step => `<li>${step}</li>`).join("");
+        const examples = (group.examples || []).map(example => `<li>${example}</li>`).join("");
+        const image = group.image
+          ? `<div class="workflow-shot">${shot(group.image, group.imageTitle || group.title)}</div>`
+          : "";
+        return `<div class="workflow-group">
+          <h5>${group.title}</h5>
+          <p>${group.summary}</p>
+          ${steps ? `<ol>${steps}</ol>` : ""}
+          ${examples ? `<p>Common uses:</p><ul>${examples}</ul>` : ""}
+          ${image}
+        </div>`;
+      }).join("");
+      return `<div class="workflow-groups">${groups}</div>`;
     }
 
     function renderDeepCard(section, item, heading = "h4") {

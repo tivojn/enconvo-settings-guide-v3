@@ -407,3 +407,13 @@ Added after the user noted that Global Provider sections rendered a parent card 
 - Updated the HTML renderer so flat Global Provider child sections, such as AI Model, Text-to-Speech, Web Search, Image Generation, Video Generation, Web Fetch, and OCR, are embedded into the parent page section instead of rendering a second repeated title block.
 - Combined the child intro text into the parent section's instruction flow, then rendered the detailed provider subsections below it.
 - Preserved screenshots, anchors, sidebar tree structure, and the underlying `sections` data.
+
+## Dictation Post Action Command Deep Dive
+
+Added after the user asked for deeper Dictation documentation covering Post Action Commands.
+
+- Used the live EnConvo Settings UI at `Dictation & Transcription > Dictation` to open `Add Post Action Command`, search `profess`, and select `Change Tone Professional` from Writing Toolkit.
+- Verified that `Change Tone Professional` was added to the Post Action Commands list below `Dictation Polish` and `Dictation Translate`.
+- Added the user's supplied bottom-center dictation input indicator image as `screenshots/dictation-post-action-indicator.png`.
+- `screencapture` failed in this pass with `could not create image from display`, so no additional full-window screenshot was saved.
+- No provider credentials, secrets, authorization codes, callback URLs, API keys, or tokens were opened or stored.
