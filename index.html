@@ -1365,13 +1365,13 @@
       {
         id: "dictation-transcription",
         title: "Dictation & Transcription",
-        intro: "These panes configure speech-to-text models, dictation behavior, transcription history, vocabulary, and recordings.",
+        intro: "These panes set EnConvo's default configuration for Dictation and Transcription. Dictation defaults control live voice input and voice-command STT/ASR behavior, while Transcription defaults control STT/ASR for audio or video files.",
         pages: [
-          ["31-dictation-models.png", "Dictation Models", "Choose the model used for live speech-to-text.", "Use local models when privacy and offline use matter, or cloud models when accuracy and language coverage are more important. Confirm the model before relying on dictation in daily work.", "Voice"],
-          ["32-dictation.png", "Dictation", "Configure live dictation behavior.", "Use this page to tune how EnConvo listens, transcribes, and inserts spoken text. Review trigger behavior before using dictation in sensitive apps.", "Voice"],
+          ["31-dictation-models.png", "Dictation Models", "Choose the default STT/ASR provider for live voice input.", "STT means Speech to Text; ASR means Automatic Speech Recognition. Use Dictation Models for EnConvo voice-input features such as Dictation opened with the Right Command key, Smart Bar Voice Command opened from the voice-command icon, and direct Voice Command opened with the Right Option key. Choose local models when privacy and offline use matter, or cloud models when accuracy and language coverage are more important.", "Voice"],
+          ["32-dictation.png", "Dictation", "Configure default live dictation and voice-input behavior.", "Use this page to tune how EnConvo listens, transcribes, inserts spoken text, and handles live voice triggers. Review trigger behavior before using dictation or voice command in sensitive apps.", "Voice"],
           ["33-dictation-history.png", "Dictation History", "Review previous dictation entries.", "Use history to recover or inspect prior dictation output. Treat it as private because entries can include spoken content from work, messages, or notes.", "Private"],
           ["34-dictionary.png", "Dictionary", "Add vocabulary hints for better recognition.", "Use Dictionary for names, symbols, product terms, abbreviations, and domain vocabulary that dictation commonly mishears. Keep the list focused so recognition hints stay useful.", "Voice"],
-          ["35-transcription-models.png", "Transcription Models", "Choose the model used for file-based transcription.", "Use this page before transcribing audio or video files. Pick a local or cloud model based on privacy, language, accuracy, and runtime needs.", "Voice"],
+          ["35-transcription-models.png", "Transcription Models", "Choose the default STT/ASR provider for file-based transcription.", "Use Transcription Models for tools that transcribe an audio file or a video's soundtrack. Pick a local or cloud provider based on privacy, language, accuracy, and runtime needs.", "Voice"],
           ["36-recordings.png", "Recordings", "Manage saved recordings used for transcription or review.", "Use Recordings to inspect, replay, or remove saved audio. Treat file names and audio content as private unless you intentionally share them.", "Private"]
         ]
       },

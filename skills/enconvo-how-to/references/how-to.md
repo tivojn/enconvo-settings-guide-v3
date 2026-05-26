@@ -199,11 +199,13 @@ Global path: `Credential Management > Credential Management`.
 
 ## Dictation And Transcription
 
-- Dictation models: `Dictation & Transcription > Dictation Models`. Choose the model for live speech-to-text. Source: `#dictation-transcription-dictation-models`.
-- Dictation behavior: `Dictation & Transcription > Dictation`. Tune live listening, transcription, and insertion behavior. Source: `#dictation-transcription-dictation`.
+Use `Dictation & Transcription` for EnConvo's default STT/ASR configuration. STT means Speech to Text; ASR means Automatic Speech Recognition.
+
+- Dictation models: `Dictation & Transcription > Dictation Models`. Choose the default STT/ASR provider for live voice input features, including Dictation opened with the Right Command key, Smart Bar Voice Command opened from the voice-command icon, and direct Voice Command opened with the Right Option key. Source: `#dictation-transcription-dictation-models`.
+- Dictation behavior: `Dictation & Transcription > Dictation`. Tune live listening, speech-to-text transcription, insertion behavior, and trigger behavior for dictation and voice command. Source: `#dictation-transcription-dictation`.
 - Dictation history: `Dictation & Transcription > Dictation History`. Treat spoken content as private. Source: `#dictation-transcription-dictation-history`.
 - Dictionary: `Dictation & Transcription > Dictionary`. Add vocabulary hints for better recognition. Source: `#dictation-transcription-dictionary`.
-- Transcription models: `Dictation & Transcription > Transcription Models`. Choose the model for file-based transcription. Source: `#dictation-transcription-transcription-models`.
+- Transcription models: `Dictation & Transcription > Transcription Models`. Choose the default STT/ASR provider for file-based tools, such as transcribing an audio file or a video's soundtrack. Source: `#dictation-transcription-transcription-models`.
 - Recordings: `Dictation & Transcription > Recordings`. Treat audio files, titles, and transcripts as private. Source: `#dictation-transcription-recordings`.
 
 ## AI Commands, KnowledgeBase, Account, General, Developer
