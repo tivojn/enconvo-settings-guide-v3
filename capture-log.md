@@ -417,3 +417,13 @@ Added after the user asked for deeper Dictation documentation covering Post Acti
 - Added the user's supplied bottom-center dictation input indicator image as `screenshots/dictation-post-action-indicator.png`.
 - `screencapture` failed in this pass with `could not create image from display`, so no additional full-window screenshot was saved.
 - No provider credentials, secrets, authorization codes, callback URLs, API keys, or tokens were opened or stored.
+
+## Dictation Post Action Command Step Screenshots
+
+Added after the user noted that the Post Action Command walkthrough needed actual step screenshots, not only text.
+
+- Added `screenshots/dictation-post-action-01-before-add.png` for the Dictation page before opening the add-command sheet.
+- Added `screenshots/dictation-post-action-02-search-professional.png` for the `Add Post Action Command` sheet after searching `profess`.
+- Added `screenshots/dictation-post-action-03-command-added.png` for the Dictation page after `Change Tone Professional` was added.
+- Updated the Dictation workflow renderer so the walkthrough can show a sequence of full screenshots plus the small bottom-center dictation indicator image.
+- The step screenshots were captured manually by the user because sandboxed `screencapture` still returned `could not create image from display` even after Screen & System Audio Recording entries were enabled for Codex, Codex Computer Use, node, Terminal, iTerm, and zsh.

@@ -306,6 +306,11 @@
     .workflow-group ol,
     .workflow-group ul { margin: 8px 0 0; padding-left: 20px; }
     .workflow-group li { margin: 5px 0; color: #334155; line-height: 1.55; }
+    .workflow-shots {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
     .workflow-shot .shot { max-width: 360px; margin-top: 12px; }
     .toc strong { display: block; margin-bottom: 10px; font-size: 13px; }
     .toc a { display: block; padding: 5px 0 5px 10px; color: var(--muted); font-size: 12.75px; }
@@ -1465,6 +1470,20 @@
                   "Dictation Translate: speak Chinese, then pass the recognized text through EnConvo's translation command to produce the target language.",
                   "Change Tone Professional: speak casually, then let the command rewrite the wording in a professional tone."
                 ],
+                shots: [
+                  {
+                    image: "dictation-post-action-01-before-add.png",
+                    title: "Dictation page before adding a post action command"
+                  },
+                  {
+                    image: "dictation-post-action-02-search-professional.png",
+                    title: "Add Post Action Command sheet with Professional search result"
+                  },
+                  {
+                    image: "dictation-post-action-03-command-added.png",
+                    title: "Dictation page after Change Tone Professional is added"
+                  }
+                ],
                 image: "dictation-post-action-indicator.png",
                 imageTitle: "Dictation input indicator with post-action options"
               }
@@ -2098,6 +2117,7 @@
       const groups = details.workflowGroups.map(group => {
         const steps = (group.steps || []).map(step => `<li>${step}</li>`).join("");
         const examples = (group.examples || []).map(example => `<li>${example}</li>`).join("");
+        const shots = (group.shots || []).map(item => shot(item.image, item.title || group.title)).join("");
         const image = group.image
           ? `<div class="workflow-shot">${shot(group.image, group.imageTitle || group.title)}</div>`
           : "";
@@ -2106,6 +2126,7 @@
           <p>${group.summary}</p>
           ${steps ? `<ol>${steps}</ol>` : ""}
           ${examples ? `<p>Common uses:</p><ul>${examples}</ul>` : ""}
+          ${shots ? `<div class="workflow-shots">${shots}</div>` : ""}
           ${image}
         </div>`;
       }).join("");
