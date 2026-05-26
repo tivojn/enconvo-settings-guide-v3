@@ -263,12 +263,14 @@
       line-height: 1.55;
       margin: 5px 0;
     }
-    .shortcut-groups {
+    .shortcut-groups,
+    .model-groups {
       display: grid;
       gap: 18px;
       margin: 18px 0 6px;
     }
-    .shortcut-group h5 {
+    .shortcut-group h5,
+    .model-group h5 {
       margin: 0 0 8px;
       color: #475569;
       font-size: 13px;
@@ -297,6 +299,8 @@
     }
     .shortcut-table td:first-child { font-weight: 700; color: #1f2937; }
     .shortcut-table code { white-space: nowrap; }
+    .model-group ul { margin: 8px 0 0; padding-left: 19px; }
+    .model-group li { margin: 4px 0; color: #334155; }
     .toc strong { display: block; margin-bottom: 10px; font-size: 13px; }
     .toc a { display: block; padding: 5px 0 5px 10px; color: var(--muted); font-size: 12.75px; }
     code { padding: .13rem .3rem; border-radius: 4px; background: var(--soft); font: .9em ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -1367,11 +1371,141 @@
         title: "Dictation & Transcription",
         intro: "These panes set EnConvo's default configuration for Dictation and Transcription. Dictation defaults control live voice input and voice-command STT/ASR behavior, while Transcription defaults control STT/ASR for audio or video files.",
         pages: [
-          ["31-dictation-models.png", "Dictation Models", "Choose the default STT/ASR provider for live voice input.", "STT means Speech to Text; ASR means Automatic Speech Recognition. Use Dictation Models for EnConvo voice-input features such as Dictation opened with the Right Command key, Smart Bar Voice Command opened from the voice-command icon, and direct Voice Command opened with the Right Option key. Choose local models when privacy and offline use matter, or cloud models when accuracy and language coverage are more important.", "Voice"],
+          ["31-dictation-models.png", "Dictation Models", "Choose the default STT/ASR provider for live voice input.", "STT means Speech to Text; ASR means Automatic Speech Recognition. Use Dictation Models for EnConvo voice-input features such as Dictation opened with the Right Command key, Smart Bar Voice Command opened from the voice-command icon, and direct Voice Command opened with the Right Option key. Choose local models when privacy and offline use matter, or cloud models when accuracy and language coverage are more important.", "Voice", {
+            modelGroups: [
+              {
+                title: "EnConvo Cloud Plan",
+                summary: "Managed cloud STT/ASR models that work without configuring a separate provider API key.",
+                items: [
+                  "Soniox STT Realtime v4",
+                  "Soniox STT Async v4",
+                  "GPT-4o Mini Transcribe",
+                  "GPT-4o Transcribe",
+                  "Whisper-1",
+                  "xAI Speech-to-Text",
+                  "xAI Speech-to-Text Realtime",
+                  "Voxtral Mini",
+                  "Whisper Large V3 Turbo",
+                  "Whisper Large V3",
+                  "Gemini 3.1 Flash Lite",
+                  "Microsoft Azure Realtime",
+                  "Microsoft Azure Fast Transcription",
+                  "AssemblyAI Universal-Streaming",
+                  "AssemblyAI Universal",
+                  "Volcengine Realtime (BigASR)",
+                  "Volcengine Flash (BigASR Turbo)",
+                  "ElevenLabs Scribe v2 Realtime",
+                  "ElevenLabs Scribe v2"
+                ]
+              },
+              {
+                title: "Third Party Custom Provider via API key",
+                summary: "Direct provider routes for users who want to use their own credentials instead of EnConvo Cloud.",
+                items: [
+                  "Soniox STT Realtime v4",
+                  "Soniox STT Async v4",
+                  "GPT-4o Mini Transcribe",
+                  "GPT-4o Transcribe",
+                  "Whisper-1",
+                  "xAI Speech-to-Text",
+                  "xAI Speech-to-Text Realtime",
+                  "Voxtral Mini",
+                  "Whisper Large V3 Turbo",
+                  "Whisper Large V3",
+                  "Gemini 3.1 Flash Lite",
+                  "Microsoft Azure Realtime",
+                  "Microsoft Azure Fast Transcription",
+                  "AssemblyAI Universal-Streaming",
+                  "AssemblyAI Universal",
+                  "Volcengine Realtime (BigASR)",
+                  "Volcengine Flash (BigASR Turbo)",
+                  "ElevenLabs Scribe v2 Realtime",
+                  "ElevenLabs Scribe v2"
+                ]
+              },
+              {
+                title: "MLX-optimized local models",
+                summary: "Local STT/ASR models that can run on this Mac after download. These are useful when privacy, offline use, or local latency matters.",
+                items: [
+                  "Parakeet TDT 0.6B V3",
+                  "Parakeet TDT 0.6B V2",
+                  "Qwen3 ASR 0.6B (4bit)",
+                  "Qwen3 ASR 1.7B (8bit)",
+                  "Qwen3 ASR 0.6B (8bit)",
+                  "Qwen3 ASR 1.7B (4bit)",
+                  "Whisper Large V3 Turbo",
+                  "Whisper Large V3",
+                  "Whisper Medium",
+                  "Whisper Small",
+                  "Whisper Base",
+                  "Whisper Tiny"
+                ]
+              }
+            ]
+          }],
           ["32-dictation.png", "Dictation", "Configure default live dictation and voice-input behavior.", "Use this page to tune how EnConvo listens, transcribes, inserts spoken text, and handles live voice triggers. Review trigger behavior before using dictation or voice command in sensitive apps.", "Voice"],
           ["33-dictation-history.png", "Dictation History", "Review previous dictation entries.", "Use history to recover or inspect prior dictation output. Treat it as private because entries can include spoken content from work, messages, or notes.", "Private"],
           ["34-dictionary.png", "Dictionary", "Add vocabulary hints for better recognition.", "Use Dictionary for names, symbols, product terms, abbreviations, and domain vocabulary that dictation commonly mishears. Keep the list focused so recognition hints stay useful.", "Voice"],
-          ["35-transcription-models.png", "Transcription Models", "Choose the default STT/ASR provider for file-based transcription.", "Use Transcription Models for tools that transcribe an audio file or a video's soundtrack. Pick a local or cloud provider based on privacy, language, accuracy, and runtime needs.", "Voice"],
+          ["35-transcription-models.png", "Transcription Models", "Choose the default STT/ASR provider for file-based transcription.", "Use Transcription Models for tools that transcribe an audio file or a video's soundtrack. Pick a local or cloud provider based on privacy, language, accuracy, and runtime needs.", "Voice", {
+            modelGroups: [
+              {
+                title: "EnConvo Cloud Plan",
+                summary: "Managed cloud STT/ASR models for file-based transcription without configuring a separate provider API key.",
+                items: [
+                  "AssemblyAI Universal",
+                  "Soniox STT Async v4",
+                  "GPT-4o Mini Transcribe",
+                  "GPT-4o Transcribe",
+                  "Whisper-1",
+                  "xAI Speech-to-Text",
+                  "Voxtral Mini",
+                  "Whisper Large V3 Turbo",
+                  "Whisper Large V3",
+                  "Gemini 3.1 Flash Lite",
+                  "Microsoft Azure Fast Transcription",
+                  "Volcengine Flash (BigASR Turbo)",
+                  "ElevenLabs Scribe v2"
+                ]
+              },
+              {
+                title: "Third Party Custom Provider via API key",
+                summary: "Direct provider routes for file transcription with user-managed provider credentials.",
+                items: [
+                  "AssemblyAI Universal",
+                  "Soniox STT Async v4",
+                  "GPT-4o Mini Transcribe",
+                  "GPT-4o Transcribe",
+                  "Whisper-1",
+                  "xAI Speech-to-Text",
+                  "Voxtral Mini",
+                  "Whisper Large V3 Turbo",
+                  "Whisper Large V3",
+                  "Gemini 3.1 Flash Lite",
+                  "Microsoft Azure Fast Transcription",
+                  "Volcengine Flash (BigASR Turbo)",
+                  "ElevenLabs Scribe v2"
+                ]
+              },
+              {
+                title: "MLX-optimized local models",
+                summary: "Local STT/ASR models for file transcription after download. Use these when privacy or offline transcription matters.",
+                items: [
+                  "Parakeet TDT 0.6B V3",
+                  "Parakeet TDT 0.6B V2",
+                  "Qwen3 ASR 0.6B (4bit)",
+                  "Qwen3 ASR 1.7B (8bit)",
+                  "Qwen3 ASR 0.6B (8bit)",
+                  "Qwen3 ASR 1.7B (4bit)",
+                  "Whisper Large V3 Turbo",
+                  "Whisper Large V3",
+                  "Whisper Medium",
+                  "Whisper Small",
+                  "Whisper Base",
+                  "Whisper Tiny"
+                ]
+              }
+            ]
+          }],
           ["36-recordings.png", "Recordings", "Manage saved recordings used for transcription or review.", "Use Recordings to inspect, replay, or remove saved audio. Treat file names and audio content as private unless you intentionally share them.", "Private"]
         ]
       },
@@ -1896,7 +2030,12 @@
     }
 
     function renderPageDetails(details) {
-      if (!details || !details.shortcutGroups) return "";
+      if (!details) return "";
+      return `${renderShortcutDetails(details)}${renderModelDetails(details)}`;
+    }
+
+    function renderShortcutDetails(details) {
+      if (!details.shortcutGroups) return "";
       const groups = details.shortcutGroups.map(group => {
         const rows = group.items.map(item => {
           const [name, description, shortcut, mode] = item;
@@ -1913,6 +2052,19 @@
         </div>`;
       }).join("");
       return `<div class="shortcut-groups">${groups}</div>`;
+    }
+
+    function renderModelDetails(details) {
+      if (!details || !details.modelGroups) return "";
+      const groups = details.modelGroups.map(group => {
+        const items = group.items.map(item => `<li>${item}</li>`).join("");
+        return `<div class="model-group">
+          <h5>${group.title} (${group.items.length})</h5>
+          <p>${group.summary}</p>
+          <ul>${items}</ul>
+        </div>`;
+      }).join("");
+      return `<div class="model-groups">${groups}</div>`;
     }
 
     function renderDeepCard(section, item, heading = "h4") {

@@ -208,6 +208,16 @@ Use `Dictation & Transcription` for EnConvo's default STT/ASR configuration. STT
 - Transcription models: `Dictation & Transcription > Transcription Models`. Choose the default STT/ASR provider for file-based tools, such as transcribing an audio file or a video's soundtrack. Source: `#dictation-transcription-transcription-models`.
 - Recordings: `Dictation & Transcription > Recordings`. Treat audio files, titles, and transcripts as private. Source: `#dictation-transcription-recordings`.
 
+Supported Dictation Models:
+- EnConvo Cloud Plan: Soniox STT Realtime v4; Soniox STT Async v4; GPT-4o Mini Transcribe; GPT-4o Transcribe; Whisper-1; xAI Speech-to-Text; xAI Speech-to-Text Realtime; Voxtral Mini; Whisper Large V3 Turbo; Whisper Large V3; Gemini 3.1 Flash Lite; Microsoft Azure Realtime; Microsoft Azure Fast Transcription; AssemblyAI Universal-Streaming; AssemblyAI Universal; Volcengine Realtime (BigASR); Volcengine Flash (BigASR Turbo); ElevenLabs Scribe v2 Realtime; ElevenLabs Scribe v2.
+- Third Party Custom Provider via API key: Soniox STT Realtime v4; Soniox STT Async v4; GPT-4o Mini Transcribe; GPT-4o Transcribe; Whisper-1; xAI Speech-to-Text; xAI Speech-to-Text Realtime; Voxtral Mini; Whisper Large V3 Turbo; Whisper Large V3; Gemini 3.1 Flash Lite; Microsoft Azure Realtime; Microsoft Azure Fast Transcription; AssemblyAI Universal-Streaming; AssemblyAI Universal; Volcengine Realtime (BigASR); Volcengine Flash (BigASR Turbo); ElevenLabs Scribe v2 Realtime; ElevenLabs Scribe v2.
+- MLX-optimized local models: Parakeet TDT 0.6B V3; Parakeet TDT 0.6B V2; Qwen3 ASR 0.6B (4bit); Qwen3 ASR 1.7B (8bit); Qwen3 ASR 0.6B (8bit); Qwen3 ASR 1.7B (4bit); Whisper Large V3 Turbo; Whisper Large V3; Whisper Medium; Whisper Small; Whisper Base; Whisper Tiny.
+
+Supported Transcription Models:
+- EnConvo Cloud Plan: AssemblyAI Universal; Soniox STT Async v4; GPT-4o Mini Transcribe; GPT-4o Transcribe; Whisper-1; xAI Speech-to-Text; Voxtral Mini; Whisper Large V3 Turbo; Whisper Large V3; Gemini 3.1 Flash Lite; Microsoft Azure Fast Transcription; Volcengine Flash (BigASR Turbo); ElevenLabs Scribe v2.
+- Third Party Custom Provider via API key: AssemblyAI Universal; Soniox STT Async v4; GPT-4o Mini Transcribe; GPT-4o Transcribe; Whisper-1; xAI Speech-to-Text; Voxtral Mini; Whisper Large V3 Turbo; Whisper Large V3; Gemini 3.1 Flash Lite; Microsoft Azure Fast Transcription; Volcengine Flash (BigASR Turbo); ElevenLabs Scribe v2.
+- MLX-optimized local models: Parakeet TDT 0.6B V3; Parakeet TDT 0.6B V2; Qwen3 ASR 0.6B (4bit); Qwen3 ASR 1.7B (8bit); Qwen3 ASR 0.6B (8bit); Qwen3 ASR 1.7B (4bit); Whisper Large V3 Turbo; Whisper Large V3; Whisper Medium; Whisper Small; Whisper Base; Whisper Tiny.
+
 ## AI Commands, KnowledgeBase, Account, General, Developer
 
 - Add AI command templates: `AI Commands > Store`. Source: `#ai-commands-store`.
