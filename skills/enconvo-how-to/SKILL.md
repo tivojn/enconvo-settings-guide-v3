@@ -1,6 +1,6 @@
 ---
 name: enconvo-how-to
-description: Answer practical "how do I..." questions about EnConvo Settings, agents, provider defaults, provider-specific setup, credentials, tools, skills, shortcuts, dictation, knowledgebase, account, developer panes, and related EnConvo configuration workflows using the local EnConvo Settings User Guide v3.
+description: Answer practical "how do I..." questions about EnConvo Settings, agents, provider defaults, provider-specific setup, credentials, tools, skills, shortcuts, dictation, knowledgebase, account, developer panes, and related EnConvo configuration workflows using the EnConvo Settings User Guide v3.
 metadata:
   short-description: EnConvo Settings how-to answers
 ---
@@ -28,15 +28,16 @@ Use this skill when the user asks how to do something in EnConvo Settings, espec
 Build source links as `GUIDE_BASE_URL + anchor`.
 
 Current `GUIDE_BASE_URL`:
-`file:///Users/zanearcher/Documents/Codex/2026-05-25/use-ai-tutor-skill-to-help/enconvo-settings-guide-v3/index.html`
+`https://enconvo-settings-guide-v3.vercel.app/`
 
-When the production document URL is provided, use it as `GUIDE_BASE_URL` instead of the local file URL. Keep the same `#anchor` suffixes unless the production site changes the IDs.
+Local development guide source, if the deployed site is unavailable:
+`file:///Users/zanearcher/Documents/Codex/2026-05-25/use-ai-tutor-skill-to-help/enconvo-settings-guide-v3/index.html`
 
 ## Reference
 
 For the main how-to paths, read [references/how-to.md](references/how-to.md).
 
-Original guide source:
+Original local guide source:
 `file:///Users/zanearcher/Documents/Codex/2026-05-25/use-ai-tutor-skill-to-help/enconvo-settings-guide-v3/index.html`
 
 ## Canonical Example
@@ -46,4 +47,4 @@ User: "How to create a new agent in EnConvo?"
 Answer:
 With EnConvo frontmost, press `Cmd+,`. Or click EnConvo in the macOS menu bar and choose Settings. Then go to `Agents > Agent List`. In the middle Agent List column, open the bottom action menu and click `Create New Agent`. Choose `New Agent` for the default EnConvo setup, `New OpenClaw Agent` for an OpenClaw-first setup, or `New Hermes Agent` for a Hermes-first setup.
 
-Source: `file:///Users/zanearcher/Documents/Codex/2026-05-25/use-ai-tutor-skill-to-help/enconvo-settings-guide-v3/index.html#agent-list-create-create-new-agent-menu`
+Source: `https://enconvo-settings-guide-v3.vercel.app/#agent-list-create-create-new-agent-menu`

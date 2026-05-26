@@ -14,9 +14,10 @@ Build source links as:
 `GUIDE_BASE_URL + anchor`
 
 Current `GUIDE_BASE_URL`:
-`file:///Users/zanearcher/Documents/Codex/2026-05-25/use-ai-tutor-skill-to-help/enconvo-settings-guide-v3/index.html`
+`https://enconvo-settings-guide-v3.vercel.app/`
 
-When the production document URL is provided, replace only `GUIDE_BASE_URL` and keep the matching anchor suffix.
+Local development guide source, if the deployed site is unavailable:
+`file:///Users/zanearcher/Documents/Codex/2026-05-25/use-ai-tutor-skill-to-help/enconvo-settings-guide-v3/index.html`
 
 ## Open Settings
 
