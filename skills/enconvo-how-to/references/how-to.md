@@ -217,7 +217,7 @@ Global path: `Credential Management > Credential Management`.
 - General app preferences: `General > General Settings`. Source: `#general-general-settings`.
 - Keyboard shortcuts: `General > Shortcut Settings`. Use this to avoid conflicts with macOS or other apps. Source: `#general-shortcut-settings`.
 - Version/build information: `General > About`. Source: `#general-about`.
-- Developer utilities: `Developer > Developer Tools`. Source: `#developer-developer-tools`.
+- Developer utilities and factory reset: `Developer > Developer Tools`. Use this pane for diagnostics and for destructive reset controls that erase EnConvo settings and restore a factory-reset state. Back up anything important first and use reset controls only when the user intentionally wants fresh default settings. Source: `#developer-developer-tools`.
 - Logs: `Developer > Logging`. Logs may include paths, account data, request metadata, or provider details. Source: `#developer-logging`.
 - API settings: `Developer > APIs`. Keep endpoints, keys, and tokens private. Source: `#developer-apis`.
 - CLI instructions: `Developer > CLI Guide`. Source: `#developer-cli-guide`.
