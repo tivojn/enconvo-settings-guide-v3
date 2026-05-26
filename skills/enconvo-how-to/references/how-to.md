@@ -6,7 +6,7 @@ Use this reference to answer practical EnConvo Settings questions. Prefer short 
 2. The left-sidebar path.
 3. The exact tab, menu, pencil, gear, switch, or button to use.
 4. A privacy reminder when credentials, OAuth codes, recordings, logs, memory, or knowledge sources are involved.
-5. A source link to the closest guide anchor.
+5. **Always** a source URI to the closest guide anchor, rendered as plain text (not just a markdown link) so the URL is visible. Prefer the most specific matching anchor, especially credential-type, OAuth2, and ApiKey pages. If no exact anchor appears in this reference, do not claim it is absent unless you have checked the guide's generated anchor list; otherwise link the nearest parent section without speculation.
 
 ## Source Links
 
@@ -85,9 +85,17 @@ Use this pane when configuring app-wide spoken-output defaults.
 - EnConvo Cloud Plan TTS: use EnConvo Cloud as the credential provider when subscription-backed speech should avoid separate provider keys. Source: `#global-text-to-speech-enconvo-cloud-plan-tts`.
 - Edge TTS: no API key path. Configure preview text, voice, and output format. Source: `#global-text-to-speech-edge-tts-configuration`.
 - OpenAI TTS: choose the OpenAI TTS provider, configure OAuth2 or ApiKey through the credential pencil, then choose model, voice, and speed. Source: `#global-text-to-speech-openai-tts-configuration`.
+- OpenAI TTS credential type: use the credential sheet's `Credentials Type` menu to choose OAuth2 or ApiKey. Source: `#global-text-to-speech-openai-tts-credential-type-menu`.
+- OpenAI TTS OAuth2: choose `OAuth2`, review the connected account area, then use `Connect` or `Reconnect` only when you intend to authorize or repair the OpenAI account connection. Source: `#global-text-to-speech-openai-tts-oauth2-credential-sheet`.
+- OpenAI TTS ApiKey: choose `ApiKey`, paste the OpenAI API key, confirm API type/base URL when shown, and validate only when ready. Source: `#global-text-to-speech-openai-tts-apikey-setup`.
 - Gemini TTS: configure the Gemini ApiKey credential first, then choose TTS model and speaking voice. Source: `#global-text-to-speech-gemini-tts-configuration`.
+- Gemini TTS ApiKey: paste the Gemini API key, confirm the base URL, then validate only when ready. Source: `#global-text-to-speech-gemini-tts-apikey-setup`.
 - xAI TTS: configure the xAI credential through OAuth2 or ApiKey, then choose xAI voice/language behavior. Source: `#global-text-to-speech-xai-tts-configuration`.
+- xAI TTS credential type: click the pencil beside `Credential Provider`, then use `Credentials Type` to choose `OAuth2` for browser account authorization or `ApiKey` for direct key setup. Source: `#global-text-to-speech-xai-tts-credential-type-menu`.
+- xAI TTS OAuth2: choose `OAuth2`, review the connected account area, then click `Connect` or `Reconnect` only when you intend to authorize, change, or repair the xAI account connection. Source: `#global-text-to-speech-xai-tts-oauth2-credential-sheet`.
+- xAI TTS ApiKey: choose `ApiKey`, paste the xAI API key, and validate only after confirming the key is correct. Source: `#global-text-to-speech-xai-tts-apikey-setup`.
 - Eleven Labs TTS: configure the Eleven Labs API key, then refresh/open model and voice menus before making it default. Source: `#global-text-to-speech-eleven-labs-tts-configuration`.
+- Eleven Labs TTS ApiKey: paste the Eleven Labs API key, validate when ready, then return to choose model and voice. Source: `#global-text-to-speech-eleven-labs-tts-apikey-setup`.
 - Kokoro MLX TTS: local on-device TTS through the `mlx_manage` extension; choose a local Kokoro voice preset. Source: `#global-text-to-speech-kokoro-mlx-tts-configuration`.
 - Qwen3 MLX TTS: local on-device TTS with Qwen3-TTS variants, voices, and an Instruction field for style/emotion guidance. Source: `#global-text-to-speech-qwen3-mlx-tts-configuration`.
 

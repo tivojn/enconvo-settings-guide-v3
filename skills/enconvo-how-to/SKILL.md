@@ -18,7 +18,7 @@ Use this skill when the user asks how to do something in EnConvo Settings, espec
 - Name the left-sidebar path with arrows, for example `Agents > Agent List`.
 - Then name the exact control or tab to click.
 - For provider questions, include the provider branch when known, for example `Global Providers Settings > AI Model > OpenAI`, `Global Providers Settings > Text-to-Speech > Edge TTS`, or `Agents > Agent List > Mavis > AI Model`.
-- End with a source link to the exact relevant section in the guide when a matching anchor is known.
+- Always end with a source URI to the exact relevant section in the guide. Render it as plain text (not just a markdown link) so the URL is visible. Prefer the most specific anchor in `references/how-to.md`, especially provider credential sheets such as OAuth2 or ApiKey pages. If no exact anchor appears in the reference, do not claim it is absent unless you have checked the guide's generated anchor list; otherwise link the nearest parent section without speculation.
 - Keep answers short unless the user asks for a walkthrough.
 - If a step involves secrets, API keys, OAuth codes, callback URLs, account data, logs, recordings, or memory, remind the user to keep those private.
 - Do not claim to operate EnConvo unless the user explicitly asks you to control the app.
