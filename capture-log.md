@@ -427,3 +427,11 @@ Added after the user noted that the Post Action Command walkthrough needed actua
 - Added `screenshots/dictation-post-action-03-command-added.png` for the Dictation page after `Change Tone Professional` was added.
 - Updated the Dictation workflow renderer so the walkthrough can show a sequence of full screenshots plus the small bottom-center dictation indicator image.
 - The step screenshots were captured manually by the user because sandboxed `screencapture` still returned `could not create image from display` even after Screen & System Audio Recording entries were enabled for Codex, Codex Computer Use, node, Terminal, iTerm, and zsh.
+
+## Dictation Post Action Guide Layout Tightening
+
+Added after the user noted that the Dictation Post Action section should pair each text step with its screenshot instead of rendering all text followed by all screenshots.
+
+- Changed the Post Action Command workflow to render step-by-step instruction blocks with the matching screenshot directly under each step.
+- Moved the small bottom-center dictation indicator image into the final step about selecting a post action during live voice input.
+- Suppressed the old `32-dictation.png` page screenshot for the Dictation page because the new first and final Post Action screenshots cover the same visible pane more specifically.
