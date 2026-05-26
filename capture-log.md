@@ -435,3 +435,11 @@ Added after the user noted that the Dictation Post Action section should pair ea
 - Changed the Post Action Command workflow to render step-by-step instruction blocks with the matching screenshot directly under each step.
 - Moved the small bottom-center dictation indicator image into the final step about selecting a post action during live voice input.
 - Suppressed the old `32-dictation.png` page screenshot for the Dictation page because the new first and final Post Action screenshots cover the same visible pane more specifically.
+
+## Sidebar Anchor Sync
+
+Added after the user checked the deployed Dictation URL and asked for the left panel and content body to stay in sync.
+
+- Added active-link styling for the left navigation and right table of contents.
+- Added hash and scroll synchronization so visiting `#dictation-transcription-dictation` opens the matching left-nav branch, highlights `Dictation`, and scrolls it into view.
+- Reused the same `hidePageShot` handling in the top-level page renderer so the old `32-dictation.png` screenshot no longer renders on the Dictation page.

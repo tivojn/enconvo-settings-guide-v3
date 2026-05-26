@@ -92,6 +92,12 @@
     }
     details[open] > summary::before { transform: rotate(90deg); }
     summary:hover, .sidebar a:hover { background: var(--primary-soft); text-decoration: none; }
+    .sidebar a.active,
+    .toc a.active {
+      background: var(--primary-soft);
+      color: #1d4ed8;
+      font-weight: 760;
+    }
     .tree { margin: 2px 0 8px 12px; padding-left: 10px; border-left: 1px solid #e4e8ef; }
     .sidebar a {
       display: block;
@@ -2207,6 +2213,7 @@
         const cards = section.pages.map(page => {
           const [src, title, summary, guidance, tag, details] = page;
           const id = `${section.id}-${slug(title)}`;
+          const pageShot = src && !details?.hidePageShot ? shot(src, title) : "";
           const pageChildren = children.filter(child => child.parentPage === title);
           const embeddedIntros = pageChildren
             .filter(child => flatChildSectionIds.has(child.id))
@@ -2221,7 +2228,7 @@
             <p>${guidance}</p>
             ${embeddedIntros}
             ${renderPageDetails(details)}
-            ${shot(src, title)}
+            ${pageShot}
             ${nested}
           </section>`;
         }).join("");
@@ -2263,6 +2270,51 @@
       document.body.style.overflow = "";
     }
 
+    function setActiveNav(id, { scrollSidebar = false } = {}) {
+      if (!id) return;
+      const selector = `a[href="#${CSS.escape(id)}"]`;
+      const activeLinks = [...sidebar.querySelectorAll(selector), ...toc.querySelectorAll(selector)];
+      if (!activeLinks.length) return;
+
+      sidebar.querySelectorAll("a.active").forEach(link => link.classList.remove("active"));
+      toc.querySelectorAll("a.active").forEach(link => link.classList.remove("active"));
+      activeLinks.forEach(link => {
+        link.classList.add("active");
+        link.closest("details")?.setAttribute("open", "");
+        let parent = link.parentElement?.closest("details");
+        while (parent) {
+          parent.open = true;
+          parent = parent.parentElement?.closest("details");
+        }
+      });
+
+      if (scrollSidebar) {
+        const sidebarLink = sidebar.querySelector(selector);
+        sidebarLink?.scrollIntoView({ block: "center", inline: "nearest" });
+      }
+    }
+
+    function contentAnchors() {
+      return [...guide.querySelectorAll("section[id]")];
+    }
+
+    function syncNavFromScroll() {
+      const anchors = contentAnchors();
+      const marker = 92;
+      let active = anchors[0]?.id;
+      for (const section of anchors) {
+        if (section.getBoundingClientRect().top <= marker) active = section.id;
+        else break;
+      }
+      setActiveNav(active);
+    }
+
+    function syncNavFromHash() {
+      const id = decodeURIComponent(window.location.hash.replace(/^#/, ""));
+      if (!id) return;
+      setActiveNav(id, { scrollSidebar: true });
+    }
+
     function bindInteractions() {
       guide.addEventListener("click", event => {
         const button = event.target.closest(".shot-button");
@@ -2302,13 +2354,30 @@
         if (event.key === "-") viewerZoomOut.click();
         if (event.key.toLowerCase() === "f") viewerFit.click();
       });
-      window.matchMedia("(max-width: 780px)").addEventListener("change", renderSidebar);
+      let ticking = false;
+      window.addEventListener("scroll", () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          syncNavFromScroll();
+          ticking = false;
+        });
+      }, { passive: true });
+      window.addEventListener("hashchange", syncNavFromHash);
+      window.matchMedia("(max-width: 780px)").addEventListener("change", () => {
+        renderSidebar();
+        requestAnimationFrame(syncNavFromHash);
+      });
     }
 
     renderSidebar();
     renderToc();
     renderGuide();
     bindInteractions();
+    requestAnimationFrame(() => {
+      syncNavFromHash();
+      if (!window.location.hash) syncNavFromScroll();
+    });
   </script>
 </body>
 </html>
