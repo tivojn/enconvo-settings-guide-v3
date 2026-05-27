@@ -61,6 +61,45 @@ then the article content should place Mavis inside the `Agent List` page block a
 
 Do not render child sections as siblings of their parent page when the user asked for a deep tree.
 
+## Workflow Walkthroughs
+
+For task walkthroughs, make the text and screenshots work together:
+
+- Pair each instruction step with the screenshot that proves that step.
+- Avoid a long ordered list followed by a gallery of screenshots; that is harder to follow in a user-facing guide.
+- Use a compact image treatment only for tiny UI elements such as a floating dictation indicator.
+- If a workflow-specific screenshot duplicates a generic page screenshot, keep the generic file in `screenshots/` for archive history but suppress it from rendering with a data flag such as `hidePageShot`.
+
+Example data shape:
+
+```js
+workflowGroups: [{
+  title: "Post Action Commands",
+  summary: "Post Action Commands run an EnConvo command after live dictation.",
+  steps: [
+    {
+      text: "Open Dictation & Transcription > Dictation, then click Add Command.",
+      image: "dictation-post-action-01-before-add.png",
+      title: "Dictation page before adding a post action command"
+    },
+    {
+      text: "Search Professional and choose Change Tone Professional.",
+      image: "dictation-post-action-02-search-professional.png",
+      title: "Add Post Action Command sheet with Professional search result"
+    }
+  ]
+}]
+```
+
+## Sidebar And Anchor Sync
+
+When the guide has a left navigation and deep anchors:
+
+- Opening a URL with a hash, such as `#dictation-transcription-dictation`, should open the matching left-nav branch and highlight that link.
+- The left sidebar should scroll the active link into view on initial hash load.
+- While the user scrolls the article body, keep the active left-nav and right-TOC link in sync with the visible content section.
+- If the sidebar is re-rendered for mobile or responsive changes, reapply the active hash state afterward.
+
 ## CSS Notes
 
 Use quiet docs styling:

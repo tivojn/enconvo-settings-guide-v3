@@ -35,6 +35,8 @@ For each EnConvo page or nested leaf:
 
 If step 1 fails, pause the capture work before changing settings. Computer Use screenshots visible in the conversation are useful for navigation, but they are not enough for a screenshot-backed guide unless they are saved as original image files in `screenshots/`.
 
+If sandboxed `screencapture` returns `could not create image from display`, check macOS Screen & System Audio Recording permissions for the host app and helper processes. If permission repair still does not unblock capture during the current session, ask the user to capture the exact states manually while you drive the UI, then copy the newest Desktop screenshots into `screenshots/` with stable names and log that the user captured them manually.
+
 ## Exhaustive Leaf Audit SOP
 
 Use this when the user asks for a full-scale guide, a proof of concept, or says the previous pass was too shallow.
@@ -78,6 +80,8 @@ Every row must have either a saved screenshot path or `missing screenshot: <reas
 If the user warns that other windows were visible, restart the affected screenshots after they minimize noise. Do not argue with the old captures; treat clean screenshots as the new source of truth.
 
 If the normal screenshot command fails, continue with Computer Use state and available screenshot surfaces, but tell the user if you could not create new image files. When previous clean screenshots already exist, reuse them and document new findings against those files.
+
+When the user manually captures a screenshot for the guide, verify the newest Desktop screenshot visually before copying it into the repo. Use the same stable naming rules as automated captures.
 
 ## Mavis Proof Pattern
 

@@ -29,7 +29,9 @@ Use the existing guide as a living artifact when one exists:
 2. Preserve existing screenshots and notes unless the user asks to restart them.
 3. Add new sections under the matching hierarchy. For example, Mavis belongs under `Agents > Agent List > Mavis Deep Dive`, not as a sibling of `Agent List`.
 4. Keep the left sidebar tree and article content hierarchy aligned.
-5. Verify all image paths and JavaScript before finishing. When available, run `scripts/audit_guide.py <guide-dir>` from this skill folder to catch missing image refs, duplicate extensions, and screenshot-caption style copy.
+5. When a page uses a workflow walkthrough, pair each text step with the screenshot that proves that exact step. Do not render one long text block followed by a screenshot dump.
+6. If a new workflow screenshot supersedes an older page overview screenshot, keep the old screenshot file for archive history but suppress it from user-facing rendering with a data flag such as `hidePageShot`.
+7. Verify all image paths and JavaScript before finishing. When available, run `scripts/audit_guide.py <guide-dir>` from this skill folder to catch missing image refs, duplicate extensions, and screenshot-caption style copy.
 
 When building or extending the HTML structure, read `references/html-guide-pattern.md`.
 
@@ -132,6 +134,7 @@ Match a clean EnConvo docs/manual feel:
 - screenshot captions, filenames, and "Click to enlarge" text should be hidden by default unless the user asks for them
 - avoid card-in-card or box-in-box visual structure; use plain sections and frameless screenshots unless the existing guide design requires cards
 - do not render internal tags such as `Private`, `Provider`, `Voice`, or `Runtime` as visible badges by default
+- when users open a deep hash link such as `#dictation-transcription-dictation`, the left navigation should open the matching branch, highlight the active link, and scroll the sidebar to keep the navigation and content body in sync
 
 Prefer a data-driven `sections` array over hand-writing many repeated HTML blocks. Nested content should be represented with parent metadata such as:
 
@@ -150,6 +153,8 @@ Before final response:
 5. Update `capture-log.md` with the new capture pass and any oddities.
 
 Do not push or deploy unless the user explicitly asks. When asked to push/deploy, run validation first, commit the exact intended changes, push, deploy, and report the commit hash plus the production URL.
+
+After publishing guide changes that affect anchors, source URLs, or practical answer content, update the bundled and installed `enconvo-how-to` skill as part of the same pass. Confirm the installed skill copy and repo-bundled skill copy match, and validate that every referenced anchor exists in the generated guide.
 
 Useful checks:
 
